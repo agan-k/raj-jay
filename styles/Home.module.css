@@ -81,8 +81,9 @@
 }
 
 .card {
+  min-height: 25rem;
   margin: 1rem;
-  flex-basis: 45%;
+  flex-basis: 33%;
   padding: 1.5rem;
   text-align: left;
   color: inherit;
@@ -99,6 +100,10 @@
   border-color: #0070f3;
 }
 
+.card img {
+   margin: 0 auto;
+}
+
 .card h3 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
@@ -106,8 +111,13 @@
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
+  /* font-size: 1rem; */
   line-height: 1.5;
+}
+.card .date {
+   margin: 1rem 0; 
+   font-size: .8rem;
+   font-weight: 100;
 }
 
 .logo {
