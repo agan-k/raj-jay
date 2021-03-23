@@ -14,6 +14,11 @@ export default function Home(props) {
    ))
    console.log(press_publication)
 
+   const press_date = props.press.results.map(result =>
+      <p style={{width: '100%', margin: '0'}}>{result.data.date}</p>
+   )
+   console.log(press_date)
+
    const press_title = props.press.results.map(result => result.data.article_title.map(article_title =>
       <h3 style={{width: '100%', margin: '0'}}>{article_title.text}</h3>
    ))
@@ -35,7 +40,7 @@ export default function Home(props) {
    console.log(press_link)
    console.log(props.press.results.length)
 
-   const article_sections = [press_publication, press_subject, press_title, press_body, press_link]
+   const article_sections = [press_publication, press_date, press_subject, press_title, press_body, press_link]
    console.log(article_sections)
    let article = [];
    let articles = [];
