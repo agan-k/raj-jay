@@ -9,8 +9,8 @@ export default function Review({ data }) {
      
      <React.Fragment>
        <article>
-         <header>{RichText.asText(data.title)}</header>
-         <main>{RichText.asText(data.review_body)}</main>
+            <img src={data.logo.url} style={{maxHeight: '4rem'}}/>
+         <main>{RichText.render(data.press_body)}</main>
        </article>
      </React.Fragment>
    );
@@ -18,7 +18,7 @@ export default function Review({ data }) {
 
 export async function getStaticProps({ params }) {
    const { uid } = params;
-   const { data } = await client.getByUID("review", uid);
+   const { data } = await client.getByUID("press", uid);
    return {
      props: { data },
    };
@@ -26,12 +26,12 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const { results } = await client.query(
-    Prismic.Predicates.at("document.type", "review")
+    Prismic.Predicates.at("document.type", "press")
   )
 
-  const paths = results.map(review => ({
+  const paths = results.map(press => ({
     params: {
-      uid: review.uid,
+      uid: press.uid,
     },
   }))
   return {

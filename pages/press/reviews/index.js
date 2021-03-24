@@ -1,4 +1,4 @@
-// import Head from 'next/head'
+import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
 import Prismic from "prismic-javascript"
 import { client } from "../../../prismic-configuration"
@@ -7,7 +7,9 @@ import { RichText } from "prismic-reactjs";
 import Link from "next/link";
 
 export default function reviews(props) {
-   console.log(props)
+   console.log(props.press)
+   console.log(props.reviews)
+   // console.log(props.press.results[0].data.article_title[0].text)
    return (
       <div>
          <h1>reviews</h1>
@@ -21,19 +23,44 @@ export default function reviews(props) {
               </Link>
           </li>
         ))}
+         </ul>
+         <hr/>
+         <ul>
+        {props.press.results.map((press) => (
+           <li key={press.uid}>
+              <Link href="reviews/[id]" as={`reviews/${press.uid}`}>
+                 <a>
+                  {RichText.render(press.data.article_title)}
+                 </a>
+              </Link>
+          </li>
+        ))}
       </ul>
       </div>
    )
 }
 export async function getStaticProps() {
    const reviews = await client.query(
-      Prismic.Predicates.at("document.type", "review"),
-      { orderings: "[my.reviews.date desc]" }
+      Prismic.Predicates.at("document.type", "review")
+   )
+   const press = await client.query(
+      Prismic.Predicates.at("document.type", "press")
    )
    return {
       props: {
-         reviews
+         reviews,
+         press
       },
    }
 }
+// export async function getStaticProps() {
+//    const press = await client.query(
+//       Prismic.Predicates.at("document.type", "press")
+//    )
+//    return {
+//       props: {
+//          press
+//       },
+//    }
+// }
 

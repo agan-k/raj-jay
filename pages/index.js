@@ -8,51 +8,58 @@ import { RichText } from "prismic-reactjs";
 export default function Home(props) {
    console.log(props.press)
    console.log(props.press.results)
-   
+
+   // ++++++++++++++ press type +++++++++++++++++++++++++
+
+   const press_type = props.press.results.map(result =>
+      result.data.press_type
+   )
+   const press_logo = props.press.results.map(result =>
+      result.data.logo.url ?
+         <img src={result.data.logo.url} style={{display: 'block'}} /> : ''
+   )
+
    const press_publication = props.press.results.map(result => result.data.publication.map(publication =>
-      <h3 style={{width: '100%', margin: '0'}}>{publication.text}</h3>
+      <h3>{publication.text}</h3>
    ))
-   console.log(press_publication)
 
    const press_date = props.press.results.map(result =>
-      <p style={{width: '100%', margin: '0'}}>{result.data.date}</p>
+      <p>{result.data.date}</p>
    )
-   console.log(press_date)
 
    const press_title = props.press.results.map(result => result.data.article_title.map(article_title =>
-      <h3 style={{width: '100%', margin: '0'}}>{article_title.text}</h3>
+      <h3>{article_title.text}</h3>
    ))
-   console.log(press_title)
    
    const press_subject = props.press.results.map(result => result.data.article_subject.map(article_subject =>
-      <h3 style={{width: '100%', margin: '0'}}>{article_subject.text}</h3>
+      <h3>{article_subject.text}</h3>
    ))
-   console.log(press_subject)
    
    const press_body = props.press.results.map(result => result.data.press_body.map(paragraph =>
-      <p style={{width: '100%'}}>{paragraph.text}</p>
+      <p>{paragraph.text}</p>
    ))
-   console.log(press_body)
       
    const press_link = props.press.results.map(result => 
-      <a style={{width: '100%'}} href={result.data.link.url}>link</a>
+      <a href={result.data.link.url}>link</a>
    )
-   console.log(press_link)
-   console.log(props.press.results.length)
 
-   const article_sections = [press_publication, press_date, press_subject, press_title, press_body, press_link]
-   console.log(article_sections)
-   let article = [];
-   let articles = [];
+   // const press_list = 
+
+   const press_model = [press_type, press_logo, press_publication, press_date, press_subject, press_title, press_body, press_link]
+   let press_single = [];
+   let press_all = [];
    for (let i = 0; i < props.press.results.length; i++) {
-      for (let j = 0; j < article_sections.length; j++) {
-         article.push(article_sections[j][i]);
-         if (article.length == article_sections.length) {
-            articles.push(article);
-            article = [];
+      for (let j = 0; j < press_model.length; j++) {
+         press_single.push(press_model[j][i]);
+         if (press_single.length == press_model.length) {
+            press_all.push(press_single);
+            press_single = [];
          };
-      }
-   }
+      };
+   };
+   console.log(press_all)
+   console.log(press_all[0][2])
+   // ++++++++++++++++++++++++++++++++++++++++++ press type end 
    
   return (
     <div className={styles.container}>
@@ -69,10 +76,16 @@ export default function Home(props) {
         <p className={styles.description}>
           Home of drummer Rajiv jayaweera
         </p>
-
-           <div className={styles.grid}>
-              {articles}
+           
+         <div>
+            {/* {press_all.filter(item => item.)} */}
          </div>
+           
+
+
+
+           {/* <div className={styles.grid}>
+         </div> */}
       </main>
 
       <footer className={styles.footer}>
