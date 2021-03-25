@@ -6,13 +6,12 @@ import React from 'react'
 export default function Review({ data }) {
    console.log(data);
    return (
-     
-     <React.Fragment>
+     <div>
        <article>
-            <img src={data.logo.url} style={{maxHeight: '4rem'}}/>
+         <img src={data.logo.url} style={{maxHeight: '3rem'}}/>
          <main>{RichText.render(data.press_body)}</main>
        </article>
-     </React.Fragment>
+     </div>
    );
  }
 
