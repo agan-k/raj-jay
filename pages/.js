@@ -6,4 +6,9 @@
          </a>
       </Link>
   </li>
-)}
+)
+}
+
+const news_cards = props.press.results.map(result => 
+   result.
+   )

@@ -8,6 +8,8 @@ import Link from 'next/link'
 
 export default function Home(props) {
    console.log(props)
+
+   
    
   return (
     <div className={styles.container}>
@@ -33,7 +35,9 @@ export default function Home(props) {
       </ul>
       
       <main className={styles.main}>
-           <div className={styles.grid}></div>
+           <div className={styles.grid}>
+              
+           </div>
       </main>
 
       <footer className={styles.footer}>

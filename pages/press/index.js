@@ -18,6 +18,7 @@ export default function reviews(props) {
            <li key={press.uid}>
               <Link href="press/reviews/[id]" as={`press/reviews/${press.uid}`}>
                  <a>
+                  {RichText.render(press.data.publication)}
                   {RichText.render(press.data.article_title)}
                  </a>
               </Link>
