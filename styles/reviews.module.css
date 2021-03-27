@@ -1,0 +1,9 @@
+.container ul h3, .container ul h4 {
+   font-size: 1rem;
+   font-weight: 300;
+   display: inline-block;
+   margin: .1rem;
+}
+.container li {
+   list-style: none;
+}
