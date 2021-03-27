@@ -7,16 +7,11 @@ import Link from 'next/link'
 
 
 export default function Home(props) {
-   console.log(props)
-   console.log(props.content.results[0].data.news_card)
-   console.log(props.content.results[0].data.news_card_blurb)
-
-   
 
    const news_cards = props.content.results.map(result =>
       result.data.news_card ?
          <div key={result.uid} className={styles.card}>
-            <Link href={`${result.data.content_type}/${result.uid}`} >
+            <Link href={`${result.data.content_type.substr(0, 5)}/${result.uid}`} >
                <a>
                   <img src={result.data.news_card_image.url}/>
                   {RichText.render(result.data.news_card_blurb)}
@@ -24,20 +19,6 @@ export default function Home(props) {
             </Link>
          </div> : ''
    )
-   
-   // {
-      // if (result.data.news_card) {
-         // <div className={styles.card}>
-         //    <Link href={`${result.content_type}/${result.uid}`} >
-         //       <a>
-         //          {RichText.render(result.data.news_card_blurb)}
-         //       </a>
-         //    </Link>
-         // </div>
-      // }
-   // }
-   // )
-   console.log(news_cards)
    
    return (
     <div className={styles.container}>
@@ -74,7 +55,7 @@ export default function Home(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Site by{'form vs content'}
+          Site by&nbsp;{'form vs content'}
           {/* <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} /> */}
         </a>
       </footer>
@@ -83,10 +64,6 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-   // const news_cards = await client.query(
-   //    Prismic.Predicates.at("document.type", "news_card"),
-   //    { orderings: "[my.news_card.date desc]" }
-   // )
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content")
    )
