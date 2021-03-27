@@ -1,4 +1,4 @@
-import { client } from "../../../prismic-configuration";
+import { client } from "../../prismic-configuration";
 import { RichText } from "prismic-reactjs";
 import Prismic from "prismic-javascript";
 import React from 'react'
@@ -9,12 +9,6 @@ export default function Review({ data }) {
        <article>
          <img src={data.logo.url} style={{maxHeight: '3rem'}}/>
          <main>{RichText.render(data.content_body)}</main>
-         <style jsx>{`
-            main image{
-               width: 60%;
-            }
-       
-       `}</style>
        </article>
       </div>
    );

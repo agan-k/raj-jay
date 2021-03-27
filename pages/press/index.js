@@ -10,17 +10,19 @@ export default function reviews(props) {
    console.log(props.content)
 
    const press_reviews = props.content.results.filter(result => 
-      result.data.content_type == 'press/reviews'
+      result.data.content_type == 'press-reviews'
    )
    const press_releases = props.content.results.filter(result => 
-      result.data.content_type == 'press/releases'
+      result.data.content_type == 'press-releases'
    )
    const press_interviews = props.content.results.filter(result => 
-      result.data.content_type == 'press/interviews'
+      result.data.content_type == 'press-interviews'
    )
    const press_features = props.content.results.filter(result => 
-      result.data.content_type == 'press/features'
+      result.data.content_type == 'press-features'
    )
+   console.log(press_reviews[0].data.content_type)
+   console.log(press_reviews)
    
    return (
       <div className={styles.container}>
@@ -34,12 +36,11 @@ export default function reviews(props) {
          <h1>reviews</h1>
           <ul>
              {press_reviews.map((result) => (
-                 <li key={result.uid} style={{ background: 'grey' }}>
-                    <Link href="press/reviews/[id]" as={`press/reviews/${result.uid}`}>
+                 <li key={result.uid}>
+                    {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                    <Link href={`${result.data.content_type}/[id]`} as={`${result.data.content_type}/${result.uid}`}>
                        <a>
-                          {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
-                          &nbsp; - &nbsp;
-                          {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
+                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                        </a>
                      </Link>
                   </li>
@@ -50,11 +51,10 @@ export default function reviews(props) {
          <h1>interviews</h1>
          <ul>
             {press_interviews.map((result) => (
-               <li key={result.uid} style={{ background: 'red' }}>
-                  <Link href="press/reviews/[id]" as={`press/reviews/${result.uid}`}>
+               <li key={result.uid}>
+                  {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                  <Link href="press/[id]" as={`press/${result.uid}`}>
                      <a>
-                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
-                        &nbsp; - &nbsp;
                         {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                      </a>
                   </Link>
@@ -66,11 +66,10 @@ export default function reviews(props) {
          <h1>press releases</h1>
          <ul>
             {press_releases.map((result) => (
-               <li key={result.uid} style={{ background: 'green' }}>
-                  <Link href="press/reviews/[id]" as={`press/reviews/${result.uid}`}>
+               <li key={result.uid}>
+                  {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                  <Link href="press/[id]" as={`press/${result.uid}`}>
                      <a>
-                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
-                        &nbsp; - &nbsp;
                         {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                      </a>
                   </Link>
@@ -82,11 +81,10 @@ export default function reviews(props) {
          
          <ul>
             {press_features.map((result) => (
-               <li key={result.uid} style={{ background: 'yellow' }}>
-                  <Link href="press/reviews/[id]" as={`press/reviews/${result.uid}`}>
+               <li key={result.uid}>
+                  {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                  <Link href="press/[id]" as={`press/${result.uid}`}>
                      <a>
-                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
-                        &nbsp; - &nbsp;
                         {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                      </a>
                   </Link>

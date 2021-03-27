@@ -11,6 +11,8 @@ export default function Home(props) {
    console.log(props.content.results[0].data.news_card)
    console.log(props.content.results[0].data.news_card_blurb)
 
+   
+
    const news_cards = props.content.results.map(result =>
       result.data.news_card ?
          <div key={result.uid} className={styles.card}>
