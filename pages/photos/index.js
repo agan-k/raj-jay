@@ -9,8 +9,15 @@ export default class Photos extends Component {
       console.log(props)
       super()
       this.state = {
-         showModal: false
+         showModal: false,
+         maskImages: true
       }
+   }
+
+   toggleMask = () => {
+      this.setState({
+         maskImages: !this.state.maskImages
+      })
    }
 
    handleShowModal = (index) => {
@@ -49,10 +56,11 @@ export default class Photos extends Component {
 
       const gallery = photos.map((photo, index) => 
          <div className={style.photo_container} key={photo.uid}>
-            <div className={style.img_mask}>
+            <div className={style[`${this.state.maskImages ? 'img_mask' : 'img_unmask'}`]}>
                <img
                   onClick={() => this.handleShowModal(index)}
-                  className={style[`${this.getImgOrientation(photo.data.img.dimensions.height, photo.data.img.dimensions.width)}`]}
+                  className={style[`${this.
+                     getImgOrientation(photo.data.img.dimensions.height, photo.data.img.dimensions.width)}`]}
                   src={photo.data.img.url} />
             </div>
          </div>
@@ -61,7 +69,7 @@ export default class Photos extends Component {
       return (
          <div>
             <h1>photos</h1>
-            <p>unmask</p>
+            <span onClick={() => this.toggleMask()} className={style.img_mask_toggle}>unmask</span>
             <div className={style.gallery_container}>
                {gallery}
             </div>
