@@ -34,13 +34,15 @@ export default class Modal extends Component {
                   <img src={photo_detail.img.url}
                      className={`${getImgClassName(photo_detail.img.dimensions)}_img`}
                   />
-                  <p>{RichText.render(photo_detail.photo_caption)}</p>
+                  {RichText.render(photo_detail.photo_caption)}
                   <style jsx>{`
                      .vertical_img {
                         height: 80%;
+                        margin-top: 10%;
                      }
                      .horizontal_img {
                         height: 60%;
+                        margin-top: 20%;
                      }
                   
                   `}</style>

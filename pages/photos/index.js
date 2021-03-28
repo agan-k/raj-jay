@@ -61,6 +61,7 @@ export default class Photos extends Component {
       return (
          <div>
             <h1>photos</h1>
+            <p>unmask</p>
             <div className={style.gallery_container}>
                {gallery}
             </div>
