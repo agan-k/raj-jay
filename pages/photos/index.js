@@ -46,13 +46,15 @@ export default class Photos extends Component {
       const photos = this.props.content.results.filter(result => 
          result.data.content_type == 'photo'
       )
-      const photo_dimensions
+
       const gallery = photos.map((photo, index) => 
          <div className={style.photo_container} key={photo.uid}>
-         <img
-            onClick={() => this.handleShowModal(index)}
-            className={style[`${this.getImgOrientation(photo.data.img.dimensions.height, photo.data.img.dimensions.width)}`]}
-            src={photo.data.img.url} />
+            <div className={style.img_mask}>
+               <img
+                  onClick={() => this.handleShowModal(index)}
+                  className={style[`${this.getImgOrientation(photo.data.img.dimensions.height, photo.data.img.dimensions.width)}`]}
+                  src={photo.data.img.url} />
+            </div>
          </div>
       )
 

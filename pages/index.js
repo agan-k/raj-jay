@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
-import { RichText } from "prismic-reactjs";
+import { RichText } from "prismic-reactjs"
 import Link from 'next/link'
 
 

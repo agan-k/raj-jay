@@ -8,14 +8,21 @@
    /* background-color: yellow; */
    text-align: center;
 }
+.img_mask {
+   height: 60%;
+   width: 60%;
+   margin-top: 20%;
+   overflow: hidden;
+   /* background-color: whitesmoke; */
+}
 
 .vertical_img {
-   height: 90%;
-   margin-top: 5%;
+   height: 150%;
+   /* margin-top: 5%; */
 }
 .horizontal_img {
-   height: 60%;
-   margin-top: 20%
+   height: 100%;
+   /* margin-top: 20% */
 }
 
 
