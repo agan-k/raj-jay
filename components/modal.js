@@ -15,20 +15,20 @@ export default class Modal extends Component {
    }
    render() {
       const photo_detail = this.props.photos[this.props.index].data.img
-      function getImgOrientation(height, width) {
-         if (height > width) {
-            return 'vertical_img'
+
+      function getImgClassName(dimensions) {
+         if (dimensions.height > dimensions.width) {
+            return 'vertical'
          } else {
-            return 'horizontal_img'
+            return 'horizontal'
          }
       }
       return (
          <div className={style.container} onClick={() => this.props.handleCloseModal()}>
              {this.props.photos ?
                <div className={style.img_container}>
-                  {/* className does not work. Need different solution to bring over the image orientation from photos/index.js */}
                   <img src={photo_detail.url}
-                     className={style[`${() => getImgOrientation(photo_detail.dimensions.hight, photo_detail.dimensions.width)}`]}
+                     className={`${getImgClassName(photo_detail.dimensions)}_img`}
                   />
                </div> : ''
          } 
