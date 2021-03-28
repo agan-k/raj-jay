@@ -24,19 +24,26 @@ export default class Photos extends Component {
          index: null
       })
    }
+   getImgOrientation = (height, width) => {
+      if (height > width) {
+         
+         return 'vertical_img'
+      } else {
+        
+         return 'horizontal_img'
+      }
+   }
    render() {
       const photos = this.props.content.results.filter(result => 
          result.data.content_type == 'photo'
       )
-
       const gallery = photos.map((photo, index) => 
-         photo.data.img.dimensions.height > photo.data.img.dimensions.width ?
-            <div className={style.photo_container} key={photo.uid}>
-                  <img onClick={() => handleShowModal(index)} className={style.vertical_img} src={photo.data.img.url} />
-            </div> :
-            <div className={style.photo_container}>
-                  <img onClick={() => handleClick(index)} className={style.horizontal_img} src={photo.data.img.url} /> 
-            </div>
+         <div className={style.photo_container} key={photo.uid}>
+         <img
+            onClick={() => this.handleShowModal(index)}
+            className={style[`${this.getImgOrientation(photo.data.img.dimensions.height, photo.data.img.dimensions.width)}`]}
+            src={photo.data.img.url} />
+         </div>
       )
       return (
          <div>
@@ -47,6 +54,8 @@ export default class Photos extends Component {
 
             {this.state.showModal && (
                <Modal
+                  getImageOrientation={this.getImgOrientation}
+                  photos={photos}
                   handleCloseModal={this.handleCloseModal}
                   index={this.state.index} />
             )}
