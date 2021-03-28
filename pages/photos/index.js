@@ -3,6 +3,7 @@ import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 import style from './photos.module.css'
 import Modal from '../../components/modal'
+import MaskToggleIcon from '../../components/MaskToggleIcon'
 
 export default class Photos extends Component {
    constructor(props) {
@@ -69,7 +70,10 @@ export default class Photos extends Component {
       return (
          <div>
             <h1>photos</h1>
-            <span onClick={() => this.toggleMask()} className={style.img_mask_toggle}>unmask</span>
+            <div onClick={() => this.toggleMask()}>
+              <MaskToggleIcon />
+            </div>
+            {/* <span onClick={() => this.toggleMask()} className={style.img_mask_toggle}>unmask</span> */}
             <div className={style.gallery_container}>
                {gallery}
             </div>
