@@ -7,14 +7,16 @@ import Link from 'next/link'
 
 
 export default function Home(props) {
+   console.log(props)
 
    const news_cards = props.content.results.map(result =>
       result.data.news_card ?
          <div key={result.uid} className={styles.card}>
             <Link href={`${result.data.content_type.substr(0, 5)}/${result.uid}`} >
                <a>
-                  <img src={result.data.news_card_image.url}/>
+                  <img src={result.data.img.url}/>
                   {RichText.render(result.data.news_card_blurb)}
+                  <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
                </a>
             </Link>
          </div> : ''

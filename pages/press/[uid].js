@@ -7,7 +7,7 @@ export default function Review({ data }) {
    return (
      <div>
        <article>
-         <img src={data.logo.url} style={{maxHeight: '3rem'}}/>
+         <img src={data.img.url} style={{maxHeight: '3rem'}}/>
          <main>{RichText.render(data.content_body)}</main>
        </article>
       </div>
