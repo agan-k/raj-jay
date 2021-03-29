@@ -82,7 +82,7 @@ export default class Photos extends Component {
                <Modal
                   getImageOrientation={this.getImgOrientation}
                   photos={photos}
-                  handleCloseModal={this.handleCloseModal}
+                  closeModal={this.handleCloseModal}
                   index={this.state.index} />
             )}
          </div>

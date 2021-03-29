@@ -66,7 +66,7 @@ export default function MaskToggleIcon() {
                   align-items: center;
                   width: 3rem;
                   height: 2rem;
-                  border: 1px solid rgb(233, 233, 233);
+                  border: 1px solid rgb(200, 200, 200);
                   cursor: pointer;
                }
                .square {

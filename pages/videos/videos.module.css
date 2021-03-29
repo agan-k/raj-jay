@@ -1,0 +1,11 @@
+.gallery_container {
+   width: 80%;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 1rem auto;
+   /* justify-content: space-between ; */
+   /* background: honeydew; */
+}
+.video_container img {
+   width: 15rem;
+}

@@ -28,7 +28,7 @@ export default class Modal extends Component {
          }
       }
       return (
-         <div className={style.container} onClick={() => this.props.handleCloseModal()}>
+         <div className={style.container} onClick={() => this.props.closeModal()}>
              {this.props.photos ?
                <div className={style.img_container}>
                   <img src={photo_detail.img.url}
