@@ -1,17 +1,25 @@
 .gallery_container {
+   width: 80%;
    display: flex;
-   margin-top: 3rem;
+   flex-wrap: wrap;
+   margin: 1rem auto;
    /* justify-content: space-between ; */
+   /* background: honeydew; */
 }
 .photo_container {
    height: 9rem;
    width: 9rem;
    text-align: center;
+   /* background: yellow; */
+}
+.photo_container img {
+   cursor: pointer;
 }
 /* +++++++ img mask +++++++ */
 .img_mask_toggle {
    cursor: pointer;
 }
+/* -----   -  --   -  ---- */
 .img_mask {
    height: 100%;
    width: 100%;
@@ -23,6 +31,7 @@
 .img_mask .horizontal_img {
    height: 100%;
 }
+/* -----   -  --   -  ---- */
 .img_unmask {
    height: 100%;
    width: 100%;
@@ -35,6 +44,6 @@
    height: 60%;
    margin-top: 20%
 }
-/* +++++++ img mask end +++++++ */
+/* +++++ img mask end +++++ */
 
 

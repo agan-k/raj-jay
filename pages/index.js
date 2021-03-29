@@ -35,11 +35,8 @@ export default function Home(props) {
       <p className={styles.description}>Home of drummer Rajiv Jayaweera</p>
       <ul style={{display: 'flex', listStyle: 'none'}}>
          <li>
-            <Link href="/press">
-               <a>
-                  Press
-               </a>
-            </Link>
+            <Link href="/press"><a>Press</a></Link>&nbsp;
+            <Link href="/photos"><a>Photos</a></Link>
          </li>
          <li></li>
          <li></li>

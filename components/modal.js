@@ -38,11 +38,11 @@ export default class Modal extends Component {
                   <style jsx>{`
                      .vertical_img {
                         height: 80%;
-                        margin-top: 10%;
+                        margin-top: 5%;
                      }
                      .horizontal_img {
                         height: 60%;
-                        margin-top: 20%;
+                        margin-top: 10%;
                      }
                   
                   `}</style>

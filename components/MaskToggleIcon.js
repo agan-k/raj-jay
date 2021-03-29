@@ -54,7 +54,8 @@ export default function MaskToggleIcon() {
             
             <style jsx>{`
                .wrapper {
-                  width: 10rem;
+                  width: 80%;
+                  margin: 0 auto;
                   display: flex;
                   justify-content: space-between;
                }
@@ -63,16 +64,17 @@ export default function MaskToggleIcon() {
                   flex-wrap: wrap;
                   justify-content: center;
                   align-items: center;
-                  width: 4rem;
-                  height: 3rem;
-                  border: 1px solid grey;
+                  width: 3rem;
+                  height: 2rem;
+                  border: 1px solid rgb(233, 233, 233);
+                  cursor: pointer;
                }
                .square {
                   height: 40%;
                   width: 30%;
                }
                .rectangle {
-                  border: 1px solid grey;
+                  border: 1px solid rgb(233, 233, 233);
                }
                .rectangle.vertical {
                   height: 90%;
