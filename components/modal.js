@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import style from './modal.module.css'
 import { RichText } from "prismic-reactjs"
+import ReactPlayer from 'react-player'
+
 
 
 
@@ -17,8 +19,13 @@ export default class Modal extends Component {
       })
    }
    render() {
-      const photo_detail = this.props.photos[this.props.index].data
-      console.log(photo_detail.photo_caption.text)
+      let detail;
+      if (this.props.photos) {
+          detail = this.props.photos[this.props.index].data
+         } else if (this.props.videos) {
+            detail = this.props.videos[this.props.index].data
+      }
+      console.log()
 
       function getImgClassName(dimensions) {
          if (dimensions.height > dimensions.width) {
@@ -31,10 +38,10 @@ export default class Modal extends Component {
          <div className={style.container} onClick={() => this.props.closeModal()}>
              {this.props.photos ?
                <div className={style.img_container}>
-                  <img src={photo_detail.img.url}
-                     className={`${getImgClassName(photo_detail.img.dimensions)}_img`}
+                  <img src={detail.img.url}
+                     className={`${getImgClassName(detail.img.dimensions)}_img`}
                   />
-                  {RichText.render(photo_detail.photo_caption)}
+                  {RichText.render(detail.photo_caption)}
                   <style jsx>{`
                      .vertical_img {
                         height: 80%;
@@ -46,7 +53,16 @@ export default class Modal extends Component {
                      }
                   
                   `}</style>
-               </div> : ''
+               </div> :
+               (this.props.videos) ?
+                  <div className={style.video_container}>
+                     <ReactPlayer
+                        className='react-player'
+                        url={detail.video_link[0].text}
+                        controls
+                     />
+                  </div> : ''
+               
          } 
          </div>
       )

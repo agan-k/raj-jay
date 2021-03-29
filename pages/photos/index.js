@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Link from 'next/link'
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 import style from './photos.module.css'
@@ -69,6 +70,9 @@ export default class Photos extends Component {
 
       return (
          <div>
+            <h1>&larr;
+               <Link href="/"><a>Home</a></Link>
+            </h1>
             <h1>photos</h1>
             <div onClick={() => this.toggleMask()}>
               <MaskToggleIcon />

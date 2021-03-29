@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Link from 'next/link'
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 import style from './videos.module.css'
@@ -32,11 +33,14 @@ export default class Videos extends Component {
       console.log(videos)
       const gallery = videos.map((video, index) =>
          <div className={style.video_container} key={video.uid}>
-            <img onClick={() => handleShowModal(index)} src={video.data.img.url} />
+            <img onClick={() => this.handleShowModal(index)} src={video.data.img.url} />
          </div>
       )
       return (
          <div>
+            <h1>&larr;
+               <Link href="/"><a>Home</a></Link>
+            </h1>
             <h1>videos</h1>
             <div className={style.gallery_container}>
                {gallery}

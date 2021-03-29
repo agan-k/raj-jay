@@ -37,11 +37,7 @@ export default function reviews(props) {
    return (
       <div className={styles.container}>
          <h1>&larr;
-            <Link href="/">
-               <a>
-               Home
-               </a>
-            </Link>
+            <Link href="/"><a>Home</a></Link>
          </h1>
          <h1>reviews</h1>
           <ul>
