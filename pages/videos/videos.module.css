@@ -8,4 +8,17 @@
 }
 .video_container img {
    width: 15rem;
+   margin: 0 .5rem;
+   cursor: pointer;
+   opacity: .7;
+   transition: .4s;
+}
+.video_container img:hover {
+   opacity: 1;
+   transition: .4s;
+}
+.video_container p {
+   margin: 0 0 0 .5rem;
+   color: grey;
+   font-weight: 100;
 }

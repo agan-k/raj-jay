@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
+import { RichText } from "prismic-reactjs"
+
 import style from './videos.module.css'
 import Modal from '../../components/modal'
 
@@ -34,6 +36,7 @@ export default class Videos extends Component {
       const gallery = videos.map((video, index) =>
          <div className={style.video_container} key={video.uid}>
             <img onClick={() => this.handleShowModal(index)} src={video.data.img.url} />
+            {RichText.render(video.data.video_caption)}
          </div>
       )
       return (
