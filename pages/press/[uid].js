@@ -4,6 +4,7 @@ import Prismic from "prismic-javascript";
 import React from 'react'
 
 export default function Review({ data }) {
+   console.log(data)
    return (
      <div>
        <article>
@@ -17,6 +18,7 @@ export default function Review({ data }) {
 export async function getStaticProps({ params }) {
    const { uid } = params;
    const { data } = await client.getByUID("content", uid);
+
    return {
      props: { data },
    };
@@ -24,7 +26,8 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const { results } = await client.query(
-    Prismic.Predicates.at("document.type", "content")
+     Prismic.Predicates.at("document.type", "content"),
+     { pageSize : 100 }
   )
 
   const paths = results.map(result => ({
