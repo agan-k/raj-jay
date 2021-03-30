@@ -39,6 +39,7 @@ export default class Videos extends Component {
             {RichText.render(video.data.video_caption)}
          </div>
       )
+      console.log(this.props)
       return (
          <div>
             <h1>&larr;
@@ -63,11 +64,12 @@ export default class Videos extends Component {
 }
 export async function getStaticProps() {
    const content = await client.query(
-      Prismic.Predicates.at("document.type", "content")
-   )
-   return {
-      props: {
-         content
+      Prismic.Predicates.at("document.type", "content"),
+      { pageSize : 100 }
+      )
+      return {
+         props: {
+            content
+         }
       }
-   }
 }

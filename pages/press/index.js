@@ -15,6 +15,7 @@ export default function reviews(props) {
    const press_releases = props.content.results.filter(result => 
       result.data.content_type == 'press-releases'
    )
+   console.log(press_releases)
    const press_interviews = props.content.results.filter(result => 
       result.data.content_type == 'press-interviews'
    )
@@ -101,15 +102,12 @@ export default function reviews(props) {
    )
 }
 export async function getStaticProps() {
-   // const press = await client.query(
-   //    Prismic.Predicates.at("document.type", "press")
-   // )
    const content = await client.query(
-      Prismic.Predicates.at("document.type", "content")
+      Prismic.Predicates.at("document.type", "content"),
+      { pageSize : 100 }
    )
    return {
       props: {
-         // press,
          content
       },
    }

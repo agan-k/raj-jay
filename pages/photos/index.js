@@ -97,7 +97,8 @@ export default class Photos extends Component {
 
 export async function getStaticProps() {
    const content = await client.query(
-      Prismic.Predicates.at("document.type", "content")
+      Prismic.Predicates.at("document.type", "content"),
+      { pageSize : 100 }
    )
    return {
       props: {
