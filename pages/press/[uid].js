@@ -1,10 +1,9 @@
+import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration";
 import { RichText } from "prismic-reactjs";
-import Prismic from "prismic-javascript";
 import React from 'react'
 
 export default function Review({ data }) {
-   console.log(data)
    return (
      <div>
        <article>
@@ -18,9 +17,8 @@ export default function Review({ data }) {
 export async function getStaticProps({ params }) {
    const { uid } = params;
    const { data } = await client.getByUID("content", uid);
-
    return {
-     props: { data },
+      props: { data }
    };
  }
 

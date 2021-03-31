@@ -3,8 +3,8 @@ import styles from '../../styles/reviews.module.css'
 import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 import { React } from 'react'
-import { RichText } from "prismic-reactjs";
-import Link from "next/link";
+import { RichText } from "prismic-reactjs"
+import Link from "next/link"
 
 export default function reviews(props) {
    console.log(props.content)
@@ -104,12 +104,12 @@ export default function reviews(props) {
 export async function getStaticProps() {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
-      { pageSize : 100 }
-   )
+      { pageSize: 100 }
+   );
    return {
       props: {
          content
       },
-   }
+   };
 }
 
