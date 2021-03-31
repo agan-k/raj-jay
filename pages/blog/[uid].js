@@ -7,7 +7,7 @@ export default function Post ({data}) {
    return (
       <div>
          <article>
-            <img src={data.img.url} style={{ maxHeight: "3rem" }} />
+            <img src={data.img.url} style={{ maxHeight: "15rem" }} />
             <main>{RichText.render(data.content_body)}</main>
          </article>
       </div>
@@ -33,7 +33,7 @@ export async function getStaticPaths() {
       }
    }))
    return {
-      parths,
+      paths,
       fallback: false,
    }
 }
