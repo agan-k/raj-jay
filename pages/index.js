@@ -71,22 +71,6 @@ export default class Home extends React.Component {
                </Link>
             </div> : ''
       )
-      
-      console.log(cards)
-   
-      // const news_cards = props.content.results.map(result =>
-      //    result.data.news_card ?
-      //       <div key={result.uid} className={styles.card}>
-      //          <Link href={`${result.data.content_type.substr(0, 5)}/${result.uid}`} >
-      //             <a>
-      //                <img src={result.data.img.url}/>
-      //                <p>{formatDate(result.data.date)}</p>
-      //                {RichText.render(result.data.news_card_blurb)}
-      //                <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
-      //             </a>
-      //          </Link>
-      //       </div> : ''
-      // )
 
       return (
        <div className={styles.container}>
@@ -103,7 +87,8 @@ export default class Home extends React.Component {
             <li>
                <Link href="/press"><a>Press</a></Link>&nbsp;
                <Link href="/videos"><a>Videos</a></Link>&nbsp;
-               <Link href="/photos"><a>Photos</a></Link>
+               <Link href="/photos"><a>Photos</a></Link>&nbsp;
+               <Link href="/discography"><a>Discography</a></Link>
             </li>
             <li></li>
             <li></li>
@@ -146,7 +131,7 @@ export async function getStaticProps() {
       {
          orderings: '[my.content.date desc]',
          pageSize : 100
-      },
+      }
    )
    return {
       props: {
