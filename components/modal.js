@@ -22,10 +22,12 @@ export default class Modal extends Component {
       let detail;
       if (this.props.photos) {
           detail = this.props.photos[this.props.index].data
-         } else if (this.props.videos) {
+      } else if (this.props.videos) {
             detail = this.props.videos[this.props.index].data
+      } else if (this.props.news_card_video) {
+         detail = this.props.news_card_video
       }
-      console.log()
+      console.log(detail)
 
       function getImgClassName(dimensions) {
          if (dimensions.height > dimensions.width) {
@@ -54,7 +56,7 @@ export default class Modal extends Component {
                   
                   `}</style>
                </div> :
-               (this.props.videos) ?
+               (this.props.videos || this.props.news_card_video) ?
                   <div className={style.video_container}>
                      <ReactPlayer
                         className='react-player'

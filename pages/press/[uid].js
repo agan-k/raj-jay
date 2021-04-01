@@ -3,7 +3,7 @@ import { client } from "../../prismic-configuration";
 import { RichText } from "prismic-reactjs";
 import React from 'react'
 
-export default function Review({ data }) {
+export default function pressArticle({ data }) {
    return (
      <div>
        <article>

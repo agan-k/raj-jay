@@ -7,7 +7,7 @@ import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
 import getContentPaths from '../contentPaths'
-import styles from '../../styles/reviews.module.css'
+import styles from './press.module.css'
 
 export default function Press(props) {
    console.log(props.content)
