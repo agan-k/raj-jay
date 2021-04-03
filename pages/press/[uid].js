@@ -1,7 +1,7 @@
+import React from 'react'
 import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration";
 import { RichText } from "prismic-reactjs";
-import React from 'react'
 
 export default function pressArticle({ data }) {
    return (

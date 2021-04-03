@@ -1,23 +1,32 @@
 import React, { Component } from 'react'
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
-import styles from './discography.module.css'
+import style from './discography.module.css'
 import Link from 'next/link'
-import BandcampPlayer from 'react-bandcamp'
 
 
 
-export default function Discography() {
+
+export default function Discography(props) {
   
-   const discography = this.props.content.results.filter(result =>
+   const discography = props.content.results.filter(result =>
       result.data.content_type == 'discography'
       )
    console.log(discography)
+
+   const albums_gallery = discography.map(album => 
+      <div className={style.album_container}>
+         <Link href="discography/[id]" as={`discography/${album.uid}`}>
+            <img src={album.data.img.url} />
+         </Link>
+      </div>
+      )
    
    return (
-      <div className={styles.container}>
+      <div className={style.container}>
          <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
          <h1>Disco</h1>
+         {albums_gallery}
       </div>
    )
 }
