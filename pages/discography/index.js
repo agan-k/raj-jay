@@ -7,23 +7,20 @@ import BandcampPlayer from 'react-bandcamp'
 
 
 
-export default class Discography extends Component {
-   constructor(props) {
-      super(props)
-      this.state = {
-         disc_detail: null
-      }
-   }
-   render() {
-      return (
-         <div className={styles.container}>
-            <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-            <h1>Disco</h1>
-         </div>
+export default function Discography() {
+  
+   const discography = this.props.content.results.filter(result =>
+      result.data.content_type == 'discography'
       )
-   }
+   console.log(discography)
+   
+   return (
+      <div className={styles.container}>
+         <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
+         <h1>Disco</h1>
+      </div>
+   )
 }
-
 export async function getStaticProps() {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),

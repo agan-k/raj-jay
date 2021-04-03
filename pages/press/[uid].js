@@ -25,16 +25,15 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const { results } = await client.query(
      Prismic.Predicates.at("document.type", "content"),
-     { pageSize : 100 }
+     { pageSize: 100 }
   )
-
   const paths = results.map(result => ({
     params: {
       uid: result.uid,
-    },
+    }
   }))
   return {
     paths,
-    fallback: false,
+    fallback: false
   }
 }
