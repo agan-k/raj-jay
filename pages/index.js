@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import styles from '../styles/Home.module.css'
+import styles from './Home.module.css'
 import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs"
@@ -88,7 +88,7 @@ export default class Home extends React.Component {
                <Link href="/press"><a>Press</a></Link>&nbsp;
                <Link href="/videos"><a>Videos</a></Link>&nbsp;
                <Link href="/photos"><a>Photos</a></Link>&nbsp;
-               <Link href="/discography"><a>Discography</a></Link>
+               <Link href="/disco"><a>Discography</a></Link>
             </li>
             <li></li>
             <li></li>

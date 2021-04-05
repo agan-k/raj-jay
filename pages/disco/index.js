@@ -16,7 +16,7 @@ export default function Discography(props) {
 
    const albums_gallery = discography.map(album => 
       <div className={style.album_container}>
-         <Link href="discography/[id]" as={`discography/${album.uid}`}>
+         <Link href="disco/[id]" as={`disco/${album.uid}`}>
             <img src={album.data.img.url} />
          </Link>
       </div>
@@ -25,15 +25,20 @@ export default function Discography(props) {
    return (
       <div className={style.container}>
          <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-         <h1>Disco</h1>
-         {albums_gallery}
+         <h1>Discography</h1>
+         <div className={style.gallery_container} >
+            {albums_gallery}
+         </div>
       </div>
    )
 }
 export async function getStaticProps() {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
-      { pageSize: 100 }
+      {
+         orderings: '[my.content.date desc]',
+         pageSize : 100
+      }
    )
    return {
       props: {

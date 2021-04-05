@@ -6,6 +6,9 @@
   justify-content: center;
   align-items: center;
 }
+.container a {
+   color:rgb(75, 75, 75);
+}
 
 .main {
   padding: 5rem 0;
