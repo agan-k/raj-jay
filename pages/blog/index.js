@@ -21,18 +21,18 @@ export default function Blog(props) {
             <Link href="/"><a>Home</a></Link>
          </h1>
          <h1>BlogPosts</h1>
-         <ul>
-            {blog.map(result =>
-               <li key={result.uid}>
-                  <Link href="blog/[id]" as={`${getContentPaths(blog)}/${result.uid}`}>
-                     <a>
-
-                  {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                     </a>
-                  </Link>
-               </li>
-               )}
-         </ul>
+         {blog.map(result =>
+            <div className={styles.post_container}>
+               {/* <li key={result.uid}> */}
+               {/* <Link href="blog/[id]" as={`${getContentPaths(blog)}/${result.uid}`}> */}
+               {/* <a> */}
+               {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+               <img src={result.data.img.url} />
+               {/* </a> */}
+               {/* </Link> */}
+               {/* </li> */}
+            </div>
+         )}
       </div>
    )
 }

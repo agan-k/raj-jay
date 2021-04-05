@@ -1,0 +1,10 @@
+.container {
+   width: 60%;
+   margin: 0 auto;
+}
+.container li {
+   list-style:  none;
+}
+.container img {
+   max-height: 15rem;
+}

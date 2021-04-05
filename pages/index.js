@@ -85,6 +85,7 @@ export default class Home extends React.Component {
          <p className={styles.description}>Home of drummer Rajiv Jayaweera</p>
          <ul style={{display: 'flex', listStyle: 'none'}}>
             <li>
+               <Link href="/blog"><a>Blog</a></Link>&nbsp;
                <Link href="/press"><a>Press</a></Link>&nbsp;
                <Link href="/videos"><a>Videos</a></Link>&nbsp;
                <Link href="/photos"><a>Photos</a></Link>&nbsp;
