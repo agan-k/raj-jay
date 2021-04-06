@@ -2,13 +2,21 @@
    width: 60%;
    margin: 0 auto;
 }
-.post_container {
-   width: 80%;
+.post_link {
+   display: flex;
+   width: 100%;
    margin: 0 auto;
 }
-.post_container li {
+/* .post_container li {
    list-style:  none;
+   
+} */
+.post_link h3, .post_link h4 {
+   margin: 0;
+   display: inline;
+   font-size: .8rem;
 }
-.post_container img {
-   max-height: 15rem;
+
+.last_post_container img {
+   max-height: 10rem;
 }

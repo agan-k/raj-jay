@@ -35,7 +35,8 @@ export default class Home extends React.Component {
       
       let cards = this.props.content.results.filter(item => item.data.news_card)
       const news_cards = cards.map((result) =>
-         result.data.news_card && result.data.video_link.length !== 0 ?
+         result.data.news_card && result.data.content_type == 'video' ?
+         // result.data.news_card && result.data.video_link.length !== 0 ?
             <div key={result.uid} className={styles.card}
                onClick={() => this.handleVideoCard(result.data.video_link[0].text)}
             >
@@ -44,7 +45,8 @@ export default class Home extends React.Component {
                {RichText.render(result.data.news_card_blurb)}
                <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
             </div> :
-         (result.data.news_card && result.data.video_link.length == 0) ?
+         (result.data.news_card && result.data.content_type !== 'video') ?
+         // (result.data.news_card && result.data.video_link.length == 0) ?
             <div key={result.uid} className={styles.card}>
                <Link href={`${result.data.content_type.substr(0, 5)}/${result.uid}`} >
                   <a>
@@ -56,9 +58,10 @@ export default class Home extends React.Component {
                </Link>
             </div> : ''
       )
-      const videoLink = cards.filter((result) =>
-      result.data.news_card && result.data.video_link.length !== 0)
-      console.log(videoLink[0].data.video_link[0].text)
+      // const videoLink = cards.filter((result) =>
+      // result.data.news_card && result.data.video_link.length !== 0)
+      // console.log(videoLink[0].data.video_link[0].text)
+      console.log(cards)
       
 
       return (

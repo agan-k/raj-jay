@@ -36,21 +36,38 @@ export default class Blog extends React.Component {
       const blog = this.props.content.results.filter(result =>
          result.data.content_type == 'blog'
       )
-      const posts = blog.map(post => 
+      const last_post = blog.map(post =>
          post.data.video_link.length !== 0 ?
-            <div className={styles.post_container}
+            <div className={styles.last_post_container}
                key={post.id} onClick={() => this.handleVideo(post.data)}>
                   <h3>{formatDate(post.data.date)}</h3>
                   <img src={post.data.img.url} />
                   {RichText.render(post.data.content_body)}
             </div> :
-            <div className={styles.post_container} key={post.id}>
+            <div className={styles.last_post_container} key={post.id}>
                <h3>{formatDate(post.data.date)}</h3>
                <img src={post.data.img.url} />
                {RichText.render(post.data.content_body)}
+         </div>
+         )
+      const posts = blog.map(post => 
+            <div className={styles.post_container} key={post.id}>
+            <h3>{formatDate(post.data.date)}</h3>
+            <div className={styles.post_link}>
+                  <Link href="blog/[id]" as={`blog/${post.uid}`}>
+                     <a>
+                        {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}<span>,</span>&nbsp;
+                        {RichText.render(post.data.content_body.filter(item => item.type == 'heading4'))}
+                     </a>
+                  </Link>
+            </div>
+               
             </div>
          )
-      console.log(blog[0].data.video_link)
+      
+      const old_posts = posts.shift()
+
+      console.log(old_posts)
       console.log()
       return (
          <div className={styles.container}>
@@ -59,6 +76,8 @@ export default class Blog extends React.Component {
             </h1>
             <h1>BlogPosts</h1>
             <div className={styles.posts}>
+               {last_post[0]}
+               <hr style={{color: 'grey' }}/>
                {posts}
             </div>
             {this.state.showModal && (
@@ -67,21 +86,6 @@ export default class Blog extends React.Component {
                   closeModal={this.closeModal}
                />
             )}
-
-            {/* {blog.map(result =>
-               <div className={styles.post_container}> */}
-                  {/* <li key={result.uid}> */}
-                  {/* <Link href="blog/[id]" as={`${getContentPaths(blog)}/${result.uid}`}> */}
-                  {/* <a> */}
-                  {/* <h3>{formatDate(result.data.date)}</h3>
-                  <img src={result.data.img.url} />
-                  {RichText.render(result.data.content_body)} */}
-   
-                  {/* </a> */}
-                  {/* </Link> */}
-                  {/* </li> */}
-               {/* </div> */}
-            {/* )} */}
          </div>
       )
    }

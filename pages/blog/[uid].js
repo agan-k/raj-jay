@@ -1,15 +1,30 @@
-import React from "react"
+import React, {useState} from "react"
 import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
-import { RichText } from "prismic-reactjs";
+import { RichText } from "prismic-reactjs"
+import Modal from "../../components/modal"
 
-export default function Post ({data}) {
+export default function Post({ data }) {
+   const [showModal, setShowModal] = useState(false)
+   console.log(data)
    return (
+      
       <div>
-         <article>
-            <img src={data.img.url} style={{ maxHeight: "15rem" }} />
-            <main>{RichText.render(data.content_body)}</main>
-         </article>
+         {data.video_link.length !== 0 ?
+            <article>
+               <img onClick={() => setShowModal(true)} src={data.img.url} style={{ maxHeight: "15rem" }} />
+               <main>{RichText.render(data.content_body)}</main>
+            </article> :
+            <article>
+               <img src={data.img.url} style={{ maxHeight: "15rem" }} />
+               <main>{RichText.render(data.content_body)}</main>
+            </article>
+         }
+         {showModal && (
+            <Modal blog_video_url={data.video_link[0].text}
+               closeModal={() => setShowModal(false)}
+            />
+         )}
       </div>
    )
 }
