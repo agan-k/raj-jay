@@ -24,9 +24,10 @@ export default class Modal extends Component {
           detail = this.props.photo
          //  detail = this.props.photos[this.props.index].data
       } else if (this.props.videos) {
-            detail = this.props.videos[this.props.index].data
-      } else if (this.props.news_card_video) {
-         detail = this.props.news_card_video
+            detail = this.props.video_url
+            // detail = this.props.videos[this.props.index].data
+      } else if (this.props.news_card_video_url) {
+         detail = this.props.news_card_video_url
       } else if (this.props.blog_video) {
          detail = this.props.blog_video
       }
@@ -61,11 +62,11 @@ console.log(detail)
                   
                   `}</style>
                </div> :
-               (this.props.videos || this.props.news_card_video) ?
+               (this.props.videos || this.props.news_card_video_url) ?
                   <div className={style.video_container}>
                      <ReactPlayer
                         className='react-player'
-                        url={detail.video_link[0].text}
+                        url={detail}
                         controls
                      />
                   </div> : ''

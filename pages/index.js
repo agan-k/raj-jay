@@ -22,6 +22,7 @@ export default class Home extends React.Component {
          showModal: !this.state.showModal,
          video_url: video_url
       })
+      
    }
 
    closeModal = () => {
@@ -36,7 +37,7 @@ export default class Home extends React.Component {
       const news_cards = cards.map((result) =>
          result.data.news_card && result.data.video_link.length !== 0 ?
             <div key={result.uid} className={styles.card}
-               onClick={() => this.handleVideoCard(result.data)}
+               onClick={() => this.handleVideoCard(result.data.video_link[0].text)}
             >
                <img src={result.data.img.url}/>
                <p>{formatDate(result.data.date)}</p>
@@ -55,6 +56,10 @@ export default class Home extends React.Component {
                </Link>
             </div> : ''
       )
+      const videoLink = cards.filter((result) =>
+      result.data.news_card && result.data.video_link.length !== 0)
+      console.log(videoLink[0].data.video_link[0].text)
+      
 
       return (
        <div className={styles.container}>
@@ -86,7 +91,7 @@ export default class Home extends React.Component {
                
                {this.state.showModal && (
                   <Modal
-                     news_card_video={this.state.video_url}
+                     news_card_video_url={this.state.video_url}
                      closeModal={this.closeModal}
                   />
                )}

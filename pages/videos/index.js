@@ -14,17 +14,16 @@ export default class Videos extends Component {
          showModal: false
       }
    }
-   handleShowModal = (index) => {
+   handleShowModal = (video_url) => {
       this.setState({
          showModal: !this.state.showModal,
-         index: index
+         video_url: video_url
       })
    }
 
    handleCloseModal = () => {
       this.setState({
          showModal: !this.state.showModal,
-         index: null
       })
    }
 
@@ -32,14 +31,13 @@ export default class Videos extends Component {
       const videos = this.props.content.results.filter(result =>
          result.data.content_type == 'video'
       )
-      console.log(videos)
-      const gallery = videos.map((video, index) =>
+      console.log(videos[0].data.video_link[0].text)
+      const gallery = videos.map((video) =>
          <div className={style.video_container} key={video.uid}>
-            <img onClick={() => this.handleShowModal(index)} src={video.data.img.url} />
+            <img onClick={() => this.handleShowModal(video.data.video_link[0].text)} src={video.data.img.url} />
             {RichText.render(video.data.video_caption)}
          </div>
       )
-      console.log(this.props)
       return (
          <div>
             <h1>&larr;
@@ -53,7 +51,7 @@ export default class Videos extends Component {
             {this.state.showModal && (
                <Modal
                   videos={videos}
-                  index={this.state.index}
+                  video_url={this.state.video_url}
                   closeModal={this.handleCloseModal}
 
                />
