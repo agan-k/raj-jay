@@ -10,25 +10,27 @@ export default class Modal extends Component {
    constructor(props) {
       super(props)
       this.state = {
-         count: null
+         // count: null
       }
    }
    componentDidMount = () => {
       this.setState({
-         count: this.props.index
+         // count: this.props.index
       })
    }
    render() {
       let detail;
       if (this.props.photos) {
-          detail = this.props.photos[this.props.index].data
+          detail = this.props.photo
+         //  detail = this.props.photos[this.props.index].data
       } else if (this.props.videos) {
             detail = this.props.videos[this.props.index].data
       } else if (this.props.news_card_video) {
          detail = this.props.news_card_video
+      } else if (this.props.blog_video) {
+         detail = this.props.blog_video
       }
-      console.log(detail)
-
+console.log(detail)
       function getImgClassName(dimensions) {
          if (dimensions.height > dimensions.width) {
             return 'vertical'
@@ -43,6 +45,9 @@ export default class Modal extends Component {
                   <img src={detail.img.url}
                      className={`${getImgClassName(detail.img.dimensions)}_img`}
                   />
+                  {/* <img src={detail.img.url}
+                     className={`${getImgClassName(detail.img.dimensions)}_img`}
+                  /> */}
                   {RichText.render(detail.photo_caption)}
                   <style jsx>{`
                      .vertical_img {

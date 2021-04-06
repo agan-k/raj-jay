@@ -2,9 +2,13 @@
    width: 60%;
    margin: 0 auto;
 }
-.container li {
+.post_container {
+   width: 80%;
+   margin: 0 auto;
+}
+.post_container li {
    list-style:  none;
 }
-.container img {
+.post_container img {
    max-height: 15rem;
 }

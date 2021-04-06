@@ -6,7 +6,7 @@ import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 import Link from 'next/link'
 import Modal from '../components/modal'
-import { Date } from 'prismic-reactjs';
+import formatDate from './formatDate.js'
 
 
 export default class Home extends React.Component {
@@ -32,25 +32,9 @@ export default class Home extends React.Component {
 
    render() {
       
-      function formatDate(date) {
-         let months = ["January","February","March","April","May","June","July",
-            "August", "September", "October", "November", "December"];
-         let month;
-         let year = date.slice(0, 4);
-         if (date.charAt(5) == '0') {
-            month = months[date.slice(6, 7) -1];
-         }
-         else {
-            month = months[date.slice(5, 7) -1]
-         }
-         return month + ' ' + year;
-      }
-      
-      
-   
       let cards = this.props.content.results.filter(item => item.data.news_card)
       const news_cards = cards.map((result) =>
-         result.data.news_card && result.data.content_type == 'video' ?
+         result.data.news_card && result.data.video_link.length !== 0 ?
             <div key={result.uid} className={styles.card}
                onClick={() => this.handleVideoCard(result.data)}
             >
@@ -59,7 +43,7 @@ export default class Home extends React.Component {
                {RichText.render(result.data.news_card_blurb)}
                <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
             </div> :
-         (result.data.news_card && result.data.content_type !== 'video') ?
+         (result.data.news_card && result.data.video_link.length == 0) ?
             <div key={result.uid} className={styles.card}>
                <Link href={`${result.data.content_type.substr(0, 5)}/${result.uid}`} >
                   <a>
