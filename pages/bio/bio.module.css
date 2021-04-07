@@ -1,0 +1,8 @@
+.container img {
+   float: left;
+   margin: 1rem;
+   border-radius: 5%;
+}
+.container img:nth-child(2) {
+   float: right;
+}
