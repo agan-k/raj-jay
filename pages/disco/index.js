@@ -1,26 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 import style from './discography.module.css'
 import Link from 'next/link'
 
-
-
-
 export default function Discography(props) {
   
    const discography = props.content.results.filter(result =>
       result.data.content_type == 'discography'
-      )
-   console.log(discography)
-
+   )
+   
    const albums_gallery = discography.map(album => 
       <div className={style.album_container}>
          <Link href="disco/[id]" as={`disco/${album.uid}`}>
             <img src={album.data.img.url} />
          </Link>
       </div>
-      )
+   )
    
    return (
       <div className={style.container}>
@@ -32,6 +28,7 @@ export default function Discography(props) {
       </div>
    )
 }
+
 export async function getStaticProps() {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),

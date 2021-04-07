@@ -10,7 +10,6 @@ import getContentPaths from '../contentPaths'
 import styles from './press.module.css'
 
 export default function Press(props) {
-   console.log(props.content)
 
    const press_reviews = props.content.results.filter(result => 
       result.data.content_type == 'press-reviews'

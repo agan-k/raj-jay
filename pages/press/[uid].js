@@ -19,7 +19,7 @@ export async function getStaticProps({ params }) {
    const { data } = await client.getByUID("content", uid);
    return {
       props: { data }
-   };
+   }
  }
 
 export async function getStaticPaths() {

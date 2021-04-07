@@ -10,8 +10,7 @@ export default function Album({data}) {
    return (
       <div className={style.container}>
          <h1>&larr;
-         <Link href='/disco'><a>Discography</a></Link>
-
+            <Link href='/disco'><a>Discography</a></Link>
          </h1>
          <main>
             <div className={style.album_info}>
@@ -26,12 +25,12 @@ export default function Album({data}) {
                   height='460px'
                   artwork='none'
                />
-
             )}
          </main>
       </div>
    )
 }
+
 export async function getStaticProps({ params }) {
    const { uid } = params;
    const { data } = await client.getByUID("content", uid);
