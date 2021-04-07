@@ -37,7 +37,7 @@ export default function Blog(props) {
          <div className={styles.post_link}>
             <Link href="blog/[id]" as={`/blog/${post.uid}`}>
                <a>
-                  {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}<span>,</span>&nbsp;
+                  {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
                   {RichText.render(post.data.content_body.filter(item => item.type == 'heading4'))}
                </a>
             </Link>
@@ -73,7 +73,7 @@ export async function getStaticProps() {
       Prismic.Predicates.at("document.type", "content"),
       {
          orderings: '[my.content.date desc]',
-         pageSize : 100
+         pageSize: 100
       }
    );
    return {

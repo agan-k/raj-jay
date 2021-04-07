@@ -15,7 +15,7 @@ export default function Post({ data }) {
    return (
       
       <div className={style.container}>
-         <h1>&larr;<Link href="/blog"><a>Blog Home</a></Link></h1>
+         <h1>&larr;<Link href="/blog"><a>BlogHome</a></Link></h1>
          {data.video_link.length !== 0 ?
             <article>
                <img onClick={() => setShowModal(true)} src={data.img.url} style={{ maxHeight: "15rem" }} />

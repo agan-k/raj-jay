@@ -12,14 +12,12 @@ export default function Bio(props) {
    return (
       <div className={style.container}>
          <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-         {RichText.render(props.bio.results[0].data.bio_body)}
+         {RichText.render(props.bio.data.bio_body)}
       </div>
    )
 }
 export async function getStaticProps() {
-   const bio = await client.query(
-      Prismic.Predicates.at("document.type", "bio")
-   )
+   const bio = await client.getSingle("bio")
    return {
       props: {
          bio
