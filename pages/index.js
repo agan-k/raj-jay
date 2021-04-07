@@ -53,6 +53,8 @@ export default function Home(props) {
 
          <ul style={{display: 'flex', listStyle: 'none'}}>
             <li>
+               <Link href="#"><a>News</a></Link>&nbsp;
+               <Link href="/bio"><a>Bio</a></Link>&nbsp;
                <Link href="/blog"><a>Blog</a></Link>&nbsp;
                <Link href="/press"><a>Press</a></Link>&nbsp;
                <Link href="/videos"><a>Videos</a></Link>&nbsp;

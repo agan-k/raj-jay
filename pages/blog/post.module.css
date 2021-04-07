@@ -1,0 +1,7 @@
+.container {
+   width: 100%
+}
+.container article {
+   width: 60%;
+   margin: 0 auto;
+}

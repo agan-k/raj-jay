@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
@@ -10,6 +11,7 @@ export default function Bio(props) {
    console.log(props)
    return (
       <div className={style.container}>
+         <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
          {RichText.render(props.bio.results[0].data.bio_body)}
       </div>
    )
