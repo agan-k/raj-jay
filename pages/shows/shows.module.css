@@ -1,0 +1,13 @@
+.calendar_container {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+.container main {
+   width: 60%;
+
+}
+.container aside {
+   width: 30%;
+   
+}

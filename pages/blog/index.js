@@ -45,7 +45,7 @@ export default function Blog(props) {
       </div>
    )
       
-   const old_posts = posts.shift()
+   posts.shift()
 
    return (
       <div className={styles.container}>

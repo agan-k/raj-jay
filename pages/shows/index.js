@@ -1,28 +1,37 @@
 import React from 'react'
 import Link from 'next/link'
 
-import Prismic from 'prismic-javascript'
-import { client } from '../../prismic-configuration'
-import RichText from 'prismic-reactjs'
+import { client } from "../../prismic-configuration"
+import { RichText } from "prismic-reactjs"
 
 import style from './shows.module.css'
 
 export default function Shows(props) {
+   console.log(props)
+   const announcement = props.shows.data.announcement
+   const recent_updates = props.shows.data.recent_updates
+   const calendar = props.shows.data.shows_body
+   
    return (
       <div className={style.container}>
-         <h1>&larr;
-            <Link href="/"><a>Home</a></Link>
-         </h1>
+         <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
          <h1>Shows</h1>
-         <p className={style.covid19}>
-         DUE TO THE CURRENT SITUATION, UNFORTUNATELY MOST LIVE SHOWS HAVE BEEN CANCELLED/POSTPONED BUT PLEASE STAY TUNED FOR FURTHER UPDATES.
-         </p>
+         <div className={style.announcement}>
+            {RichText.render(announcement)}
+         </div>
+         <div className={style.calendar_container}>
+            <main>
+               {RichText.render(calendar)}
+            </main>
+            <aside>
+               {RichText.render(recent_updates)}
+            </aside>
+         </div>
       </div>
    )
 }
-
 export async function getStaticProps() {
-   const shows = await client.getSingle("Shows")
+   const shows = await client.getSingle("shows")
    return {
       props: {
          shows
