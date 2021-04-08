@@ -9,6 +9,7 @@ import Modal from '../components/modal'
 import formatDate from './formatDate.js'
 
 export default function Home(props) {
+   console.log(props)
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
       
@@ -59,6 +60,7 @@ export default function Home(props) {
                <Link href="/press"><a>Press</a></Link>&nbsp;
                <Link href="/videos"><a>Videos</a></Link>&nbsp;
                <Link href="/photos"><a>Photos</a></Link>&nbsp;
+               <Link href="/shows"><a>Shows</a></Link>&nbsp;
                <Link href="/disco"><a>Discography</a></Link>
             </li>
          </ul>
