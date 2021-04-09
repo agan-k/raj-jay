@@ -1,0 +1,56 @@
+.container {
+   width: 80%;
+   margin: 0 auto;
+}
+.header {
+   height: 2rem;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   right: 0;
+   background: white;
+   /* background: yellow; */
+   z-index: 999;
+}
+.nav_container {
+   margin: 0 auto;
+   /* background: red; */
+   padding-top: .2rem;
+   width: 63%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+}
+.header h1 {
+   width: 20%;
+   margin: 0;
+   font-size: .7rem;
+}
+.header ul {
+   /* background: blue; */
+   width: 80%;
+   margin: 0;
+   padding: 0;
+   /* text-align: center; */
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   list-style: none;
+}
+.header ul a {
+   font-size: .9rem;
+   text-transform: uppercase;
+   color: rgb(125, 196, 218);
+
+}
+.main {
+   padding-top: 2rem;
+}
+.footer {
+   display: flex;
+   justify-content: center;
+   justify-items: center;
+   padding: 2rem;
+   font-size: .8rem;
+}

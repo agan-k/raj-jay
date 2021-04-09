@@ -1,22 +1,26 @@
-import Head from 'next/head'
 import React, { useState } from 'react'
-import styles from './Home.module.css'
+import Head from 'next/head'
+import Link from 'next/link'
+
 import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs"
-import Link from 'next/link'
-import Modal from '../components/modal'
 import formatPrismicDate from './formatPrismicDate.js'
 
+import Layout from '../components/layout'
+import Modal from '../components/modal'
+import style from './Home.module.css'
+
 export default function Home(props) {
-   console.log(props)
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
       
    let cards = props.content.results.filter(item => item.data.news_card)
    const news_cards = cards.map((result) =>
+      
       result.data.news_card && result.data.content_type == 'video' ?
-         <div key={result.uid} className={styles.card}
+         
+         <div key={result.uid} className={style.card}
             onClick={() => setVideoURL(result.data.video_link[0].text)}
          >
             <img src={result.data.img.url} onClick={() => setShowModal(true)}/>
@@ -24,8 +28,10 @@ export default function Home(props) {
             {RichText.render(result.data.news_card_blurb)}
             <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
          </div> :
+
       (result.data.news_card && result.data.content_type !== 'video') ?
-         <div key={result.uid} className={styles.card}>
+            
+         <div key={result.uid} className={style.card}>
             <Link href={`${result.data.content_type.substr(0, 5)}/${result.uid}`} >
                <a>
                   <img src={result.data.img.url}/>
@@ -38,60 +44,25 @@ export default function Home(props) {
    )      
 
    return (
-      <div className={styles.container}>
-         <Head>
-           <title>Create Next App</title>
-           <link rel="icon" href="/favicon.ico" />
-         </Head>
-         
-         <h1 className={styles.title}>
-            Rajiv jayaweera
-         </h1>
-
-         <p className={styles.description}>
-            Home of drummer Rajiv Jayaweera
-         </p>
-
-         <ul style={{display: 'flex', listStyle: 'none'}}>
-            <li>
-               <Link href="#"><a>News</a></Link>&nbsp;
-               <Link href="/bio"><a>Bio</a></Link>&nbsp;
-               <Link href="/blog"><a>Blog</a></Link>&nbsp;
-               <Link href="/shows"><a>Shows</a></Link>&nbsp;
-               <Link href="/press"><a>Press</a></Link>&nbsp;
-               <Link href="/photos"><a>Photos</a></Link>&nbsp;
-               <Link href="/videos"><a>Videos</a></Link>&nbsp;
-               <Link href="/disco"><a>Discography</a></Link>&nbsp;
-               <Link href="/contact"><a>Contact</a></Link>&nbsp;
-               <Link href="/links"><a>Links</a></Link>&nbsp;
-            </li>
-         </ul>
-         
-         <main className={styles.main}>
-            <div className={styles.grid}>
-               {news_cards}
-             </div>
-
-            {showModal && (
-               <Modal
-                  news_card_video_url={videoURL}
-                  closeModal={() => setShowModal(false)}
-               />
-            )}
-         </main>
+      <Layout>
+         <div className={style.container}>
+            <img className={style.banner} src={'/images/home_banner.jpg'}/>
+            
+            <main className={style.main}>
+               <div className={style.grid}>
+                  {news_cards}
+                </div>
    
-         <footer className={styles.footer}>
-           <a
-             href="https://formversuscontent.com"
-             target="_blank"
-             rel="noopener noreferrer"
-           >
-             Site by&nbsp;{'FormVsContent'}
-             {/* <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} /> */}
-           </a>
-         </footer>
-       </div>
-     )
+               {showModal && (
+                  <Modal
+                     news_card_video_url={videoURL}
+                     closeModal={() => setShowModal(false)}
+                  />
+               )}
+            </main>
+          </div>
+      </Layout>
+   )
 }
 
 export async function getStaticProps() {
