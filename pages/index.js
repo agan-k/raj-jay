@@ -6,7 +6,7 @@ import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 import Link from 'next/link'
 import Modal from '../components/modal'
-import formatDate from './formatDate.js'
+import formatPrismicDate from './formatPrismicDate.js'
 
 export default function Home(props) {
    console.log(props)
@@ -20,7 +20,7 @@ export default function Home(props) {
             onClick={() => setVideoURL(result.data.video_link[0].text)}
          >
             <img src={result.data.img.url} onClick={() => setShowModal(true)}/>
-            <p>{formatDate(result.data.date)}</p>
+            <p>{formatPrismicDate(result.data.date)}</p>
             {RichText.render(result.data.news_card_blurb)}
             <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
          </div> :
@@ -29,7 +29,7 @@ export default function Home(props) {
             <Link href={`${result.data.content_type.substr(0, 5)}/${result.uid}`} >
                <a>
                   <img src={result.data.img.url}/>
-                  <p>{formatDate(result.data.date)}</p>
+                  <p>{formatPrismicDate(result.data.date)}</p>
                   {RichText.render(result.data.news_card_blurb)}
                   <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
                </a>

@@ -1,5 +1,6 @@
 .calendar_container {
-   width: 100%;
+   width: 80%;
+   margin: 0 auto;
    display: flex;
    justify-content: space-between;
 }
@@ -10,4 +11,9 @@
 .container aside {
    width: 30%;
    
+}
+.announcement p {
+   font-size: .8rem;
+   background-color: rgb(255, 255, 123);
+   padding: 5px;
 }

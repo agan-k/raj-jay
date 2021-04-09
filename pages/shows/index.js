@@ -5,9 +5,10 @@ import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
 import style from './shows.module.css'
+import {current_date} from '../Date.js'
 
 export default function Shows(props) {
-   console.log(props)
+   
    const announcement = props.shows.data.announcement
    const recent_updates = props.shows.data.recent_updates
    const calendar = props.shows.data.shows_body
@@ -24,6 +25,9 @@ export default function Shows(props) {
                {RichText.render(calendar)}
             </main>
             <aside>
+               <h3>Recent Updates</h3>
+               <h3>{current_date}</h3>
+               {/* <h3>{formatDate(date)}</h3> */}
                {RichText.render(recent_updates)}
             </aside>
          </div>
