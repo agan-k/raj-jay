@@ -14,16 +14,18 @@
 }
 .nav_container {
    margin: 0 auto;
-   /* background: red; */
    padding-top: .2rem;
    max-width: 900px;
    display: flex;
    justify-content: space-between;
 }
 .nav_container h1 {
+   /* background: red; */
    width: 20%;
    margin: 0;
    font-size: 1rem;
+   font-weight: 100;
+   letter-spacing: .1rem;
 }
 .nav_container ul {
    /* background: blue; */
@@ -35,12 +37,13 @@
    list-style: none;
 }
 .nav_container ul a {
-   font-size: .9rem;
-   text-transform: uppercase;
-   padding: .1rem;
+   font-size: 1rem;
+   text-transform: lowercase;
+   padding: 0 .1rem;
 }
 .nav_container ul a:hover {
    color: rgb(9, 113, 145);
+   text-decoration: underline;
 }
 .mogile_nav_toggle {
    display: none;

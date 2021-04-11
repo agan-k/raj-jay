@@ -17,13 +17,11 @@ a {
    color: rgb(125, 196, 218);
    text-decoration: none;
 }
-.active_nav_links a {
-   color: rgb(9, 113, 145);
+.active_nav_links li, .active_nav_links a {
+   display: none;
 }
 @media (max-width: 600px) {
-   .active_nav_links a {
-      display: none;
-   }
+  
    
 }
 
