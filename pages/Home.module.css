@@ -132,4 +132,7 @@
     width: 100%;
     flex-direction: column;
   }
+  .card {
+     opacity: 1;
+  }
 }

@@ -16,4 +16,10 @@ a {
 .active_nav_links a {
    color: rgb(9, 113, 145);
 }
+@media (max-width: 600px) {
+   .active_nav_links a {
+      display: none;
+   }
+   
+}
 

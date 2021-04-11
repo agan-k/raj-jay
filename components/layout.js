@@ -20,7 +20,8 @@ export default function Layout({ children }) {
            <title>RajivJayaweera</title>
            <link rel="icon" href="/favicon.ico" />
          </Head>
-         <header className={style.header}>
+         <header className={mobileNavShow ? style['header_open'] : style['header']}>
+         {/* <header className={style.header}> */}
             <div className={style.nav_container}>
                <h1>RajivJayaweera.com</h1>
                <ul>
@@ -29,7 +30,7 @@ export default function Layout({ children }) {
                <div className={style['mobile_nav_toggle']} onClick={() => setMobileNavShow(!mobileNavShow)}>
                   <div className={!mobileNavShow ? style['open_icon'] : style['close_icon']}>
 
-                  </div>
+               </div>
 
                </div>
 
