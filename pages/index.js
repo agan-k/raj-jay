@@ -46,9 +46,9 @@ export default function Home(props) {
    return (
       <Layout>
          <div className={style.container}>
-            <img className={style.banner} src={'/images/home_banner.jpg'}/>
             
             <main className={style.main}>
+            <img className={style.banner} src={'/images/home_banner.jpg'}/>
                <div className={style.grid}>
                   {news_cards}
                 </div>

@@ -1,10 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import Head from "next/head"
+import { useRouter } from "next/router"
 
+import { navLinksData } from '../pages/navLinks'
 import style from "./layout.module.css"
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
+   const [mobileNavShow, setMobileNavShow] = useState(false)
+   const router = useRouter()
+   const links = navLinksData.map(link =>
+      <li className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
+         <Link href={link.uid}><a>{link.name}</a></Link>
+      </li>
+      )
    return (
       <div className={style.container}>
          <Head>
@@ -15,21 +24,18 @@ export default function Layout({children}) {
             <div className={style.nav_container}>
                <h1>RajivJayaweera.com</h1>
                <ul>
-                  <li>
-                     <Link href="#"><a>News</a></Link>&nbsp;
-                     <Link href="/bio"><a>Bio</a></Link>&nbsp;
-                     <Link href="/blog"><a>Blog</a></Link>&nbsp;
-                     <Link href="/shows"><a>Shows</a></Link>&nbsp;
-                     <Link href="/press"><a>Press</a></Link>&nbsp;
-                     <Link href="/photos"><a>Photos</a></Link>&nbsp;
-                     <Link href="/videos"><a>Videos</a></Link>&nbsp;
-                     <Link href="/disco"><a>Discography</a></Link>&nbsp;
-                     <Link href="/contact"><a>Contact</a></Link>&nbsp;
-                     <Link href="/links"><a>Links</a></Link>&nbsp;
-                  </li>
+                  {links}
                </ul>
+               <div className={style['mobile_nav_toggle']} onClick={() => setMobileNavShow(!mobileNavShow)}>
+                  <div className={!mobileNavShow ? style['open_icon'] : style['close_icon']}>
+
+                  </div>
+
+               </div>
 
             </div>
+            
+            
          </header>
          <main className={style.main}>
             {children}

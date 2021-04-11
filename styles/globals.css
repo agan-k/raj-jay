@@ -10,7 +10,10 @@ body {
   box-sizing: border-box;
 }
 a {
-  color: rgb(0, 140, 255);
-  text-decoration: none;
+   color: rgb(125, 196, 218);
+   text-decoration: none;
+}
+.active_nav_links a {
+   color: rgb(9, 113, 145);
 }
 

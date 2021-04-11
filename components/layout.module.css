@@ -16,33 +16,37 @@
    margin: 0 auto;
    /* background: red; */
    padding-top: .2rem;
-   width: 63%;
+   max-width: 900px;
    display: flex;
    justify-content: space-between;
    align-items: center;
    
 }
-.header h1 {
+.nav_container h1 {
    width: 20%;
    margin: 0;
-   font-size: .7rem;
+   font-size: 1rem;
 }
-.header ul {
+.nav_container ul {
    /* background: blue; */
-   width: 80%;
+   max-width: 900px;
    margin: 0;
    padding: 0;
-   /* text-align: center; */
    display: flex;
    justify-content: flex-end;
    align-items: flex-end;
    list-style: none;
 }
-.header ul a {
+.nav_container ul a {
    font-size: .9rem;
    text-transform: uppercase;
-   color: rgb(125, 196, 218);
-
+   padding: .1rem;
+}
+.nav_container ul a:hover {
+   color: rgb(9, 113, 145);
+}
+.mogile_nav_toggle {
+   display: none;
 }
 .main {
    padding-top: 2rem;
@@ -53,4 +57,66 @@
    justify-items: center;
    padding: 2rem;
    font-size: .8rem;
+}
+
+@media (max-width: 600px) {
+
+   .header {
+      height: 100%;
+      height: 2.5rem;
+      overflow: hidden;
+      display: flex;
+      
+   }
+   .nav_container {
+      width: 100%;
+      display: initial;
+      margin-top: .5rem;
+   }
+   .nav_container h1, .nav_container ul {
+      width: 100%;
+      display: block;
+   }
+   .nav_container ul {
+      margin-top: 2rem;
+   }
+   .nav_container ul li {
+      margin: .8rem;
+      text-align: right;
+   }
+   .nav_container ul li a{
+      font-size: 1.5rem;
+      margin: .5rem;
+   }
+
+   .mobile_nav_toggle {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      /* margin:  0 1rem; */
+      /* padding: 0 1rem 1rem 1rem ; */
+      /* height: min-content; */
+      /* width: 2rem; */
+      /* background: rgb(138, 138, 127); */
+      text-align:center;
+   }
+   .open_icon:after {
+      content: '+';
+      font-size: 2rem;
+      /* vertical-align: text-top; */
+      padding: 1rem;
+      /* margin: 0 auto; */
+   }
+   .close_icon:after {
+      content: '-';
+      font-size: 2rem;
+      padding: 1rem;
+      /* margin: 0 auto; */
+   }
+
+   .main {
+      padding-top: 2.5rem;
+   }
+   
 }
