@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
+
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 import { RichText } from "prismic-reactjs"
 
+import Layout from '../../components/layout'
 import style from './videos.module.css'
 import Modal from '../../components/modal'
 
@@ -25,22 +27,24 @@ export default function Videos(props) {
    )
    
    return (
-      <div>
-         <h1>&larr;
-            <Link href="/"><a>Home</a></Link>
-         </h1>
-         <h1>videos</h1>
-         <div className={style.gallery_container}>
-            {gallery}
+      <Layout>
+         <div>
+            <h1>&larr;
+               <Link href="/"><a>Home</a></Link>
+            </h1>
+            <h1>videos</h1>
+            <div className={style.gallery_container}>
+               {gallery}
+            </div>
+            {showModal && (
+               <Modal
+                  videos={true}
+                  video_url={videoURL}
+                  closeModal={() => setShowModal(false)}
+               />
+            )}
          </div>
-         {showModal && (
-            <Modal
-               videos={true}
-               video_url={videoURL}
-               closeModal={() => setShowModal(false)}
-            />
-         )}
-      </div>
+      </Layout>
    )
    
 }

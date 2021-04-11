@@ -6,6 +6,7 @@ import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
+import Layout from '../../components/layout'
 import getContentPaths from '../contentPaths'
 import styles from './press.module.css'
 
@@ -26,69 +27,71 @@ export default function Press(props) {
    )
    
    return (
-      <div className={styles.container}>
-         <h1>&larr;
-            <Link href="/"><a>Home</a></Link>
-         </h1>
-         <h1>reviews</h1>
-          <ul>
-             {press_reviews.map(result => 
-                 <li key={result.uid}>
-                    {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                    <Link href="press/[id]" as={`${getContentPaths(press_reviews)}/${result.uid}`}>
-                       <a>
-                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
-                       </a>
-                     </Link>
-                  </li>
-               )}
-         </ul>
-         <hr />
-         
-         <h1>interviews</h1>
-         <ul>
-            {press_interviews.map(result => 
-               <li key={result.uid}>
-                  {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                  <Link href="press/[id]" as={`${getContentPaths(press_interviews)}/${result.uid}`}>
-                     <a>
-                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
-                     </a>
-                  </Link>
-               </li>
-            )}
-         </ul>
-         <hr />
-         
-         <h1>press releases</h1>
-         <ul>
-            {press_releases.map(result => 
-               <li key={result.uid}>
-                  {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                  <Link href="press/[id]" as={`${getContentPaths(press_releases)}/${result.uid}`}>
-                     <a>
-                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
-                     </a>
-                  </Link>
-               </li>
-            )}
-         </ul>
-        <hr/>
-         <h1>features</h1>
-         <ul>
-            {press_features.map(result => 
-               <li key={result.uid}>
-                  {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                  <Link href="press/[id]" as={`${getContentPaths(press_features)}/${result.uid}`}>
-                     <a>
-                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
-                     </a>
-                  </Link>
-               </li>
-            )}
-         </ul>
-        <hr/>
-      </div>
+      <Layout>
+            <div className={styles.container}>
+               <h1>&larr;
+                  <Link href="/"><a>Home</a></Link>
+               </h1>
+               <h1>reviews</h1>
+               <ul>
+                  {press_reviews.map(result => 
+                     <li key={result.uid}>
+                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                        <Link href="press/[id]" as={`${getContentPaths(press_reviews)}/${result.uid}`}>
+                           <a>
+                              {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
+                           </a>
+                           </Link>
+                        </li>
+                     )}
+               </ul>
+               <hr />
+               
+               <h1>interviews</h1>
+               <ul>
+                  {press_interviews.map(result => 
+                     <li key={result.uid}>
+                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                        <Link href="press/[id]" as={`${getContentPaths(press_interviews)}/${result.uid}`}>
+                           <a>
+                              {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
+                           </a>
+                        </Link>
+                     </li>
+                  )}
+               </ul>
+               <hr />
+               
+               <h1>press releases</h1>
+               <ul>
+                  {press_releases.map(result => 
+                     <li key={result.uid}>
+                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                        <Link href="press/[id]" as={`${getContentPaths(press_releases)}/${result.uid}`}>
+                           <a>
+                              {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
+                           </a>
+                        </Link>
+                     </li>
+                  )}
+               </ul>
+            <hr/>
+               <h1>features</h1>
+               <ul>
+                  {press_features.map(result => 
+                     <li key={result.uid}>
+                        {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                        <Link href="press/[id]" as={`${getContentPaths(press_features)}/${result.uid}`}>
+                           <a>
+                              {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
+                           </a>
+                        </Link>
+                     </li>
+                  )}
+               </ul>
+            <hr/>
+            </div>
+      </Layout>
    )
 }
 export async function getStaticProps() {

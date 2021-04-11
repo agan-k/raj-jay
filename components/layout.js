@@ -41,13 +41,13 @@ export default function Layout({ children }) {
          <main className={style.main}>
             {children}
          </main>
-         <footer className={style.footer}>
+         <footer className={style.footer}>Site by
               <a
                 href="https://formversuscontent.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Site by&nbsp;{'FormVsContent'}
+                &nbsp;{'FormVsContent'}
               </a>
             </footer>
       </div>

@@ -4,18 +4,21 @@ import Link from 'next/link'
 import { client } from '../../prismic-configuration'
 import { RichText } from 'prismic-reactjs'
 
+import Layout from '../../components/layout'
 import style from './links.module.css'
 
 export default function Links(props) {
    const links = props.links.data.links_body;
    return (
-      <div className={style.container}>
-         <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-         <h1>Links</h1>
-         <div className={style.links_container}>
-            {RichText.render(links)}
+      <Layout>
+         <div className={style.container}>
+            <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
+            <h1>Links</h1>
+            <div className={style.links_container}>
+               {RichText.render(links)}
+            </div>
          </div>
-      </div>
+      </Layout>
    )
 }
 export async function getStaticProps() {

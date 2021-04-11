@@ -4,6 +4,8 @@ import { client } from '../../prismic-configuration'
 import style from './discography.module.css'
 import Link from 'next/link'
 
+import Layout from '../../components/layout'
+
 export default function Discography(props) {
   
    const discography = props.content.results.filter(result =>
@@ -19,13 +21,15 @@ export default function Discography(props) {
    )
    
    return (
-      <div className={style.container}>
-         <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-         <h1>Discography</h1>
-         <div className={style.gallery_container} >
-            {albums_gallery}
+      <Layout>
+         <div className={style.container}>
+            <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
+            <h1>Discography</h1>
+            <div className={style.gallery_container} >
+               {albums_gallery}
+            </div>
          </div>
-      </div>
+      </Layout>
    )
 }
 

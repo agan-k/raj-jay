@@ -4,18 +4,21 @@ import Link from 'next/link'
 import { client } from '../../prismic-configuration'
 import { RichText } from 'prismic-reactjs'
 
+import Layout from '../../components/layout'
 import style from './contact.module.css'
 
 export default function Contact(props) {
    console.log(props)
    return (
-      <div className={style.container}>
-         <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-         <h1>Contact</h1>
-         <div className={style.contact_container}>
-            {RichText.render(props.contact.data.contact_body)}
+      <Layout>
+         <div className={style.container}>
+            <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
+            <h1>Contact</h1>
+            <div className={style.contact_container}>
+               {RichText.render(props.contact.data.contact_body)}
+            </div>
          </div>
-      </div>
+      </Layout>
    )
 }
 

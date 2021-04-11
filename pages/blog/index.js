@@ -9,6 +9,7 @@ import { RichText } from "prismic-reactjs"
 import styles from './blog.module.css'
 import formatPrismicDate from '../formatPrismicDate.js'
 import Modal from '../../components/modal'
+import Layout from '../../components/layout'
 
 export default function Blog(props) {
    const [showModal, setShowModal] = useState(false)
@@ -48,23 +49,25 @@ export default function Blog(props) {
    posts.shift()
 
    return (
-      <div className={styles.container}>
-         <h1>&larr;
-            <Link href="/"><a>Home</a></Link>
-         </h1>
-         <h1>BlogPosts</h1>
-         <div className={styles.posts}>
-            {last_post[0]}
-            <hr style={{color: 'grey' }}/>
-            {posts}
+      <Layout>
+         <div className={styles.container}>
+            <h1>&larr;
+               <Link href="/"><a>Home</a></Link>
+            </h1>
+            <h1>BlogPosts</h1>
+            <div className={styles.posts}>
+               {last_post[0]}
+               <hr style={{color: 'grey' }}/>
+               {posts}
+            </div>
+            {showModal && (
+               <Modal
+                  blog_video_url={videoURL}
+                  closeModal={() => setShowModal(false)}
+               />
+            )}
          </div>
-         {showModal && (
-            <Modal
-               blog_video_url={videoURL}
-               closeModal={() => setShowModal(false)}
-            />
-         )}
-      </div>
+      </Layout>
    )
 }
 

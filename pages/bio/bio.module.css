@@ -1,23 +1,29 @@
 .container {
-   width: 100%;
+   max-width: 900px;
    margin: 0 auto;
 }
 .container img {
-   display: block;
-   margin: 0 auto;
+   float: left;
+   margin: 0 1rem 0 0;
    width: 15rem;
    border-radius: 5%;
 }
-.container h2 {
-   text-align: center;
+@media (max-width: 600px) {
+   .container {
+      width: 98%;
+   }
+   .container h2 {
+      text-align: center;
+   }
+   .container img {
+      float: none;
+      display: block;
+      width: 90%;
+      margin: 1rem auto;
+      text-align:center;
+   }
+   
 }
-/* .container .block_img img {
-   width: 15rem;
-   margin: 1rem;
-} */
-/* .container p:nth-child(3) img {
-   float: left;
-}
-.container p:nth-child(6) img{
-   float: right;
-} */
+
+
+
