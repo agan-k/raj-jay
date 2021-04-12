@@ -43,10 +43,6 @@ export default function Photos(props) {
    return (
       <Layout>
          <div>
-            <h1>&larr;
-               <Link href="/"><a>Home</a></Link>
-            </h1>
-            <h1>photos</h1>
             <div onClick={() => setMaskImages(!maskImages)}>
             <MaskToggleIcon />
             </div>

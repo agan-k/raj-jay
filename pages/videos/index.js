@@ -29,10 +29,6 @@ export default function Videos(props) {
    return (
       <Layout>
          <div>
-            <h1>&larr;
-               <Link href="/"><a>Home</a></Link>
-            </h1>
-            <h1>videos</h1>
             <div className={style.gallery_container}>
                {gallery}
             </div>

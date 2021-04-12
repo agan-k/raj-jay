@@ -29,9 +29,6 @@ export default function Press(props) {
    return (
       <Layout>
             <div className={styles.container}>
-               <h1>&larr;
-                  <Link href="/"><a>Home</a></Link>
-               </h1>
                <h1>reviews</h1>
                <ul>
                   {press_reviews.map(result => 

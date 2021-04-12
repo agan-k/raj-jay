@@ -12,8 +12,6 @@ export default function Contact(props) {
    return (
       <Layout>
          <div className={style.container}>
-            <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-            <h1>Contact</h1>
             <div className={style.contact_container}>
                {RichText.render(props.contact.data.contact_body)}
             </div>

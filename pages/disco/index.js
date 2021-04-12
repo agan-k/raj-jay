@@ -23,8 +23,6 @@ export default function Discography(props) {
    return (
       <Layout>
          <div className={style.container}>
-            <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-            <h1>Discography</h1>
             <div className={style.gallery_container} >
                {albums_gallery}
             </div>

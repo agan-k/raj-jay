@@ -7,7 +7,7 @@ import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 import formatPrismicDate from './formatPrismicDate.js'
 
-import Layout1 from '../components/layout1'
+import Layout from '../components/layout'
 import Modal from '../components/modal'
 import style from './Home.module.css'
 
@@ -44,7 +44,7 @@ export default function Home(props) {
    )      
 
    return (
-      <Layout1>
+      <Layout>
          <div className={style.container}>
             
             <main className={style.main}>
@@ -61,7 +61,7 @@ export default function Home(props) {
                )}
             </main>
           </div>
-      </Layout1>
+      </Layout>
    )
 }
 

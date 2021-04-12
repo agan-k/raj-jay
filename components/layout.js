@@ -7,7 +7,7 @@ import { navLinksData } from '../pages/navLinks'
 import style from "./layout.module.css"
 
 export default function Layout({ children }) {
-   const [mobileNavShow, setMobileNavShow] = useState(false)
+   const [navShow, setNavShow] = useState(false)
    const router = useRouter()
    const links = navLinksData.map(link =>
       <li className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
@@ -20,25 +20,23 @@ export default function Layout({ children }) {
            <title>RajivJayaweera</title>
            <link rel="icon" href="/favicon.ico" />
          </Head>
-         <header className={mobileNavShow ? style['header_open'] : style['header']}>
-         {/* <header className={style.header}> */}
+         <header className={style.header}>
             <div className={style.nav_container}>
-               <h1>RajivJayaweera.com</h1>
-               <ul>
+               {router.pathname !== '/' ?
+                  <Link href='/'><a><h1>RajivJayaweera.com</h1></a></Link> :
+                  <h1>RajivJayaweera.com</h1>
+               }
+               <div className={style['mobile_nav_toggle']} onClick={() => setNavShow(!navShow)}>
+                  <div className={!navShow ? style['open_icon'] : style['close_icon']}>
+                     
+                  </div>
+               </div>
+            </div>
+               <ul className={navShow ? style['nav_links_open'] : style['nav_links']}>
                   {links}
                </ul>
-               <div className={style['mobile_nav_toggle']} onClick={() => setMobileNavShow(!mobileNavShow)}>
-                  <div className={!mobileNavShow ? style['open_icon'] : style['close_icon']}>
-
-               </div>
-
-               </div>
-
-            </div>
-            
-            
          </header>
-         <main className={style.main}>
+         <main className={style['main']}>
             {children}
          </main>
          <footer className={style.footer}>Site by

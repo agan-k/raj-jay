@@ -17,8 +17,6 @@ export default function Shows(props) {
    return (
       <Layout>
          <div className={style.container}>
-            <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-            <h1>Shows</h1>
             <div className={style.announcement}>
                {RichText.render(announcement)}
             </div>

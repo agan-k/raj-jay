@@ -12,8 +12,6 @@ export default function Links(props) {
    return (
       <Layout>
          <div className={style.container}>
-            <h1>&larr;<Link href="/"><a>Home</a></Link></h1>
-            <h1>Links</h1>
             <div className={style.links_container}>
                {RichText.render(links)}
             </div>

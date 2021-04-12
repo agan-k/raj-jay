@@ -51,10 +51,6 @@ export default function Blog(props) {
    return (
       <Layout>
          <div className={styles.container}>
-            <h1>&larr;
-               <Link href="/"><a>Home</a></Link>
-            </h1>
-            <h1>BlogPosts</h1>
             <div className={styles.posts}>
                {last_post[0]}
                <hr style={{color: 'grey' }}/>

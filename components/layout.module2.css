@@ -1,0 +1,139 @@
+.container {
+   width: 80%;
+   margin: 0 auto;
+}
+.header {
+   height: 2rem;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   right: 0;
+   background: white;
+   /* background: yellow; */
+   z-index: 999;
+}
+.nav_container {
+   margin: 0 auto;
+   padding-top: .2rem;
+   max-width: 900px;
+   display: flex;
+   justify-content: space-between;
+}
+.nav_container h1 {
+   /* background: red; */
+   width: 20%;
+   margin: 0;
+   font-size: 1rem;
+   font-weight: 100;
+   letter-spacing: .1rem;
+}
+.nav_container ul {
+   /* background: blue; */
+   width: 80%;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: flex-end;
+   list-style: none;
+}
+.nav_container ul a {
+   font-size: 1rem;
+   text-transform: lowercase;
+   padding: 0 .1rem;
+}
+.nav_container ul a:hover {
+   color: rgb(9, 113, 145);
+   text-decoration: underline;
+}
+.mogile_nav_toggle {
+   display: none;
+}
+.main {
+   padding-top: 2rem;
+}
+.footer {
+   display: flex;
+   justify-content: center;
+   justify-items: center;
+   padding: 2rem;
+   font-size: .8rem;
+   color: grey;
+}
+
+@media (max-width: 600px) {
+   .container {
+      width: 98%;
+   }
+   .header {
+      width: 98%;
+      height: 2.5rem;
+      overflow: hidden;
+      display: flex;
+
+   }
+
+   .header_open {
+      width: 98%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: white;
+      height: 100%;
+      display: flex;
+      z-index: 999;
+      transition: .1s;
+   }
+   .nav_container {
+      width: 100%;
+      display: initial;
+      margin-top: .5rem;
+   }
+   .nav_container h1 {
+     font-weight: 100;
+   }
+   .nav_container h1, .nav_container ul {
+      width: 100%;
+      display: block;
+   }
+   .nav_container ul {
+      margin-top: 2rem;
+   }
+   .nav_container ul li {
+      margin: .4rem;
+      text-align: right;
+   }
+   .nav_container ul li a{
+      font-size: 1.5rem;
+      margin: .5rem;
+   }
+
+   .mobile_nav_toggle {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      /* margin:  0 1rem; */
+      /* padding: 0 1rem 1rem 1rem ; */
+      /* height: min-content; */
+      /* width: 2rem; */
+      /* background: rgb(138, 138, 127); */
+      text-align:center;
+   }
+   .open_icon:after {
+      content: '\25BE';
+      font-size: 2rem;
+      /* vertical-align: text-top; */
+      padding: 1rem;
+      /* margin: 0 auto; */
+   }
+   .close_icon:after {
+      content: '\25B4';
+      font-size: 2rem;
+      padding: 1rem;
+      /* margin: 0 auto; */
+   }
+   .main {
+      padding-top: 2.5rem;
+   }
+   
+}

@@ -17,7 +17,8 @@ a {
    color: rgb(125, 196, 218);
    text-decoration: none;
 }
-.active_nav_links li, .active_nav_links a {
+
+.active_nav_links {
    display: none;
 }
 @media (max-width: 600px) {

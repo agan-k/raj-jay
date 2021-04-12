@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
-import Layout from '../../components/layout1'
+import Layout from '../../components/layout'
 
 import style from './bio.module.css'
 
