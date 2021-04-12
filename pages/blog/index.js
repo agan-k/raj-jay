@@ -34,7 +34,7 @@ export default function Blog(props) {
          )
    const posts = blog.map(post => 
       <div className={style.post_container} key={post.id}>
-         <h3>{formatPrismicDate(post.data.date)}</h3>
+         <p>{formatPrismicDate(post.data.date)}</p>
          <div className={style.post_link}>
             <Link href="blog/[id]" as={`/blog/${post.uid}`}>
                <a>
