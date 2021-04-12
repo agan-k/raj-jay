@@ -6,7 +6,7 @@ import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
-import styles from './blog.module.css'
+import style from './blog.module.css'
 import formatPrismicDate from '../formatPrismicDate.js'
 import Modal from '../../components/modal'
 import Layout from '../../components/layout'
@@ -20,22 +20,22 @@ export default function Blog(props) {
    )
    const last_post = blog.map(post =>
       post.data.video_link.length !== 0 ?
-         <div className={styles.last_post_container}
+         <div className={style.last_post_container}
             key={post.id} onClick={() => setVideoURL(post.data.video_link[0].text)}>
             <h3>{formatPrismicDate(post.data.date)}</h3>
             <img src={post.data.img.url} onClick={() => setShowModal(true)} />
                {RichText.render(post.data.content_body)}
          </div> :
-         <div className={styles.last_post_container} key={post.id}>
+         <div className={style.last_post_container} key={post.id}>
             <h3>{formatPrismicDate(post.data.date)}</h3>
             <img src={post.data.img.url} />
             {RichText.render(post.data.content_body)}
          </div>
          )
    const posts = blog.map(post => 
-      <div className={styles.post_container} key={post.id}>
+      <div className={style.post_container} key={post.id}>
          <h3>{formatPrismicDate(post.data.date)}</h3>
-         <div className={styles.post_link}>
+         <div className={style.post_link}>
             <Link href="blog/[id]" as={`/blog/${post.uid}`}>
                <a>
                   {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
@@ -50,11 +50,13 @@ export default function Blog(props) {
 
    return (
       <Layout>
-         <div className={styles.container}>
-            <div className={styles.posts}>
+         <div className={style.container}>
+            <div className={style.posts}>
                {last_post[0]}
-               <hr style={{color: 'grey' }}/>
-               {posts}
+               {/* <hr style={{ color: 'grey', opacity: '.3', marginTop: '2rem' }} /> */}
+               <div className={style.old_posts}>
+                  {posts}
+               </div>
             </div>
             {showModal && (
                <Modal
