@@ -9,9 +9,6 @@
 .banner {
    max-width: 900px;
 }
-.container a {
-   color:rgb(75, 75, 75);
-}
 
 .main {
   flex: 1;
@@ -71,53 +68,59 @@
    border: 1px solid rgb(241, 241, 241);
    display: flex;
    justify-content: center;
-   /* align-items: center; */
+   align-items: center;
    flex-wrap: wrap;
    max-width: 900px;
    /* margin-top: .5rem; */
 }
 
 .card {
-  min-height: 25rem;
-  margin: 1rem;
-  flex-basis: 28%;
-  padding: 1rem;
-  text-align: left;
-  color: black;
-  text-decoration: none;
-  /* border: 1px solid #eaeaea; */
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  opacity: .7;
+   font-weight: 100;
+   min-height: 25rem;
+   margin: 1rem;
+   flex-basis: 28%;
+   padding: 1rem;
+   text-align: left;
+   text-decoration: none;
+   /* border: 1px solid white; */
+   border-radius: 10px;
+   transition: color 0.15s ease, border-color 0.15s ease;
+   opacity: .9;
+   transition: .2s;
+   cursor: pointer;
+   /* line-height: 1.5; */
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: black;
-  border-color: black;
-  opacity: 1;
+   opacity: 1;
+}
+.card a {
+   color:rgb(114, 114, 114);
+   transition: .3s;
+}
+.card a:hover {
+   color:rgb(0, 0, 0);
+   transition: .3s;
 }
 
 .card img {
    width: 100%;
-   /* margin: 0 auto; */
-}
-
-.card h3 {
-  /* margin: 0 0 1rem 0;
-  font-size: 1.5rem; */
 }
 
 .card p {
   margin: 0;
-  /* font-size: 1rem; */
-  line-height: 1.5;
 }
 .card .date {
-   margin: 1rem 0; 
+   text-align: right;
+   font-style: italic;
    font-size: .8rem;
-   font-weight: 100;
+   font-weight: 700;
+}
+.card .arrow {
+   display: block;
+   text-align: right;
 }
 
 .logo {

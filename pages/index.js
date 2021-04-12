@@ -23,10 +23,12 @@ export default function Home(props) {
          <div key={result.uid} className={style.card}
             onClick={() => setVideoURL(result.data.video_link[0].text)}
          >
-            <img src={result.data.img.url} onClick={() => setShowModal(true)}/>
-            <p>{formatPrismicDate(result.data.date)}</p>
-            {RichText.render(result.data.news_card_blurb)}
-            <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
+            <a>
+               <p className={style.date}>{formatPrismicDate(result.data.date)}</p>
+               <img src={result.data.img.url} onClick={() => setShowModal(true)}/>
+               {RichText.render(result.data.news_card_blurb)}
+               <span className={style.arrow}>&rarr;</span>
+            </a>
          </div> :
 
       (result.data.news_card && result.data.content_type !== 'video') ?
@@ -34,10 +36,10 @@ export default function Home(props) {
          <div key={result.uid} className={style.card}>
             <Link href={`${result.data.content_type.substr(0, 5)}/${result.uid}`} >
                <a>
+                  <p className={style.date}>{formatPrismicDate(result.data.date)}</p>
                   <img src={result.data.img.url}/>
-                  <p>{formatPrismicDate(result.data.date)}</p>
                   {RichText.render(result.data.news_card_blurb)}
-                  <span style={{display: 'block', textAlign: 'right'}}>&rarr;</span>
+                  <span className={style.arrow}>&rarr;</span>
                </a>
             </Link>
          </div> : ''

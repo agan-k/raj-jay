@@ -18,5 +18,5 @@ export default function formatPrismicDate(date) {
    else {
       month = months[date.slice(5, 7) -1]
    }
-   return day + ' ' + month + ' ' + year;
+   return day + '. ' + month + ' ' + year;
 }
