@@ -9,3 +9,8 @@
    margin: 0 auto;
    /* margin-top: 5rem; */
 }
+@media (max-width: 600px) {
+   .container {
+      width: 98%;
+   }
+}
