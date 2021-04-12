@@ -50,7 +50,7 @@ export default function Blog(props) {
 
    return (
       <Layout>
-         <div className={style.container}>
+         <div className={showModal ? style['container_blur'] : style['container']}>
             <div className={style.posts}>
                {last_post[0]}
                {/* <hr style={{ color: 'grey', opacity: '.3', marginTop: '2rem' }} /> */}
@@ -58,13 +58,13 @@ export default function Blog(props) {
                   {posts}
                </div>
             </div>
-            {showModal && (
-               <Modal
-                  blog_video_url={videoURL}
-                  closeModal={() => setShowModal(false)}
-               />
-            )}
          </div>
+         {showModal && (
+            <Modal
+               blog_video_url={videoURL}
+               closeModal={() => setShowModal(false)}
+            />
+         )}
       </Layout>
    )
 }
