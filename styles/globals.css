@@ -16,13 +16,16 @@ p {
 * {
   box-sizing: border-box;
 }
-.container {
-   max-width: 900px;
-   background: red;
-}
+
 a {
    color: rgb(125, 196, 218);
    text-decoration: none;
+   transition: .3s;
+}
+a:hover {
+   color: rgb(42, 109, 129);
+   text-decoration: none;
+   transition: .3s;
 }
 
 .active_nav_links {
