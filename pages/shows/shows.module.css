@@ -1,19 +1,41 @@
-.calendar_container {
-   width: 80%;
+.container {
+   max-width: 900px;
    margin: 0 auto;
-   display: flex;
-   justify-content: space-between;
 }
-.container main {
-   width: 60%;
-
-}
-.container aside {
-   width: 30%;
-   
+.container img {
+   max-width: 900px;
 }
 .announcement p {
    font-size: .8rem;
    background-color: rgb(255, 255, 123);
    padding: 5px;
+}
+.calendar_container {
+   display: flex;
+   justify-content: space-between;
+   /* background: red; */
+}
+.calendar_container h4 {
+   margin: 0;
+}
+.calendar_container ul {
+   font-size: .8rem;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+.calendar_container li {
+
+}
+.calendar_container p {
+   margin: .5rem 0;
+}
+.calendar_container main {
+   width: 60%;
+}
+.container aside {
+   width: 30%;
+}
+.updates {
+  margin: 1rem 0;
 }
