@@ -9,7 +9,7 @@ import style from './shows.module.css'
 import {current_date} from '../Date.js'
 
 export default function Shows(props) {
-   console.log(props)
+   console.log(props.shows.data.featured_flyer.url)
    const announcement = props.shows.data.announcement
    const recent_updates = props.shows.data.recent_updates
    const calendar = props.shows.data.shows_body
@@ -20,17 +20,17 @@ export default function Shows(props) {
 
             <main className={style.main}>
                <img className={style.banner} src={props.shows.data.banner_image.url}/>
-               <div className={style.announcement}>
+               {/* <div className={style.announcement}>
                   {RichText.render(announcement)}
-               </div>
+               </div> */}
                <div className={style.calendar_container}>
                   <main>
                      {RichText.render(calendar)}
                   </main>
                   <aside>
-                     <h4 className={style.updates}>Recent Updates - {current_date}</h4>
-                     {/* <h3>{formatDate(date)}</h3> */}
-                     {RichText.render(recent_updates)}
+                     <img className={style.featured_flyer}
+                        src={props.shows.data.featured_flyer.url}
+                     />
                   </aside>
                </div>
             </main>

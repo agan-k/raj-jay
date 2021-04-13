@@ -53,7 +53,6 @@ export default function Blog(props) {
          <div className={showModal ? style['container_blur'] : style['container']}>
             <div className={style.posts}>
                {last_post[0]}
-               {/* <hr style={{ color: 'grey', opacity: '.3', marginTop: '2rem' }} /> */}
                <div className={style.old_posts}>
                   {posts}
                </div>
