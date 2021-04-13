@@ -1,5 +1,6 @@
 .container {
    max-width: 900px;
+   padding: 0 0.5rem;
    min-height: 80vh;
    margin: 0 auto;
    transition: .3s;
@@ -44,9 +45,7 @@
 }
 
 @media (max-width: 600px) {
-   .container {
-      width: 98%;
-   }
+   
    .posts {
       display: initial;
    }

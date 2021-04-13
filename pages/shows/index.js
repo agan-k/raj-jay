@@ -17,20 +17,23 @@ export default function Shows(props) {
    return (
       <Layout>
          <div className={style.container}>
-            <img src={props.shows.data.banner_image.url}/>
-            <div className={style.announcement}>
-               {RichText.render(announcement)}
-            </div>
-            <div className={style.calendar_container}>
-               <main>
-                  {RichText.render(calendar)}
-               </main>
-               <aside>
-                  <h4 className={style.updates}>Recent Updates - {current_date}</h4>
-                  {/* <h3>{formatDate(date)}</h3> */}
-                  {RichText.render(recent_updates)}
-               </aside>
-            </div>
+
+            <main className={style.main}>
+               <img className={style.banner} src={props.shows.data.banner_image.url}/>
+               <div className={style.announcement}>
+                  {RichText.render(announcement)}
+               </div>
+               <div className={style.calendar_container}>
+                  <main>
+                     {RichText.render(calendar)}
+                  </main>
+                  <aside>
+                     <h4 className={style.updates}>Recent Updates - {current_date}</h4>
+                     {/* <h3>{formatDate(date)}</h3> */}
+                     {RichText.render(recent_updates)}
+                  </aside>
+               </div>
+            </main>
          </div>
       </Layout>
    )

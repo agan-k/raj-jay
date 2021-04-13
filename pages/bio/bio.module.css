@@ -1,5 +1,6 @@
 .container {
    max-width: 900px;
+   padding: 0 0.5rem;
    margin: 0 auto;
 }
 .container img {
@@ -9,19 +10,7 @@
    border-radius: 5%;
 }
 @media (max-width: 600px) {
-   .container {
-      width: 98%;
-   }
-   .container h2 {
-      text-align: center;
-   }
-   .container img {
-      float: none;
-      display: block;
-      width: 90%;
-      margin: 1rem auto;
-      text-align:center;
-   }
+   /* */
    
 }
 

@@ -1,16 +1,29 @@
 .container {
-   max-width: 900px;
-   margin: 0 auto;
+   /* max-width: 900px; */
+   padding: 0 0.5rem;
+   display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.container img {
+.banner {
    max-width: 900px;
 }
+.main {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
 .announcement p {
+   max-width: 900px;
    font-size: .8rem;
    background-color: rgb(255, 255, 123);
    padding: 5px;
 }
 .calendar_container {
+   max-width: 900px;
    display: flex;
    justify-content: space-between;
    /* background: red; */
@@ -38,4 +51,18 @@
 }
 .updates {
   margin: 1rem 0;
+}
+@media (max-width: 600px) {
+   .banner {
+      width: 100%;
+   }
+   .calendar_container {
+      display: initial;
+   }
+   .calendar_container main {
+      width: 100%;
+   }
+   .container aside {
+      width: 100%;
+   }
 }

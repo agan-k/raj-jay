@@ -50,7 +50,7 @@ export default function Home(props) {
          <div className={style.container}>
             
             <main className={style.main}>
-            <img className={style.banner} src={'/images/home_banner.jpg'}/>
+               <img className={style.banner} src={'/images/home_banner.jpg'}/>
                <div className={style.grid}>
                   {news_cards}
                 </div>
