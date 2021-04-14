@@ -12,6 +12,7 @@ import Modal from '../components/modal'
 import style from './Home.module.css'
 
 export default function Home(props) {
+   console.log(props)
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
       

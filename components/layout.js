@@ -3,7 +3,7 @@ import Link from "next/link"
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { navLinksData } from '../pages/navLinks'
+import { navLinksData } from '../navLinks.js'
 import style from "./layout.module.css"
 
 export default function Layout({ children }) {

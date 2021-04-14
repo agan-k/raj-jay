@@ -18,7 +18,6 @@ export default function Press(props) {
    const press_releases = props.content.results.filter(result => 
       result.data.content_type == 'press-releases'
    )
-   console.log(press_releases)
    const press_interviews = props.content.results.filter(result => 
       result.data.content_type == 'press-interviews'
    )

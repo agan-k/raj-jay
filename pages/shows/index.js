@@ -6,7 +6,6 @@ import { RichText } from "prismic-reactjs"
 
 import Layout from '../../components/layout'
 import style from './shows.module.css'
-import {current_date} from '../Date.js'
 
 export default function Shows(props) {
    console.log(props.shows.data.featured_flyer.url)
