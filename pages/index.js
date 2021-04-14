@@ -35,14 +35,14 @@ export default function Home(props) {
       (result.data.news_card && result.data.content_type !== 'video') ?
             
          <div key={result.uid} className={style.card}>
-            <Link href={`/${result.data.content_type.substr(0, 5)}/${result.uid}`} >
+            {/* <Link href={`/${result.data.content_type.substr(0, 5)}/${result.uid}`} > */}
                <a>
                   <p className={style.date}>{formatPrismicDate(result.data.date)}</p>
                   <img src={result.data.img.url}/>
                   {RichText.render(result.data.news_card_blurb)}
                   <span className={style.arrow}>&rarr;</span>
                </a>
-            </Link>
+            {/* </Link> */}
          </div> : ''
    )      
 
