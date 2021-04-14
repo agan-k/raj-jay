@@ -33,11 +33,11 @@ export default function Press(props) {
                   {press_reviews.map(result => 
                      <li key={result.uid}>
                         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                        <Link href="press/[id]" as={`${getContentPaths(press_reviews)}/${result.uid}`}>
+                        {/* <Link href="press/[id]" as={`${getContentPaths(press_reviews)}/${result.uid}`}> */}
                            <a>
                               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                            </a>
-                           </Link>
+                           {/* </Link> */}
                         </li>
                      )}
                </ul>
