@@ -9,11 +9,11 @@ import style from "./layout.module.css"
 export default function Layout({ children }) {
    const [navShow, setNavShow] = useState(false)
    const router = useRouter()
-   const links = navLinksData.map(link =>
-      <li key={link.uid} className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
-         <Link href={link.uid}><a>{link.name}</a></Link>
-      </li>
-      )
+   // const links = navLinksData.map(link =>
+   //    <li key={link.uid} className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
+   //       <Link href={link.uid}><a>{link.name}</a></Link>
+   //    </li>
+   //    )
    return (
       <div className={style.container}>
          <Head>
@@ -33,7 +33,7 @@ export default function Layout({ children }) {
                </div>
             </div>
                <ul className={navShow ? style['nav_links_open'] : style['nav_links']}>
-                  {links}
+                  {/* {links} */}
                </ul>
          </header>
          <main className={style['main']}>
