@@ -16,7 +16,7 @@ export default function Post({ data }) {
    return (
       <Layout>
          <div className={style.container}>
-         <Link href="/blog"><h4>&larr; &nbsp;<a>blog home</a></h4></Link>
+         {/* <Link href="/blog"><h4>&larr; &nbsp;<a>blog home</a></h4></Link> */}
             {data.video_link.length !== 0 ?
                <article>
                   <h3>{formatPrismicDate(data.date)}</h3>
