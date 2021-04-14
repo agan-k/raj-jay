@@ -14,9 +14,9 @@ export default function Discography(props) {
    
    const albums_gallery = discography.map(album => 
       <div key={album.uid} className={style.album_container}>
-         <Link href="disco/[id]" as={`disco/${album.uid}`}>
+         {/* <Link href="disco/[id]" as={`disco/${album.uid}`}>
             <img src={album.data.img.url} />
-         </Link>
+         </Link> */}
       </div>
    )
    

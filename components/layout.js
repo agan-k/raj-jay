@@ -22,10 +22,10 @@ export default function Layout({ children }) {
          </Head>
          <header className={style.header}>
             <div className={style.nav_container}>
-               {router.pathname !== '/' ?
+               {/* {router.pathname !== '/' ?
                   <Link href='/'><a><h1>RajivJayaweera.com</h1></a></Link> :
                   <h1>RajivJayaweera.com</h1>
-               }
+               } */}
                <div className={style['mobile_nav_toggle']} onClick={() => setNavShow(!navShow)}>
                   <div className={!navShow ? style['open_icon'] : style['close_icon']}>
                      

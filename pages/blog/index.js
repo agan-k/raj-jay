@@ -36,12 +36,12 @@ export default function Blog(props) {
       <div className={style.post_container} key={post.id}>
          <p>{formatPrismicDate(post.data.date)}</p>
          <div className={style.post_link}>
-            <Link href="blog/[id]" as={`/blog/${post.uid}`}>
+            {/* <Link href="blog/[id]" as={`/blog/${post.uid}`}> */}
                <a>
                   {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
                   {RichText.render(post.data.content_body.filter(item => item.type == 'heading4'))}
                </a>
-            </Link>
+            {/* </Link> */}
          </div>
       </div>
    )
