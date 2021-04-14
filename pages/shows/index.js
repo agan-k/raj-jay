@@ -8,9 +8,7 @@ import Layout from '../../components/layout'
 import style from './shows.module.css'
 
 export default function Shows(props) {
-   console.log(props.shows.data.featured_flyer.url)
-   const announcement = props.shows.data.announcement
-   const recent_updates = props.shows.data.recent_updates
+
    const calendar = props.shows.data.shows_body
    
    return (
@@ -19,9 +17,6 @@ export default function Shows(props) {
 
             <main className={style.main}>
                <img className={style.banner} src={props.shows.data.banner_image.url}/>
-               {/* <div className={style.announcement}>
-                  {RichText.render(announcement)}
-               </div> */}
                <div className={style.calendar_container}>
                   <main>
                      {RichText.render(calendar)}

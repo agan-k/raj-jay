@@ -4,8 +4,9 @@ import { useState } from 'react'
 
 
 export default function MaskToggleIcon() {
+
    const [maskedImages, setMaskedImages] = useState(true)
-   console.log(maskedImages)
+   
    return (
       <div className="wrapper" >
          {!maskedImages ? 

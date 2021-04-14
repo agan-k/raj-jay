@@ -10,7 +10,7 @@ export default function Layout({ children }) {
    const [navShow, setNavShow] = useState(false)
    const router = useRouter()
    const links = navLinksData.map(link =>
-      <li className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
+      <li key={link.uid} className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
          <Link href={link.uid}><a>{link.name}</a></Link>
       </li>
       )

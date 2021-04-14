@@ -7,13 +7,13 @@ import Link from 'next/link'
 import Layout from '../../components/layout'
 
 export default function Discography(props) {
-  
+   
    const discography = props.content.results.filter(result =>
       result.data.content_type == 'discography'
-   )
+      )
    
    const albums_gallery = discography.map(album => 
-      <div className={style.album_container}>
+      <div key={album.uid} className={style.album_container}>
          <Link href="disco/[id]" as={`disco/${album.uid}`}>
             <img src={album.data.img.url} />
          </Link>

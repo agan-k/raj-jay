@@ -8,7 +8,7 @@ import Layout from '../../components/layout'
 import style from './contact.module.css'
 
 export default function Contact(props) {
-   console.log(props)
+   
    return (
       <Layout>
          <div className={style.container}>
