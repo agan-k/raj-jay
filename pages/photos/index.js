@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
+
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 
-import Layout from '../../components/layout'
 import style from './photos.module.css'
+import Layout from '../../components/layout'
 import Modal from '../../components/modal'
 import MaskToggleIcon from '../../components/MaskToggleIcon'
 

@@ -7,7 +7,6 @@ import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
 import Layout from '../../components/layout'
-import getContentPaths from '../contentPaths'
 import styles from './press.module.css'
 
 export default function Press(props) {
@@ -24,6 +23,13 @@ export default function Press(props) {
    const press_features = props.content.results.filter(result => 
       result.data.content_type == 'press-features'
    )
+
+   function getContentPaths(currentContentType) {
+      const path = currentContentType.map(result => 
+         result.data.content_type.substr(0, 5)
+         );
+      return path[0];
+   }
    
    return (
       <Layout>
@@ -33,11 +39,11 @@ export default function Press(props) {
                   {press_reviews.map(result => 
                      <li key={result.uid}>
                         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                        {/* <Link href="/press/[id]" as={`/${getContentPaths(press_reviews)}/${result.uid}`}> */}
+                        <Link href="/press/[id]" as={`/${getContentPaths(press_reviews)}/${result.uid}`}>
                            <a>
                               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                            </a>
-                           {/* </Link> */}
+                           </Link>
                         </li>
                      )}
                </ul>
@@ -48,11 +54,11 @@ export default function Press(props) {
                   {press_interviews.map(result => 
                      <li key={result.uid}>
                         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                        {/* <Link href="/press/[id]" as={`/${getContentPaths(press_interviews)}/${result.uid}`}> */}
+                        <Link href="/press/[id]" as={`/${getContentPaths(press_interviews)}/${result.uid}`}>
                            <a>
                               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                            </a>
-                        {/* </Link> */}
+                        </Link>
                      </li>
                   )}
                </ul>
@@ -63,11 +69,11 @@ export default function Press(props) {
                   {press_releases.map(result => 
                      <li key={result.uid}>
                         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                        {/* <Link href="/press/[id]" as={`/${getContentPaths(press_releases)}/${result.uid}`}> */}
+                        <Link href="/press/[id]" as={`/${getContentPaths(press_releases)}/${result.uid}`}>
                            <a>
                               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                            </a>
-                        {/* </Link> */}
+                        </Link>
                      </li>
                   )}
                </ul>
@@ -77,11 +83,11 @@ export default function Press(props) {
                   {press_features.map(result => 
                      <li key={result.uid}>
                         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
-                        {/* <Link href="/press/[id]" as={`/${getContentPaths(press_features)}/${result.uid}`}> */}
+                        <Link href="/press/[id]" as={`/${getContentPaths(press_features)}/${result.uid}`}>
                            <a>
                               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
                            </a>
-                        {/* </Link> */}
+                        </Link>
                      </li>
                   )}
                </ul>

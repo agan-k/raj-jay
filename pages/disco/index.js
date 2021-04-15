@@ -1,9 +1,10 @@
 import React from 'react'
-import Prismic from 'prismic-javascript'
-import { client } from '../../prismic-configuration'
-import style from './discography.module.css'
 import Link from 'next/link'
 
+import Prismic from 'prismic-javascript'
+import { client } from '../../prismic-configuration'
+
+import style from './discography.module.css'
 import Layout from '../../components/layout'
 
 export default function Discography(props) {
@@ -14,16 +15,16 @@ export default function Discography(props) {
    
    const albums_gallery = discography.map(album => 
       <div key={album.uid} className={style.album_container}>
-         {/* <Link href="disco/[id]" as={`disco/${album.uid}`}>
+         <Link href="disco/[id]" as={`disco/${album.uid}`}>
             <img src={album.data.img.url} />
-         </Link> */}
+         </Link>
       </div>
    )
    
    return (
       <Layout>
          <div className={style.container}>
-            <div className={style.gallery_container} >
+            <div className={style.gallery_container}>
                {albums_gallery}
             </div>
          </div>

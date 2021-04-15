@@ -14,7 +14,7 @@ export default function Album({data}) {
       <Layout>
          <div className={style.container}>
             <h1>&larr;
-               {/* <Link href='/disco'><a>full discography</a></Link> */}
+               <Link href='/disco'><a>full discography</a></Link>
             </h1>
             <main>
                <div className={style.album_info}>
