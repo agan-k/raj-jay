@@ -3,12 +3,24 @@ import Link from "next/link"
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { navLinksData } from '../navLinks.js'
 import style from "./layout.module.css"
 
 export default function Layout({ children }) {
    const [navShow, setNavShow] = useState(false)
    const router = useRouter()
+   const navLinksData = [
+      {name: 'news', uid: '/'},
+      {name: 'bio', uid: '/bio'},
+      {name: 'blog', uid: '/blog'},
+      {name: 'shows', uid: '/shows'},
+      {name: 'press', uid: '/press'},
+      {name: 'photos', uid: '/photos'},
+      {name: 'videos', uid: '/videos'},
+      {name: 'discography', uid: '/disco'},
+      {name: 'store', uid: '/#'},
+      {name: 'links', uid: '/links'},
+      {name: 'contact', uid: '/contact'},
+   ]
    const links = navLinksData.map(link =>
       <li key={link.uid} className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
          <Link href={link.uid}><a>{link.name}</a></Link>
