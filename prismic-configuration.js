@@ -8,4 +8,4 @@ export const apiEndpoint = process.env.PRISMIC_URL
 export const accessToken = process.env.NEXT_PUBLIC_PRISMIC_ACCESS_TOKEN
 
 // Client method to query Prismic
-export const client = Prismic.client(apiEndpoint, { accessToken })
+export const client = Prismic.client('https://dbop.cdn.prismic.io/api/v2', { accessToken })
