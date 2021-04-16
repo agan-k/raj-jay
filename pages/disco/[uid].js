@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 
 import Prismic from "prismic-javascript"
@@ -9,7 +8,8 @@ import BandcampPlayer from 'react-bandcamp'
 import style from './album.module.css'
 import Layout from '../../components/layout'
 
-export default function Album({data}) {
+export default function Album({ data }) {
+
    return (
       <Layout>
          <div className={style.container}>
@@ -21,10 +21,11 @@ export default function Album({data}) {
                   <img src={data.img.url} style={{maxHeight: '10rem'}}/>
                   {RichText.render(data.content_body)}
                </div>
-               {data.bandcamp_id[0].text && (
+               
+               {RichText.asText(data.bandcamp_id) && (
                   <BandcampPlayer
                      className='audio-player'
-                     album={data.bandcamp_id[0].text}
+                     album={RichText.asText(data.bandcamp_id)}
                      width='40%'
                      height='460px'
                      artwork='none'
