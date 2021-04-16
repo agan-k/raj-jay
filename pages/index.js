@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
 
 import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs"
-// import formatPrismicDate from './formatPrismicDate.js'
 
 import Layout from '../components/layout'
 import Modal from '../components/modal'
@@ -17,8 +15,8 @@ export default function Home(props) {
    const [videoURL, setVideoURL] = useState(null)
 
    function formatPrismicDate(date) {
-      let months = ["January","February","March","April","May","June","July",
-         "August", "September", "October", "November", "December"];
+      let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
+         "Aug", "Sep", "Oct", "Nov", "Dec"];
       let day;
       let month;
       let year = date.slice(0, 4);
@@ -35,7 +33,7 @@ export default function Home(props) {
       else {
          month = months[date.slice(5, 7) -1]
       }
-      return day + '. ' + month + ' ' + year;
+      return month + ' ' + day + ', ' + ' ' + year;
    }
       
    let cards = props.content.results.filter(item => item.data.news_card)
