@@ -17,32 +17,49 @@
    background-color: white;
    transition: .3s;
 }
-.old_posts{
-   margin-top: 4rem
+.post_container {
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid rgb(231, 231, 231);
 }
-.post_container p {
-   margin: 0;
+.post_date {
+   width: 30%;
    font-size: .7rem;
    font-weight: 700;
+   margin: 0 1rem 0 0;
+   /* background: red; */
+   text-align: left;
+}
+.post_date p {
+   margin: 0;
 }
 .post_link {
-   display: flex;
-   width: 100%;
-   margin: 0 auto;
-}
-
-.post_link h3, .post_link h4 {
+   width: 70%;
+   /* text-align: right; */
    margin: 0;
-   display: inline;
-   font-size: .8rem;
+   /* background: blue; */
 }
+   .post_link h3, .post_link h4 {
+      margin: 0;
+      display: inline;
+      font-size: .8rem;
+   }
 .last_post_container img {
    max-height: 10rem;
 }
 .posts {
    display: flex;
-   justify-content: space-between;
+   /* justify-content: space-between; */
 }
+   .current_post {
+      width: 50%
+   }
+   .old_posts{
+      width: 45%;
+      margin-left: 5%;
+      margin-top: 3.2rem;
+
+   }
 
 @media (max-width: 600px) {
    

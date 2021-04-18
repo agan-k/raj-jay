@@ -55,11 +55,15 @@ export default function Blog(props) {
          )
    const posts = blog.map(post => 
       <div className={style.post_container} key={post.id}>
-         <p>{formatPrismicDate(post.data.date)}</p>
+         <div className={style.post_date}>
+            <p>
+               {formatPrismicDate(post.data.date)}
+            </p>
+         </div>
          <div className={style.post_link}>
             <Link href="blog/[id]" as={`/blog/${post.uid}`}>
                <a>
-                  {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}&nbsp;
+                  {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}<br />
                   {RichText.render(post.data.content_body.filter(item => item.type == 'heading4'))}
                </a>
             </Link>
@@ -73,7 +77,9 @@ export default function Blog(props) {
       <Layout>
          <div className={showModal ? style['container_blur'] : style['container']}>
             <div className={style.posts}>
-               {last_post[0]}
+               <div className={style.current_post}>
+                  {last_post[0]}
+               </div>
                <div className={style.old_posts}>
                   {posts}
                </div>
