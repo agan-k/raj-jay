@@ -3,6 +3,7 @@ import Link from "next/link"
 import Head from "next/head"
 import { useRouter } from "next/router"
 
+import MailingList from './mailingList'
 import style from "./layout.module.css"
 
 export default function Layout({ children }) {
@@ -38,15 +39,21 @@ export default function Layout({ children }) {
                   <Link href='/'><a><h1>RajivJayaweera.com</h1></a></Link> :
                   <h1>RajivJayaweera.com</h1>
                }
-               <div className={style['mobile_nav_toggle']} onClick={() => setNavShow(!navShow)}>
+               <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
                   <div className={!navShow ? style['open_icon'] : style['close_icon']}>
                      
                   </div>
                </div>
             </div>
-               <ul className={navShow ? style['nav_links_open'] : style['nav_links']}>
-                  {links}
-               </ul>
+            
+               <div className={navShow ? style['nav_open'] : style['nav']}>
+                  <ul>
+                     {links}
+                  </ul>
+                  <div className={style.mailing_list}>
+                     <MailingList />
+                  </div>
+               </div>
          </header>
          <main className={style['main']}>
             {children}

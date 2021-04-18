@@ -5,17 +5,17 @@ import { RichText } from 'prismic-reactjs'
 
 import style from './contact.module.css'
 import Layout from '../../components/layout'
-import ContactForm from '../../components/contactForm'
+import ContactForm from '../../components/mailingList'
 
 export default function Contact(props) {
    
    return (
       <Layout>
-         {/* <div className={style.container}>
+         <div className={style.container}>
             <div className={style.contact_container}>
                {RichText.render(props.contact.data.contact_body)}
             </div>
-         </div> */}
+         </div>
          <ContactForm/>
       </Layout>
    )

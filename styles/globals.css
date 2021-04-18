@@ -29,7 +29,12 @@ a:hover {
 }
 
 .active_nav_links {
-   display: none;
+   /* display: none; */
+   background: rgb(233, 233, 233);
+   text-align: right;
+}
+.active_nav_links {
+   color: red;
 }
 @media (max-width: 600px) {
   /* body {

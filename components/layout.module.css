@@ -32,7 +32,7 @@
       transition: .2s;
    }
 
-   .mobile_nav_toggle {
+   .nav_toggle {
       width: 80%;
       display: block;
       text-align: left;
@@ -48,8 +48,11 @@
       .close_icon:after {
          content: '\25BC';
       }
-
-   .nav_links, .nav_links_open {
+   .nav, .nav_open {
+      display: flex;
+      justify-content: space-between;
+   }
+   .nav ul, .nav_open ul {
       margin: 0;
       margin-left: 22%;
       overflow: hidden;
@@ -60,20 +63,22 @@
       background: white;
       transition: .3s;
    }
-   .nav_links {
+   .nav {
+      overflow: hidden;
       height: 0; 
    }
-   .nav_links_open {
+   .nav_open {
+      overflow: hidden;
       height: 14rem;
    }
-      .nav_links_open a, .nav_links a {
+      .nav_open a, .nav a {
          font-size: 1rem;
          font-weight: 100;
          text-transform: lowercase;
          color: grey;
          transition: .2s;
       }
-      .nav_links_open a:hover, .nav_links a:hover {
+      .nav_open a:hover, .nav a:hover {
          color: initial;
          transition: .2s;
       }

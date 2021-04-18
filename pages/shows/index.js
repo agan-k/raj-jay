@@ -5,6 +5,7 @@ import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
 import Layout from '../../components/layout'
+import MailingList from '../../components/mailingList'
 import style from './shows.module.css'
 
 export default function Shows(props) {
@@ -22,6 +23,7 @@ export default function Shows(props) {
                      {RichText.render(calendar)}
                   </main>
                   <aside>
+                     <MailingList />
                      <img className={style.featured_flyer}
                         src={props.shows.data.featured_flyer.url}
                      />
