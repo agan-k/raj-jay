@@ -19,14 +19,17 @@ export default function Shows(props) {
             <main className={style.main}>
                <img className={style.banner} src={props.shows.data.banner_image.url}/>
                <div className={style.calendar_container}>
+                  <div className={style.mailing_list}>
+                     <MailingList />
+                  </div>
                   <main>
                      {RichText.render(calendar)}
                   </main>
                   <aside>
-                     <MailingList />
                      <img className={style.featured_flyer}
                         src={props.shows.data.featured_flyer.url}
                      />
+                     <MailingList />
                   </aside>
                </div>
             </main>

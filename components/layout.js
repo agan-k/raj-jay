@@ -25,6 +25,17 @@ export default function Layout({ children }) {
    const links = navLinksData.map(link =>
       <li key={link.uid} className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
          <Link href={link.uid}><a>{link.name}</a></Link>
+         <style jsx>{`
+            .active_nav_links {
+               background: rgb(233, 233, 233);
+               color: white;
+               text-align: right;
+            }
+            .active_nav_links a {
+               color: white;
+               cursor: initial;
+            }
+         `}</style>
       </li>
       )
    return (
@@ -35,6 +46,7 @@ export default function Layout({ children }) {
          </Head>
          <header className={style.header}>
             <div className={style.nav_container}>
+               <img src="/images/logo.png" style={{height: '1.2rem'}}/>&nbsp;
                {router.pathname !== '/' ?
                   <Link href='/'><a><h1>RajivJayaweera.com</h1></a></Link> :
                   <h1>RajivJayaweera.com</h1>
@@ -51,6 +63,7 @@ export default function Layout({ children }) {
                      {links}
                   </ul>
                   <div className={style.mailing_list}>
+                     <p>join mailing list:</p>
                      <MailingList />
                   </div>
                </div>
