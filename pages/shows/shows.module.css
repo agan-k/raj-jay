@@ -14,6 +14,7 @@
    }
       .main .banner {
          max-width: 900px;
+         filter: grayscale(100%);
       }
 
    .calendar_container {

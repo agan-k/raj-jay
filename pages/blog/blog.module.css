@@ -3,6 +3,7 @@
    padding: 0 0.5rem;
    min-height: 80vh;
    margin: 0 auto;
+   margin-top: 3rem;
    transition: .3s;
 }
 .container_blur {

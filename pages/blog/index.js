@@ -13,14 +13,14 @@ import Layout from '../../components/layout'
 export default function Blog(props) {
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
-
+   
    function formatPrismicDate(date) {
       let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
-         "Aug", "Sep", "Oct", "Nov", "Dec"];
+      "Aug", "Sep", "Oct", "Nov", "Dec"];
       let day;
       let month;
       let year = date.slice(0, 4);
-   
+      
       if (date.charAt(8) == '0') {
          day = date.slice(9, 10);
       }
@@ -35,10 +35,10 @@ export default function Blog(props) {
       }
       return month + ' ' + day + ', ' + ' ' + year;
    }
-
+   
    const blog = props.content.results.filter(result =>
       result.data.content_type == 'blog'
-   )
+      )
    const last_post = blog.map(post =>
       post.data.video_link.length !== 0 ?
          <div className={style.last_post_container}

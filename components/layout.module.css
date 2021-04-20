@@ -11,16 +11,27 @@
 }
 
 .nav_container {
+   height: 1.5rem;
    margin: .5rem auto;
    padding-top: .2rem;
    display: flex;
+   overflow: hidden;
+   transition: .3s;
 }
-   .nav_container h1 {
+.nav_container_open {
+   height: 6rem;
+   margin: .5rem auto;
+   padding-top: .2rem;
+   display: flex;
+   transition: .3s;
+}
+   .nav_container h1, .nav_container_open h1 {
       width: 20%;
       margin: 0;
       font-size: 1rem;
       font-weight: 100;
       letter-spacing: .1rem;
+      cursor: pointer;
    }
    .nav_container a {
       color: initial;
@@ -30,11 +41,11 @@
       color: grey;
       transition: .2s;
    }
-
    .nav_toggle {
-      width: 80%;
+      width: 2rem;
       display: block;
       text-align: left;
+      cursor: pointer;
    }
       .open_icon:after, .close_icon:after {
          font-size: 1rem;
@@ -47,57 +58,64 @@
       .close_icon:after {
          content: '\25BC';
       }
-   .nav, .nav_open {
-
-      /* width: 60%; */
-      /* margin-left: 30%; */
+   .nav {
+      width: 100%;
+      height: 4rem;
+      margin-top: 1.5rem;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-around;
       overflow: hidden;
       border-right: 1px solid rgb(243, 243, 243);
       border-left: 1px solid rgb(243, 243, 243);
    }
-   .nav {
-      height: 0;
-      transition: .3s; 
-   }
-   .nav_open {
-      height: 14rem;
-      transition: .3s; 
-   }
-      .nav ul, .nav_open ul {
+   .nav ul {
+         display: flex;
+         flex-wrap: wrap;
+         flex-direction: column;
+         align-items: flex-start;
          margin: 0;
-         margin-right: 30%;
          overflow: hidden;
-         width: 8rem;
+         width: 20rem;
          padding: 0;
          list-style: none;
-         letter-spacing: .1rem;
          background: white;
-         transition: .3s;
       }
-      .nav_open a, .nav a {
-         letter-spacing: .1rem;
-         font-size: .8rem;
-         font-weight: 100;
-         text-transform: lowercase;
-         color: grey;
+      .nav_open li {
+         /* height: 1rem; */
+         /* padding: .3rem; */
+      }
+      .nav li:hover{
+         background: black;
+         /* text-align: right; */
          transition: .2s;
       }
-      .nav_open a:hover, .nav a:hover {
-         color: initial;
-         transition: .2s;
-      }
+         .nav a {
+            letter-spacing: .1rem;
+            font-size: .8rem;
+            font-weight: 100;
+            text-transform: lowercase;
+            color: grey;
+            transition: .2s;
+         }
+         .nav a:hover {
+            color: white;
+         }
+
       .mailing_list {
-         margin-right: 1rem;
          min-width: min-content;
          height: min-content;
+         opacity: .5;
+         transition: .2s;
+      }
+      .mailing_list:hover {
+         opacity: 1;
+         transition: .2s;
       }
          .mailing_list p {
             margin: 0 0 0 .5rem;
             font-size: .8rem;
             font-style: italic;
-            color: rgb(199, 199, 199);
+            color: rgb(155, 155, 155);
          }
 
 .footer {

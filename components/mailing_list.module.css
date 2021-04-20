@@ -1,10 +1,8 @@
 .container {
-   /* background: red; */
    display: flex;
    justify-content: flex-end;
-   /* text-align: right; */
-   /* opacity: .7; */
 }
+
 .container form {
    text-align: right;
    display: flex;
@@ -12,12 +10,10 @@
 }
 .form_label {
    display: inline;
-   color: rgb(199, 199, 199);
+   color: rgb(155, 155, 155);
 }
-/*  */
 .container p {
    font-size: .8rem;
-   /* display: inline; */
    margin: 0 1rem 0 0;
 }
 .form_label label {
@@ -29,9 +25,9 @@
 .form_label input {
    border: none;
    outline: none;
-  width: 50px;
-  transition: ease-in-out, width .35s ease-in-out;
-  background: rgb(245, 245, 245);
+   width: 50px;
+   transition: ease-in-out, width .35s ease-in-out;
+   background: rgb(245, 245, 245);
 }
 
 .container input:focus {
@@ -49,4 +45,5 @@
    background: black;
    color: rgb(230, 230, 230);
    border-radius: 5px;
+   cursor: pointer;
 }
