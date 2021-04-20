@@ -4,43 +4,37 @@
 }
 
 .header {
-   height: min-content;
    max-width: 900px;
-   margin: 0 auto;
-   transition: .3s;
-}
-
-.nav_container {
-   height: 1.5rem;
-   margin: .5rem auto;
-   padding-top: .2rem;
    display: flex;
-   overflow: hidden;
+   margin: 1rem auto .5rem;
    transition: .3s;
 }
-.nav_container_open {
-   height: 6rem;
-   margin: .5rem auto;
-   padding-top: .2rem;
-   display: flex;
-   transition: .3s;
-}
-   .nav_container h1, .nav_container_open h1 {
-      width: 20%;
+   .header h1{
+      /* width: 20%; */
       margin: 0;
       font-size: 1rem;
       font-weight: 100;
       letter-spacing: .1rem;
       cursor: pointer;
    }
-   .nav_container a {
-      color: initial;
-      transition: .2s;
-   }
-   .nav_container a:hover {
-      color: grey;
-      transition: .2s;
-   }
+
+.nav_container, .nav_container_open {
+   width: 100%;
+   padding-top: .2rem;
+   display: flex;
+   justify-items: space-between;
+   overflow: hidden;
+}
+.nav_container {
+   height: 1.5rem;
+   transition: .3s;
+}
+.nav_container_open {
+   height: 6rem;
+   border-left: 1px solid rgb(243, 243, 243);
+   border-right: 1px solid rgb(243, 243, 243);
+   transition: .3s;
+}
    .nav_toggle {
       width: 2rem;
       display: block;
@@ -58,65 +52,64 @@
       .close_icon:after {
          content: '\25BC';
       }
+
    .nav {
-      width: 100%;
-      height: 4rem;
+      width: 50%;
+      height: 10rem;
       margin-top: 1.5rem;
-      display: flex;
-      justify-content: space-around;
-      overflow: hidden;
+      padding: 0 1rem;
       border-right: 1px solid rgb(243, 243, 243);
-      border-left: 1px solid rgb(243, 243, 243);
    }
-   .nav ul {
+      .nav ul {
+         height: 4rem;
          display: flex;
          flex-wrap: wrap;
          flex-direction: column;
          align-items: flex-start;
          margin: 0;
          overflow: hidden;
-         width: 20rem;
+         width: 100%;
          padding: 0;
          list-style: none;
          background: white;
-      }
-      .nav_open li {
-         /* height: 1rem; */
-         /* padding: .3rem; */
-      }
-      .nav li:hover{
-         background: black;
-         /* text-align: right; */
-         transition: .2s;
-      }
-         .nav a {
-            letter-spacing: .1rem;
-            font-size: .8rem;
-            font-weight: 100;
-            text-transform: lowercase;
-            color: grey;
-            transition: .2s;
          }
-         .nav a:hover {
-            color: white;
-         }
+            .nav li:hover{
+               transition: .2s;
+            }
+            .nav a {
+               letter-spacing: .1rem;
+               font-size: .8rem;
+               font-weight: 100;
+               text-transform: lowercase;
+               color: grey;
+               padding: 0 .2rem;
+               transition: .2s;
+            }
+            .nav a:hover {
+               background: black;
+               color: white;
+            }
 
       .mailing_list {
-         min-width: min-content;
+         width: 50%;
+         margin: 1.5rem 1rem 0 1.5rem;
          height: min-content;
-         opacity: .5;
          transition: .2s;
       }
       .mailing_list:hover {
          opacity: 1;
          transition: .2s;
       }
-         .mailing_list p {
-            margin: 0 0 0 .5rem;
-            font-size: .8rem;
-            font-style: italic;
-            color: rgb(155, 155, 155);
-         }
+      .mailing_list p {
+         display: inline;
+         background: black;
+         text-transform: uppercase;
+         font-size: .8rem;
+         padding: .1rem;
+         margin: 0;
+         font-size: .8rem;
+         color: white;
+      }
 
 .footer {
    display: flex;
@@ -129,33 +122,49 @@
 
 @media (max-width: 600px) {
 
-   .container, .header, .header_open {
+   .container {
+      width: 100%;
+   }
+   .header {
       width: 98%;
    }
-   
-   .nav_container h1 {
-      width: 60%;
-   }
 
-   .nav ul, .nav_open ul {
-      margin-left: 0;
+   .nav_container, .nav_container_open {
+      display: block;
+      width: 20%;
+      background: white;
+      border-left: none;
+      border-right: none;
+      transition: none;
+   }
+   
+   .nav_container_open {
+      position: absolute;
       width: 100%;
+      height: 100%;
+      top: 2.2rem;
+      bottom: 0;
+      height: 100%;
+      z-index: 999;
+      transition: none;
+   }
+   
+   .nav_container_open a {
+      font-size: 2rem;
+   }
+   .nav {
+      width: 100%;
+      /* height: min-content; */
       text-align: right;
+      /* margin: 0 auto; */
+      border: none;
    }
-   .nav_open {
-      height: 100vh;
-      overflow: hidden;
-   }
-      .nav_open a, .nav_links a {
-         font-size: 1.5rem;
-         padding: .5rem;
+   .nav ul {
+      display: initial;
       }
-      .nav_open li, .nav_links li {
-         padding: .5rem;
-      }
+   
    .mailing_list {
       display: none;
    }
-   
       
  }

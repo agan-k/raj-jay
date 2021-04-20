@@ -27,11 +27,10 @@ export default function Layout({ children }) {
          <Link href={link.uid}><a>{link.name}</a></Link>
          <style jsx>{`
             .active_nav_links {
-               background: black;
                text-align: right;
-               padding-right: .5rem;
             }
             .active_nav_links a {
+               background: black;
                margin: 0;
                color: white;
                cursor: initial;
@@ -46,33 +45,33 @@ export default function Layout({ children }) {
            <link rel="icon" href="/favicon.ico" />
          </Head>
          <header className={style.header}>
-            <div className={navShow ? style['nav_container_open'] : style['nav_container']}>
-               <img src="/images/logo.png" style={{ height: '1.2rem'}} />
-               &nbsp;
-              
+            <img src="/images/logo.png" style={{ height: '1.2rem'}} />
+            &nbsp;
             {router.pathname !== '/' ?
                <Link href='/'><h1>RajivJayaweera.com</h1></Link> :
                <h1>RajivJayaweera.com</h1>
             }
 
-               <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
-                  <div className={!navShow ? style['open_icon'] : style['close_icon']}>
-                     
-                  </div>
+            <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
+               <div className={!navShow ? style['open_icon'] : style['close_icon']}>
+                  
                </div>
-               <div
-                  className={style.nav}>
+            </div>
+
+            <div className={navShow ? style['nav_container_open'] : style['nav_container']}>
+              
+               <div className={style.nav}>
                   <ul>
                      {links}
                   </ul>
-                  <div className={style.mailing_list}>
-                     <p>join mailing list:</p>
-                     <MailingList />
-                  </div>
+               </div>
+
+               <div className={style.mailing_list}>
+                  <p>join mailing list:</p>
+                  <MailingList />
                </div>
             </div>
             
-
          </header>
          <main className={style['main']}>
             {children}
