@@ -1,9 +1,9 @@
 .container {
    max-width: 900px;
    padding: 0 0.5rem;
-   min-height: 80vh;
+   min-height: 100vh;
    margin: 0 auto;
-   margin-top: 3rem;
+   margin-top: 1rem;
    transition: .3s;
 }
 .container_blur {
@@ -20,11 +20,13 @@
 }
 .post_container {
    display: flex;
-   justify-content: space-between;
-   border-bottom: 1px solid rgb(231, 231, 231);
+   background: white;
+   margin-bottom: 1px;
+   /* justify-content: space-between; */
+   /* border-bottom: 1px solid rgb(231, 231, 231); */
 }
 .post_date {
-   width: 30%;
+   width: 25%;
    font-size: .7rem;
    font-weight: 700;
    margin: 0 1rem 0 0;
@@ -36,9 +38,7 @@
 }
 .post_link {
    width: 70%;
-   /* text-align: right; */
    margin: 0;
-   /* background: blue; */
 }
    .post_link h3, .post_link h4 {
       margin: 0;
@@ -57,8 +57,10 @@
    }
    .old_posts{
       width: 45%;
+      height: min-content;
       margin-left: 5%;
       margin-top: 3.2rem;
+      background: rgb(230, 230, 230);
 
    }
 
