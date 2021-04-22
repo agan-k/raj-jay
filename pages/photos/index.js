@@ -42,22 +42,23 @@ export default function Photos(props) {
 
    return (
       <Layout>
-         <div>
-            <div onClick={() => setMaskImages(!maskImages)}>
-            <MaskToggleIcon />
+         <div className={showModal ? style['container_blur'] : style['container']}>
+            <div className={style.mask_toggle} onClick={() => setMaskImages(!maskImages)}>
+               <MaskToggleIcon />
             </div>
             <div className={style.gallery_container}>
                {gallery}
             </div>
-            {showModal && (
-               <Modal
-                  getImageOrientation={getImgOrientation}
-                  closeModal={() => setShowModal(false)}
-                  photo={photo}
-                  photos={true}
-               />
-            )}
          </div>
+         
+         {showModal && (
+            <Modal
+               getImageOrientation={getImgOrientation}
+               closeModal={() => setShowModal(false)}
+               photo={photo}
+               photos={true}
+            />
+         )}
       </Layout>
    )
       

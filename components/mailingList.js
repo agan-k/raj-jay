@@ -20,7 +20,7 @@ export default function MailingList() {
             </div>
             {/* <br/> */}
             <div>
-               <button type="submit">Send</button>
+               <button type="submit">Join</button>
             </div>
          </form>
 

@@ -1,8 +1,31 @@
+.container {
+   max-width: 900px;
+   display: flex;
+   justify-content: space-between;
+   padding: 4rem 0.5rem;
+   margin: 0 auto;
+   transition: .3s;
+}
+.container_blur {
+   max-width: 900px;
+   display: flex;
+   justify-content: space-between;
+   padding: 4rem 0.5rem;
+   margin: 0 auto;
+   transition: .3s;
+
+   -webkit-filter: blur(5px);
+   -moz-filter: blur(5px);
+   -o-filter: blur(5px);
+   -ms-filter: blur(5px);
+   filter: blur(5px);
+   background-color: none;
+}
 .gallery_container {
    width: 80%;
    display: flex;
    flex-wrap: wrap;
-   margin: 1rem auto;
+   /* margin: 1rem auto; */
    /* justify-content: space-between ; */
    /* background: honeydew; */
 }
@@ -16,8 +39,10 @@
    cursor: pointer;
 }
 /* +++++++ img mask +++++++ */
-.img_mask_toggle {
-   cursor: pointer;
+.mask_toggle {
+   width: min-content;
+   /* background: red; */
+   display: block;
 }
 /* -----   -  --   -  ---- */
 .img_mask {

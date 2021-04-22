@@ -20,6 +20,7 @@ export default function Shows(props) {
                <img className={style.banner} src={props.shows.data.banner_image.url}/>
                <div className={style.calendar_container}>
                   <div className={style.mailing_list}>
+                     <p>mailing list:</p>
                      <MailingList />
                   </div>
                   <main>
@@ -29,7 +30,12 @@ export default function Shows(props) {
                      <img className={style.featured_flyer}
                         src={props.shows.data.featured_flyer.url}
                      />
-                     <MailingList />
+                     <div className={style.mailing_list}>
+                        <p>join the mailing list to find out about upcoming events
+                           in your area.
+                        </p>
+                        <MailingList />
+                     </div>
                   </aside>
                </div>
             </main>

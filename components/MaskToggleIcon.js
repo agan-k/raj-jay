@@ -55,10 +55,10 @@ export default function MaskToggleIcon() {
             
             <style jsx>{`
                .wrapper {
-                  width: 80%;
-                  margin: 0 auto;
-                  display: flex;
-                  justify-content: space-between;
+                  display: inline;
+                  // width: 100%;
+                  // display: flex;
+                  // justify-content: space-between;
                }
                .container {
                   display: flex;

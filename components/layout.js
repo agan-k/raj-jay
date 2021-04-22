@@ -27,7 +27,7 @@ export default function Layout({ children }) {
          <Link href={link.uid}><a>{link.name}</a></Link>
          <style jsx>{`
             .active_nav_links {
-               text-align: right;
+               // text-align: right;
             }
             .active_nav_links a {
                background: black;
@@ -48,8 +48,8 @@ export default function Layout({ children }) {
             <img src="/images/logo.png" style={{ height: '1.2rem'}} />
             &nbsp;
             {router.pathname !== '/' ?
-               <Link href='/'><h1>RajivJayaweera.com</h1></Link> :
-               <h1>RajivJayaweera.com</h1>
+               <Link href='/'><h1>RajivJayaweera.com&nbsp;</h1></Link> :
+               <><h1>RajivJayaweera.com</h1>&nbsp;</>
             }
 
             <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
@@ -67,7 +67,7 @@ export default function Layout({ children }) {
                </div>
 
                <div className={style.mailing_list}>
-                  <p>join mailing list:</p>
+                  <p>mailing list:</p>
                   <MailingList />
                </div>
             </div>

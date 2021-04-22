@@ -36,11 +36,12 @@
 .container button {
    margin: .8rem 0 0 0;
    font-size: .8rem;
+   letter-spacing: .1rem;
+   color: white;
    border: 0;
    text-transform: lowercase;
    padding: .4rem;
-   background: black;
-   color: rgb(230, 230, 230);
+   background: rgb(155, 155, 155);
    border-radius: 5px;
    cursor: pointer;
 }
