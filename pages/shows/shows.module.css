@@ -57,13 +57,12 @@
                font-size: .8rem;
                line-height: 1rem;
                margin: 0;
-               /* text-align: justify; */
             }
+
          .featured_flyer {
             width: 80%;
             display: block;
             margin: 2rem 12%;
-            /* margin-left: 2%; */
          }
 
 @media (max-width: 600px) {
