@@ -18,7 +18,7 @@ export default function Layout({ children }) {
       {name: 'photos', uid: '/photos'},
       {name: 'videos', uid: '/videos'},
       {name: 'discography', uid: '/disco'},
-      {name: 'store', uid: '/#'},
+      {name: 'store', uid: 'https://pistils.bandcamp.com/merch'},
       {name: 'links', uid: '/links'},
       {name: 'contact', uid: '/contact'},
    ]
