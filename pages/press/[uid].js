@@ -1,17 +1,25 @@
-import React from 'react'
+import React from "react"
+import Link from "next/link"
 
-import Prismic from "prismic-javascript";
-import { client } from "../../prismic-configuration";
-import { RichText } from "prismic-reactjs";
+import Prismic from "prismic-javascript"
+import { client } from "../../prismic-configuration"
+import { RichText } from "prismic-reactjs"
+
+import Layout from "../../components/layout"
+import style from "./pressArticle.module.css"
 
 export default function pressArticle({ data }) {
    return (
-     <div>
-       <article>
-         <img src={data.img.url} style={{maxHeight: '3rem'}}/>
-         <main>{RichText.render(data.content_body)}</main>
-       </article>
-      </div>
+      <Layout>
+         <div className={style.container}>
+         <Link href="/press"><h4>&larr; &nbsp;<a>press home</a></h4></Link>
+
+            <article>
+               <img src={data.img.url} style={{maxHeight: '3rem'}}/>
+               <main>{RichText.render(data.content_body)}</main>
+            </article>
+         </div>
+      </Layout>
    );
  }
 
