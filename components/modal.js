@@ -35,11 +35,11 @@ export default function Modal(props) {
                   {RichText.render(detail.photo_caption)}
                   <style jsx>{`
                      .vertical_img {
-                        height: 80%;
+                        height: 70%;
                         margin-top: 5%;
                      }
                      .horizontal_img {
-                        height: 60%;
+                        height: 50%;
                         margin-top: 10%;
                      }
                   `}</style>

@@ -38,29 +38,35 @@ export default function Blog(props) {
    
    const blog = props.content.results.filter(result =>
       result.data.content_type == 'blog'
-      )
+   )
+   
    const last_post = blog.map(post =>
       post.data.video_link.length !== 0 ?
-         <div className={style.last_post_container}
+         <div className={style.last_post}
             key={post.id} onClick={() => setVideoURL(post.data.video_link[0].text)}>
-            <h3>{formatPrismicDate(post.data.date)}</h3>
-            <img src={post.data.img.url} onClick={() => setShowModal(true)} />
-               {RichText.render(post.data.content_body)}
-         </div> :
-         <div className={style.last_post_container} key={post.id}>
-            <h3>{formatPrismicDate(post.data.date)}</h3>
-            <img src={post.data.img.url} />
-            {RichText.render(post.data.content_body)}
-         </div>
-         )
-   const posts = blog.map(post => 
-      <div className={style.post_container} key={post.id}>
-         <div className={style.post_date}>
+            <div className={style.last_post_date}>
             <p>
                {formatPrismicDate(post.data.date)}
             </p>
          </div>
-         <div className={style.post_link}>
+            <img src={post.data.img.url} onClick={() => setShowModal(true)} />
+               {RichText.render(post.data.content_body)}
+         </div> :
+         <div className={style.last_post} key={post.id}>
+            <h3>{formatPrismicDate(post.data.date)}</h3>
+            <img src={post.data.img.url} />
+            {RichText.render(post.data.content_body)}
+         </div>
+   )
+   
+   const old_posts_links = blog.map(post => 
+      <div className={style.old_post_link_container} key={post.id}>
+         <div className={style.old_post_date}>
+            <p>
+               {formatPrismicDate(post.data.date)}
+            </p>
+         </div>
+         <div className={style.old_post_link}>
             <Link href="blog/[id]" as={`/blog/${post.uid}`}>
                <a>
                   {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}<br />
@@ -71,18 +77,20 @@ export default function Blog(props) {
       </div>
    )
       
-   posts.shift()
+   old_posts_links.shift()
 
    return (
       <Layout>
          <div className={showModal ? style['container_blur'] : style['container']}>
-            <div className={style.posts}>
-               <div className={style.current_post}>
-                  {last_post[0]}
-               </div>
-               <div className={style.old_posts}>
-                  {posts}
-               </div>
+         <h2>Blog</h2>
+            <div className={style.posts_container}>
+               {/* <div className={style.last_post_container}> */}
+                  {last_post.shift()}
+               {/* </div> */}
+            <div className={style.old_posts_container}>
+            <h4>old posts:</h4>
+               {old_posts_links}
+            </div>
             </div>
          </div>
          {showModal && (
