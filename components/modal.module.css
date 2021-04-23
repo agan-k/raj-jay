@@ -6,8 +6,18 @@
    height: 100%;
    color: white;
    background: rgba(0, 0, 0, 0.616);
-   z-index: 999;
+   z-index: 998;
 }
+.close_modal {
+   background: black;
+   text-align: center;
+   padding: 1rem 1rem;
+   cursor: pointer;
+}
+   .close_modal span {
+      font-size: 2rem;
+      vertical-align: sub;
+   }
 .img_container {
    width: 100%;
    height: 100%;
@@ -19,6 +29,20 @@
    font-weight: 200;
 }
 .video_container {
-   width: min-content;
-   margin: 5% auto;
+   position: relative;
+   padding-top: 50.25% /* Player ratio: 100 / (1280 / 720) */
+   /* max-width: 100%; */
+   /* display: flex;
+   justify-content: center; */
+   /* margin: 5% auto; */
+}
+.react_player {
+   position: absolute;
+   top: 0;
+   left: 0;
+ }
+ @media (max-width: 600px) {
+    
+   
+   
 }

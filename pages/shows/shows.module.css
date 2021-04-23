@@ -51,16 +51,19 @@
          .mailing_list {
             margin: 0;
             width: 94%;
-            margin: 0 0 0 6%;
+            margin: 7rem 0 0 6%;
          }
             .mailing_list p {
+               font-size: .8rem;
+               line-height: 1rem;
                margin: 0;
-               text-align: justify;
+               /* text-align: justify; */
             }
          .featured_flyer {
             width: 80%;
             display: block;
-            margin: 5rem auto;
+            margin: 2rem 12%;
+            /* margin-left: 2%; */
          }
 
 @media (max-width: 600px) {

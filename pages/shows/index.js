@@ -30,8 +30,14 @@ export default function Shows(props) {
                      <img className={style.featured_flyer}
                         src={props.shows.data.featured_flyer.url}
                      />
+                     <img className={style.featured_flyer}
+                        src={props.shows.data.featured_flyer1.url}
+                     />
+                     <img className={style.featured_flyer}
+                        src={props.shows.data.featured_flyer2.url}
+                     />
                      <div className={style.mailing_list}>
-                        <p>join the mailing list to find out about upcoming events
+                        <p>Join the mailing list to find out about upcoming events
                            in your area.
                         </p>
                         <MailingList />

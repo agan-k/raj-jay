@@ -30,6 +30,7 @@ a:hover {
 
 
 
+
 @media (max-width: 600px) {
    body {
       padding-top: 2rem;
@@ -37,13 +38,5 @@ a:hover {
    .active_nav_links {
       display: none;
    }
-  /* body {
-     font-size: 18px;
-     
-  }
-  p {
-     line-height: 1.6rem;
-  }
-    */
 }
 
