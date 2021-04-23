@@ -1,4 +1,4 @@
-import  React  from 'react'
+import  React, { useState }  from 'react'
 import Link from "next/link"
 
 import Prismic from "prismic-javascript"
@@ -9,9 +9,7 @@ import Layout from '../../components/layout'
 import style from './press.module.css'
 
 export default function Press(props) {
-   // console.log(props.content.results.filter(result => result.data.content_type == 'press-reviews' ||
-   // result.data.content_type == 'press-interviews'
-   // ))
+   const [quotesShow, setQuotesShow] = useState(false)
 
    function getContentPaths(currentContentType) {
       const path = currentContentType.map(result => 
@@ -94,12 +92,23 @@ export default function Press(props) {
    return (
       <Layout>
          <div className={style.container}>
+            <div className={style.quoteS_container_mobile}>
+               <h4>quotes</h4>
+               <div className={style['quotes_toggle']} onClick={() => setQuotesShow(!quotesShow)}>
+                  <div className={!quotesShow ? style['open_icon'] : style['close_icon']}>
+                  </div>
+               </div>
+               <div className={quotesShow ? style['quoteS_open'] : style['quoteS']}>
+                  <>{quotes}</>
+               </div>
+               
+            </div>
             <div className={style.quoteS_container}>
                <h4>quotes</h4>
-               {quotes}
+                  {quotes}
             </div>
             <div className={style.article_linkS_container}>
-               
+
                <h4>press releases</h4>
                <ul>{releases}</ul>
 

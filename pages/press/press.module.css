@@ -7,10 +7,17 @@
    justify-content: space-between;
 }
 
+.quoteS_container_mobile {
+   display: none;
+}
 .quoteS_container {
    width: 50%;
    margin-top: 3rem;
 }
+   .quote {
+      margin-bottom: 2rem;
+      font-size: .8rem;
+   }
 
 .article_linkS_container {
    width: 35%;
@@ -41,8 +48,53 @@
       text-decoration: underline;
    }
 
-.quote {
-   margin-bottom: 2rem;
-   font-size: .8rem;
+@media (max-width: 600px) {
+   .container {
+      display: block;
+      max-width: 98%;
+   }
+   .article_linkS_container {
+      width: 100%;
+      margin-top: 0;
+   }
+   .quoteS_container {
+      display: none;
+   }
+   .quoteS_container_mobile {
+      display: block;
+   }
+   .quoteS_container_mobile {
+      margin : 2rem 0 1rem 0;
+      border-bottom: 1px solid rgb(241, 241, 241);
+      padding-bottom: 1rem;
+
+   }
+   
+   .quoteS {
+      max-height: 0;
+      overflow: hidden;
+      background-color: none;
+   }
+   .quoteS_open {
+      max-height: 100%;
+      overflow: initial;
+   }
+   .quotes_toggle {
+      display: inline-block;
+      width: min-content;
+      height: min-content;
+      margin-left: .6rem;
+      cursor: pointer;
+   }
+   .open_icon:after, .close_icon:after {
+      font-size: 1rem;
+      width: 1rem;
+   }
+   .open_icon:after {
+      content: '\25B6';
+   }
+   .close_icon:after {
+      content: '\25BC';
+   }
 }
 
