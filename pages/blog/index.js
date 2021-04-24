@@ -49,7 +49,7 @@ export default function Blog(props) {
                {formatPrismicDate(post.data.date)}
             </p>
          </div>
-            <img src={post.data.img.url} onClick={() => setShowModal(true)} />
+            <img className={style.video_thumb} src={post.data.img.url} onClick={() => setShowModal(true)} />
                {RichText.render(post.data.content_body)}
          </div> :
          <div className={style.last_post} key={post.id}>
@@ -84,13 +84,13 @@ export default function Blog(props) {
          <div className={showModal ? style['container_blur'] : style['container']}>
          <h2>Blog</h2>
             <div className={style.posts_container}>
-               {/* <div className={style.last_post_container}> */}
+               <div className={style.last_post_container}>
                   {last_post.shift()}
-               {/* </div> */}
-            <div className={style.old_posts_container}>
-            <h4>old posts:</h4>
-               {old_posts_links}
-            </div>
+               </div>
+               <div className={style.old_posts_container}>
+                  <h4>old posts:</h4>
+                  {old_posts_links}
+               </div>
             </div>
          </div>
          {showModal && (
