@@ -53,10 +53,8 @@
       .last_post_date p  {
          font-size: .9rem;
          font-style: italic;
-         /* text-align: right; */
          margin: 0 0 .5rem 0;
          font-weight: 600;
-
       }
 
 .old_post_link_container {
@@ -92,8 +90,7 @@
 .posts_container {
    display: inline-block;
    width: 100%;
-   /* display: flex;
-   justify-content: space-between; */
+   
 }
    .last_post_container {
       float: left;
@@ -101,9 +98,7 @@
    }
    .old_posts_container {
       float: right;
-      /* width: 50%; */
       height: min-content;
-      /* background: rgb(230, 230, 230); */
 
    }
 

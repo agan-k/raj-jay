@@ -29,7 +29,9 @@ export default function Post({ data }) {
                   <main>{RichText.render(data.content_body)}</main>
                </article> :
                <article>
-                  <h3>{formattedDate}</h3>
+                  <div className={style.post_date}>
+                     <p>{formattedDate}</p>
+                  </div>
                   <img src={data.img.url} style={{ maxHeight: "15rem" }} />
                   <main>{RichText.render(data.content_body)}</main>
                </article>
