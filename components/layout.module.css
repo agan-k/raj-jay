@@ -119,8 +119,9 @@
    display: flex;
    justify-content: center;
    justify-items: center;
+   margin-top: 3rem;
    padding: 2rem;
-   font-size: .8rem;
+   font-size: .6rem;
    color: grey;
 }
 
