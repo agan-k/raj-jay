@@ -1,7 +1,6 @@
 .container {
    max-width: 900px;
    padding: 0 0.5rem;
-   min-height: 100vh;
    margin: 0 auto;
    margin-top: 1rem;
    transition: .3s;
@@ -21,87 +20,82 @@
    background-color: #ffffff;
    transition: .3s;
 }
-.last_post {
-}
-   .last_post .video_thumb {
-      max-width: 98%;
-      max-height: 100%;
-      margin: 0;
-      float: none;
-      cursor: pointer;
-      opacity: .8;
-      transition: .2s;
+   .posts_container {
+      display: inline-block;
+      width: 100%;
    }
-   .last_post .video_thumb:hover {
-      opacity: 1;
-      transition: .2s;
-   }
-   .last_post img {
-      max-height: 10rem;
-      display: block;
-      margin: 0 auto;
-      /* float: left; */
-      /* margin: 1rem 1rem 1rem 0; */
-   }
-   .last_post p {
-      font-size: .8rem;
-      letter-spacing: 1px;
-   }
-   .last_post_date  {
-      margin: 0;
-   }
-      .last_post_date p  {
-         font-size: .9rem;
-         font-style: italic;
-         margin: 0 0 .5rem 0;
-         font-weight: 600;
-      }
-
-.old_post_link_container {
-   display: flex;
-   background: white;
-   margin-bottom: 1px;
-}
-   .old_post_link_container 
-   .old_post_date {
-         width: 25%;
-         font-size: .7rem;
-         font-style: italic;
-         margin: 0 1rem 0 0;
-         text-align: left;
-      }
-      .old_post_link_container 
-      .old_post_date p {
-         margin: 0;
-      }
-
-   .old_post_link_container 
-   .old_post_link {
-      width: 70%;
-      margin: 0;
-   }
-      .old_post_link h3, 
-      .old_post_link h4 {
-         margin: 0;
-         display: inline;
-         font-size: .8rem;
-      }
-
-.posts_container {
-   display: inline-block;
-   width: 100%;
-   
-}
    .last_post_container {
-      float: left;
-      width: 50%
+         float: left;
+         width: 45%;
    }
-   .old_posts_container {
-      float: right;
-      height: min-content;
+         .last_post_date  {
+            margin: 0;
+         }
+            .last_post_date p  {
+               font-size: .9rem;
+               font-style: italic;
+               margin: 0 0 .5rem 0;
+               font-weight: 600;
+            }
+         .last_post .video_thumb {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0;
+            cursor: pointer;
+            transition: .2s;
+            opacity: .8;
+            
+         }
+         .last_post .video_thumb:hover {
+            opacity: 1;
+            transition: .2s;
+         }
+         .last_post img {
+            max-height: 10rem;
+            display: block;
+            margin: 0 auto;
+         }
+         .last_post p {
+            font-size: .8rem;
+            letter-spacing: 1px;
+         }
+      /* ----------------- */
+      .old_posts_container {
+         float: right;
+         min-width: 40%;
+         height: min-content;
+      }
+         .old_post_link_container {
+            display: flex;
+            background: white;
+            margin-bottom: 1px;
+         }
+            .old_post_link_container 
+            .old_post_date {
+                  width: 25%;
+                  font-size: .7rem;
+                  font-style: italic;
+                  margin: 0 1rem 0 0;
+                  text-align: left;
+               }
+               .old_post_link_container 
+               .old_post_date p {
+                  margin: 0;
+               }
+         
+            .old_post_link_container 
+            .old_post_link {
+               width: 70%;
+               margin: 0;
+            }
+               .old_post_link h3, 
+               .old_post_link h4 {
+                  margin: 0;
+                  display: inline;
+                  font-size: .8rem;
+               }
 
-   }
-
+   
 @media (max-width: 600px) {
    
    .old_post_link_container 
@@ -109,9 +103,14 @@
       width: 30%;
    }
    .posts_container {
-      display: initial;
+      /* display: inline-block; */
    }
    .old_posts_container {
       margin-top: 2rem;
    }
+   .last_post_container, .old_posts_container {
+      /* float: none; */
+      width: 100%;
+   }
+   
 }

@@ -36,30 +36,32 @@ export default function Blog(props) {
       return month + ' ' + day + ', ' + ' ' + year;
    }
    
-   const blog = props.content.results.filter(result =>
-      result.data.content_type == 'blog'
+   const blog_posts = props.blog.results.map(result => result
    )
+   console.log(blog_posts)
    
-   const last_post = blog.map(post =>
-      post.data.video_link.length !== 0 ?
+   const last_post = blog_posts.map(post =>
+      post.data.video_url.length !== 0 ?
          <div className={style.last_post}
-            key={post.id} onClick={() => setVideoURL(post.data.video_link[0].text)}>
+            key={post.id} onClick={() => setVideoURL(post.data.video_url[0].text)}>
+            
             <div className={style.last_post_date}>
-            <p>
-               {formatPrismicDate(post.data.date)}
-            </p>
-         </div>
-            <img className={style.video_thumb} src={post.data.img.url} onClick={() => setShowModal(true)} />
-               {RichText.render(post.data.content_body)}
+               <p>
+                  {formatPrismicDate(post.data.date)}
+               </p>
+            </div>
+
+            <img className={style.video_thumb} src={post.data.title_image.url} onClick={() => setShowModal(true)} />
+            {RichText.render(post.data.post_body)}
          </div> :
          <div className={style.last_post} key={post.id}>
             <h3>{formatPrismicDate(post.data.date)}</h3>
-            <img src={post.data.img.url} />
-            {RichText.render(post.data.content_body)}
+            <img src={post.data.title_image.url} />
+            {RichText.render(post.data.post_body)}
          </div>
    )
    
-   const old_posts_links = blog.map(post => 
+   const old_posts_links = blog_posts.map(post => 
       <div className={style.old_post_link_container} key={post.id}>
          <div className={style.old_post_date}>
             <p>
@@ -69,8 +71,8 @@ export default function Blog(props) {
          <div className={style.old_post_link}>
             <Link href="blog/[id]" as={`/blog/${post.uid}`}>
                <a>
-                  {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}<br />
-                  {RichText.render(post.data.content_body.filter(item => item.type == 'heading4'))}
+                  {RichText.render(post.data.post_body.filter(item => item.type == 'heading3'))}<br />
+                  {RichText.render(post.data.post_body.filter(item => item.type == 'heading4'))}
                </a>
             </Link>
          </div>
@@ -104,16 +106,16 @@ export default function Blog(props) {
 }
 
 export async function getStaticProps() {
-   const content = await client.query(
-      Prismic.Predicates.at("document.type", "content"),
+   const blog = await client.query(
+      Prismic.Predicates.at("document.type", "blog_post"),
       {
-         orderings: '[my.content.date desc]',
+         orderings: '[my.blog_post.date desc]',
          pageSize: 100
       }
    );
    return {
       props: {
-         content
+         blog
       }
    };
 }

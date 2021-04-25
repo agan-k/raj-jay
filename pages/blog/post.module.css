@@ -6,7 +6,23 @@
 }
 .container article {
    margin: 2rem auto;
+   width: 70%;
+   /* background-color: red; */
 }
+   .container article .video_thumb {
+      opacity: .8;
+      cursor: pointer;
+      width: 98%;
+      display: block;
+   }
+   .container article .video_thumb:hover {
+      opacity: 1;
+   }
+   .container main img {
+      max-height: 13rem;
+      display: block;
+      margin: 0 auto;
+   }
 .post_date p  {
    font-size: .9rem;
    font-style: italic;
@@ -14,5 +30,24 @@
    font-weight: 600;
 }
 @media (max-width: 600px) {
-   
+   .container {
+      max-width: 100%;
+   }
+      .container article {
+         margin: 2rem auto;
+         width: 100%;
+         /* background-color: red; */
+      }
+         .container article .video_thumb {
+            opacity: .8;
+            cursor: pointer;
+            width: 100%;
+            display: block;
+         }
+
+      .container main img {
+         max-height: 10rem;
+         display: block;
+         margin: 0 auto;
+      }
 }
