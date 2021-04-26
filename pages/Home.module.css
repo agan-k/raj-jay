@@ -14,13 +14,13 @@
    font-size: .8rem;
    color: white;
 }
-.quotes_mobile {
-   display: none;
-}
 .quotes p {
    color: rgb(230, 230, 230);
    font-size: .7rem;
    line-height: .9rem;
+}
+.quotes_mobile {
+   display: none;
 }
 
 
@@ -99,6 +99,9 @@
 }
 
 @media (max-width: 600px) {
+   .container {
+      padding: 0;
+   }
    .banner {
       width: 100%;
    }
@@ -108,6 +111,7 @@
    }
    .quotes_mobile {
       display: block;
+      margin-left: 1%;
    }
    .quotes_mobile p {
       margin: .5rem;
@@ -118,9 +122,16 @@
    .grid {
     width: 100%;
     flex-direction: column;
+    border: none;
   }
   .card {
      opacity: 1;
      margin: 0;
+     padding: .5rem;
   }
+
+.card p {
+   text-align: justify;
+   font-size: .8rem;
+ }
 }
