@@ -50,8 +50,15 @@
             opacity: 1;
             transition: .2s;
          }
+         .last_post .title_image {
+            max-height: 10rem;
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+         }
          .last_post img {
             max-height: 10rem;
+            max-width: 100%;
             display: block;
             margin: 0 auto;
          }
@@ -104,6 +111,17 @@
    }
    .posts_container {
       /* display: inline-block; */
+   }
+   .last_post .last_post_date p {
+      display: block;
+      margin-bottom: 2rem;
+      text-align: center;
+   }
+   .last_post h3, .last_post h4 {
+      text-align: center;
+   }
+   .last_post p {
+      text-align: justify;
    }
    .old_posts_container {
       margin-top: 2rem;

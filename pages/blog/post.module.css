@@ -18,11 +18,17 @@
    .container article .video_thumb:hover {
       opacity: 1;
    }
+   .container article .title_image {
+      max-height: 13rem;
+      display: block;
+      margin: 0 auto;
+   }
    .container main img {
       max-height: 13rem;
       display: block;
       margin: 0 auto;
    }
+   
 .post_date p  {
    font-size: .9rem;
    font-style: italic;
@@ -36,18 +42,28 @@
       .container article {
          margin: 2rem auto;
          width: 100%;
-         /* background-color: red; */
       }
          .container article .video_thumb {
-            opacity: .8;
+            opacity: 1;
             cursor: pointer;
             width: 100%;
             display: block;
          }
+         .container article .post_date p {
+            display: block;
+            margin-bottom: 2rem;
+            text-align: center;
+         }
 
+      .container main h3, .container main h4 {
+      text-align: center;
+      }
       .container main img {
          max-height: 10rem;
          display: block;
          margin: 0 auto;
+      }
+      .container main p {
+         text-align: justify;
       }
 }
