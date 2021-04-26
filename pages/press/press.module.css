@@ -7,12 +7,16 @@
    justify-content: space-between;
 }
 
+.container h2 {
+   margin-bottom: 2rem;
+}
+
 .quoteS_container_mobile {
    display: none;
 }
 .quoteS_container {
    width: 50%;
-   margin-top: 3rem;
+   margin-top: 6rem;
 }
    .quote {
       margin-bottom: 2rem;
@@ -21,7 +25,7 @@
 
 .article_linkS_container {
    width: 35%;
-   margin-top: 3rem;
+   margin-top: 6rem;
 }
    .article_linkS_container ul {
       border-bottom: 1px solid rgb(241, 241, 241);

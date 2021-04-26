@@ -14,6 +14,16 @@ console.log(props)
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
 
+   const quotes = props.content.results.filter(result => 
+      result.data.press_quote.length !== 0
+   )
+
+   const random_index = Math.floor(Math.random() * quotes.length)
+   
+   function RandomQuote() {
+      // while i 
+   }
+
    function formatPrismicDate(date) {
       let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
          "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -68,10 +78,16 @@ console.log(props)
 
    return (
       <Layout>
+               <div className={style.quotes}>
+                  {RichText.render(quotes[random_index].data.press_quote)}
+               </div>
          <div className={style.container}>
             
             <main className={style.main}>
-               <img className={style.banner} src={'/images/home_banner.jpg'}/>
+               <img className={style.banner} src={'/images/home_banner.jpg'} />
+               <div className={style.quotes_mobile}>
+                  {RichText.render(quotes[random_index].data.press_quote)}
+               </div>
                <div className={style.grid}>
                   {news_cards}
                 </div>

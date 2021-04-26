@@ -4,7 +4,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* max-width: 900px; */
 }
+.quotes {
+   position: absolute;
+   top: 15%;
+   left: 17%;
+   width: 30%;
+   font-size: .8rem;
+   color: white;
+}
+.quotes_mobile {
+   display: none;
+}
+.quotes p {
+   color: rgb(230, 230, 230);
+   font-size: .7rem;
+   line-height: .9rem;
+}
+
+
 .banner {
    max-width: 900px;
 }
@@ -82,6 +101,19 @@
 @media (max-width: 600px) {
    .banner {
       width: 100%;
+   }
+   .quotes {
+      display: none;
+
+   }
+   .quotes_mobile {
+      display: block;
+   }
+   .quotes_mobile p {
+      margin: .5rem;
+      font-size: .6rem; 
+      line-height: .8rem;
+
    }
    .grid {
     width: 100%;

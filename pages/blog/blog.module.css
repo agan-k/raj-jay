@@ -23,18 +23,19 @@
    .posts_container {
       display: inline-block;
       width: 100%;
+      margin-top: 1rem;
    }
    .last_post_container {
          float: left;
          width: 45%;
    }
          .last_post_date  {
-            margin: 0;
+            margin: 0 auto;
          }
-            .last_post_date p  {
+            .last_post_container .last_post_date p  {
                font-size: .9rem;
                font-style: italic;
-               margin: 0 0 .5rem 0;
+               text-align: center;
                font-weight: 600;
             }
          .last_post .video_thumb {
@@ -62,14 +63,19 @@
             display: block;
             margin: 0 auto;
          }
+         .last_post h3, .last_post h4 {
+            display: block;
+            text-align: center;
+         }
          .last_post p {
             font-size: .8rem;
             letter-spacing: 1px;
+            text-align: justify;
          }
       /* ----------------- */
       .old_posts_container {
          float: right;
-         min-width: 40%;
+         width: 40%;
          height: min-content;
       }
          .old_post_link_container {
