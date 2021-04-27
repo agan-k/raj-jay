@@ -93,7 +93,7 @@ export default function Blog(props) {
    return (
       <Layout>
          <div className={showModal ? style['container_blur'] : style['container']}>
-         <h2>Blog</h2>
+            <h2>Blog</h2>
             <div className={style.posts_container}>
                <div className={style.last_post_container}>
                   {last_post.shift()}

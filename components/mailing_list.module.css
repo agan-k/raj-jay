@@ -30,6 +30,7 @@
 .form_label input::placeholder {
    color: rgb(175, 175, 175);
    font-style: italic;
+   padding-left: .3rem;
 }
 
 .container input:focus {
