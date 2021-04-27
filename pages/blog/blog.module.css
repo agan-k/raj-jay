@@ -1,5 +1,6 @@
 .container {
    max-width: 900px;
+   min-height: 80vh;
    padding: 0 0.5rem;
    margin: 0 auto;
    margin-top: 1rem;
@@ -108,7 +109,7 @@
                   font-size: .8rem;
                }
 
-   
+
 @media (max-width: 600px) {
    
    .old_post_link_container 
@@ -125,6 +126,9 @@
    }
    .last_post h3, .last_post h4 {
       text-align: center;
+   }
+   .last_post .video_thumb {
+      opacity: 1; /* important for z-index stacking*/
    }
    .last_post p {
       text-align: justify;

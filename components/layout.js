@@ -45,7 +45,7 @@ export default function Layout({ children }) {
            <link rel="icon" href="/favicon.ico" />
          </Head>
          <header className={style.header}>
-            <img src="/images/logo.png" style={{ height: '1.2rem'}} />
+            <img className={style.logo} src="/images/logo.png" />
             &nbsp;
             {router.pathname !== '/' ?
                <Link href='/'><h1>RajivJayaweera.com&nbsp;</h1></Link> :

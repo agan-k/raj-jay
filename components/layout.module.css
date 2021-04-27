@@ -4,7 +4,7 @@
 }
 
 .header {
-   max-width: 900px;
+   width: 100%;
    display: flex;
    margin: 0 auto;
    padding-top: .5rem;
@@ -12,6 +12,10 @@
    transition: .3s;
    
 }
+   .header .logo {
+      height: 1.2rem;
+      margin-left: .6rem;
+   }
    .header h1{
       width: min-content;;
       height: min-content;
@@ -125,19 +129,42 @@
    color: grey;
 }
 
+@media (max-width: 800px) {
+   .mailing_list {
+      /* display: none; */
+   }
+   .nav {
+      width: 35%;
+   }
+   .nav ul {
+      display: initial;
+   }
+  
+   .nav_container_open {
+      height: 16rem;
+   }
+   .mailing_list {
+      width: 65%;
+   }
+}
+
 @media (max-width: 600px) {
    
    .container {
       width: 100%;
+      background: white;
    }
    .header {
       position: fixed;
       min-height: 2rem;
       top: 0;
       right: 0;
-      width: 98%;
+      width: 100%;
       margin: 0;
-      
+   }
+   .header .logo {
+      height: 1.2rem;
+      margin-left: .3rem;
    }
 
    .nav_container, .nav_container_open {
