@@ -8,15 +8,15 @@ export default function MailingList() {
             <input type="hidden" name="form-name" value="contact" />
             <div className={style.form_label}>
                <label htmlFor="yourcity">
-               <span>City:</span><br />
+               {/* <span>City:</span><br /> */}
                </label>
-               <input type="text" name="city" id="yourcity" />
+               <input type="text" name="city" id="yourcity" placeholder="city" />
             </div>
             <div className={style.form_label}>
                <label htmlFor="youremail">
-               <span>Email:</span><br />
+               {/* <span>Email:</span><br /> */}
                </label>
-               <input type="email" name="email" id="youremail" />
+               <input type="email" name="email" id="youremail" placeholder="e-mail" />
             </div>
             {/* <br/> */}
             <div>
