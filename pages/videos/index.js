@@ -28,7 +28,7 @@ export default function Videos(props) {
    
    return (
       <Layout>
-         <div>
+         <div className={style.container}>
             <div className={style.gallery_container}>
                {gallery}
             </div>
