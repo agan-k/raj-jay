@@ -26,6 +26,7 @@ export default function Modal(props) {
    
       return (
          <div className={style.container} onClick={() => props.closeModal()}>
+            <div className={style.close_modal}> &nbsp;<span>&times;</span></div>
             {props.photos ?
                
                <div className={style.img_container}>
@@ -33,30 +34,19 @@ export default function Modal(props) {
                      className={style[`${getImgClassName(detail.img.dimensions)}_img`]}
                   />
                   {RichText.render(detail.photo_caption)}
-                  {/* <style jsx>{`
-                     .vertical_img {
-                        height: 70%;
-                        margin-top: 5%;
-                     }
-                     .horizontal_img {
-                        height: 50%;
-                        margin-top: 10%;
-                     }
-                     `}</style> */}
                </div> :
                (props.videos || props.news_card_video_url || props.blog_video_url) ?
                   <>
-                     <div className={style.close_modal}>close &nbsp;<span>&times;</span></div>
-               <div className={style.video_container}>
-                     <ReactPlayer
-                        className={style.react_player}
-                        url={detail}
-                        controls
-                        width="100%"
-                        height="100%"
-                     />
-                  </div></> : ''
-               
+                     <div className={style.video_container}>
+                           <ReactPlayer
+                              className={style.react_player}
+                              url={detail}
+                              controls
+                              width="100%"
+                              height="100%"
+                           />
+                     </div>
+                  </> : ''
             } 
          </div>
       )
