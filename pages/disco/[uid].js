@@ -13,9 +13,7 @@ export default function Album({ data }) {
    return (
       <Layout>
          <div className={style.container}>
-            <h1>&larr;
-               <Link href='/disco'><a>full discography</a></Link>
-            </h1>
+            <Link href="/disco"><h4 style={{cursor: "pointer"}}>&larr; &nbsp;<a>full discography</a></h4></Link>
             <main>
                <div className={style.album_info}>
                   <img src={data.img.url} style={{maxHeight: '10rem'}}/>

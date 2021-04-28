@@ -1,15 +1,41 @@
 .container {
-   font-size: .8rem;
    width: 100%;
+   margin: 0 auto;
+   border-left: 1px solid rgb(241, 241, 241);
+   border-right: 1px solid rgb(241, 241, 241);
+   padding: 3rem .5rem; 
+   transition: .3s;
 }
 .container main {
-   width: 70%;
+   width: 100%;
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    margin: 0 auto;
+   /* font-weight: 100; */
+}
+.container main h4 {
+   font-size: 1rem;
+   font-weight: 100;
+   
+}
+.container main p {
+   font-size: .8rem;
+   line-height: 1rem;
+   letter-spacing: 1px;
+   margin: .3rem 0;
+}
+.container main ul {
+   font-weight: 100;
+   letter-spacing: 1px;
+}
+.album_info {
+   width: 40%;
+   margin-right: 10%;
 }
 .album_info img {
    border: 1px solid rgb(212, 212, 212)
+}
+.container main .audio-player {
 }
 
 .container ul {
