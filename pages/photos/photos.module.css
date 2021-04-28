@@ -97,4 +97,22 @@
 }
 /* +++++ img mask end +++++ */
 
-
+@media (max-width: 600px) {
+   
+   .container * {
+      filter: none;
+      opacity: 1;
+   }
+   .gallery_container {
+      /* display: initial; */
+      justify-content: center;
+      margin-top: 1rem;
+      
+   }
+   .photo_container {
+      width: 18rem;
+      height: 18rem;
+      
+      
+   }
+}
