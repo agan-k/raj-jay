@@ -28,7 +28,8 @@
    background: rgb(245, 245, 245);
 }
 .form_label input::placeholder {
-   color: rgb(175, 175, 175);
+   color: rgb(195, 195, 195);
+   font-size: .7rem;
    font-style: italic;
    padding-left: .3rem;
 }

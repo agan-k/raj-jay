@@ -1,16 +1,18 @@
 .container {
-   max-width: 900px;
-   display: flex;
-   justify-content: space-between;
-   padding: 4rem 0.5rem;
+   width: 100%;
+   /* display: flex; */
+   /* justify-content: space-between; */
+   /* padding: 4rem 0.5rem; */
    margin: 0 auto;
+   border-left: 1px solid rgb(241, 241, 241);
+   border-right: 1px solid rgb(241, 241, 241);
    transition: .3s;
 }
 .container_blur {
-   max-width: 900px;
-   display: flex;
+   width: 100%;
+   /* display: flex;
    justify-content: space-between;
-   padding: 4rem 0.5rem;
+   padding: 4rem 0.5rem; */
    margin: 0 auto;
    transition: .3s;
 
@@ -22,22 +24,36 @@
    background-color: none;
 }
 .gallery_container {
-   width: 80%;
+   width: 100%;
    display: flex;
+   justify-content: center;
+   /* align-items: center; */
    flex-wrap: wrap;
-   /* margin: 1rem auto; */
-   /* justify-content: space-between ; */
-   /* background: honeydew; */
+   margin-top: 3rem;
 }
 .photo_container {
-   height: 9rem;
-   width: 9rem;
+   height: 15rem;
+   width: 15rem;
    text-align: center;
-   /* background: yellow; */
+   opacity: .8;
+   transition: .2s;
+   filter: grayscale(100%);
+}
+.photo_container:hover {
+   
+   
+   filter: grayscale(20%);
+   /* filter: none; */
+   opacity: 1;
+   transition: .2s;
 }
 .photo_container img {
    cursor: pointer;
 }
+.photo_container img:hover {
+      cursor: pointer;
+   }
+
 /* +++++++ img mask +++++++ */
 .mask_toggle {
    width: min-content;
@@ -49,24 +65,34 @@
    height: 100%;
    width: 100%;
    overflow: hidden;
+   background:white;
 }
 .img_mask .vertical_img {
    height: 150%;
 }
+.img_mask .vertical_img:hover {
+   height: 80%;
+   margin-top: 10%;
+}
 .img_mask .horizontal_img {
-   height: 100%;
+   height: 110%;
+}
+.img_mask .horizontal_img:hover {
+   height: 55%;
+   margin-top: 20%;
 }
 /* -----   -  --   -  ---- */
 .img_unmask {
    height: 100%;
    width: 100%;
+   background: black;
 }
 .img_unmask .vertical_img {
    height: 90%;
    margin-top: 5%;
 }
 .img_unmask .horizontal_img {
-   height: 60%;
+   height: 50%;
    margin-top: 20%
 }
 /* +++++ img mask end +++++ */

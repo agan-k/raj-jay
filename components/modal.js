@@ -26,7 +26,6 @@ export default function Modal(props) {
    
       return (
          <div className={style.container} onClick={() => props.closeModal()}>
-            <div className={style.close_modal}>close &nbsp;<span>&times;</span></div>
             {props.photos ?
                
                <div className={style.img_container}>
@@ -43,10 +42,12 @@ export default function Modal(props) {
                         height: 50%;
                         margin-top: 10%;
                      }
-                  `}</style>
+                     `}</style>
                </div> :
                (props.videos || props.news_card_video_url || props.blog_video_url) ?
-                  <div className={style.video_container}>
+                  <>
+                     <div className={style.close_modal}>close &nbsp;<span>&times;</span></div>
+               <div className={style.video_container}>
                      <ReactPlayer
                         className={style.react_player}
                         url={detail}
@@ -54,7 +55,7 @@ export default function Modal(props) {
                         width="100%"
                         height="100%"
                      />
-                  </div> : ''
+                  </div></> : ''
                
             } 
          </div>

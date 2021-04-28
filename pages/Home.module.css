@@ -89,17 +89,21 @@
 .card img {
    width: 100%;
 }
+.card h3 {
+   font-size: 1.2rem;
+   margin: .5rem 0;
+}
 
 .card p {
   margin: 0;
   font-size: .8rem;
 }
 .card .date {
-   text-align: right;
-   font-style: italic;
-   font-size: .8rem;
+   /* text-align: right; */
+   /* font-style: italic; */
+   font-size: 1rem;
    font-weight: 700;
-   margin-bottom: 1rem;
+   margin-bottom: .5rem;
 }
 .card .arrow {
    display: block;
@@ -148,12 +152,15 @@
    }
    .quotes_mobile {
       display: block;
-      margin-left: 1%;
+      /* margin-left: 1%; */
+      background: rgb(0, 0, 0);
+      padding: .5rem;
+      text-align: center;
    }
    .quotes_mobile p {
-      margin: .5rem;
-      font-size: .6rem; 
+      font-size: .7rem; 
       line-height: .8rem;
+      color: rgb(170, 170, 170);
 
    }
    .grid {
@@ -163,7 +170,7 @@
   }
   .card {
      opacity: 1;
-     margin: 2rem 0;
+     margin: 0;
      padding: .5rem;
      /* border-top: 1px solid rgb(235, 235, 235); */
   }
