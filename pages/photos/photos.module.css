@@ -95,8 +95,19 @@
       
    }
    .photo_container {
-      width: 18rem;
-      height: 18rem;
+      width: 6rem;
+      height: 6rem;
+   }
+   @media (orientation: landscape) {
+      .gallery_container {
+         margin-top: 1rem;
+         
+      }
+      .photo_container {
+         width: 16rem;
+         height: 16rem;
+      }
+
    }
    /* ---- - disable :hover - --- */
    .img_mask .vertical_img:hover {

@@ -8,47 +8,72 @@
    background: rgba(0, 0, 0, 0.794);
    z-index: 998;
 }
-.close_modal {
-   background: black;
-   text-align: center;
-   padding: 1rem 1rem;
-   cursor: pointer;
-   z-index: 1000;
-}
-   .close_modal span {
-      font-size: 2rem;
-      vertical-align: sub;
+   .close_modal {
+      background: black;
+      text-align: center;
+      padding: 1rem 1rem;
+      cursor: pointer;
+      z-index: 1000;
    }
-.img_container {
-   width: 100%;
-   height: 100%;
-   margin: 0 auto;
-   text-align: center;
-}
-.img_container p {
-   color: rgb(161, 161, 161);
-   font-weight: 100;
-   font-size: .7rem;
-   font-style: italic;
-   margin: 0;
-   /* background: black; */
-   width: 100%;
-}
-.video_container {
-   position: relative;
-   padding-top: 50.25% /* Player ratio: 100 / (1280 / 720) */
-   /* max-width: 100%; */
-   /* display: flex;
-   justify-content: center; */
-   /* margin: 5% auto; */
-}
-.react_player {
-   position: absolute;
-   top: 0;
-   left: 0;
- }
+      .close_modal span {
+         font-size: 2rem;
+         vertical-align: sub;
+      }
+
+   .img_container {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+   }
+      .vertical_img {
+         height: 70%;
+         margin-top: 5%;
+      }
+      .horizontal_img {
+         height: 50%;
+         margin-top: 10%;
+      }
+      .img_container p {
+         color: rgb(161, 161, 161);
+         font-weight: 100;
+         font-size: .7rem;
+         font-style: italic;
+         margin: 0;
+         width: 100%;
+      }
+   .video_container {
+      position: relative;
+      padding-top: 50.25% /* Player ratio: 100 / (1280 / 720) */
+      /* max-width: 100%; */
+      /* display: flex;
+      justify-content: center; */
+      /* margin: 5% auto; */
+   }
+      .react_player {
+         position: absolute;
+         top: 0;
+         left: 0;
+      }
  @media (max-width: 600px) {
     
-   
+   .img_container .vertical_img {
+      height: 70%;
+      margin-top: 5%;
+   }
+   .img_container .horizontal_img {
+      height: 35%;
+      margin-top: 10%;
+   }
+   @media (orientation: landscape) {
+      .img_container .vertical_img {
+         height: 82%;
+         margin-top: 2%;
+      }
+      .img_container .horizontal_img {
+         height: 84%;
+         margin-top: 1%;
+      }
+   }
    
 }

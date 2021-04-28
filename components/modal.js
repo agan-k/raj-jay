@@ -30,10 +30,10 @@ export default function Modal(props) {
                
                <div className={style.img_container}>
                   <img src={detail.img.url}
-                     className={`${getImgClassName(detail.img.dimensions)}_img`}
+                     className={style[`${getImgClassName(detail.img.dimensions)}_img`]}
                   />
                   {RichText.render(detail.photo_caption)}
-                  <style jsx>{`
+                  {/* <style jsx>{`
                      .vertical_img {
                         height: 70%;
                         margin-top: 5%;
@@ -42,7 +42,7 @@ export default function Modal(props) {
                         height: 50%;
                         margin-top: 10%;
                      }
-                     `}</style>
+                     `}</style> */}
                </div> :
                (props.videos || props.news_card_video_url || props.blog_video_url) ?
                   <>
