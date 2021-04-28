@@ -4,6 +4,7 @@
    margin: 0 auto;
    border-left: 1px solid rgb(241, 241, 241);
    border-right: 1px solid rgb(241, 241, 241);
+   padding-top: 3rem;
    transition: .3s;
 }
 
@@ -13,7 +14,6 @@
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
-   margin-top: 3rem;
 }
 .video_container img {
    width: 17rem;

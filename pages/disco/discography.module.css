@@ -1,13 +1,17 @@
 .container {
    width: 100%;
    margin: 0 auto;
+   border-left: 1px solid rgb(241, 241, 241);
+   border-right: 1px solid rgb(241, 241, 241);
+   transition: .3s;
+   padding-top: 3rem;
 }
 .gallery_container {
+   width: 100%;
    display: flex;
-   flex-wrap: wrap;
-   justify-items: center;
    justify-content: center;
-   /* background: yellow; */
+   flex-wrap: wrap;
+   /* margin-top: 3rem; */
 }
 .album_container {
    height: 10rem;
@@ -23,4 +27,15 @@
 .album_container img:hover {
    opacity: 1;
    transition: .4s;
+}
+@media (max-width: 600px) {
+   .gallery_container {
+      justify-content: center;
+   }
+   .album_container {
+      height: 18rem;
+   }
+   .album_container img {
+      opacity: 1;
+   }
 }
