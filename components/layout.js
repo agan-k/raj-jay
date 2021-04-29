@@ -52,11 +52,11 @@ export default function Layout({ children }) {
                <><h1>RajivJayaweera.com</h1>&nbsp;</>
             }
 
-            <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
+            {/* <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
                <div className={!navShow ? style['open_icon'] : style['close_icon']}>
-                  
+               
                </div>
-            </div>
+            </div> */}
 
             <div className={navShow ? style['nav_container_open'] : style['nav_container']}>
                <span className={style.close_nav_container} onClick={() => setNavShow(!navShow)}>&times;</span>
@@ -69,6 +69,11 @@ export default function Layout({ children }) {
                <div className={style.mailing_list}>
                   <p>mailing list:</p>
                   <MailingList />
+               </div>
+            </div>
+            <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
+               <div className={!navShow ? style['open_icon'] : style['close_icon']}>
+                  
                </div>
             </div>
             
