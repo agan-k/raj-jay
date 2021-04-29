@@ -45,37 +45,34 @@ export default function Layout({ children }) {
            <link rel="icon" href="/favicon.ico" />
          </Head>
          <header className={style.header}>
-            <img className={style.logo} src="/images/logo.png" />
-            &nbsp;
-            {router.pathname !== '/' ?
-               <Link href='/'><h1>RajivJayaweera.com&nbsp;</h1></Link> :
-               <><h1>RajivJayaweera.com</h1>&nbsp;</>
-            }
-
-            {/* <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
-               <div className={!navShow ? style['open_icon'] : style['close_icon']}>
-               
-               </div>
-            </div> */}
+            <div className={style.logo}>
+               <img src="/images/logo.png" />
+               &nbsp;
+               {router.pathname !== '/' ?
+                  <Link href='/'><h1>RajivJayaweera.com&nbsp;</h1></Link> :
+                  <><h1>RajivJayaweera.com</h1>&nbsp;</>
+               }
+            </div>
 
             <div className={navShow ? style['nav_container_open'] : style['nav_container']}>
-               <span className={style.close_nav_container} onClick={() => setNavShow(!navShow)}>&times;</span>
                <div className={style.nav}>
                   <ul>
                      {links}
                   </ul>
                </div>
 
+               <div className={style.social_icons}>
+                  
+               </div>
                <div className={style.mailing_list}>
                   <p>mailing list:</p>
                   <MailingList />
                </div>
-            </div><div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
+            </div>
+            <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
                <div className={!navShow ? style['open_icon'] : style['close_icon']}>
-                  
                </div>
             </div>
-            
             
          </header>
          <main className={style['main']}>
