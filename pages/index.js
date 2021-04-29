@@ -78,17 +78,11 @@ console.log(props)
 
    return (
       <Layout>
-               {/* <div className={style.quotes}>
-                  {RichText.render(quotes[random_index].data.press_quote)}
-               </div> */}
          <div className={style.container}>
-            
+               <div className={style.quotes}>
+                  {RichText.render(quotes[random_index].data.press_quote)}
+               </div>
             <main className={style.main}>
-               {/* <div className={style.banner2}>
-                  <div className={style.quotes2}>
-                     {RichText.render(quotes[random_index].data.press_quote)}
-                  </div>
-               </div> */}
                <img className={style.banner} src={'/images/home_banner.jpg'} />
                <div className={style.quotes_mobile}>
                   {RichText.render(quotes[random_index].data.press_quote)}
