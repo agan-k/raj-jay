@@ -40,7 +40,7 @@
       transition: .3s;
    }
    .nav_container_open {
-      height: 6rem;
+      height: 8.5rem;
       /* border-right: 1px solid rgb(243, 243, 243); */
       transition: .3s;
    }
@@ -71,7 +71,7 @@
       width: 50%;
       margin-top: 1.5rem;
       padding: 0 1rem;
-      border-right: 1px solid rgb(243, 243, 243);
+      
    }
       .nav ul {
          height: 4rem;
@@ -90,7 +90,7 @@
             }
             .nav a {
                letter-spacing: .1rem;
-               font-size: .8rem;
+               font-size: .6rem;
                font-weight: 100;
                text-transform: lowercase;
                color: grey;
@@ -101,25 +101,65 @@
                background: black;
                color: white;
             }
-
-      .mailing_list {
+        
+      .nav_aux {
          width: 35%;
-         margin: 1.5rem 1rem 0 2rem;
          height: min-content;
-         transition: .2s;
+         margin: 1.3rem 0 0 0;
+         padding-left: 2rem;
+         border-left: 1px solid rgb(243, 243, 243);
       }
-      .mailing_list:hover {
+      .nav_aux img {
+         height: 1.7rem;
+         padding: .3rem;
+         opacity: .7;
+         cursor: pointer;
+      }
+      .nav_aux img:hover {
          opacity: 1;
-         transition: .2s;
       }
-      .mailing_list p {
-         font-size: .8rem;
-         line-height: .6rem;
-         letter-spacing: .1rem;
-         padding: .1rem;
-         margin: .2rem 0;
-         color: grey;
-      }
+         .nav_aux p {
+            font-size: .6rem;
+            line-height: .6rem;
+            vertical-align: sub;
+            letter-spacing: .1rem;
+            padding: .1rem;
+            margin: .5rem 0 0 0;
+            color: grey;
+         }
+         .social_icons {
+            width: 100%;
+            display: flex;
+         }
+         .social_icons img {
+         }
+         .media_kit {
+            display: flex;
+            width: 100%;
+         }
+         .media_kit img {
+         }
+
+         .mailing_list {
+            width: 100%;
+            /* margin-top: .3rem; */
+            /* margin: 1.5rem 1rem 0 2rem; */
+            /* height: min-content; */
+            transition: .2s;
+         }
+         .mailing_list:hover {
+            opacity: 1;
+            transition: .2s;
+         }
+         .mailing_list p {
+            /* font-size: .8rem;
+            line-height: .6rem;
+            letter-spacing: .1rem;
+            padding: .1rem;
+            margin: .2rem 0;
+            color: grey; */
+         }
+         
 
 .footer {
    display: flex;

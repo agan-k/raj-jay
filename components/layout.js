@@ -60,13 +60,27 @@ export default function Layout({ children }) {
                      {links}
                   </ul>
                </div>
-
-               <div className={style.social_icons}>
-                  
-               </div>
-               <div className={style.mailing_list}>
-                  <p>mailing list:</p>
-                  <MailingList />
+               <div className={style.nav_aux}>
+                  <div className={style.social_icons}>
+                     <p>social:</p>
+                     <Link href="https://www.instagram.com/euroraj/">
+                        <img src="/icons/instagram.png" />
+                     </Link>
+                     <Link href="https://www.facebook.com/rajivjayaweera/">
+                        <img src="/icons/facebook.png" />
+                     </Link>
+                     <Link href="https://youtube.com/user/euroraj/videos">
+                        <img src="/icons/youtube.png" />
+                     </Link>
+                  </div>
+                  <div className={style.media_kit}>
+                     <p>media kit:</p>
+                     <img src="/icons/google drive.png" />
+                  </div>
+                  <div className={style.mailing_list}>
+                     <p>mailing list:</p>
+                     <MailingList />
+                  </div>
                </div>
             </div>
             <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>

@@ -1,4 +1,5 @@
 .container {
+   margin-top: .3rem;
 }
 
 .container form {
@@ -29,7 +30,7 @@
 }
 .form_label input::placeholder {
    color: rgb(195, 195, 195);
-   font-size: .7rem;
+   font-size: .6rem;
    font-style: italic;
    padding-left: .3rem;
 }
@@ -40,14 +41,14 @@
 }
 
 .container button {
-   margin: 0 0 0 0;
-   font-size: .8rem;
+   margin: 0;
+   font-size: .6rem;
    letter-spacing: .1rem;
    color: white;
    border: 0;
    text-transform: lowercase;
-   padding: .4rem;
-   background: rgb(155, 155, 155);
-   border-radius: 5px;
+   padding: .3rem;
+   background: rgba(0, 0, 0, 0.6);
+   border-radius: 4px;
    cursor: pointer;
 }
