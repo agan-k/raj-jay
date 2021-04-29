@@ -59,7 +59,7 @@ export default function Layout({ children }) {
             </div>
 
             <div className={navShow ? style['nav_container_open'] : style['nav_container']}>
-              
+               <span className={style.close_nav_container} onClick={() => setNavShow(!navShow)}>&times;</span>
                <div className={style.nav}>
                   <ul>
                      {links}

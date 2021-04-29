@@ -33,7 +33,7 @@ a:hover {
 
 @media (max-width: 600px) {
    body {
-      padding-top: 2rem;
+      /* padding-top: 2rem; */
    }
    .active_nav_links {
       display: none;

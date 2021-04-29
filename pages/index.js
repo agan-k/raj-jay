@@ -101,12 +101,13 @@ console.log(props)
                <Link href="https://pistils.bandcamp.com/album/pistils">
                   <p><a>buy / listen &rarr;</a></p>
                </Link>
-               </div>
+            </div>
             <main className={style.main}>
                <img className={style.banner} src={'/images/home_banner.jpg'} />
                {/* <div className={style.quotes_mobile}>
                   {RichText.render(quotes[mobile_quote_index].data.press_quote)}
                </div> */}
+               <h2>News</h2>
                <div className={style.grid}>
                   {news_cards}
                 </div>
