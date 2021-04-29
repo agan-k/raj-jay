@@ -28,7 +28,7 @@ console.log(props)
    console.log(quotes)
 
    
-   const random_index = Math.floor(Math.random() * quotes.length);
+   const mobile_quote_index = Math.floor(Math.random() * quotes.length);
   
 
    
@@ -90,8 +90,8 @@ console.log(props)
 
          <div className={style.container}>
             <div
-               // className={style.quotes}
-               className={randomQuoteIndex ? style['quotes_fade'] : style['quotes']}
+               className={style.quotes_fade}
+               // className={randomQuoteIndex ? style['quotes_fade'] : ''}
             >
                   {RichText.render(quotes[randomQuoteIndex].data.press_quote)}
                </div>
@@ -104,9 +104,9 @@ console.log(props)
                </div>
             <main className={style.main}>
                <img className={style.banner} src={'/images/home_banner.jpg'} />
-               <div className={style.quotes_mobile}>
-                  {/* {RichText.render(quotes[random_index].data.press_quote)} */}
-               </div>
+               {/* <div className={style.quotes_mobile}>
+                  {RichText.render(quotes[mobile_quote_index].data.press_quote)}
+               </div> */}
                <div className={style.grid}>
                   {news_cards}
                 </div>
