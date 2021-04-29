@@ -13,9 +13,29 @@
    top: 2rem;
    left: 2rem;
    width: 40%;
-   font-size: .8rem;
+   
 }
+
+.quotes_fade {
+   position: absolute;
+   top: 2rem;
+   left: 2rem;
+   width: 40%;
+   animation: quote_fade 10s infinite;
+}
+@keyframes quote_fade {
+   0% {opacity: 0;}
+   50% {opacity: 1;}
+   75% {opacity: 1;}
+   100% {opacity: 0;}
+}
+
 .quotes p {
+   color: rgb(221, 221, 221);
+   font-size: .7rem;
+   line-height: .9rem;
+}
+.quotes_fade p {
    color: rgb(221, 221, 221);
    font-size: .7rem;
    line-height: .9rem;
@@ -23,6 +43,54 @@
 .quotes_mobile {
    display: none;
 }
+.cta_buy_album {
+   position: absolute;
+   justify-content: space-between;
+   top: 10rem;
+   right: 7rem;
+   height: min-content;
+   width: 9rem;
+   font-size: .8rem;
+   
+}
+.cta_buy_album img {
+   height: 9rem;
+   /* transform: rotate(-2deg); */
+   /* box-shadow: 0px 4px 33px 3px rgb(124, 105, 54); */
+}
+.cta_buy_album p {
+   font-size: .7rem;
+   /* font-weight: 500; */
+   /* display: flex; */
+   /* height: 1rem; */
+   justify-content: center;
+   align-items: center;
+   color: rgb(175, 175, 175);
+   text-align: center;
+   margin: 0;
+   /* margin-bottom: 1rem; */
+   line-height: .8rem;
+   margin: .5rem auto 1.5rem;
+}
+.cta_buy_album a {
+   font-weight: 500;
+   color: rgb(192, 192, 192);
+   padding: .7rem .5rem;
+   /* border-radius: 5px; */
+   cursor: pointer;
+   /* border: 1px solid rgb(192, 192, 192); */
+   /* background: rgb(196, 1, 1); */
+   transition: .2s;
+   background: rgb(235, 235, 235);
+   color: black;
+   
+}
+.cta_buy_album a:hover {
+   background: rgb(65, 62, 62);
+   color: white;
+   transition: .2s;
+}
+
 
 
 .banner {
@@ -49,19 +117,19 @@
 }
 
 .grid {
-   border-left: 1px solid rgb(241, 241, 241);
-   border-right: 1px solid rgb(241, 241, 241);
+   width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
-   width: 100%;
+   border-left: 1px solid rgb(241, 241, 241);
+   border-right: 1px solid rgb(241, 241, 241);
 }
 
 .card {
    font-weight: 100;
-   min-height: 25rem;
-   margin: 1rem;
+   min-height: min-content;
+   margin: 1rem ;
    flex-basis: 28%;
    padding: 1rem;
    text-align: left;
@@ -173,8 +241,9 @@
   }
   .card {
      opacity: 1;
-     margin: 0;
+     margin: 2rem 0 0 0;
      padding: .5rem;
+     min-height: min-content;
      /* border-top: 1px solid rgb(235, 235, 235); */
   }
 

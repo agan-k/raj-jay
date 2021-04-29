@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 import Prismic from "prismic-javascript"
@@ -13,16 +13,25 @@ export default function Home(props) {
 console.log(props)
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
+   const [randomQuoteIndex, setRandomQuoteIndex] = useState(6)
+
+   useEffect(() => {
+      const index = setInterval(() => {
+        setRandomQuoteIndex(randomQuoteIndex => Math.floor(Math.random() * quotes.length));
+      },10000);
+      return () => clearInterval(index);
+    }, []);
 
    const quotes = props.content.results.filter(result => 
       result.data.press_quote.length !== 0
    )
+   console.log(quotes)
 
-   const random_index = Math.floor(Math.random() * quotes.length)
    
-   function RandomQuote() {
-      // while i 
-   }
+   const random_index = Math.floor(Math.random() * quotes.length);
+  
+
+   
 
    function formatPrismicDate(date) {
       let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
@@ -78,14 +87,25 @@ console.log(props)
 
    return (
       <Layout>
+
          <div className={style.container}>
-               <div className={style.quotes}>
-                  {RichText.render(quotes[random_index].data.press_quote)}
+            <div
+               // className={style.quotes}
+               className={randomQuoteIndex ? style['quotes_fade'] : style['quotes']}
+            >
+                  {RichText.render(quotes[randomQuoteIndex].data.press_quote)}
+               </div>
+               <div className={style.cta_buy_album}>
+               <img src={'/images/cta_buy_album.jpg'} />
+               <p>new album Pistils<br/> out now!</p>
+               <Link href="https://pistils.bandcamp.com/album/pistils">
+                  <p><a>buy / listen &rarr;</a></p>
+               </Link>
                </div>
             <main className={style.main}>
                <img className={style.banner} src={'/images/home_banner.jpg'} />
                <div className={style.quotes_mobile}>
-                  {RichText.render(quotes[random_index].data.press_quote)}
+                  {/* {RichText.render(quotes[random_index].data.press_quote)} */}
                </div>
                <div className={style.grid}>
                   {news_cards}
