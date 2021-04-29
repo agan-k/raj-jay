@@ -70,12 +70,12 @@ export default function Layout({ children }) {
                   <p>mailing list:</p>
                   <MailingList />
                </div>
-            </div>
-            <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
+            </div><div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
                <div className={!navShow ? style['open_icon'] : style['close_icon']}>
                   
                </div>
             </div>
+            
             
          </header>
          <main className={style['main']}>
