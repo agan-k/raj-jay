@@ -1,5 +1,5 @@
 .container {
-   width: 80%;
+   width: 70%;
    margin: 0 auto;
 }
 
@@ -39,7 +39,7 @@
    }
    .nav_container_open {
       height: 6rem;
-      border-right: 1px solid rgb(243, 243, 243);
+      /* border-right: 1px solid rgb(243, 243, 243); */
       transition: .3s;
    }
    .nav_toggle {
@@ -63,7 +63,7 @@
       width: 50%;
       margin-top: 1.5rem;
       padding: 0 1rem;
-      border-left: 1px solid rgb(243, 243, 243);
+      /* border-left: 1px solid rgb(243, 243, 243); */
       border-right: 1px solid rgb(243, 243, 243);
    }
       .nav ul {
@@ -124,7 +124,7 @@
    color: grey;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1025px) {
    .container {
       width: 95%;
    }

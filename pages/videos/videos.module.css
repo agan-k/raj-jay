@@ -2,8 +2,8 @@
    width: 100%;
    min-height: 70vh;
    margin: 0 auto;
-   border-left: 1px solid rgb(241, 241, 241);
-   border-right: 1px solid rgb(241, 241, 241);
+   /* border-left: 1px solid rgb(241, 241, 241);
+   border-right: 1px solid rgb(241, 241, 241); */
    padding-top: 3rem;
    transition: .3s;
 }
@@ -16,7 +16,7 @@
    flex-wrap: wrap;
 }
 .video_container img {
-   width: 17rem;
+   width: 15rem;
    margin: 1rem 1rem 0 1rem;
    cursor: pointer;
    opacity: .7;
@@ -30,6 +30,17 @@
    margin: 0 0 0 1rem;
    color: grey;
    font-weight: 100;
+}
+/* @media (max-width: 800px) {
+   .video_container img {
+      width: 12rem;
+   }
+} */
+@media (max-width: 1025px) {
+   .video_container img {
+      width: 12rem;
+   }
+   
 }
 @media (max-width: 600px) {
    .video_container img {

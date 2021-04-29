@@ -8,32 +8,10 @@
    background: rgba(0, 0, 0, 0.794);
    z-index: 998;
 }
-   .img_container {
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      text-align: center;
-   }
-      .vertical_img {
-         height: 70%;
-         margin-top: 5%;
-      }
-      .horizontal_img {
-         height: 50%;
-         margin-top: 10%;
-      }
-      .img_container p {
-         color: rgb(161, 161, 161);
-         font-weight: 100;
-         font-size: .7rem;
-         font-style: italic;
-         margin: 0;
-         width: 100%;
-      }
 
    .close_modal {
       text-align: right;
-      padding: 2rem;
+      padding: 1rem 2rem;
       cursor: pointer;
       z-index: 1000;
    }
@@ -42,6 +20,29 @@
          font-weight: 100;
          color: grey;
          vertical-align: sub;
+      }
+
+   .img_container {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+   }
+      .vertical_img {
+         height: 80%;
+         margin-top: 0;
+      }
+      .horizontal_img {
+         height: 70%;
+         margin-top: 0;
+      }
+      .img_container p {
+         color: rgb(161, 161, 161);
+         font-weight: 100;
+         font-size: .7rem;
+         font-style: italic;
+         margin: 0;
+         width: 100%;
       }
 
    .video_container {
@@ -57,27 +58,29 @@
       }
 
  @media (max-width: 800px) {
-
-   @media (orientation: portrait) {
-      .close_modal {
-         color: rgb(201, 201, 201);
-         background: none;
-         text-align: right;
-         /* margin-bottom: 20%; */
-         padding: 2rem 3rem;
-      }
-      .video_container {
-        position: relative;
-        padding-top: 45.25%; /* Player ratio: 100 / (1280 / 720) */
-        width: 85%;
-        margin: 0 auto;
-     }
-        .react_player {
-           position: absolute;
-           top: 0;
-           left: 0;
-        }
+   
+   .close_modal {
+      color: rgb(201, 201, 201);
+      background: none;
+      text-align: right;
+      /* margin-bottom: 20%; */
+      padding: 1rem 2rem;
    }
+   .horizontal_img {
+      height: 45%;
+      margin-top: 0;
+   }
+   .video_container {
+     position: relative;
+     padding-top: 45.25%; /* Player ratio: 100 / (1280 / 720) */
+     width: 85%;
+     margin: 0 auto;
+   } 
+     .react_player {
+        position: absolute;
+        top: 0;
+        left: 0;
+     }
 }
 
 @media (max-width: 1025px) {
@@ -86,8 +89,13 @@
       background: none;
       text-align: right;
       /* margin-bottom: 3%; */
-      padding: 2rem 3rem;
+      padding: 1rem 2rem;
    }
+   .vertical_img {
+      height: 80%;
+      margin-top: 0;
+   }
+   
    .video_container {
      position: relative;
      padding-top: 50.25%; /* Player ratio: 100 / (1280 / 720) */
@@ -95,11 +103,12 @@
      margin: 0 auto;
   }
 }
+
  @media (max-width: 600px) {
     
    .img_container .vertical_img {
-      height: 70%;
-      margin-top: 5%;
+      height: 80%;
+      margin-top: 1%;
    }
    .img_container .horizontal_img {
       height: 35%;
@@ -107,31 +116,32 @@
    }
    .close_modal {
       text-align: right;
-      padding: 1rem 2rem;
-      margin-bottom: 20%;
+      padding: 0 .5rem;
+      margin-bottom: 0;
    }
    .video_container {
       position: relative;
       padding-top: 50.25%; /* Player ratio: 100 / (1280 / 720) */
       width: 95%;
-      margin: 0 auto;
+      margin: 35% auto;
    }
    @media (orientation: landscape) {
-      
-      .img_container .vertical_img {
-         height: 82%;
-         margin-top: 2%;
-      }
-      .img_container .horizontal_img {
-         height: 84%;
-         margin-top: 1%;
-      }
       
       .close_modal {
          text-align: right;
          padding: 0 .5rem;
          margin-bottom: 0;
       }
+      .img_container .vertical_img {
+         height: 87%;
+         margin-top: 1%;
+      }
+      .img_container .horizontal_img {
+         height: 78%;
+         margin-top: 2%;
+      }
+      
+      
       .video_container {
          position: relative;
          padding-top: 48.25%; /* Player ratio: 100 / (1280 / 720) */

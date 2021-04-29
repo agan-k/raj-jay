@@ -9,6 +9,7 @@ import style from './album.module.css'
 import Layout from '../../components/layout'
 
 export default function Album({ data }) {
+   console.log(data)
 
    return (
       <Layout>
@@ -16,19 +17,26 @@ export default function Album({ data }) {
             <Link href="/disco"><h4 style={{cursor: "pointer"}}>&larr; &nbsp;<a>full discography</a></h4></Link>
             <main>
                <div className={style.album_info}>
-                  <img src={data.img.url} style={{maxHeight: '10rem'}}/>
-                  {RichText.render(data.content_body)}
+                  <img src={data.img.url} />
+                     {RichText.render(data.content_body)}
+                  
                </div>
                
-               {RichText.asText(data.bandcamp_id) && (
+               { RichText.asText(data.bandcamp_id) ?
                   <BandcampPlayer
-                     className='audio-player'
+                     className='audio_player'
                      album={RichText.asText(data.bandcamp_id)}
-                     width='40%'
+                     // width='40%'
                      height='460px'
                      artwork='none'
-                  />
-               )}
+                     /> : ''
+                     // <div>data.</div>
+                  }
+               <style jsx>{`
+                  audio_player {
+                     width: 10%;
+                  }
+                  `}</style>
             </main>
          </div>
       </Layout>
