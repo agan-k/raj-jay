@@ -168,10 +168,13 @@
       position: absolute;
       justify-content: space-between;
       top: 8rem;
-      right: 5rem;
+      right: 4rem;
       height: min-content;
-      width: 9rem;
+      width: 10rem;
       font-size: .8rem;
+   }
+   .cta_buy_album img {
+      height: 10rem;
    }
    .grid {
       width: 100%;

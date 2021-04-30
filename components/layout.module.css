@@ -108,19 +108,8 @@
          width: 45%;
          height: min-content;
          margin: 1.5rem 0 0 0;
-         /* padding-left: 2rem; */
          box-shadow: -5px 0px 15px -21px rgb(0, 0, 0);
       }
-         .nav_aux p {
-            white-space: nowrap;
-            font-size: .6rem;
-            line-height: 1.2rem;
-            letter-spacing: .1rem;
-            padding: .2rem;
-            margin: 0 0 0rem 0;
-            color: grey;
-         }
-         
          .social_icons {
             width: 100%;
             height: 1.7rem;
@@ -213,7 +202,19 @@
    /* -------!!!!!!!!!!! */
 
    .nav_aux {
-      display: none;
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;      
+   }
+   .social_icons {
+      height: min-content;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+   }
+   .social_icons img {
+      height: 3rem;
+      margin: 0;
    }
 
    /* ---------!!!!!!!!! */
@@ -236,14 +237,17 @@
    
    .nav_container, .nav_container_open {
       display: block;
-      width: 20%;
       background: white;
       border-left: none;
       border-right: none;
       transition: none;
    }
+      .nav_container li, .nav_container_open li {
+         margin: .5rem 0;
+      }
       .nav_container a, .nav_container_open a {
-         font-size: 2rem;
+         font-size: 1.5rem;
+         padding: .5rem;
       }
    
    .nav_container_open {
@@ -257,16 +261,17 @@
    }
    .nav {
       width: 100%;
-      /* height: min-content; */
       text-align: right;
       margin: 0;
       padding-top: 2rem;
       border: none;
    }
    .nav_toggle {
+      margin: 0;
+      padding: .4rem;
       position: fixed;
-      top: .4rem;
-      right: .3rem;
+      top: 0;
+      right: 0;
       z-index: 9999;
    }
    .nav a:hover {
