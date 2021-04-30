@@ -21,6 +21,7 @@ export default function Layout({ children }) {
       {name: 'store', uid: 'https://pistils.bandcamp.com/merch'},
       {name: 'links', uid: '/links'},
       {name: 'contact', uid: '/contact'},
+      {name: 'media-kit', uid: '/#'},
    ]
    const links = navLinksData.map(link =>
       <li key={link.uid} className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
@@ -62,7 +63,6 @@ export default function Layout({ children }) {
                </div>
                <div className={style.nav_aux}>
                   <div className={style.social_icons}>
-                     <p>social:</p>
                      <a href="https://www.instagram.com/euroraj/" target="_blank">
                         <img src="/icons/instagram.png" />
                      </a>
@@ -71,12 +71,6 @@ export default function Layout({ children }) {
                      </a>
                      <a href="https://youtube.com/user/euroraj/videos" target="_blank">
                         <img src="/icons/youtube.png" />
-                     </a>
-                  </div>
-                  <div className={style.media_kit}>
-                     <p>media kit:</p>
-                     <a>
-                        <img src="/icons/google drive.png" />
                      </a>
                   </div>
                   <div className={style.mailing_list}>
