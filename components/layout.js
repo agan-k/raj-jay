@@ -63,19 +63,21 @@ export default function Layout({ children }) {
                <div className={style.nav_aux}>
                   <div className={style.social_icons}>
                      <p>social:</p>
-                     <Link href="https://www.instagram.com/euroraj/">
+                     <a href="https://www.instagram.com/euroraj/" target="_blank">
                         <img src="/icons/instagram.png" />
-                     </Link>
-                     <Link href="https://www.facebook.com/rajivjayaweera/">
+                     </a>
+                     <a href="https://www.facebook.com/rajivjayaweera/" target="_blank">
                         <img src="/icons/facebook.png" />
-                     </Link>
-                     <Link href="https://youtube.com/user/euroraj/videos">
+                     </a>
+                     <a href="https://youtube.com/user/euroraj/videos" target="_blank">
                         <img src="/icons/youtube.png" />
-                     </Link>
+                     </a>
                   </div>
                   <div className={style.media_kit}>
                      <p>media kit:</p>
-                     <img src="/icons/google drive.png" />
+                     <a>
+                        <img src="/icons/google drive.png" />
+                     </a>
                   </div>
                   <div className={style.mailing_list}>
                      <p>mailing list:</p>
