@@ -89,24 +89,23 @@ console.log(props)
       <Layout>
 
          <div className={style.container}>
-            <div
-               className={style.quotes_fade}
+            <div className={style.quotes_fade}
                // className={randomQuoteIndex ? style['quotes_fade'] : ''}
             >
-                  {RichText.render(quotes[randomQuoteIndex].data.press_quote)}
-               </div>
-               <div className={style.cta_buy_album}>
+               {RichText.render(quotes[randomQuoteIndex].data.press_quote)}
+            </div>
+            <div className={style.cta_buy_album}>
                <img src={'/images/cta_buy_album.jpg'} />
                <p>new album Pistils<br/> out now!</p>
                <Link href="https://pistils.bandcamp.com/album/pistils">
                   <p><a>buy / listen &rarr;</a></p>
                </Link>
             </div>
+
             <main className={style.main}>
                <img className={style.banner} src={'/images/home_banner.jpg'} />
-               {/* <div className={style.quotes_mobile}>
-                  {RichText.render(quotes[mobile_quote_index].data.press_quote)}
-               </div> */}
+               <img className={style.banner_mobile} src={'/images/mobile_home_banner2.jpg'} />
+               
                <h2>News</h2>
                <div className={style.grid}>
                   {news_cards}

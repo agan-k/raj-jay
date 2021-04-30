@@ -9,13 +9,19 @@
    align-items: center;
   
 }
-.quotes {
+.banner {
+   width: 100%;
+}
+.banner_mobile {
+   display: none;
+}
+/* .quotes {
    position: absolute;
    top: 2rem;
    left: 2rem;
    width: 40%;
    
-}
+} */
 .quotes_fade {
    position: absolute;
    top: 2rem;
@@ -82,9 +88,7 @@
    transition: .2s;
 }
 
-.banner {
-   width: 100%;
-}
+
 
 .main {
   flex: 1;
@@ -186,29 +190,25 @@
 }
 
 @media (max-width: 600px) {
-   .container {      
+
+   .container { 
       padding: 0;
    }
+   
    .banner {
-      /* width: 100%; */
-      /* display: initial; */
+      display: none;
    }
-   /* .quotes_mobile {
-      display: block;
-      background: rgb(0, 0, 0);
-      padding: .5rem;
-      text-align: center;
-   } */
-   /* .quotes_mobile p {
-      font-size: .7rem; 
-      line-height: .8rem;
-      color: rgb(170, 170, 170);
-   } */
+   .banner_mobile {
+      display: initial;
+      width: 100%;
+   }
 
    .quotes_fade {
+      /* display: none; */
+      width: 60%;
       top: .5rem;
-      left: .5rem;
-      width: 45%;
+      left: 7rem;
+      /* background: white; */
    }
 
    .quotes_fade p {
@@ -217,15 +217,15 @@
    }
    .cta_buy_album {
       background: white;
-      top: 7rem;
-      right: .5rem;
-      width: 7.3rem;
+      top: 8rem;
+      left: 9rem;
+      width: 8.4rem;
       font-size: .8rem;
    }
    .cta_buy_album img {
       display: block;
-      height: 7rem;
-      margin: .1rem auto;
+      height: 8rem;
+      margin: .2rem auto;
    }
    .cta_buy_album p {
       font-size: .5rem;
@@ -239,17 +239,16 @@
    .cta_buy_album a {
       font-weight: 500;
       font-size: .5rem;
-      color: rgb(192, 192, 192);
-      padding: .4rem .2rem;
+      color: white;
+      padding: .4rem;
       cursor: pointer;
       transition: .2s;
-      background: rgb(235, 235, 235);
-      color: black;
+      background: rgb(24, 23, 23);
       
    }
    .main h2 {
       display: initial;
-      margin: 3rem 0 0 .5rem;
+      margin: 8rem 0 0 .5rem;
    }
    .grid {
     width: 100%;
