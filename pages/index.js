@@ -104,7 +104,7 @@ console.log(props)
 
             <main className={style.main}>
                <img className={style.banner} src={'/images/home_banner.jpg'} />
-               <img className={style.banner_mobile} src={'/images/mobile_home_banner2.jpg'} />
+               <img className={style.banner_mobile} src={'/images/mobile_home_banner3.jpg'} />
                
                <h2>News</h2>
                <div className={style.grid}>

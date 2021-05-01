@@ -207,25 +207,25 @@
    .quotes_fade {
       /* display: none; */
       width: 60%;
-      top: .5rem;
-      left: 7rem;
+      top: 1rem;
+      left: 1rem;
       /* background: white; */
    }
 
    .quotes_fade p {
-      font-size: .5rem;
-      line-height: .6rem;
+      font-size: .6rem;
+      line-height: .7rem;
    }
    .cta_buy_album {
       background: white;
-      top: 8rem;
-      left: 9rem;
-      width: 8.4rem;
+      top: 10rem;
+      left: 8rem;
+      width: 9.4rem;
       font-size: .8rem;
    }
    .cta_buy_album img {
       display: block;
-      height: 8rem;
+      height: 9rem;
       margin: .2rem auto;
    }
    .cta_buy_album p {
