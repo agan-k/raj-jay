@@ -58,7 +58,7 @@
    .nav_toggle {
       width: min-content;
       height: min-content;
-      margin-right: .5rem;
+      padding-right: .5rem;
       cursor: pointer;
    }
    .open_icon:after, .close_icon:after {
@@ -260,7 +260,6 @@
       height: 100%;
       top: 0;
       right: 0;
-      /* padding-right: 1rem; */
       z-index: 999;
       transition: none;
    }
@@ -272,16 +271,16 @@
       border: none;
    }
    .nav_toggle {
-      /* margin-right: 1rem; */
-      z-index: 9999;
+      padding-right: 1rem;
    }
    .nav_toggle .close_icon:after {
-      padding: .4rem 1.4rem .4rem .4rem;
+      z-index: 999;
+      /* padding: .4rem 1.4rem .4rem .4rem; */
       position: fixed;
-      top: 0;
-      right: 0;
-
+      top: 0.5rem;
+      right: 1rem;
    }
+   
    .nav a:hover {
       background: none;
    }
