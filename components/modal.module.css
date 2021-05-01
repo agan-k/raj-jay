@@ -108,11 +108,11 @@
     
    .img_container .vertical_img {
       height: 80%;
-      margin-top: 1%;
+      margin-top: 5%;
    }
    .img_container .horizontal_img {
       height: 35%;
-      margin-top: 10%;
+      margin-top: 20%;
    }
    .close_modal {
       text-align: right;
@@ -133,11 +133,11 @@
          margin-bottom: 0;
       }
       .img_container .vertical_img {
-         height: 87%;
+         height: 85%;
          margin-top: 1%;
       }
       .img_container .horizontal_img {
-         height: 78%;
+         height: 82%;
          margin-top: 2%;
       }
       

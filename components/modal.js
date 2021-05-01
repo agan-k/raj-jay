@@ -26,7 +26,6 @@ export default function Modal(props) {
    
       return (
          <div className={style.container} onClick={() => props.closeModal()}>
-            <div className={style.close_modal}> &nbsp;<span>&times;</span></div>
             {props.photos ?
                
                <div className={style.img_container}>
@@ -36,7 +35,8 @@ export default function Modal(props) {
                   {RichText.render(detail.photo_caption)}
                </div> :
                (props.videos || props.news_card_video_url || props.blog_video_url) ?
-                  <>
+               <>
+                  <div className={style.close_modal}> &nbsp;<span>&times;</span></div>
                      <div className={style.video_container}>
                            <ReactPlayer
                               className={style.react_player}
