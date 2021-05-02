@@ -1,21 +1,16 @@
 .container {
    position: relative;
-   box-shadow: -5px 0px 22px -21px rgb(121, 121, 121);
-   padding: 0rem .5rem 6rem 1rem;
    width: 100%;
-   margin: 0 auto;
-}
-.container h2 {
-   margin: 2rem 0 4rem 0;
+   padding: 3rem 1rem;
+   min-height: 80vh;
 }
 .container p {
    font-size: .9rem;
 }
 .container img {
    float: left;
-   margin: 0 1rem 1rem 0;
+   margin: .3rem 1rem 1rem 0;
    max-height: 10rem;
-   border-radius: 5%;
 }
 @media (max-width: 600px) {
    /* */

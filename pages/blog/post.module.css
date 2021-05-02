@@ -1,13 +1,22 @@
-.container {
-   max-width: 100%;
-   padding: 0 0.5rem;
-   margin: 1rem auto;
+.container,
+.container_blur {
+   position: relative;
+   width: 100%;
    min-height: 80vh;
+   transition: .3s;
+}
+.container_blur {
+   -webkit-filter: blur(5px);
+   -moz-filter: blur(5px);
+   -o-filter: blur(5px);
+   -ms-filter: blur(5px);
+   filter: blur(5px);
+   background-color: #ffffff;
+   transition: .3s;
 }
 .container article {
    margin: 2rem auto;
    width: 70%;
-   /* background-color: red; */
 }
    .container article .video_thumb {
       opacity: .8;
@@ -37,11 +46,14 @@
 }
 @media (max-width: 600px) {
    .container {
-      max-width: 100%;
+      padding: 0;
    }
       .container article {
          margin: 2rem auto;
-         width: 100%;
+         width: 90%;
+      }
+      .container article .title_image {
+         display: none;
       }
          .container article .video_thumb {
             opacity: 1;

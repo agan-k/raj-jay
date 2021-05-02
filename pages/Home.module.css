@@ -1,6 +1,4 @@
 .container {
-   box-shadow: -5px 0px 22px -21px rgb(121, 121, 121);
-   padding: 0 .5rem 0 1rem;
    position: relative;
    width: 100%;
    display: flex;
