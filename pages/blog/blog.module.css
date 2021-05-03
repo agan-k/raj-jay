@@ -2,7 +2,7 @@
    padding: 3rem 1rem;
    position: relative;
    width: 100%;
-   min-height: 80vh;
+   min-height: 90vh;
    transition: .3s;
 }
 .container_blur {   
@@ -16,21 +16,17 @@
 }
    .posts_container {
       display: block;
-      /* width: 95%; */
       margin: 1rem auto;
    }
-   .last_post_container {
-         float: left;
-         width: 45%;
-   }
-      .last_post_date  {
-         margin: 0 auto;
+      .last_post_container {
+            float: left;
+            width: 45%;
       }
          .last_post_container .last_post_date p  {
-            font-size: .9rem;
+            font-size: 1.2rem;
             font-style: italic;
-            text-align: center;
             font-weight: 600;
+            margin-top: 0;
          }
 
       .last_post .video_thumb {
@@ -73,6 +69,7 @@
          float: right;
          width: 40%;
          height: min-content;
+         margin-top: 2.5rem;
       }
          .old_post_link_container {
             display: flex;

@@ -1,11 +1,19 @@
-.container {
+.container, .container_blur {
    position: relative;
    width: 100%;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-  
+}
+.container_blur {   
+   -webkit-filter: blur(5px);
+   -moz-filter: blur(5px);
+   -o-filter: blur(5px);
+   -ms-filter: blur(5px);
+   filter: blur(5px);
+   background-color: #ffffff;
+   transition: .3s;
 }
 .banner {
    width: 100%;

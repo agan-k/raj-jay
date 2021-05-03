@@ -25,7 +25,7 @@ console.log(props)
    const quotes = props.content.results.filter(result => 
       result.data.press_quote.length !== 0
    )
-   console.log(quotes)
+   console.log(props.content.results[0].data.video_link[0].text)
 
    
    const mobile_quote_index = Math.floor(Math.random() * quotes.length);
@@ -58,7 +58,7 @@ console.log(props)
    let cards = props.content.results.filter(item => item.data.news_card)
    const news_cards = cards.map((result) =>
       
-      result.data.news_card && result.data.content_type == 'video' ?
+      result.data.news_card && result.data.video_link !== 0 ?
          
          <div key={result.uid} className={style.card}
             onClick={() => setVideoURL(result.data.video_link[0].text)}
@@ -88,7 +88,7 @@ console.log(props)
    return (
       <Layout>
 
-         <div className={style.container}>
+         <div className={showModal ? style['container_blur'] : style['container']}>
             <div className={style.quotes_fade}
                // className={randomQuoteIndex ? style['quotes_fade'] : ''}
             >
@@ -111,14 +111,14 @@ console.log(props)
                   {news_cards}
                 </div>
    
+            </main>
+          </div>
                {showModal && (
                   <Modal
                      news_card_video_url={videoURL}
                      closeModal={() => setShowModal(false)}
                   />
                )}
-            </main>
-          </div>
       </Layout>
    )
 }

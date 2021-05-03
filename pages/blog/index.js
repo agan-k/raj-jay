@@ -39,7 +39,6 @@ export default function Blog(props) {
    const blog = props.content.results.filter(result =>
       result.data.content_type == 'blog'
    )
-   // console.log(blog[0].data.video_link.text)
    console.log(blog)
    
    const last_post = blog.map(post =>
@@ -98,7 +97,7 @@ export default function Blog(props) {
                   {last_post.shift()}
                </div>
                <div className={style.old_posts_container}>
-                  <h4>old posts:</h4>
+                  {/* <h4>old posts:</h4> */}
                   {old_posts_links}
                </div>
             </div>
