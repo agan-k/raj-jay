@@ -15,36 +15,35 @@ export default function Shows(props) {
    return (
       <Layout>
          <div className={style.container}>
-
-            <main className={style.main}>
-               <img className={style.banner} src={props.shows.data.banner_image.url}/>
-               <div className={style.calendar_container}>
+            
+            <img className={style.banner} src={props.shows.data.banner_image.url} />
+            
+            <div className={style.calendar_container}>
+               <div className={style.mailing_list}>
+                  <p>mailing list:</p>
+                  <MailingList />
+               </div>
+               <main>
+                  {RichText.render(calendar)}
+               </main>
+               <aside>
+                  <img className={style.featured_flyer}
+                     src={props.shows.data.featured_flyer.url}
+                  />
+                  <img className={style.featured_flyer}
+                     src={props.shows.data.featured_flyer1.url}
+                  />
+                  <img className={style.featured_flyer}
+                     src={props.shows.data.featured_flyer2.url}
+                  />
                   <div className={style.mailing_list}>
-                     <p>mailing list:</p>
+                     <p>Join the mailing list to find out about upcoming events
+                        in your area.
+                     </p>
                      <MailingList />
                   </div>
-                  <main>
-                     {RichText.render(calendar)}
-                  </main>
-                  <aside>
-                     <img className={style.featured_flyer}
-                        src={props.shows.data.featured_flyer.url}
-                     />
-                     <img className={style.featured_flyer}
-                        src={props.shows.data.featured_flyer1.url}
-                     />
-                     <img className={style.featured_flyer}
-                        src={props.shows.data.featured_flyer2.url}
-                     />
-                     <div className={style.mailing_list}>
-                        <p>Join the mailing list to find out about upcoming events
-                           in your area.
-                        </p>
-                        <MailingList />
-                     </div>
-                  </aside>
-               </div>
-            </main>
+               </aside>
+            </div>
          </div>
       </Layout>
    )

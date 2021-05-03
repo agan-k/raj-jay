@@ -5,7 +5,9 @@
    min-height: 90vh;
 }
 .container p {
-   font-size: .9rem;
+   font-size: .8rem;
+   font-weight: 400;
+   color: grey;
 }
 .container img {
    float: left;

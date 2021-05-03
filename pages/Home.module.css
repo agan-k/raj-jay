@@ -6,15 +6,6 @@
    justify-content: center;
    align-items: center;
 }
-.container_blur {   
-   -webkit-filter: blur(5px);
-   -moz-filter: blur(5px);
-   -o-filter: blur(5px);
-   -ms-filter: blur(5px);
-   filter: blur(5px);
-   background-color: #ffffff;
-   transition: .3s;
-}
 .banner {
    width: 100%;
 }
@@ -95,13 +86,13 @@
 }
 
 .main {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .main h2 {
-   display: none; /* this is "News" */
+   display: none; /* this is "News" @media max-width 600px */
 }
 
 .grid {
@@ -110,8 +101,6 @@
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
-   /* border-left: 1px solid rgb(241, 241, 241);
-   border-right: 1px solid rgb(241, 241, 241); */
 }
 
 .card {

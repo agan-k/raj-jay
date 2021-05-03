@@ -1,75 +1,81 @@
 .container {
-   padding: 0 0.5rem;
+   position: relative;
+   width: 100%;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
 }
-   .main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-   }
-      .main .banner {
+   
+   .banner {
          width: 100%;
-      }
+   }
 
    .calendar_container {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      font-size: .8rem;
       padding: 1rem;
-      border: 1px solid rgb(241, 241, 241);
+      font-size: .9rem;
    }
       .calendar_container .mailing_list {
          display: none;
       }
-      .calendar_container h4 {
-         margin: 1rem 0 0 0;
-      }
-      .calendar_container ul {
-         font-size: .8rem;
-         list-style: none;
-         padding: 0;
-         margin: 0;
-      }
-      .calendar_container p {
-         margin: .5rem 0;
-      }
+
       .calendar_container main {
          width: 60%;
       }
+      .calendar_container main p,
+      .calendar_container main h4,
+      .calendar_container main ul {
+         color: rgb(102, 102, 102);
+         /* font-weight: 500; */
+      }
+      .calendar_container main h4 { 
+         margin: 1rem 0 0 0;
+         font-size: 1.2rem;
+         font-weight: 600;
+         text-decoration: underline;
+      }
+      .calendar_container main ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+         font-size: .7rem;
+      }
+      .calendar_container main p {
+         margin: .5rem 0;
+         letter-spacing: 1px;
+      }
+
       .calendar_container aside {
          width: 35%;
          display: flex;
          flex-direction: column;
-         align-items: flex-end;
+         align-items: center;
+         padding-top: 3rem;
          /* border-left: 1px solid rgb(241, 241, 241); */
       }
+      .calendar_container aside .featured_flyer {
+            width: 70%;
+            margin: 1rem 0;
+            opacity: .8;
+         }
          .calendar_container aside .mailing_list {
             width: 90%;
             display: block;
          }
          .mailing_list {
-            margin: 0;
             width: 94%;
             margin: 4rem 0 0 6%;
          }
             .mailing_list p {
-               font-size: .8rem;
-               line-height: 1rem;
-               margin: 0;
+               font-size: .7rem;
+               line-height: .8rem;
+               margin: 0 0 1rem 0;
             }
 
-         .featured_flyer {
-            width: 90%;
-            margin-bottom: 1rem;
-            /* display: block; */
-            /* text-align: right; */
-            /* margin: 2rem 12%; */
-         }
 
 @media (max-width: 600px) {
    .container {

@@ -85,9 +85,9 @@ export default function Layout({ children }) {
             </div>
             
          </header>
-         <main className={style['main']}>
-            {children}
-         </main>
+            <main className={style['main']}>
+               {children}
+            </main>
          <footer className={style.footer}>Site by
               <a
                 href="https://formversuscontent.com"
