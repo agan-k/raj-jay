@@ -91,9 +91,6 @@
   flex-direction: column;
   justify-content: center;
 }
-.main h2 {
-   display: none; /* this is "News" @media max-width 600px */
-}
 
 .grid {
    width: 100%;
@@ -101,12 +98,13 @@
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
+   margin-top: 1rem;
 }
 
 .card {
    font-weight: 100;
    min-height: min-content;
-   margin: 1rem ;
+   margin: 0 1rem ;
    flex-basis: 28%;
    padding: 1rem;
    text-align: left;
@@ -160,7 +158,6 @@
 @media (max-width: 800px)  {
    
    .cta_buy_album {
-      position: absolute;
       justify-content: space-between;
       top: 8rem;
       right: 4rem;
@@ -200,11 +197,9 @@
    }
 
    .quotes_fade {
-      /* display: none; */
       width: 60%;
       top: 1rem;
       left: 1rem;
-      /* background: white; */
    }
 
    .quotes_fade p {
@@ -212,6 +207,9 @@
       line-height: .7rem;
    }
    .cta_buy_album {
+      position: initial;
+      margin: -15% 0 0 28%;
+
       background: white;
       top: 10rem;
       left: 8rem;
@@ -249,6 +247,7 @@
    .grid {
     width: 100%;
     flex-direction: column;
+    margin-top: 1rem;
     border: none;
   }
   .card {

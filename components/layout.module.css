@@ -16,27 +16,38 @@
 
    
 }
-@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Marvel&family=Raleway+Dots&display=swap');
-   .header .logo {
-      display: flex;
-      margin-left: .6rem;
-
-   }
-   .header .logo img {
-      height: 1.2rem;
-   }
-   .header .logo h1{
-      width: min-content;;
-      height: min-content;
-      margin: 0;
-      font-family: 'Marvel', sans-serif;
-      /* font-family: 'Raleway Dots', cursive;      font-size: 1rem; */
-      font-weight: 100;
-      font-size: 1rem;
-      letter-spacing: .1rem;
-      cursor: pointer;
-   }
+   @import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Marvel&family=Raleway+Dots&display=swap');
+      .header .logo {
+         display: flex;
+         margin-left: .2rem;
+      }
+      .header .logo a {
+         color: black;
+      }
+      .header .logo h1{
+         width: min-content;;
+         height: min-content;
+         margin: 0;
+         font-family: 'Marvel', sans-serif;
+         /* font-family: 'Raleway Dots', cursive;      font-size: 1rem; */
+         font-weight: 100;
+         font-size: 1rem;
+         letter-spacing: .1rem;
+         /* cursor: pointer; */
+      }
+      .header .logo .active_page {
+         font-family: 'Marvel', sans-serif;
+         font-size: .8rem;
+         /* text-transform: uppercase; */
+         letter-spacing: 2px;
+         color: white;
+         background-color: black;
+         width: min-content;
+         height: min-content;
+         padding: 0 .5rem;
+         margin: .1rem 0;
+      }
    
    .nav_container, .nav_container_open {
       width: 100%;
@@ -76,19 +87,8 @@
    
    .nav {
       width: 45%;
-      margin-top: .2rem;
+      margin-top: 1rem;
    }
-      .nav .active_page {
-         font-family: 'Marvel', sans-serif;
-         font-size: .8rem;
-         text-transform: uppercase;
-         letter-spacing: 2px;
-         color: white;
-         background-color: black;
-         width: min-content;
-         padding: 0 .5rem;
-      }
-      
       .nav ul {
          height: 4rem;
          display: flex;

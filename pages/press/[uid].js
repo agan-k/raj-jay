@@ -13,7 +13,7 @@ export default function pressArticle({ data }) {
       <Layout>
          <div className={style.container}>
 
-         <Link href="/press"><h4 style={{cursor: "pointer", maxWidth: "8rem"}}>&larr; &nbsp;<a>press home</a></h4></Link>
+         <Link href="/press"><h4 style={{cursor: "pointer", margin: "3rem 0 4rem 2rem"}}>&larr; &nbsp;<a>press home</a></h4></Link>
 
             <article>
                <img src={data.img.url} style={{maxHeight: '3rem'}}/>

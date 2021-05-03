@@ -10,7 +10,7 @@ export default function Layout({ children }) {
    const [navShow, setNavShow] = useState(false)
    const router = useRouter()
    const navLinksData = [
-      {name: 'news', uid: '/'},
+      {name: 'home', uid: '/'},
       {name: 'bio', uid: '/bio'},
       {name: 'blog', uid: '/blog'},
       {name: 'shows', uid: '/shows'},
@@ -28,6 +28,7 @@ export default function Layout({ children }) {
          <Link href={link.uid}><a>{link.name}</a></Link>
          <style jsx>{`
             .active_nav_links {
+               display: none;
                // text-align: right;
             }
             .active_nav_links a {
@@ -47,9 +48,9 @@ export default function Layout({ children }) {
    function currentPage(path) {
       let active_page;
       if (path == '/') {
-         active_page = 'news';
+         active_page = 'home';
       } else {
-         active_page = path.slice(1);
+         active_page = path.split("/")[1];
       }
       return active_page
    }
@@ -62,19 +63,26 @@ export default function Layout({ children }) {
          </Head>
          <header className={style.header}>
             <div className={style.logo}>
-               <img src="/images/logo.png" />
-               &nbsp;
-               {router.pathname !== '/' ?
-                  <Link href='/'><h1>RajivJayaweera.com/&nbsp;</h1></Link> :
+            {router.pathname !== '/' ?
+                  <Link href='/'><a><h1>RajivJayaweera.com/&nbsp;</h1></a></Link> :
                   <><h1>RajivJayaweera.com/</h1>&nbsp;</>
                }
+               {/* <img src="/images/logo.png" />
+               &nbsp; */}
+               <div className={style.active_page}>
+                     {currentPage(router.pathname)}
+               </div>
+               {/* {router.pathname !== '/' ?
+                  <Link href='/'><h1>RajivJayaweera.com/&nbsp;</h1></Link> :
+                  <><h1>RajivJayaweera.com/</h1>&nbsp;</>
+               } */}
             </div>
 
             <div className={navShow ? style['nav_container_open'] : style['nav_container']}>
                <div className={style.nav}>
-                  <div className={style.active_page}>
+                  {/* <div className={style.active_page}>
                      {currentPage(router.pathname)}
-                  </div>
+                  </div> */}
                   <ul>
                      {links}
                   </ul>

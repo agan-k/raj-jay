@@ -94,6 +94,11 @@ console.log(props)
             >
                {RichText.render(quotes[randomQuoteIndex].data.press_quote)}
             </div>
+
+            <main className={style.main}>
+               <img className={style.banner} src={'/images/home_banner.jpg'} />
+               <img className={style.banner_mobile} src={'/images/mobile_home_banner3.jpg'} />
+               
             <div className={style.cta_buy_album}>
                <img src={'/images/cta_buy_album.jpg'} />
                <p>new album Pistils<br/> out now!</p>
@@ -101,12 +106,6 @@ console.log(props)
                   <p><a>buy / listen &rarr;</a></p>
                </Link>
             </div>
-
-            <main className={style.main}>
-               <img className={style.banner} src={'/images/home_banner.jpg'} />
-               <img className={style.banner_mobile} src={'/images/mobile_home_banner3.jpg'} />
-               
-               <h2>News</h2>
                <div className={style.grid}>
                   {news_cards}
                 </div>

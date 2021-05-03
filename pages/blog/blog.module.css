@@ -106,7 +106,9 @@
    .container {
       padding: 0;
    }
-   
+   .posts_container {
+      width: 90%;
+   }
    .old_post_link_container 
    .old_post_date {
       width: 30%;

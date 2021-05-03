@@ -12,6 +12,7 @@ p {
    letter-spacing: 1px;
    line-height: 1.3rem;
    color: rgb(56, 56, 56);
+   overflow-wrap: break-word;/* for the long URL links*/
 }
 
 * {
