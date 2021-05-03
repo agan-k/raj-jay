@@ -92,7 +92,7 @@ export default function Press(props) {
    return (
       <Layout>
          <div className={style.container}>
-         <h2>Press</h2>
+            
             <div className={style.quoteS_container_mobile}>
                <h4>quotes</h4>
                <div className={style['quotes_toggle']} onClick={() => setQuotesShow(!quotesShow)}>
@@ -102,12 +102,13 @@ export default function Press(props) {
                <div className={quotesShow ? style['quoteS_open'] : style['quoteS']}>
                   <>{quotes}</>
                </div>
-               
             </div>
+
             <div className={style.quoteS_container}>
                <h4>quotes</h4>
                   {quotes}
             </div>
+            
             <div className={style.article_linkS_container}>
 
                <h4>press releases</h4>

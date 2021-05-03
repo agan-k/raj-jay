@@ -76,9 +76,19 @@
    
    .nav {
       width: 45%;
-      margin-top: 1.5rem;
-
+      margin-top: .2rem;
    }
+      .nav .active_page {
+         font-family: 'Marvel', sans-serif;
+         font-size: .8rem;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         color: white;
+         background-color: black;
+         width: min-content;
+         padding: 0 .5rem;
+      }
+      
       .nav ul {
          height: 4rem;
          display: flex;

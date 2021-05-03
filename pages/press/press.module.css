@@ -1,8 +1,6 @@
 .container {
-   max-width: 900px;
-   padding: 0 0.5rem;
-   margin: 0 auto;
-
+   width: 100%;
+   padding: 3rem 2rem;
    display: flex;
    justify-content: space-between;
 }
@@ -16,7 +14,7 @@
 }
 .quoteS_container {
    width: 50%;
-   margin-top: 6rem;
+   /* margin-top: 6rem; */
 }
    .quote {
       margin-bottom: 2rem;
@@ -25,7 +23,7 @@
 
 .article_linkS_container {
    width: 35%;
-   margin-top: 6rem;
+   /* margin-top: 6rem; */
 }
    .article_linkS_container ul {
       border-bottom: 1px solid rgb(241, 241, 241);

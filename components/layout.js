@@ -31,14 +31,29 @@ export default function Layout({ children }) {
                // text-align: right;
             }
             .active_nav_links a {
-               background: black;
+               // background: black;
                margin: 0;
-               color: white;
+               // color: black;
+               // text-decoration: underline;
                cursor: initial;
+            }
+            .active_nav_links a:hover {
+               background: none;
+               color: initial;
             }
          `}</style>
       </li>
-      )
+   )
+   function currentPage(path) {
+      let active_page;
+      if (path == '/') {
+         active_page = 'news';
+      } else {
+         active_page = path.slice(1);
+      }
+      return active_page
+   }
+   // const active_page = router.pathname
    return (
       <div className={style.container}>
          <Head>
@@ -50,13 +65,16 @@ export default function Layout({ children }) {
                <img src="/images/logo.png" />
                &nbsp;
                {router.pathname !== '/' ?
-                  <Link href='/'><h1>RajivJayaweera.com&nbsp;</h1></Link> :
-                  <><h1>RajivJayaweera.com</h1>&nbsp;</>
+                  <Link href='/'><h1>RajivJayaweera.com/&nbsp;</h1></Link> :
+                  <><h1>RajivJayaweera.com/</h1>&nbsp;</>
                }
             </div>
 
             <div className={navShow ? style['nav_container_open'] : style['nav_container']}>
                <div className={style.nav}>
+                  <div className={style.active_page}>
+                     {currentPage(router.pathname)}
+                  </div>
                   <ul>
                      {links}
                   </ul>
