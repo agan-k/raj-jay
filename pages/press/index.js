@@ -94,8 +94,8 @@ export default function Press(props) {
          <div className={style.container}>
             
             <div className={style.quoteS_container_mobile}>
-               <h4>quotes</h4>
                <div className={style['quotes_toggle']} onClick={() => setQuotesShow(!quotesShow)}>
+               <h4>quotes</h4>
                   <div className={!quotesShow ? style['open_icon'] : style['close_icon']}>
                   </div>
                </div>

@@ -53,7 +53,7 @@
 @media (max-width: 600px) {
    .container {
       display: block;
-      max-width: 98%;
+      padding: 1rem .5rem;
    }
    .article_linkS_container {
       width: 100%;
@@ -66,37 +66,42 @@
       display: block;
    }
    .quoteS_container_mobile {
-      margin : 2rem 0 1rem 0;
+      margin: 2rem 0 1rem 0;
       border-bottom: 1px solid rgb(241, 241, 241);
       padding-bottom: 1rem;
+   }
+      .quotes_toggle {
+         display: flex;
+         justify-content: flex-end;
+         margin-left: .6rem;
+         cursor: pointer;
+      }
+         .quotes_toggle h4 {
+            display: block;
+            text-align: right;
+            line-height: 1.2rem;
+         }
+         .open_icon:after, .close_icon:after {
+            font-size: 1rem;
+            width: 1rem;
+            padding: 0 0 0 1rem;
+         }
+         .open_icon:after {
+            content: '\25B6';
+         }
+         .close_icon:after {
+            content: '\25BC';
+         }
+
+      .quoteS_open {
+         overflow: hidden;
+         transition: max-height 0.3s ease-out;  
+         height: auto;
+         max-height: 100%;
+      }
+      .quoteS {
+         overflow: hidden;
+         max-height: 0;
+      }
 
    }
-   
-   .quoteS {
-      max-height: 0;
-      overflow: hidden;
-      background-color: none;
-   }
-   .quoteS_open {
-      max-height: 100%;
-      overflow: initial;
-   }
-   .quotes_toggle {
-      display: inline-block;
-      width: min-content;
-      height: min-content;
-      margin-left: .6rem;
-      cursor: pointer;
-   }
-   .open_icon:after, .close_icon:after {
-      font-size: 1rem;
-      width: 1rem;
-   }
-   .open_icon:after {
-      content: '\25B6';
-   }
-   .close_icon:after {
-      content: '\25BC';
-   }
-}
-
