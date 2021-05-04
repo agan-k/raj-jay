@@ -23,8 +23,8 @@ export default function Post({ data }) {
 
    return (
       <Layout>
-            <Link href="/blog"><h4 style={{cursor: "pointer", margin: "3rem 0 4rem 2rem"}}>&larr; &nbsp;<a>blog home</a></h4></Link>
          <div className={style.container}>
+            <Link href="/blog"><h4 className={style.blog_home_link}>&larr; &nbsp;<a>blog home</a></h4></Link>
                {data.video_link.length !== 0 ?
                <article>
                   <div className={style.post_date}>

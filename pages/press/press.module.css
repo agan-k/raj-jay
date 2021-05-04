@@ -53,7 +53,7 @@
 @media (max-width: 600px) {
    .container {
       display: block;
-      padding: 1rem .5rem;
+      padding: 3rem .5rem;
    }
    .article_linkS_container {
       width: 100%;
@@ -63,45 +63,55 @@
       display: none;
    }
    .quoteS_container_mobile {
-      display: block;
-   }
-   .quoteS_container_mobile {
-      margin: 2rem 0 1rem 0;
+      background-color: blue;
+      display: initial;
+      padding: 3rem 0 1rem 0;
       border-bottom: 1px solid rgb(241, 241, 241);
-      padding-bottom: 1rem;
    }
-      .quotes_toggle {
-         display: flex;
-         justify-content: flex-end;
-         margin-left: .6rem;
-         cursor: pointer;
-      }
-         .quotes_toggle h4 {
-            display: block;
-            text-align: right;
-            line-height: 1.2rem;
-         }
-         .open_icon:after, .close_icon:after {
-            font-size: 1rem;
-            width: 1rem;
-            padding: 0 0 0 1rem;
-         }
-         .open_icon:after {
-            content: '\25B6';
-         }
-         .close_icon:after {
-            content: '\25BC';
-         }
 
-      .quoteS_open {
-         overflow: hidden;
+         .quotes_toggle {
+            display: flex;
+            justify-content: flex-end;
+            margin-left: .6rem;
+            cursor: pointer;
+         }
+            .quotes_toggle h4 {
+               display: block;
+               text-align: right;
+               line-height: 1.2rem;
+            }
+            .open_icon:after, .close_icon:after {
+               font-size: 1rem;
+               width: 1rem;
+               padding: 0 0 0 1rem;
+            }
+            .open_icon:after {
+               content: '\25B6';
+            }
+            .close_icon:after {
+               content: '\25BC';
+            }
+
+      .quoteS_container_mobile .quoteS_open {
+         overflow: scroll;
          transition: max-height 0.3s ease-out;  
          height: auto;
-         max-height: 100%;
+         max-height: 300px;
+         margin: .5rem 0 2rem 0;
+         padding: 1rem .5rem;
+         background-color: rgb(240, 240, 240);
       }
-      .quoteS {
+      .quoteS_container_mobile .quoteS {
+         margin-bottom: 2rem;
          overflow: hidden;
-         max-height: 0;
+         height: 0;
+      }
+
+      .quote {
+         margin-bottom: 1rem;
+      }
+      .quote p {
+         margin: 0 0 .3rem 0;
       }
 
    }

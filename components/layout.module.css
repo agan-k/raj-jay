@@ -68,7 +68,7 @@
    .nav_toggle {
       width: min-content;
       height: min-content;
-      padding: 0 .5rem;
+      padding: 0 0 0 .5rem;
       cursor: pointer;
    }
    .open_icon:after, .close_icon:after {
@@ -87,7 +87,7 @@
    
    .nav {
       width: 45%;
-      margin-top: 1rem;
+      margin-top: 2rem;
    }
       .nav ul {
          height: 4rem;
@@ -122,7 +122,7 @@
       .nav_aux {
          width: 45%;
          /* height: min-content; */
-         margin: 1.5rem 0 0 0;
+         margin: 2rem 0 0 0;
 
       }
          .social_icons {
@@ -133,7 +133,7 @@
             .social_icons img {
                display: inline;
                height: 100%;
-               padding: .2rem;
+               padding: .2rem .2rem .2rem 0;
                opacity: .7;
                cursor: pointer;
             }

@@ -20,7 +20,8 @@ export default function Shows(props) {
             
             <div className={style.calendar_container}>
                <div className={style.mailing_list}>
-                  <p>mailing list:</p>
+                  <p>Join the mailing list to find out about upcoming events
+                     in your area.</p>
                   <MailingList />
                </div>
                <main>

@@ -30,7 +30,6 @@
       .calendar_container main h4,
       .calendar_container main ul {
          color: rgb(102, 102, 102);
-         /* font-weight: 500; */
       }
       .calendar_container main h4 { 
          margin: 1rem 0 0 0;
@@ -86,7 +85,7 @@
    }
    .calendar_container .mailing_list {
       display: block;
-      margin: 0;
+      margin: 0 0 4rem 0;
       width: 100%;
    }
    .calendar_container {
