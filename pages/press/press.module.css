@@ -104,7 +104,8 @@
       .quoteS_container_mobile .quoteS {
          margin-bottom: 2rem;
          overflow: hidden;
-         height: 0;
+         max-height: 0;
+         transition: .3s;
       }
 
       .quote {
