@@ -31,12 +31,12 @@
    }
    .article_link {
       list-style: none;
+      margin-bottom: .5rem;
       }
 
    .container h3,
    .container h4 {
       font-size: .8rem;
-      display: inline-block;
       margin: 0;
    }
    .article_link h3 {
@@ -47,6 +47,7 @@
       letter-spacing: 1px;
       font-weight: 300;
       font-style: italic;
+
    }
 
 @media (max-width: 600px) {

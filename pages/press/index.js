@@ -24,7 +24,7 @@ export default function Press(props) {
    )
    const reviews = press_reviews.map(result => 
       <li className={style.article_link} key={result.uid}>
-         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}<br/>
+         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
          <Link href="/press/[id]" as={`/${getContentPaths(press_reviews)}/${result.uid}`}>
             <a>
                {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
@@ -39,7 +39,7 @@ export default function Press(props) {
    )
    const releases = press_releases.map(result => 
       <li className={style.article_link} key={result.uid}>
-         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}<br/>
+         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
          <Link href="/press/[id]" as={`/${getContentPaths(press_releases)}/${result.uid}`}>
             <a>
                {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
@@ -54,7 +54,7 @@ export default function Press(props) {
    )
    const interviews = press_interviews.map(result => 
       <li className={style.article_link} key={result.uid}>
-         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}<br />
+         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
          <Link href="/press/[id]" as={`/${getContentPaths(press_interviews)}/${result.uid}`}>
             <a>
                {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
@@ -69,7 +69,7 @@ export default function Press(props) {
    )
    const features = press_features.map(result => 
       <li className={style.article_link} key={result.uid}>
-         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}<br/>
+         {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
          <Link href="/press/[id]" as={`/${getContentPaths(press_features)}/${result.uid}`}>
             <a>
                {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
@@ -108,7 +108,7 @@ export default function Press(props) {
                <h4>quotes</h4>
                   {quotes}
             </div>
-            
+
             <div className={style.article_linkS_container}>
 
                <h4>press releases</h4>

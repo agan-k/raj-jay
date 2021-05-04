@@ -7,12 +7,15 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 16px;  
 }
+p, a, h2 {
+   overflow-wrap: break-word;/* for the long URL links*/
+
+}
 p {
    font-weight: 100;
    letter-spacing: 1px;
    line-height: 1.3rem;
    color: rgb(56, 56, 56);
-   overflow-wrap: break-word;/* for the long URL links*/
 }
 
 * {
