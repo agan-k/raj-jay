@@ -2,6 +2,7 @@
 .container_blur {
    position: relative;
    width: 100%;
+   padding: 3rem 1rem;
    min-height: 80vh;
    transition: .3s;
 }
@@ -14,11 +15,15 @@
    background-color: #ffffff;
    transition: .3s;
 }
-   .container .blog_home_link {
-      margin: 3rem 0 4rem 2rem;
+.container .blog_home_link {
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 4rem;
+      /* background-color: red; */
+      /* margin: 3rem 0 4rem 2rem; */
       cursor: pointer;
    }
-
+   
    .container article {
       margin: 2rem auto;
       width: 70%;
@@ -50,7 +55,8 @@
       .container main {
          font-size: .8rem;
          font-weight: 400;
-         color: grey;      }
+         color: grey;      
+      }
 
       .container main img {
          max-height: 13rem;
@@ -61,14 +67,33 @@
 
 @media (max-width: 600px) {
    .container {
-      padding: 0;
+      padding: 2rem .5rem;
+   }
+   .container .blog_home_link {
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 4rem;
+      /* background-color: red; */
+      /* margin: 3rem 0 4rem 2rem; */
+      cursor: pointer;
    }
       .container article {
          margin: 2rem auto;
-         width: 90%;
+         width: 100%;
+         text-align: center;
       }
-      .container article .title_image {
-      }
+         .container article .title_image {
+            margin: 0 auto;
+            margin-bottom: 3rem;
+         }
+         .container article h3 {
+            /* line-height: 1.5rem; */
+         }
+         .container article h3,
+         .container article h4 {
+            margin-bottom: 2rem;
+
+         }
          .container article .video_thumb {
             opacity: 1;
             cursor: pointer;
@@ -78,16 +103,17 @@
          .container article .post_date p {
             display: block;
             margin-bottom: 2rem;
-            text-align: center;
+            /* text-align: center; */
          }
 
       .container main h3, .container main h4 {
-      text-align: center;
+      /* text-align: center; */
       }
       .container main img {
          max-height: 10rem;
          max-width: 100%;
-         display: block;
+         display: inline-block;
+         text-align: center;
          margin: 0 auto;
       }
       .container main p {

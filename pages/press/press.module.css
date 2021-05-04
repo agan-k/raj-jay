@@ -14,7 +14,6 @@
 }
 .quoteS_container {
    width: 50%;
-   /* margin-top: 6rem; */
 }
    .quote {
       margin-bottom: 2rem;
@@ -47,7 +46,6 @@
       letter-spacing: 1px;
       font-weight: 300;
       font-style: italic;
-
    }
 
 @media (max-width: 600px) {

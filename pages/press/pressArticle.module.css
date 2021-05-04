@@ -1,10 +1,15 @@
 .container {
-   width: 100%;
    position: relative;
+   width: 100%;
+   padding: 3rem 1rem;
    min-height: 80vh;
 }
    .container .press_home_link {
-      margin: 3rem 0 4rem 2rem;
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 4rem;
+      /* background-color: red; */
+      /* margin: 3rem 0 4rem 2rem; */
       cursor: pointer;
    }
 
@@ -12,6 +17,12 @@
       margin: 2rem auto;
       width: 70%;
    }
+
+      .container main {
+         font-size: .8rem;
+         font-weight: 400;
+         color: grey;      
+      }
       .container article main img {
          max-width: 50%;
          cursor: pointer;
@@ -26,15 +37,19 @@
       
 @media (max-width: 600px) {
    .container {
-      padding: 0;
+      padding: 2rem .5rem;
    }
    .container .press_home_link {
-      margin: 2rem 0 4rem .5rem;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 4rem;
+      /* background-color: red; */
+      /* margin: 3rem 0 4rem 2rem; */
       cursor: pointer;
    }
    .container article {
       margin: 2rem auto;
-      width: 90%;
+      width: 100%;
    }
    .container article main img {
       max-width: 100%;
