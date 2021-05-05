@@ -56,33 +56,32 @@ console.log(props)
    }
       
    let cards = props.content.results.filter(item => item.data.news_card)
-   const news_cards = cards.map((result) =>
+   console.log(cards)
+   const news_cards = cards.map((item) =>
       
-      result.data.news_card && result.data.video_link !== 0 ?
+      item.data.video_link.length > 0 ?
          
-         <div key={result.uid} className={style.card}
-            onClick={() => setVideoURL(result.data.video_link[0].text)}
+         <div key={item.uid} className={style.card}
+            onClick={() => setVideoURL(item.data.video_link[0].text)}
          >
             <a>
-               <p className={style.date}>{formatPrismicDate(result.data.date)}</p>
-               <img src={result.data.img.url} onClick={() => setShowModal(true)}/>
-               {RichText.render(result.data.news_card_blurb)}
+               <p className={style.date}>{formatPrismicDate(item.data.date)}</p>
+               <img src={item.data.img.url} onClick={() => setShowModal(true)}/>
+               {RichText.render(item.data.news_card_blurb)}
                <span className={style.arrow}>&rarr;</span>
             </a>
-         </div> :
-
-      (result.data.news_card && result.data.content_type !== 'video') ?
-            
-         <div key={result.uid} className={style.card}>
-            <Link href={`/${result.data.content_type.substr(0, 5)}/${result.uid}`} >
+         </div>
+         :
+         <div key={item.uid} className={style.card}>
+            <Link href={`/${item.data.content_type.substr(0, 5)}/${item.uid}`} >
                <a>
-                  <p className={style.date}>{formatPrismicDate(result.data.date)}</p>
-                  <img src={result.data.img.url}/>
-                  {RichText.render(result.data.news_card_blurb)}
+                  <p className={style.date}>{formatPrismicDate(item.data.date)}</p>
+                  <img src={item.data.img.url}/>
+                  {RichText.render(item.data.news_card_blurb)}
                   <span className={style.arrow}>&rarr;</span>
                </a>
             </Link>
-         </div> : ''
+         </div>
    )      
 
    return (
