@@ -87,6 +87,7 @@
             cursor: pointer;
          }
             .quotes_toggle h4 {
+               margin: 0;
                display: block;
                text-align: right;
                line-height: 1.2rem;
@@ -109,7 +110,6 @@
          height: auto;
          max-height: 300px;
          margin: .5rem 0 2rem 0;
-         padding: 1rem .5rem;
          background-color: rgb(240, 240, 240);
       }
       .quoteS_container_mobile .quoteS {
@@ -120,10 +120,9 @@
       }
 
       .quote {
-         margin-bottom: 2rem;
+         /* margin-bottom: 2rem; */
       }
       .quote p {
-         margin: 0 0 .3rem 0;
          padding: 0 .5rem;
       }
 
