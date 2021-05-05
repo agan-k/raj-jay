@@ -18,7 +18,7 @@ console.log(props)
    useEffect(() => {
       const index = setInterval(() => {
         setRandomQuoteIndex(randomQuoteIndex => Math.floor(Math.random() * quotes.length));
-      },10000);
+      },10200);
       return () => clearInterval(index);
     }, []);
 
@@ -89,7 +89,6 @@ console.log(props)
 
          <div className={showModal ? style['container_blur'] : style['container']}>
             <div className={style.quotes_fade}
-               // className={randomQuoteIndex ? style['quotes_fade'] : ''}
             >
                {RichText.render(quotes[randomQuoteIndex].data.press_quote)}
             </div>

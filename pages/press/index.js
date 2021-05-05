@@ -81,20 +81,19 @@ export default function Press(props) {
    const quotes_source = props.content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    )
-   const quotes = quotes_source.map(result =>
+   const quotes = quotes_source.map(item =>
       <div className={style.quote}>
-         { RichText.render(result.data.press_quote) }
+         { RichText.render(item.data.press_quote) }
       </div>
    )
-   console.log(quotes)
 
    
    return (
       <Layout>
          <div className={style.container}>
             
-            <div className={style.quoteS_container_mobile} onClick={() => setQuotesShow(!quotesShow)}>
-               <div className={style['quotes_toggle']} >
+            <div className={style.quoteS_container_mobile} >
+               <div className={style['quotes_toggle']} onClick={() => setQuotesShow(!quotesShow)}>
                <h4>quotes</h4>
                   <div className={!quotesShow ? style['open_icon'] : style['close_icon']}>
                   </div>

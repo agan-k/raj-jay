@@ -12,19 +12,17 @@
 .banner_mobile {
    display: none;
 }
-/* .quotes {
-   position: absolute;
-   top: 2rem;
-   left: 2rem;
-   width: 40%;
-   
-} */
+
 .quotes_fade {
    position: absolute;
    top: 2rem;
    left: 2rem;
    width: 40%;
    animation: quote_fade 10s infinite;
+}
+.quotes_fade p:nth-child(2) {
+   font-size: .6rem;
+   text-align: right;
 }
 @keyframes quote_fade {
    0% {opacity: 0;}

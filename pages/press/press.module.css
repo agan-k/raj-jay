@@ -15,9 +15,22 @@
 .quoteS_container {
    width: 50%;
 }
-   .quote {
-      margin-bottom: 2rem;
-      font-size: .8rem;
+   .quoteS_container h4 {
+      margin: 0 0 2rem 0;
+   }
+   
+.quote p {
+   font-size: .8rem;
+ }
+   .quote p:nth-child(2) {
+      color: black;
+      font-size: .6rem;
+      text-align: right;
+      margin: 0;
+      margin-bottom: 1.5rem;
+   }
+   .quote p:nth-child(1) {
+      margin: 0;
    }
 
 .article_linkS_container {
@@ -33,8 +46,8 @@
       margin-bottom: .5rem;
       }
 
-   .container h3,
-   .container h4 {
+   .article_linkS_container h3,
+   .article_linkS_container h4 {
       font-size: .8rem;
       margin: 0;
    }
@@ -107,10 +120,11 @@
       }
 
       .quote {
-         margin-bottom: 1rem;
+         margin-bottom: 2rem;
       }
       .quote p {
          margin: 0 0 .3rem 0;
+         padding: 0 .5rem;
       }
 
    }
