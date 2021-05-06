@@ -1,6 +1,7 @@
 .container {
    position: relative;
    width: 100%;
+   min-height: 90vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -26,7 +27,18 @@
       .calendar_container main {
          width: 60%;
       }
-      .calendar_container main p,
+
+      .calendar_container main .calendar_listing {
+         width: 80%;
+         height: min-content;
+         padding: 1rem;
+         margin: .3rem 0;
+         background: white;
+         box-shadow: 0px 0px 9px 1px rgb(238, 238, 238);
+
+      }
+
+      /* .calendar_container main p,
       .calendar_container main h4,
       .calendar_container main ul {
          color: rgb(102, 102, 102);
@@ -46,7 +58,7 @@
       .calendar_container main p {
          margin: .5rem 0;
          letter-spacing: 1px;
-      }
+      } */
 
       .calendar_container aside {
          width: 35%;
