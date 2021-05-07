@@ -10,12 +10,9 @@ import MailingList from '../../components/mailingList'
 import style from './shows.module.css'
 
 export default function Shows(props) {
+   console.log(props)
 
-   console.log(props.calendar_listings.results)
-   const dates = props.calendar_listings.results.map(item => 
-      item.data.date
-   )
-   console.log(dates)
+   const past_shows = RichText.render(props.shows.data.shows_body)
 
    function formatPrismicDate(date) {
       let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
@@ -38,20 +35,53 @@ export default function Shows(props) {
       }
       return month + ' ' + day + ', ' + ' ' + year;
    }
-   
-   const calendar_listings = props.calendar_listings.results.map(listing =>
-      <div className={style.calendar_listing}>
-         <p>
-            {formatPrismicDate(listing.data.date)}
-         </p>
 
+   const calendar_listings = props.calendar_listings.results.map(listing =>
+      <div key={listing.id} className={style.calendar_listing}>
+         <div className={style.date}>{formatPrismicDate(listing.data.date)}</div>
+         <div className={style.venue}>
+            {RichText.render(listing.data.venue)}
+         </div>
+         <div className={style.headlining_artist}>
+            {RichText.render(listing.data.headlining_artist)}
+         </div>
+         <ul>{listing.data.lineup.map(list_item =>
+            <li key={list_item.text}>{list_item.text}</li>
+         )}</ul>
+         <div className={style.address}>
+            <div className={style.street}>
+               {RichText.render(listing.data.street_address)}
+            </div>
+            <div className={style.city}>
+               {RichText.render(listing.data.city)}
+            </div>
+            &nbsp;
+            <div className={style.country}>
+               {RichText.render(listing.data.country)}
+            </div>
+            &nbsp;
+            {listing.data.map_link.url && (
+               <a href={listing.data.map_link.url} target="_blank">
+                  <img className={style.map_icon} src="/icons/location-icon.png" /></a>
+            )}
+         </div>
+         
+         
+            {listing.data.links.length !== 0 && (
+            <div className={style.links}>
+               <img className={style.link_icon} src="/icons/link-icon.png" />
+               {RichText.render(listing.data.links)}
+         </div>
+            )}
       </div>
       )
+
+  
    return (
       <Layout>
          <div className={style.container}>
             
-            {/* <img className={style.banner} src={props.shows.data.banner_image.url} /> */}
+            <img className={style.banner} src={props.shows.data.banner_image.url} />
             
             <div className={style.calendar_container}>
                <div className={style.mailing_list}>
@@ -60,11 +90,13 @@ export default function Shows(props) {
                   <MailingList />
                </div>
                <main>
-                  {/* {RichText.render(calendar)} */}
                   {calendar_listings}
+                  <div className={style.past_shows}>
+                     {past_shows}
+                  </div>
                </main>
                <aside>
-                  {/* <img className={style.featured_flyer}
+                  <img className={style.featured_flyer}
                      src={props.shows.data.featured_flyer.url}
                   />
                   <img className={style.featured_flyer}
@@ -72,7 +104,7 @@ export default function Shows(props) {
                   />
                   <img className={style.featured_flyer}
                      src={props.shows.data.featured_flyer2.url}
-                  /> */}
+                  />
                   <div className={style.mailing_list}>
                      <p>Join the mailing list to find out about upcoming events
                         in your area.
@@ -86,12 +118,15 @@ export default function Shows(props) {
    )
 }
 export async function getStaticProps() {
+   const shows = await client.getSingle("shows");
+
    const calendar_listings = await client.query(
       Prismic.Predicates.at("document.type", "calendar_listing"),
       { pageSize: 100 }
    );
    return {
       props: {
+         shows,
          calendar_listings
       }
    }
