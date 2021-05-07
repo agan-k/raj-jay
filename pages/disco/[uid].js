@@ -19,7 +19,6 @@ export default function Album({ data }) {
                <div className={style.album_info}>
                   <img src={data.img.url} />
                      {RichText.render(data.content_body)}
-                  
                </div>
                
                { RichText.asText(data.bandcamp_id) ?
