@@ -1,15 +1,39 @@
-.links_container {
+.container {
+   position: relative;
+   width: 100%;
+   padding: 3rem 1rem;
+   min-height: 90vh;
+   
+}
+.links_wrapper {
    display: flex;
    flex-wrap: wrap;
-   justify-items: space-between;
+   justify-content: flex-start;
+   margin-left: 10%;
 }
-.links_container > * {
-   background: rgb(221, 221, 221);
-   margin: .3rem .3rem;
-   padding: .3rem;
-   border-radius: 5px;
-   cursor: pointer;
+.link_container {
+   font-size: .6rem;
+   font-weight: 100;
+   color: grey;
+   width: 15%;
+   height: min-content;
+   margin: .2rem;
+   padding: .5rem;
 }
-.links_container > *:hover {
-   background: red;
+.link_container a {
+   color: grey;
+}
+.link_container a:hover {
+   color: initial;
+}
+@media (max-width: 600px) {
+   .container {
+      padding: 3rem 0;
+   }
+   .links_wrapper {
+      margin-left: 5%;
+   }
+   .link_container {
+      width: 45%;
+   }
 }
