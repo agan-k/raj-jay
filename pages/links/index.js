@@ -10,7 +10,7 @@ export default function Links(props) {
  
    const links = props.links.data.links_body.map(link =>
       link.text.split(','));
-   const formated_links = links.map(link =>
+   const formatted_links = links.map(link =>
       <>
          {/* {link[2] && ( */}
             <div className={style.link_container}>
@@ -26,7 +26,7 @@ export default function Links(props) {
       <Layout>
          <div className={style.container}>
             <div className={style.links_wrapper}>
-               {formated_links}
+               {formatted_links}
             </div>
          </div>
       </Layout>
