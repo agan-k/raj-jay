@@ -15,8 +15,8 @@ export default function Contact(props) {
    const formatted_publicity = publicity.map(publicist =>
       <div className={style.publicist}>
          <h4>{publicist[0]}:</h4>
-         <p>{publicist[1]}</p>
-         <a href={publicist[2]}>&rarr;</a>
+         <p>{publicist[1]}&nbsp;<a href={publicist[2]}>&rarr;</a></p>
+         
       </div>
       )
    console.log(publicity)
@@ -24,7 +24,6 @@ export default function Contact(props) {
    return (
       <Layout>
          <div className={style.container}>
-            <p>publicist</p>
             <div className={style.publicity}>
                {formatted_publicity}
             </div>

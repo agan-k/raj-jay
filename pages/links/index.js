@@ -12,14 +12,14 @@ export default function Links(props) {
       link.text.split(','));
    const formatted_links = links.map(link =>
       <>
-         {/* {link[2] && ( */}
+         {link[2] && (
             <div className={style.link_container}>
                <a href={link[2]} target="_blank">
                   <strong><span>{link[0]}</span></strong><br/>
                   <em><span>{link[1]}</span></em>
                </a>
             </div>
-         {/* )} */}
+         )}
       </>
       )
    return (

@@ -122,7 +122,10 @@ export async function getStaticProps() {
 
    const calendar_listings = await client.query(
       Prismic.Predicates.at("document.type", "calendar_listing"),
-      { pageSize: 100 }
+      {
+         orderings: '[my.calendar_listing.date]',
+         pageSize: 100
+      }
    );
    return {
       props: {
