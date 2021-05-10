@@ -48,9 +48,9 @@ export default function Layout({ children }) {
    function currentPage(path) {
       let active_page;
       if (path == '/') {
-         active_page = 'home';
+         active_page = '/home';
       } else {
-         active_page = path.split("/")[1];
+         active_page = path
       }
       return active_page
    }
@@ -64,8 +64,8 @@ export default function Layout({ children }) {
          <header className={style.header}>
             <div className={style.logo}>
             {router.pathname !== '/' ?
-                  <Link href='/'><a><h1>RajivJayaweera.com/&nbsp;</h1></a></Link> :
-                  <><h1>RajivJayaweera.com/</h1>&nbsp;</>
+                  <Link href='/'><a><h1>RajivJayaweera.com&nbsp;</h1></a></Link> :
+                  <><h1>RajivJayaweera.com</h1>&nbsp;</>
                }
                {/* <img src="/images/logo.png" />
                &nbsp; */}
