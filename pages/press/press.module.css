@@ -43,7 +43,7 @@
    .article_linkS_container ul {
       font-size: .8rem;
       border-bottom: 1px solid rgb(241, 241, 241);
-      padding: 0 0 1rem 0;
+      padding: 0 0 .5rem 0;
       margin-bottom: 2rem;
    }
    .article_link {

@@ -27,8 +27,10 @@ export default function Contact(props) {
             <div className={style.publicity}>
                {formatted_publicity}
             </div>
-            <p>write direct</p>
-         <ContactForm/>
+            <div className={style.form_container}>
+               <p>Munch dranch with many words here:</p>
+               <ContactForm/>
+            </div>
          </div>
       </Layout>
    )
