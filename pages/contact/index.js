@@ -24,11 +24,11 @@ export default function Contact(props) {
    return (
       <Layout>
          <div className={style.container}>
-            <div className={style.publicity}>
+            <div className={style.publicity_container}>
                {formatted_publicity}
             </div>
             <div className={style.form_container}>
-               <p>Munch dranch with many words here:</p>
+               <h4>Contact Rajiv Jayaweera:</h4>
                <ContactForm/>
             </div>
          </div>

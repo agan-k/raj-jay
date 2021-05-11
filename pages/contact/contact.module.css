@@ -1,25 +1,22 @@
 .container {
    position: relative;
    width: 100%;
-   padding: 3rem 1rem;
+   padding: 3rem  0  0 4rem;
    min-height: 80vh;
 }
-.publicity {
+.publicity_container {
    /* display: flex; */
    width: 90%;
    /* justify-content: space-around; */
    font-size: .9rem;
-   margin: 0 auto;
 }
 .publicist {
    /* display: flex; */
 }
-.publicist h4, .publicist p, .publicist a {
-   font-weight: 500;
-}
-.publicist h4 {
+.container h4 {
    margin: 1rem 0 0 0;
    font-weight: 500;
+   color: rgb(75, 75, 75);
 }
  .publicist p, .publicist a {
    margin: 0 0 1rem 1rem;
@@ -31,9 +28,20 @@
 }
 
 .form_container {
-   width: 50%;
-   margin: 3rem auto 0;
+   width: 52%;
+   margin: 1rem 0;
 }
 .form_container p {
    margin: 0;
+}
+@media (max-width: 600px) {
+   .container {
+      padding-left: 1rem;
+   }
+   .publicity_container {
+      width: 100%;
+   }
+   .form_container {
+      width: 90%;
+   }
 }
