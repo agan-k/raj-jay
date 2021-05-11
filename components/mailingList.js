@@ -4,7 +4,7 @@ export default function MailingList() {
    return (
       <div className={style.container}>
          <form name="mailing-list" action="/formSubmission" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="mailing-list" />
             <div className={style.form_label}>
                <label htmlFor="yourcity">
                </label>
