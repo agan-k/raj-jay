@@ -28,8 +28,8 @@
 }
 
 .form_container {
-   width: 52%;
-   margin: 1rem 0;
+   width: 50%;
+   margin-left: 1rem;
 }
 .form_container p {
    margin: 0;

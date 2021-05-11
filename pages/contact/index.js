@@ -27,8 +27,8 @@ export default function Contact(props) {
             <div className={style.publicity_container}>
                {formatted_publicity}
             </div>
+            <h4>Contact Rajiv Jayaweera:</h4>
             <div className={style.form_container}>
-               <h4>Contact Rajiv Jayaweera:</h4>
                <ContactForm/>
             </div>
          </div>
