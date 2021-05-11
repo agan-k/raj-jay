@@ -18,7 +18,7 @@ console.log(props)
    useEffect(() => {
       const index = setInterval(() => {
         setRandomQuoteIndex(randomQuoteIndex => Math.floor(Math.random() * quotes.length));
-      },10200);
+      },10000);
       return () => clearInterval(index);
     }, []);
 
