@@ -34,7 +34,7 @@
    }
 
 .article_linkS_container {
-   width: 40%;
+   width: 35%;
    margin-top: 0;
 } 
    .article_linkS_container h4 {
@@ -44,7 +44,7 @@
       font-size: .8rem;
       border-bottom: 1px solid rgb(241, 241, 241);
       padding: 0 0 .5rem 0;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
    }
    .article_link {
       display: flex;
@@ -52,17 +52,16 @@
       list-style: none;
       margin-bottom: .5rem;
       }
-   
-   .article_link ul h4 {
-   }
    .article_link h3,
    .article_link h4 {
       font-size: .7rem;
       margin: 0;
-      margin-right: .5rem;
+      font-weight: 100;
    }
    .article_link h3 {
-      /* font-weight: 500; */
+      margin-right: .5rem;
+      white-space: nowrap;
+
    }
    .article_link h4  {
       line-height: 1.3;
