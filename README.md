@@ -6,6 +6,6 @@ Music artist profile web app. Headless CMS, responsive design, third party music
 
 # Screenshot
 
-![](screenshots/desktop_home.jpg)
-![](screenshots/ipad_home.jpg)
-![](screenshots/iphone_home.jpg)
+![](screenshots/desktop_home.png)
+![](screenshots/ipad_home.png)
+![](screenshots/iphone_home.png)
