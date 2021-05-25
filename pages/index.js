@@ -25,9 +25,6 @@ console.log(props)
    const quotes = props.content.results.filter(result => 
       result.data.press_quote.length !== 0
    )
-   console.log(props.content.results[0].data.video_link[0].text)
-
-   
    const mobile_quote_index = Math.floor(Math.random() * quotes.length);
   
 
@@ -101,7 +98,7 @@ console.log(props)
                <img src={'/images/cta_buy_album.jpg'} />
                <p>new album Pistils<br/> out now!</p>
                <Link href="https://pistils.bandcamp.com/album/pistils">
-                  <p><a>buy / listen &rarr;</a></p>
+                  <p><a>listen / buy &rarr;</a></p>
                </Link>
             </div>
                <div className={style.grid}>
