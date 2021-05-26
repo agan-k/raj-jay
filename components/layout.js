@@ -105,8 +105,11 @@ export default function Layout({ children }) {
                   </div>
                </div>
             </div>
-            <div className={style['nav_toggle']} onClick={() => setNavShow(!navShow)}>
-               <div className={!navShow ? style['open_icon'] : style['close_icon']}>
+            <div className={style['nav_toggle']}>
+               <div
+                  className={!navShow ? style['open_icon'] : style['close_icon']}
+                  onClick={() => setNavShow(!navShow)}
+               >
                </div>
             </div>
             

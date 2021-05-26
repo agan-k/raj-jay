@@ -180,6 +180,9 @@
       /* margin: 0; */
       padding: 2rem .5rem;
    }
+   .calendar_container main .past_shows {
+      width: 100%;
+   }
    .container aside {
       display: none;
    }
