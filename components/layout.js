@@ -61,7 +61,7 @@ export default function Layout({ children }) {
            <title>RajivJayaweera</title>
            <link rel="icon" href="/favicon.ico" />
          </Head>
-         <header className={style.header}>
+         <header className={style.header} onMouseOver={() => setNavShow(true)} onMouseOut={() => setNavShow(false)}>
             <div className={style.logo}>
             {router.pathname !== '/' ?
                   <Link href='/'><a><h1>RajivJayaweera.com/&nbsp;</h1></a></Link> :
