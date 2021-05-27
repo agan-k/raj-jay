@@ -62,11 +62,7 @@
       width: 100%;
       transition: .3s;
    }
-   .nav_toggle {
-      width: min-content;
-      height: min-content;
-      padding: 0 0 0 .5rem;
-      cursor: pointer;
+   .mobile_nav_toggle {
       display: none;
    }
    .open_icon:after, .close_icon:after {
@@ -182,8 +178,12 @@
    }
 }
 @media (max-width: 800px) {
-   .nav_toggle {
+   .mobile_nav_toggle {
       display: block;
+      width: min-content;
+      height: min-content;
+      padding: 0 0 0 .5rem;
+      cursor: pointer;
    }
    .nav_container, 
    .nav_container_open {
@@ -254,7 +254,7 @@
       position: fixed;
       width: 100%;
       height: 100%;
-      top: 0;
+      top: 2rem;
       right: 0;
       z-index: 999;
       transition: none;
@@ -266,21 +266,23 @@
       padding-top: 2rem;
       border: none;
    }
-   .nav_toggle {
-      width: min-content;
-      height: min-content;
-      padding-right: .5rem;
+   .mobile_nav_toggle {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 2rem;
+      /* padding-right: .5rem; */
       line-height: 1.2rem;
       cursor: pointer;
       display: block;
    }
-   .nav_toggle .close_icon:after {
+   .mobile_nav_toggle .close_icon:after, 
+   .mobile_nav_toggle .open_icon:after {
       z-index: 999;
       position: fixed;
       top: .5rem;
       right: .5rem;
-   }
-   .nav_toggle .open_icon:after {
    }
    
    .nav a:hover {

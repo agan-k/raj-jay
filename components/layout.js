@@ -54,7 +54,6 @@ export default function Layout({ children }) {
       }
       return active_page
    }
-   // const active_page = router.pathname
    return (
       <div className={style.container}>
          <Head>
@@ -67,22 +66,13 @@ export default function Layout({ children }) {
                   <Link href='/'><a><h1>RajivJayaweera.com/&nbsp;</h1></a></Link> :
                   <><h1>RajivJayaweera.com/</h1>&nbsp;</>
                }
-               {/* <img src="/images/logo.png" />
-               &nbsp; */}
                <div className={style.active_page}>
                      {currentPage(router.pathname)}
                </div>
-               {/* {router.pathname !== '/' ?
-                  <Link href='/'><h1>RajivJayaweera.com/&nbsp;</h1></Link> :
-                  <><h1>RajivJayaweera.com/</h1>&nbsp;</>
-               } */}
             </div>
 
             <div className={navShow ? style['nav_container_open'] : style['nav_container']}>
                <div className={style.nav}>
-                  {/* <div className={style.active_page}>
-                     {currentPage(router.pathname)}
-                  </div> */}
                   <ul>
                      {links}
                   </ul>
@@ -105,15 +95,14 @@ export default function Layout({ children }) {
                   </div>
                </div>
             </div>
-            <div className={style['nav_toggle']}>
-               <div
-                  className={!navShow ? style['open_icon'] : style['close_icon']}
-                  onClick={() => setNavShow(!navShow)}
-               >
-               </div>
-            </div>
-            
          </header>
+               <div className={style['mobile_nav_toggle']} >
+                  <div
+                     className={!navShow ? style['open_icon'] : style['close_icon']}
+                     onClick={() => setNavShow(!navShow)}
+                  >
+                  </div>
+               </div>
             <main className={style['main']}>
                {children}
             </main>
