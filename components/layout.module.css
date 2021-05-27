@@ -174,15 +174,15 @@
       cursor: pointer;
    }
       .open_icon:after, .close_icon:after {
-         font-size: 1.3rem;
          width: 2rem;
          text-align: right;
          color: rgb(29, 29, 29);
       }
       .open_icon:after {
          content: '\2630';
+         font-size: 1.1rem;
          font-weight: 100;
-         line-height: 1rem;
+         line-height: 1.1rem;
       }
       .close_icon:after {
          content: '\00D7';
