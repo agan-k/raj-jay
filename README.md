@@ -2,7 +2,7 @@
 
 [Link to the project](https://rajivjayaweera.com)
 
-Music artist web app. Headless CMS, responsive design, third party music distribution integration, form submission.
+Music artist profile web app. Headless CMS, responsive design, third party music distribution integration, form submission.
 
 
 <img src="screenshots/desktop_home.png" height="600">
