@@ -78,10 +78,8 @@ export default function Blog(props) {
          </div>
          <div className={style.old_post_link}>
             <Link href="blog/[id]" as={`/blog/${post.uid}`}>
-               <a>
-                  {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}<br />
-                  {RichText.render(post.data.content_body.filter(item => item.type == 'heading4'))}
-               </a>
+               {RichText.render(post.data.content_body.filter(item => item.type == 'heading3'))}<br />
+               {RichText.render(post.data.content_body.filter(item => item.type == 'heading4'))}
             </Link>
          </div>
       </div>

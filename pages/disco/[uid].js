@@ -4,17 +4,15 @@ import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
-import BandcampPlayer from 'react-bandcamp'
 import style from './album.module.css'
 import Layout from '../../components/layout'
 
 export default function Album({ data }) {
-   console.log(data)
 
    return (
       <Layout>
          <div className={style.container}>
-            <Link href="/disco"><h4 style={{cursor: "pointer"}}>&larr; &nbsp;<a>full discography</a></h4></Link>
+            <Link href="/disco"><h4 style={{cursor: "pointer"}}>&larr; &nbsp;full discography</h4></Link>
             <main>
                <div className={style.album_info}>
                   <img src={data.img.url} />
@@ -22,20 +20,12 @@ export default function Album({ data }) {
                </div>
                
                { RichText.asText(data.bandcamp_id) ?
-                  <BandcampPlayer
-                     className='audio_player'
-                     album={RichText.asText(data.bandcamp_id)}
-                     // width='40%'
-                     height='460px'
-                     artwork='none'
-                     /> : ''
-                     // <div>data.</div>
-                  }
-               <style jsx>{`
-                  audio_player {
-                     width: 10%;
-                  }
-                  `}</style>
+                  <iframe 
+                     style={{border: 0, height: '460px'}} 
+                     src={`https://bandcamp.com/EmbeddedPlayer/album=${RichText.asText(data.bandcamp_id)}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/`} 
+                     seamless 
+                  /> : ''
+               }
             </main>
          </div>
       </Layout>

@@ -26,9 +26,7 @@ export default function Press(props) {
       <li className={style.article_link} key={result.uid}>
          {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
          <Link href="/press/[id]" as={`/${getContentPaths(press_reviews)}/${result.uid}`}>
-            <a>
-               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
-            </a>
+            {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
          </Link>
       </li>
    )
@@ -41,9 +39,7 @@ export default function Press(props) {
       <li className={style.article_link} key={result.uid}>
          {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
          <Link href="/press/[id]" as={`/${getContentPaths(press_releases)}/${result.uid}`}>
-            <a>
-               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
-            </a>
+            {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
          </Link>
       </li>
    )
@@ -56,9 +52,7 @@ export default function Press(props) {
       <li className={style.article_link} key={result.uid}>
          {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
          <Link href="/press/[id]" as={`/${getContentPaths(press_interviews)}/${result.uid}`}>
-            <a>
-               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
-            </a>
+            {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
          </Link>
       </li>
    )
@@ -71,9 +65,7 @@ export default function Press(props) {
       <li className={style.article_link} key={result.uid}>
          {RichText.render(result.data.content_body.filter(item => item.type == 'heading3'))}
          <Link href="/press/[id]" as={`/${getContentPaths(press_features)}/${result.uid}`}>
-            <a>
-               {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
-            </a>
+            {RichText.render(result.data.content_body.filter(item => item.type == 'heading4'))}
          </Link>
       </li>
    )
