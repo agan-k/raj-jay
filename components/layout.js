@@ -25,7 +25,7 @@ export default function Layout({ children }) {
    ]
    const links = navLinksData.map(link =>
       <li key={link.uid} className={router.pathname == `${link.uid}` ? 'active_nav_links' : ''}>
-         <Link href={link.uid}><a>{link.name}</a></Link>
+         <Link href={link.uid}>{link.name}</Link>
          <style jsx>{`
             .active_nav_links {
                display: none;
@@ -63,7 +63,7 @@ export default function Layout({ children }) {
          <header className={style.header} onMouseOver={() => setNavShow(true)} onMouseOut={() => setNavShow(false)}>
             <div className={style.logo}>
             {router.pathname !== '/' ?
-                  <Link href='/'><a><h1>RajivJayaweera.com/&nbsp;</h1></a></Link> :
+                  <Link href='/'><h1>RajivJayaweera.com/&nbsp;</h1></Link> :
                   <><h1>RajivJayaweera.com/</h1>&nbsp;</>
                }
                <div className={style.active_page}>

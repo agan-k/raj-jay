@@ -61,22 +61,18 @@ console.log(props)
          <div key={item.uid} className={style.card}
             onClick={() => setVideoURL(item.data.video_link[0].text)}
          >
-            <a>
-               <p className={style.date}>{formatPrismicDate(item.data.date)}</p>
-               <img src={item.data.img.url} onClick={() => setShowModal(true)}/>
-               {RichText.render(item.data.news_card_blurb)}
-               <span className={style.arrow}>&rarr;</span>
-            </a>
+            <p className={style.date}>{formatPrismicDate(item.data.date)}</p>
+            <img src={item.data.img.url} onClick={() => setShowModal(true)}/>
+            {RichText.render(item.data.news_card_blurb)}
+            <span className={style.arrow}>&rarr;</span>
          </div>
          :
          <div key={item.uid} className={style.card}>
             <Link href={`/${item.data.content_type.substr(0, 5)}/${item.uid}`} >
-               <a>
-                  <p className={style.date}>{formatPrismicDate(item.data.date)}</p>
-                  <img src={item.data.img.url}/>
-                  {RichText.render(item.data.news_card_blurb)}
-                  <span className={style.arrow}>&rarr;</span>
-               </a>
+               <p className={style.date}>{formatPrismicDate(item.data.date)}</p>
+               <img src={item.data.img.url}/>
+               {RichText.render(item.data.news_card_blurb)}
+               <span className={style.arrow}>&rarr;</span>
             </Link>
          </div>
    )      
@@ -98,7 +94,7 @@ console.log(props)
                <img src={'/images/cta_buy_album.jpg'} />
                <p>new album Pistils<br/> out now!</p>
                <Link href="https://pistils.bandcamp.com/album/pistils">
-                  <p><a>listen / buy &rarr;</a></p>
+                  <p>listen / buy &rarr;</p>
                </Link>
             </div>
                <div className={style.grid}>
