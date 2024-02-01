@@ -1,4 +1,5 @@
 .container, .container_blur {
+   padding-top: 120px;
    position: relative;
    width: 100%;
    display: flex;

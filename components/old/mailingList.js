@@ -1,4 +1,4 @@
-import style from './mailing_list.module.css'
+import style from './mailing_list.module.css';
 
 export default function MailingList() {
    return (

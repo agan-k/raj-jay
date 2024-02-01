@@ -114,7 +114,7 @@ export default function Layout({ children }) {
               >
                 &nbsp;{'FormVsContent'}
               </a>
-            </footer>
+         </footer>
       </div>
    )
 }

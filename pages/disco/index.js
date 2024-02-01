@@ -5,7 +5,7 @@ import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 
 import style from './discography.module.css'
-import Layout from '../../components/layout'
+import Layout from "../../components";
 
 export default function Discography(props) {
    

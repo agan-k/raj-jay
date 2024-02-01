@@ -8,7 +8,7 @@ import { RichText } from "prismic-reactjs"
 import style from './blog.module.css'
 // import formatPrismicDate from '../formatPrismicDate.js'
 import Modal from '../../components/modal'
-import Layout from '../../components/layout'
+import Layout from '../../components'
 
 export default function Blog(props) {
    const [showModal, setShowModal] = useState(false)

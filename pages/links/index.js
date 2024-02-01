@@ -3,7 +3,7 @@ import React from 'react'
 import { client } from '../../prismic-configuration'
 import { RichText } from 'prismic-reactjs'
 
-import Layout from '../../components/layout'
+import Layout from '../../components'
 import style from './links.module.css'
 
 export default function Links(props) {

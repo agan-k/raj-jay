@@ -5,7 +5,7 @@ import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
-import Layout from '../../components/layout'
+import Layout from '../../components'
 import style from './press.module.css'
 
 export default function Press(props) {
@@ -79,7 +79,6 @@ export default function Press(props) {
       </div>
    )
 
-   
    return (
       <Layout>
          <div className={style.container}>

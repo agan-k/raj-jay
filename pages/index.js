@@ -5,9 +5,9 @@ import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
-import Layout from '../components/layout'
 import Modal from '../components/modal'
 import style from './Home.module.css'
+import { Layout } from '../components'
 
 export default function Home(props) {
 console.log(props)
@@ -79,7 +79,6 @@ console.log(props)
 
    return (
       <Layout>
-
          <div className={showModal ? style['container_blur'] : style['container']}>
             <div className={style.quotes_fade}
             >

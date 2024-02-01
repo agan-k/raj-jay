@@ -4,7 +4,7 @@ import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 
 import style from './photos.module.css'
-import Layout from '../../components/layout'
+import Layout from '../../components'
 import Modal from '../../components/modal'
 import MaskToggleIcon from '../../components/MaskToggleIcon'
 

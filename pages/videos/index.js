@@ -5,7 +5,7 @@ import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 import { RichText } from "prismic-reactjs"
 
-import Layout from '../../components/layout'
+import Layout from '../../components'
 import style from './videos.module.css'
 import Modal from '../../components/modal'
 
