@@ -1,20 +1,21 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import {MailingList} from "../../components"
 import { navLinks, socialLinks as social } from "../../utils/constants";
 import { 
-  Wrapper, 
+  Container, 
   NavContainer, 
-  SocialIcon, 
+  SocialIcons, 
   NavItem, 
-  SocialWrapper,
-  NavigationWrapper,
+  NavRoutes,
+  SocialAndMailingWrapper,
 } from "./styled";
 
-export default function Nav({navShow}) {
+export default function Nav({isNavOpen}) {
   const router = useRouter(); 
-  console.log('navShow: ', navShow)
-  const navigationRoutes = navLinks.map(item =>
-    <NavItem key={item.name} active={router.pathname == `${item.link}` ? true : false}>
+  console.log('here: ', router.pathname)
+  const navigationRoutes = navLinks.map(item => 
+    <NavItem key={item.name} active={router.pathname === `${item.url}` ? true : false}>
       <Link href={item.url}>
         {item.name}
       </Link>
@@ -22,23 +23,22 @@ export default function Nav({navShow}) {
   );
   
   const socialLinks = social.map(item =>
-    <SocialIcon key={item.name}>
-      <a href={item.url} target="_blank">
-        <img src={item.icon} alt={item.name} />
-      </a>
-    </SocialIcon>
+    <a key={item.name} href={item.url} target="_blank">
+      <img src={item.icon} alt={item.name} />
+    </a>
   );
 
   return(
-    <Wrapper navShow={navShow}>
-      <NavContainer>
-          <NavigationWrapper>
-            {navigationRoutes}
-          </NavigationWrapper>
-          {/* <SocialWrapper>
-            {socialLinks}
-          </SocialWrapper> */}
-      </NavContainer>
-    </Wrapper>
+    <Container isNavOpen={isNavOpen}>
+      <NavRoutes>
+        <ul>
+          {navigationRoutes}
+        </ul>
+      </NavRoutes>
+      <SocialAndMailingWrapper>
+        <SocialIcons>{socialLinks}</SocialIcons>
+        <MailingList />
+      </SocialAndMailingWrapper>
+    </Container>
   );
 }

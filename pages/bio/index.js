@@ -11,7 +11,6 @@ export default function Bio(props) {
    return (
       <Layout>
          <div className={style.container}>
-            {/* <h2>Bio</h2> */}
             {RichText.render(props.bio.data.bio_body)}
          </div>
       </Layout>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {Nav, MailingList} from "../../components";
+import {Nav, MailingList, NavToggle} from "../../components";
 import {
    Container,
    Logo,
@@ -11,11 +11,15 @@ import {
 } from "./styled";
 
 export default function Header() {
-   const [navShow, setNavShow] = useState(false)
+   const [open, setOpen] = useState(false)
    const router = useRouter();
    const pathname = router.pathname;
    const activePage = getActivePage(pathname);
-   const isHome = Boolean(pathname === '/')
+   const isHome = Boolean(pathname === '/');
+
+   // function HandleToggleOpen() {
+   //    setOpen(!open);
+   //  }
 
    function getActivePage(pathname) {
       let active;
@@ -29,8 +33,8 @@ export default function Header() {
 
    return(
       <Container 
-         onMouseOver={() => setNavShow(true)} 
-         onMouseOut={() => setNavShow(false)}
+         onMouseOver={() => setOpen(true)} 
+         onMouseOut={() => setOpen(false)}
       >
          <Logo>
             {isHome ?
@@ -41,8 +45,9 @@ export default function Header() {
                {activePage}
             </ActivePage>
          </Logo>
-         <Nav navShow={navShow} />
-         <MailingList />
+         <Nav isNavOpen={open} />
+         {/* <MailingList /> */}
+         {/* <NavToggle handleToggleNav={() => HandleToggleOpen()} /> */}
       </Container>
   );
 }

@@ -7,3 +7,6 @@ export const Container = styled.div`
   padding: 0 .5rem;
   margin: 0 auto;
 `;
+export const PageWrapper = styled.main`
+  // padding-top: 2rem;
+`

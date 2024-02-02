@@ -30,3 +30,7 @@ export const socialLinks = [
     icon: '/icons/youtube.png'
   },
 ];
+
+export const Z_INDEX = {
+  header: 1,
+}

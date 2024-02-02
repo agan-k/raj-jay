@@ -2,27 +2,22 @@ import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery"
 
 export const Container = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: .6rem;
+  p {
+    white-space: nowrap;
+    font-size: .6rem;
+    line-height: 1.4rem;
+    letter-spacing: .1rem;
+    padding: 0 .2rem;
+    margin: 0 .7rem 0rem 0;
+  }
   form {
-    // display: flex;
-    // justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
   }
-  .form_label {
-    display: inline;
-    color: rgb(155, 155, 155);
-  }
-  span {
-    font-size: .8rem;
-    // margin: 0 1rem 0 0;
-    color: red;
-
-  }
-  .form_label label {
-    font-size: .8rem;
-    margin: 0 0 0 0;
-    text-transform: lowercase;
-    font-style: italic;
-  }
-  .form_label input {
+  input {
     font-size: .8rem;
     border: none;
     outline: none;
@@ -30,18 +25,18 @@ export const Container = styled.div`
     transition: ease-in-out, width .35s ease-in-out;
     background: rgb(245, 245, 245);
   }
-  .form_label input::placeholder {
+  input::placeholder {
     color: rgb(195, 195, 195);
     font-size: .6rem;
     font-style: italic;
     padding-left: .3rem;
   }
-
+  
   input:focus {
-  background: rgb(255, 255, 171);
+    background: rgb(255, 255, 171);
   }
-
-  .container button {
+  
+  button {
     margin: 0;
     font-size: .6rem;
     letter-spacing: .1rem;

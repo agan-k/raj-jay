@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery";
+import { Z_INDEX } from "../../utils/constants";
 
 export const Container = styled.header`
-  position: fixed;
-  top: 0;
   width: 100%;
-  height: 120px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  padding-top: 1rem;
   background: white;
   transition: .3s;
   cursor: pointer;
@@ -17,6 +16,8 @@ export const Container = styled.header`
 `;
 
 export const Logo = styled.div`
+  display: flex;
+  margin-left: .2rem;
   display: flex;
   a {
     color: black;
