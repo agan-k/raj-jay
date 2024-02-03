@@ -149,10 +149,6 @@
    display: block;
    text-align: right;
 }
-
-.logo {
-  height: 1em;
-}
 @media (max-width: 800px)  {
    
    .cta_buy_album {
@@ -170,7 +166,6 @@
       width: 100%;
    }
    .card {
-     
       margin: 1rem;
       flex-basis: 42%;
       padding: .5rem;
