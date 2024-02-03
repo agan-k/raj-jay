@@ -1,3 +1,4 @@
+export {BannerQuotes} from "./banner-quotes";
 export {Footer} from "./footer";
 export {Header} from "./header";
 export {MailingList} from "./mailing-list";

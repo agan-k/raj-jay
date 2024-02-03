@@ -4,9 +4,8 @@ import Link from 'next/link'
 import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs";
-import formatPrismicDate from '../utils/formatPrismicDate';
 
-import { Layout, NewsCards } from '../components'
+import { Layout, NewsCards, BannerQuotes } from '../components'
 import Modal from '../components/modal'
 import style from './Home.module.css'
 
@@ -30,10 +29,7 @@ export default function Home({content}) {
    return (
       <Layout>
          <div className={showModal ? style['container_blur'] : style['container']}>
-            <div className={style.quotes_fade}
-            >
-               {RichText.render(quotes[randomQuoteIndex].data.press_quote)}
-            </div>
+            <BannerQuotes quotes={quotes} randomQuote={randomQuoteIndex} />
 
             <div className={style.main}>
                <img className={style.banner} src={'/images/home_banner.jpg'} />
