@@ -14,7 +14,7 @@ export default function Home({content}) {
    const [videoURL, setVideoURL] = useState(null)
    const [randomQuoteIndex, setRandomQuoteIndex] = useState(6);
 
-   function HandleVideoModal(videoLink) {
+   function HandleVideoLinkModal(videoLink) {
       setVideoURL(videoLink);
       setShowModal(true);
    }
@@ -47,7 +47,7 @@ export default function Home({content}) {
                      <p>listen / buy &rarr;</p>
                   </Link>
                </div>
-               <NewsCards cards={cards} HandleVideoModal={HandleVideoModal} />
+               <NewsCards cards={cards} HandleVideoLinkModal={HandleVideoLinkModal} />
             </div>
          </div>
          {showModal && (

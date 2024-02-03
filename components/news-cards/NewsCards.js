@@ -4,7 +4,7 @@ import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../utils/formatPrismicDate";
 import { Container, Card, Date, Arrow, Blurb } from "./styled";
 
-export default function NewsCards({cards, HandleVideoModal}) {
+export default function NewsCards({cards, HandleVideoLinkModal}) {
   const newsCards = cards.map((item) => {
     const isVideoLink = Boolean(item.data.video_link.length > 0);
 
@@ -12,7 +12,7 @@ export default function NewsCards({cards, HandleVideoModal}) {
       const videoLink = item.data.video_link[0].text;
       return(
         <Card key={item.uid}
-          onClick={() => HandleVideoModal(videoLink)}
+          onClick={() => HandleVideoLinkModal(videoLink)}
         >
           <Date>{formatPrismicDate(item.data.date)}</Date>
           <img src={item.data.img.url} />
