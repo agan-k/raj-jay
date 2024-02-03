@@ -27,7 +27,8 @@ export const Container = styled.div`
   }
   input::placeholder {
     color: rgb(195, 195, 195);
-    font-size: .6rem;
+    font-size: .8rem;
+    letter-spacing: 2px;
     font-style: italic;
     padding-left: .3rem;
   }
@@ -43,9 +44,14 @@ export const Container = styled.div`
     color: white;
     border: 0;
     text-transform: lowercase;
-    padding: .3rem;
+    padding: .3rem .5rem;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 4px;
     cursor: pointer;
+  }
+  &:hover button {
+    color: yellow;
+    padding: .3rem .6rem;
+    transition: .2s;
   }
 `;

@@ -4,17 +4,18 @@ import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../utils/formatPrismicDate";
 import { Container, Card, Date, Arrow, Blurb } from "./styled";
 
-export default function NewsCards({cards}) {
-  const [videoURL, setVideoURL] = useState(null)
-  console.log('NewsCards: ', cards)
+export default function NewsCards({cards, HandleVideoModal}) {
   const newsCards = cards.map((item) => {
-    if (item.data.video_link.length > 0) {
+    const isVideoLink = Boolean(item.data.video_link.length > 0);
+
+    if (isVideoLink) {
+      const videoLink = item.data.video_link[0].text;
       return(
         <Card key={item.uid}
-          onClick={() => setVideoURL(item.data.video_link[0].text)}
+          onClick={() => HandleVideoModal(videoLink)}
         >
           <Date>{formatPrismicDate(item.data.date)}</Date>
-          <img src={item.data.img.url} onClick={() => setShowModal(true)}/>
+          <img src={item.data.img.url} />
           <Blurb>
             {RichText.render(item.data.news_card_blurb)}
           </Blurb>

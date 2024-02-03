@@ -17,14 +17,14 @@ export const Container = styled.header`
 
 export const Logo = styled.div`
   display: flex;
+  width: 20%;
   margin-left: .2rem;
-  display: flex;
   a {
     color: black;
   }
   h1 {
-    width: min-content;;
-    height: min-content;
+    text-transform: uppercase;
+    white-space: nowrap;
     margin: 0;
     font-family: 'Marvel', sans-serif;
     font-weight: 100;

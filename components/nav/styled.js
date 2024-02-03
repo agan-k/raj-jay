@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -10,7 +10,7 @@ export const Container = styled.div`
   transition: .3s;
 `;
 export const NavRoutes = styled.nav`
-width: 45%;
+width: 50%;
 margin-top: 2rem;
 ul {
   height: 4rem;
@@ -29,11 +29,10 @@ export const NavItem = styled.li`
   display: ${({active}) => active ? 'none' : 'initial'};
   a {
     letter-spacing: .1rem;
-    font-size: .6rem;
-    font-weight: 100;
+    font-size: .8rem;
     text-transform: lowercase;
     color: grey;
-    padding: 0 .2rem;
+    padding: 0 .5rem;
     transition: .2s;
   }
   &:hover a {
@@ -43,7 +42,7 @@ export const NavItem = styled.li`
   }
 `;
 export const SocialAndMailingWrapper = styled.div`
-  width: 45%;
+  width: 40%;
   margin: 2rem 0 0 0;
 `;
 export const SocialIcons = styled.div`

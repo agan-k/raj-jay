@@ -12,7 +12,12 @@ import style from './Home.module.css'
 export default function Home({content}) {
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
-   const [randomQuoteIndex, setRandomQuoteIndex] = useState(6)
+   const [randomQuoteIndex, setRandomQuoteIndex] = useState(6);
+
+   function HandleVideoModal(videoLink) {
+      setVideoURL(videoLink);
+      setShowModal(true);
+   }
 
    useEffect(() => {
       const index = setInterval(() => {
@@ -42,7 +47,7 @@ export default function Home({content}) {
                      <p>listen / buy &rarr;</p>
                   </Link>
                </div>
-               <NewsCards cards={cards} />
+               <NewsCards cards={cards} HandleVideoModal={HandleVideoModal} />
             </div>
          </div>
          {showModal && (

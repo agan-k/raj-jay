@@ -4,7 +4,7 @@ import { RichText } from "prismic-reactjs"
 import ReactPlayer from 'react-player'
 
 export default function Modal(props) {
-  
+  console.log('Modal Props: ', props)
       let detail;
       if (props.photos) {
          detail = props.photo
