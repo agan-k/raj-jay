@@ -13,7 +13,6 @@ import {
 
 export default function Nav({isNavOpen}) {
   const router = useRouter(); 
-  console.log('here: ', router.pathname)
   const navigationRoutes = navLinks.map(item => 
     <NavItem key={item.name} active={router.pathname === `${item.url}` ? true : false}>
       <Link href={item.url}>
