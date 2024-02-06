@@ -17,7 +17,7 @@ export const Container = styled.header`
 
 export const Logo = styled.div`
   display: flex;
-  width: 20%;
+  min-width: 20%;
   margin-left: .2rem;
   a {
     color: black;

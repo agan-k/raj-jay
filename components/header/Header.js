@@ -36,7 +36,7 @@ export default function Header() {
       >
          <Logo>
             {isHome ?
-               <h1>RAJIV JAYAWEERA/&nbsp;</h1> :
+               <h1>RAJIV JAYAWEERA /&nbsp;</h1> :
                <Link href='/'><h1>RAJIV JAYAWEERA/&nbsp;</h1></Link>
             }
             <ActivePage>
@@ -44,6 +44,7 @@ export default function Header() {
             </ActivePage>
          </Logo>
          <Nav isNavOpen={open} />
+         {/* TODO Mobile: */}
          {/* <MailingList /> */}
          {/* <NavToggle handleToggleNav={() => HandleToggleOpen()} /> */}
       </Container>

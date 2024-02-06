@@ -1,9 +1,13 @@
 import {Container} from "./styled";
 
-export default function MailingList() {
+export default function MailingList({text}) {
+  const space = <>&nbsp;</>
   return(
     <Container>
       <form name="mailing-list" action="/formSubmission" method="POST" data-netlify="true">
+        {text && (
+          <>{text}&nbsp;&nbsp;</>
+        )}
         <div>
           <input type="hidden" name="form-name" value="mailing-list" />
           <label htmlFor="yourcity">
