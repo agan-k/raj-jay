@@ -5,6 +5,7 @@ export const Container = styled.div`
   ul {
     padding: 0;
     margin: 0;
+    margin-left: 2rem;
   }
   
 `;

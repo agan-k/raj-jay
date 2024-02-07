@@ -1,6 +1,4 @@
-import  React, { useState }  from 'react'
-import Link from "next/link"
-
+import  React, { useState }  from 'react';
 import Prismic from "prismic-javascript";
 import { RichText } from 'prismic-reactjs';
 import { client } from "../../prismic-configuration"

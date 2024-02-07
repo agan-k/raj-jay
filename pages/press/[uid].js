@@ -6,7 +6,7 @@ import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
 import {Layout} from "../../components";
-import {ArticleList} from "./components";
+import {ArticleList, QuoteList} from "./components";
 import { Container } from "./styled";
 
 export default function Article({ data, content }) {
@@ -17,7 +17,10 @@ export default function Article({ data, content }) {
                <img src={data.img.url} style={{maxHeight: '3rem'}}/>
                {RichText.render(data.content_body)}
             </section>
-            <ArticleList content={content} />
+            <aside>
+               <ArticleList content={content} />
+               <QuoteList content={content} />
+            </aside>
          </Container>
       </Layout>
    );

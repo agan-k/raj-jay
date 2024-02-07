@@ -37,7 +37,7 @@ export default function Header() {
          <Logo>
             {isHome ?
                <h1>RAJIV JAYAWEERA /&nbsp;</h1> :
-               <Link href='/'><h1>RAJIV JAYAWEERA/&nbsp;</h1></Link>
+               <Link href='/'><h1>RAJIV JAYAWEERA /&nbsp;</h1></Link>
             }
             <ActivePage>
                {activePage}

@@ -1,27 +1,34 @@
 import Link from "next/link";
 import { RichText } from "prismic-reactjs";
-import getContentPaths from "../../../../utils/getContentPaths";
 import {Container} from "./styled";
 import { useRouter } from "next/router";
 import {FlexBox, Box} from "../../../../components";
 
-export default function ArticleLink({link, articleType, uid}) {
+export default function ArticleLink({link, articleType, uid, index}) {
   const router = useRouter();
   const currentUID = router.asPath;
-  console.log('here: ', currentUID)
-  console.log('uid: ', uid)
   const isCurrentArticle =  
-    Boolean(currentUID === `/press/${uid}`);
+    Boolean(currentUID === `/press/${uid}`
+  );
+  const isPressHome = 
+    Boolean(
+      currentUID === '/press' && 
+      articleType === 'press-reviews' && 
+      index === 0
+  );
+
   return(
-    <Container marginLeft={isCurrentArticle && '-2rem'}>
+    <Container 
+      marginLeft={isPressHome || isCurrentArticle ? '-2rem' : '' }
+    >
       <Box>
-        {isCurrentArticle && (
-          <>&larr;</>
-        )}
+        {isPressHome || isCurrentArticle ?
+          <>&larr;</> : null
+        }
       </Box>
       <Box>
         {RichText.render(link.data.content_body.filter(item => item.type == 'heading3'))}
-        <Link href="/press/[id]" as={`/${getContentPaths(articleType)}/${link.uid}`}>
+        <Link href="/press/[id]" as={`/press/${link.uid}`}>
           {RichText.render(link.data.content_body.filter(item => item.type == 'heading4'))}
         </Link>
       </Box>
