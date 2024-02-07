@@ -3,12 +3,8 @@ import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
   padding: 3rem 1rem;
-  position: relative;
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  min-height: 90vh;
-  transition: .3s;
   -webkit-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   -moz-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   -o-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};

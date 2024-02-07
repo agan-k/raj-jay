@@ -4,15 +4,15 @@ import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
 import { Layout } from '../../components';
-import style from './bio.module.css'
+import { Container } from './styled';
 
 export default function Bio(props) {
    
    return (
       <Layout>
-         <div className={style.container}>
+         <Container>
             {RichText.render(props.bio.data.bio_body)}
-         </div>
+         </Container>
       </Layout>
    )
 }
