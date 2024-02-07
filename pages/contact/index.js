@@ -19,7 +19,6 @@ export default function Contact(props) {
          
       </div>
       )
-   console.log(publicity)
    
    return (
       <Layout>

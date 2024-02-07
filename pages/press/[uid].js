@@ -5,30 +5,33 @@ import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
-import Layout from "../../components/layout"
-import style from "./pressArticle.module.css"
+import {Layout} from "../../components";
+import {ArticleList} from "./components";
+import { Container } from "./styled";
 
-export default function pressArticle({ data }) {
+export default function Article({ data, content }) {
    return (
       <Layout>
-         <div className={style.container}>
-
-         <Link href="/press"><h4 className={style.press_home_link}>&larr; &nbsp;<a>press home</a></h4></Link>
-
-            <article>
+         <Container>
+            <section>
                <img src={data.img.url} style={{maxHeight: '3rem'}}/>
-               <main>{RichText.render(data.content_body)}</main>
-            </article>
-         </div>
+               {RichText.render(data.content_body)}
+            </section>
+            <ArticleList content={content} />
+         </Container>
       </Layout>
    );
  }
 
 export async function getStaticProps({ params }) {
+   const content = await client.query(
+      Prismic.Predicates.at("document.type", "content"),
+      { pageSize: 100 }
+   );
    const { uid } = params;
    const { data } = await client.getByUID("content", uid);
    return {
-      props: { data }
+      props: { data, content }
    }
  }
 

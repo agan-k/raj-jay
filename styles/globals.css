@@ -12,7 +12,7 @@ p, a, h2 {
 
 }
 p {
-   font-weight: 100;
+   /* font-weight: 100; */
    letter-spacing: 1px;
    line-height: 1.3rem;
    color: rgb(56, 56, 56);

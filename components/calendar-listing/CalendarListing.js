@@ -10,7 +10,6 @@ import {
 } from "./styled";
 
 export default function CalendarListing({listing}) {
-  console.log('here: ', listing.data.links)
   return(
     <Listing>
       <Header>
