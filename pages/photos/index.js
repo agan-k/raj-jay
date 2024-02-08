@@ -2,16 +2,14 @@ import React, { useState } from 'react'
 
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
-
-import style from './photos.module.css'
 import {Layout} from '../../components';
-import {Box} from '../../components';
 import Modal from '../../components/modal';
 import {
    Container,
    Gallery,
    Photo,
    ImageMask,
+   Image,
 } from './styled';
 
 export default function Photos(props) {
@@ -25,6 +23,10 @@ export default function Photos(props) {
          return 'horizontal'
       }
    }
+   function HandlePhotoLinkModal({photo}) {
+      setPhoto(photo);
+      setShowModal(true);
+   }
 
    const photos = props.content.results.filter(result => 
       result.data.content_type == 'photo'
@@ -32,16 +34,11 @@ export default function Photos(props) {
 
    const gallery = photos.map(photo => 
       <Photo key={photo.uid}>
-         {console.log(getImgOrientation(
-                  photo.data.img.dimensions.height, 
-                  photo.data.img.dimensions.width
-               ))}
-         <ImageMask
-            onClick={() => setPhoto(photo.data)}
+         <ImageMask 
+            onClick={() => HandlePhotoLinkModal({photo: photo.data})}
          >
-            <img
+            <Image
                src={photo.data.img.url}
-               onClick={() => setShowModal(true)}
                orientation={getImgOrientation(
                   photo.data.img.dimensions.height, 
                   photo.data.img.dimensions.width
@@ -76,10 +73,10 @@ export async function getStaticProps() {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       { pageSize : 100 }
-   )
+   );
    return {
       props: {
          content
       }
-   }
+   };
 }
