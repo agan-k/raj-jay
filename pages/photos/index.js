@@ -4,20 +4,25 @@ import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 
 import style from './photos.module.css'
-import Layout from '../../components'
-import Modal from '../../components/modal'
-import MaskToggleIcon from '../../components/MaskToggleIcon'
+import {Layout} from '../../components';
+import {Box} from '../../components';
+import Modal from '../../components/modal';
+import {
+   Container,
+   Gallery,
+   Photo,
+   ImageMask,
+} from './styled';
 
 export default function Photos(props) {
    const [showModal, setShowModal] = useState(false)
-   const [maskImages, setMaskImages] = useState(true)
    const [photo, setPhoto] = useState(null)
 
    function getImgOrientation(height, width) {
       if (height > width) {
-         return 'vertical_img'
+         return 'vertical'
       } else {
-         return 'horizontal_img'
+         return 'horizontal'
       }
    }
 
@@ -26,30 +31,33 @@ export default function Photos(props) {
    )
 
    const gallery = photos.map(photo => 
-      <div className={style.photo_container} key={photo.uid}>
-         <div
-            className={style[`${maskImages ? 'img_mask' : 'img_unmask'}`]}
+      <Photo key={photo.uid}>
+         {console.log(getImgOrientation(
+                  photo.data.img.dimensions.height, 
+                  photo.data.img.dimensions.width
+               ))}
+         <ImageMask
             onClick={() => setPhoto(photo.data)}
          >
             <img
+               src={photo.data.img.url}
                onClick={() => setShowModal(true)}
-               className={style[`${
-                  getImgOrientation(photo.data.img.dimensions.height, photo.data.img.dimensions.width)}`]}
-                  src={photo.data.img.url} />
-         </div>
-      </div>
+               orientation={getImgOrientation(
+                  photo.data.img.dimensions.height, 
+                  photo.data.img.dimensions.width
+               )}
+            />
+         </ImageMask>
+      </Photo>
    )
 
    return (
       <Layout>
-         <div className={showModal ? style['container_blur'] : style['container']}>
-            {/* <div className={style.mask_toggle} onClick={() => setMaskImages(!maskImages)}>
-               <MaskToggleIcon />
-            </div> */}
-            <div className={style.gallery_container}>
+         <Container blur={showModal ? true : false}>
+            <Gallery>
                {gallery}
-            </div>
-         </div>
+            </Gallery>
+         </Container>
          
          {showModal && (
             <Modal

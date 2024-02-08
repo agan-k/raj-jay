@@ -16,26 +16,26 @@
    filter: blur(5px);
    background-color: none;
 }
-.gallery_container {
+/* .gallery_container {
    width: 100%;
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
-}
+} */
 .photo_container {
-   height: 15rem;
+   /* height: 15rem;
    width: 15rem;
-   text-align: center;
+   text-align: center; */
    /* opacity: .8; */
    /* filter: grayscale(100%); */
 }
 .photo_container:hover {
-   filter: grayscale(20%);
-   opacity: 1;
+   /* filter: grayscale(20%); */
+   /* opacity: 1; */
 }
-.photo_container img {
+/* .photo_container img {
    cursor: pointer;
-}
+} */
 
 /* +++++++ img mask +++++++ */
 /* .mask_toggle {
