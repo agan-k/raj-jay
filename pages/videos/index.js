@@ -5,41 +5,50 @@ import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 import { RichText } from "prismic-reactjs"
 
-import Layout from '../../components'
-import style from './videos.module.css'
+import {Layout} from '../../components'
 import Modal from '../../components/modal'
+import { 
+   Container,
+   Gallery,
+   Video,
+} from './styled'
 
 export default function Videos(props) {
-   const [showModal, setShowModal] = useState(false)
-   const [videoURL, setVideoURL] = useState(null)
+   const [showModal, setShowModal] = useState(false);
+   const [videoURL, setVideoURL] = useState(null);
+
+   function HandleVideoLinkModal({url}) {
+      setVideoURL(url);
+      setShowModal(true);
+   }
    
    const videos = props.content.results.filter(result =>
       result.data.content_type == 'video'
    )
 
    const gallery = videos.map((video) =>
-      <div className={style.video_container} key={video.uid}
-         onClick={() => setVideoURL(video.data.video_link[0].text)}
+      <Video key={video.uid}
+         onClick={() => HandleVideoLinkModal({url: video.data.video_link[0].text})}
       >
          <img onClick={() => setShowModal(true)} src={video.data.img.url} />
          {RichText.render(video.data.video_caption)}
-      </div>
+      </Video>
    )
    
    return (
       <Layout>
-         <div className={style.container}>
-            <div className={style.gallery_container}>
+         <Container blur={showModal ? true : false}>
+            <Gallery>
                {gallery}
-            </div>
-            {showModal && (
-               <Modal
-                  videos={true}
-                  video_url={videoURL}
-                  closeModal={() => setShowModal(false)}
-               />
-            )}
-         </div>
+            </Gallery>
+         </Container>
+         {showModal && (
+            <Modal
+               videos={true}
+               video_url={videoURL}
+               closeModal={() => setShowModal(false)}
+            />
+         )}
       </Layout>
    )
    
