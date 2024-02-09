@@ -47,16 +47,16 @@ export default function ArticleList({content}) {
 
    return(
       <Container>
-         <Text fontSize={18} letterSpacing={3} fontWeight={600}>press releases</Text>
+         <Text fontSize={18} letterSpacing={7} fontWeight={600}>press releases</Text>
          <ul>{pressReleases}</ul>
 
-         <Text fontSize={18} letterSpacing={3} fontWeight={600}>reviews</Text>
+         <Text fontSize={18} letterSpacing={7} fontWeight={600}>reviews</Text>
          <ul>{reviews}</ul>
 
-         <Text fontSize={18} letterSpacing={3} fontWeight={600}>interviews</Text> 
+         <Text fontSize={18} letterSpacing={7} fontWeight={600}>interviews</Text> 
          <ul>{interviews}</ul>
 
-         <Text fontSize={18} letterSpacing={3} fontWeight={600}>features</Text>
+         <Text fontSize={18} letterSpacing={7} fontWeight={600}>features</Text>
          <ul>{features}</ul>
       </Container>
    );

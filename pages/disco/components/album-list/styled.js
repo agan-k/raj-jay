@@ -2,10 +2,8 @@ import styled from "styled-components";
 import { mediaQuery } from "../../../../utils/mediaQuery";
 
 export const Container = styled.div`
-  ul {
-    padding: 0;
-    margin: 0;
-    margin-left: 1rem;
-  }
-  
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
 `;

@@ -21,8 +21,8 @@ export const Wrapper = styled.div`
 export const Card = styled.div`
   font-weight: 100;
   min-height: min-content;
-  margin: 0 1rem ;
-  flex-basis: 30%;
+  margin: 0 .2rem;
+  flex-basis: 21%;
   padding: 1rem;
   text-align: left;
   text-decoration: none;
@@ -58,9 +58,8 @@ export const Date = styled.div`
 
 `;
 export const Blurb = styled.div`
-  font-size: 1rem;
-  font-weight: 700;
   margin-bottom: .5rem;
+  font-size: .8rem;
 
 `;
 export const Arrow = styled.span`

@@ -2,42 +2,43 @@ import Link from 'next/link'
 
 import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
-import { RichText } from "prismic-reactjs"
 
-import style from './album.module.css'
-import Layout from '../../components/layout'
+import {Layout} from '../../components';
+import { Album, AlbumList } from './components';
+import {Container} from './styled';
 
-export default function Album({ data }) {
+export default function Uid({ data, content }) {
+   const discography = content.results.filter(result =>
+      result.data.content_type == 'discography'
+   );
 
    return (
       <Layout>
-         <div className={style.container}>
-            <Link href="/disco"><h4 style={{cursor: "pointer"}}>&larr; &nbsp;full discography</h4></Link>
-            <main>
-               <div className={style.album_info}>
-                  <img src={data.img.url} />
-                     {RichText.render(data.content_body)}
-               </div>
-               
-               { RichText.asText(data.bandcamp_id) ?
-                  <iframe 
-                     style={{border: 0, height: '460px'}} 
-                     src={`https://bandcamp.com/EmbeddedPlayer/album=${RichText.asText(data.bandcamp_id)}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/`} 
-                     seamless 
-                  /> : ''
-               }
-            </main>
-         </div>
+         <Container>
+            <section>
+               <Album currentAlbum={data}/>
+            </section>
+            <aside>
+               <AlbumList discography={discography}/>
+            </aside>
+         </Container>
       </Layout>
    )
 }
 
 export async function getStaticProps({ params }) {
+   const content = await client.query(
+      Prismic.Predicates.at("document.type", "content"),
+      {
+         orderings: '[my.content.date desc]',
+         pageSize : 100
+      }
+   )
    const { uid } = params;
    const { data } = await client.getByUID("content", uid);
    return {
       props: {
-         data
+         data, content
       }
    }
 }

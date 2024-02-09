@@ -34,19 +34,19 @@ export default function Home({content}) {
    return (
       <Layout>
          <div className={showModal ? style['container_blur'] : style['container']}>
-            <BannerQuotes quotes={quotes} randomQuote={randomQuoteIndex} />
+            {/* <BannerQuotes quotes={quotes} randomQuote={randomQuoteIndex} /> */}
 
             <div className={style.main}>
-               <img className={style.banner} src={'/images/home_banner.jpg'} />
-               <img className={style.banner_mobile} src={'/images/mobile_home_banner3.jpg'} />
+               {/* <img className={style.banner} src={'/images/home_banner.jpg'} />
+               <img className={style.banner_mobile} src={'/images/mobile_home_banner3.jpg'} /> */}
                
-               <div className={style.cta_buy_album}>
+               {/* <div className={style.cta_buy_album}>
                   <img src={'/images/cta_buy_album.jpg'} />
                   <p>new album Pistils<br/> out now!</p>
                   <Link href="https://pistils.bandcamp.com/album/pistils">
                      <p>listen / buy &rarr;</p>
                   </Link>
-               </div>
+               </div> */}
                <NewsCards cards={cards} HandleVideoLinkModal={HandleVideoLinkModal} />
             </div>
          </div>

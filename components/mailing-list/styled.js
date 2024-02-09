@@ -3,7 +3,6 @@ import {mediaQuery} from "../../utils/mediaQuery"
 
 export const Container = styled.div`
   display: flex;
-  margin-top: .6rem;
   * {
     font-style: italic;
     font-size: .9rem;
@@ -12,7 +11,6 @@ export const Container = styled.div`
   }
   form {
     display: flex;
-    align-items: center;
     justify-content: space-between;
   }
   input {
@@ -33,12 +31,11 @@ export const Container = styled.div`
   button {
     margin: 0;
     color: white;
-    padding: .3rem .5rem;
+    padding: 0 .3rem;
     background: rgba(0, 0, 0, 0.6);
-    border: 3px solid white;
+    border: none;
     cursor: pointer;
     &:hover {
-      border: 3px solid orange;
       transition: .2s;
     }
   }

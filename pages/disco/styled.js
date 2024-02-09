@@ -1,0 +1,14 @@
+import styled from "styled-components";
+import { mediaQuery } from "../../utils/mediaQuery";
+
+export const Container = styled.div`
+width: 100%;
+padding: 3rem 2rem;
+display: flex;
+  section {
+    width: 70%;
+  }
+  aside {
+    width: 30%;
+  }
+`;

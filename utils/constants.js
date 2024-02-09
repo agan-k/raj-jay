@@ -11,6 +11,9 @@ export const navLinks = [
   {name: 'links', url: '/links'},
   {name: 'contact', url: '/contact'},
   {name: 'media-kit', url: '/#'},
+  {name: 'instagram', url: 'https://www.instagram.com/euroraj/'},
+  {name: 'facebook', url: 'https://www.facebook.com/rajivjayaweera'},
+  {name: 'youtube', url: 'https://youtube.com/user/euroraj/videos'},
 ];
 
 export const socialLinks = [
@@ -34,3 +37,5 @@ export const socialLinks = [
 export const Z_INDEX = {
   header: 1,
 }
+
+export const FEATURED_ALBUM = 'Pistils'; // Pistils (second)

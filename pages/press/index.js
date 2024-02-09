@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs';
 import { client } from "../../prismic-configuration"
 
 import {Layout} from '../../components';
-import {QuoteList, ArticleList} from "./components";
+import {QuoteList, ArticleList, Article} from "./components";
 import {Container} from './styled';
 
 import style from './press.module.css'
@@ -34,8 +34,11 @@ export default function Press({content}) {
                </div>
             </div>
             <section>
+               <Article currentArticle={pressReviews[0].data} />
+               {/* 
                <img src={pressReviews[0].data.img.url} style={{maxHeight: '3rem'}}/>
                {RichText.render(pressReviews[0].data.content_body)}
+               */}
             </section>
             <aside>
                <ArticleList content={content} />

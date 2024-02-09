@@ -1,7 +1,12 @@
 import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration";
 // import { RichText } from "prismic-reactjs";
-import {Layout, MailingList, CalendarListing, FlexBox} from '../../components';
+import {Layout, 
+   MailingList, 
+   CalendarListing, 
+   FlexBox,
+   Text,
+} from '../../components';
 import { 
    Container,
     Banner,
@@ -22,8 +27,11 @@ export default function Shows(props) {
             <Banner>
                <img src={props.shows.data.banner_image.url} />
             </Banner>
-            <FlexBox justifyContent={'end'} >
-               <MailingList text={'join mailing list:'} />
+            <FlexBox justifyContent={'end'} width={'100%'}  >
+               <FlexBox alignItems={'center'}>
+                  <Text fontWeight={100} fontStyle={'italic'}>mailing list: </Text>&nbsp;&nbsp;
+               </FlexBox>
+               <MailingList />
             </FlexBox>
             <CalendarContainer>
                <section>

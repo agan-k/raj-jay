@@ -4,30 +4,31 @@ import Link from 'next/link'
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 
-import style from './discography.module.css'
-import Layout from "../../components";
+import {Layout} from "../../components";
+import {Container} from './styled';
+import { AlbumList, Album } from './components';
+import { FEATURED_ALBUM } from '../../utils/constants';
 
-export default function Discography(props) {
-   
-   const discography = props.content.results.filter(result =>
+
+export default function Discography({content}) {
+   const discography = content.results.filter(result =>
       result.data.content_type == 'discography'
-      )
-   
-   const albums_gallery = discography.map(album => 
-      <div key={album.uid} className={style.album_container}>
-         <Link href="disco/[id]" as={`disco/${album.uid}`}>
-            <img src={album.data.img.url} />
-         </Link>
-      </div>
-   )
-   
+   );
+   const featuredAlbum = discography.filter(result =>
+      result.data.content_body[1].text === FEATURED_ALBUM
+   );
+   console.log('sdaflsdkfj', featuredAlbum[0].data)
+
    return (
       <Layout>
-         <div className={style.container}>
-            <div className={style.gallery_container}>
-               {albums_gallery}
-            </div>
-         </div>
+         <Container>
+            <section>
+               <Album currentAlbum={featuredAlbum[0].data}/>
+            </section>
+            <aside>
+               <AlbumList discography={discography} />
+            </aside>
+         </Container>
       </Layout>
    )
 }
