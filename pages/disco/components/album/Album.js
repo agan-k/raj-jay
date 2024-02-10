@@ -20,7 +20,7 @@ export default function Album({currentAlbum}) {
           </Cover>
           { RichText.asText(currentAlbum.bandcamp_id) ?
             <iframe 
-              style={{border: 0, height: '500px', width: `100%`}} 
+              style={{border: 0, height: '300px', width: `100%`}} 
               src={`https://bandcamp.com/EmbeddedPlayer/album=${RichText.asText(currentAlbum.bandcamp_id)}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/`} 
               seamless 
             /> : ''

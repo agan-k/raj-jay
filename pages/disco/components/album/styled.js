@@ -18,6 +18,7 @@ export const Cover = styled.div`
   margin: 0 auto;
   img {
     max-width: 100%;
+    border: 1px solid rgb(212,212,212)
   }
 `;
 

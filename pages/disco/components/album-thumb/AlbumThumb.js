@@ -20,8 +20,6 @@ export default function AlbumThumb({album, index}) {
       setIsActive(false);
     }
   }, [currentAlbum])
-  // console.log('router: ', router.asPath)
-  // console.log('ablum: ', album.data.content_body[1])
   return(
     <Container active={isActive}>
       <Link href="/disco/[id]" as={`/disco/${album.uid}`}>

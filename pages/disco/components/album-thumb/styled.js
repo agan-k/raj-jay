@@ -10,7 +10,7 @@ export const Container = styled.div`
   pointer-events: ${({active}) => active ? 'none' : 'initial'};
   display: ${({active}) => active ? 'flex' : 'initial'};
   justify-content: ${({active}) => active ? 'center' : 'initial'};
-  padding: ${({active}) => active ? 'initial' : '.2rem'};
+  padding: ${({active}) => active ? 'initial' : '.4rem'};
   &:hover {
     opacity: 1;
     transition: .4s;
