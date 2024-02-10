@@ -1,36 +1,40 @@
-import React from 'react'
-
+import Link from 'next/link'
 import { client } from '../../prismic-configuration'
-import { RichText } from 'prismic-reactjs'
 
-import style from './contact.module.css'
-import Layout from '../../components'
-import ContactForm from '../../components/contactForm'
+import {Box, FlexBox, Layout, Text} from '../../components'
+import {ContactForm} from './components';
+import { Container } from './styled';
 
-export default function Contact(props) {
 
-   const publicity = props.contact.data.contact_body.map(publicist => 
+export default function Contact({contact}) {
+
+   const publicity = contact.map(publicist => 
       publicist.text.split(",")
-   )
-   const formatted_publicity = publicity.map(publicist =>
-      <div className={style.publicist}>
-         <h4>{publicist[0]}:</h4>
-         <p>{publicist[1]}&nbsp;<a href={publicist[2]}>&rarr;</a></p>
-         
-      </div>
-      )
+   );
+   const publicityCard = publicity.map(publicist =>
+      <FlexBox width={'40%'} justifyContent={'start'}>
+         <Text whiteSpace={'nowrap'}>{publicist[0]}:&nbsp;</Text>
+         <Link href={publicist[2]}>
+            <Text whiteSpace={'nowrap'} color={'grey'}>{publicist[1]}&nbsp;&rarr;</Text>
+         </Link>
+      </FlexBox>
+   );
    
    return (
       <Layout>
-         <div className={style.container}>
-            <div className={style.publicity_container}>
-               {formatted_publicity}
-            </div>
-            <h4>Contact Rajiv Jayaweera:</h4>
-            <div className={style.form_container}>
-               <ContactForm/>
-            </div>
-         </div>
+         <FlexBox justifyContent={'center'}>
+            <FlexBox width={'60%'} justifyContent={'space-between'}>
+               {publicityCard}
+            </FlexBox>
+         </FlexBox>
+         <FlexBox justifyContent={'center'}>
+            <Box width={'60%'} marginTop={70}>
+               <Text padding={'0 0 1rem 0'} fontStyle={'italic'} color={'grey'}>
+                  Write to Raj:
+               </Text>
+               <ContactForm />
+            </Box>
+         </FlexBox>
       </Layout>
    )
 }
@@ -39,7 +43,7 @@ export async function getStaticProps() {
    const contact = await client.getSingle("contact")
    return {
       props: {
-         contact
+         contact: contact.data.contact_body
       }
    }
 }

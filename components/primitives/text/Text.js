@@ -7,6 +7,7 @@ export default function Text({
   fontStyle,
   fontWeight,
   letterSpacing,
+  textAlign,
   verticalAlign,
   textTransform,
   color,
@@ -20,6 +21,7 @@ export default function Text({
       fontStyle={fontStyle}
       fontWeight={fontWeight}
       letterSpacing={letterSpacing}
+      textAlign={textAlign}
       verticalAlign={verticalAlign}
       textTransform={textTransform}
       color={color}

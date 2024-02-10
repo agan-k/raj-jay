@@ -5,12 +5,14 @@ export default function Box({
   children, 
   margin, 
   marginLeft,
+  marginTop,
 }) {
   return (
     <Container
       width={width}
       margin={margin} 
       marginLeft={marginLeft}
+      marginTop={marginTop}
     >
       {children}
     </Container>

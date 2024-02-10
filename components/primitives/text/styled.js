@@ -7,6 +7,7 @@ export const Container = styled.div`
   font-style: ${({fontStyle}) => fontStyle};
   font-family: ${({fontFamily}) => fontFamily};
   font-weight: ${({fontWeight}) => fontWeight};
+  text-align: ${({textAlign}) => textAlign};
   vertical-align: ${({verticalAlign}) => verticalAlign};
   text-transform: ${({textTransform}) => textTransform};
   color: ${({color}) => color};
