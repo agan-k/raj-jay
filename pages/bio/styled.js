@@ -3,7 +3,7 @@ import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
   width: 100%;
-  padding: 3rem 1rem;
+  padding: 0 1rem;
   img {
     float: left;
     margin: .3rem 1rem 1rem 0;

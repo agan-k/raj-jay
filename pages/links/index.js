@@ -1,34 +1,36 @@
-import React from 'react'
+import { Fragment } from 'react';
+import Link from 'next/link';
+import { client } from '../../prismic-configuration';
+import {Layout, Text} from '../../components';
+import { Container, LinkCard } from './styled';
 
-import { client } from '../../prismic-configuration'
-import { RichText } from 'prismic-reactjs'
+export default function Links({linksData}) {
+   const links = linksData.map(link =>
+      link.text.split(',')
+   );
 
-import Layout from '../../components'
-import style from './links.module.css'
-
-export default function Links(props) {
- 
-   const links = props.links.data.links_body.map(link =>
-      link.text.split(','));
-   const formatted_links = links.map(link =>
-      <>
+   const linkCards = links.map(link =>
+      <Fragment key={link[0]}>
          {link[2] && (
-            <div className={style.link_container}>
-               <a href={link[2]} target="_blank">
-                  <strong><span>{link[0]}</span></strong><br/>
-                  <em><span>{link[1]}</span></em>
-               </a>
-            </div>
+            <LinkCard>
+               <Link href={link[2]} target="_blank">
+                  <Text 
+                     fontWeight={500}
+                  >{link[0]}</Text>
+                  <Text 
+                     fontWeight={100}
+                     fontStyle={'italic'}
+                  >{link[1]}</Text>
+               </Link>
+            </LinkCard>
          )}
-      </>
+      </Fragment>
       )
    return (
       <Layout>
-         <div className={style.container}>
-            <div className={style.links_wrapper}>
-               {formatted_links}
-            </div>
-         </div>
+         <Container>
+            {linkCards}
+         </Container>
       </Layout>
    )
 }
@@ -36,7 +38,7 @@ export async function getStaticProps() {
    const links = await client.getSingle("links")
    return {
       props: {
-         links
+         linksData: links.data.links_body
       }
    }
 }

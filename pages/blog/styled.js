@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-  padding: 3rem 1rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   -webkit-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};

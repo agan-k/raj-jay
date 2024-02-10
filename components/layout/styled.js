@@ -9,5 +9,6 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 export const PageWrapper = styled.main`
-  // padding-top: 2rem;
+  padding-top: 2rem;
+  min-height: 100vh;
 `
