@@ -15,10 +15,12 @@ export default function Album({currentAlbum}) {
     <div>
       <Container>
         <BandCampPlayer>
-          <Cover src={currentAlbum.img.url} width={PLAYER_WIDTH}/>
+          <Cover>
+            <img src={currentAlbum.img.url} />
+          </Cover>
           { RichText.asText(currentAlbum.bandcamp_id) ?
             <iframe 
-              style={{border: 0, height: '500px', width: `${PLAYER_WIDTH}px`}} 
+              style={{border: 0, height: '500px', width: `100%`}} 
               src={`https://bandcamp.com/EmbeddedPlayer/album=${RichText.asText(currentAlbum.bandcamp_id)}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/`} 
               seamless 
             /> : ''

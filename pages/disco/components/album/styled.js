@@ -5,13 +5,25 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   color: rgb(94, 94, 94);
+  `;
+
+export const BandCampPlayer = styled.div`
+  width: 40%;
+  flex: none;
 `;
-export const Cover = styled.img`
-  border: 1px solid rgb(212, 212, 212);
-  width: ${({width}) => width};
+
+export const Cover = styled.div`
+  width: 70%;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+  img {
+    max-width: 100%;
+  }
 `;
+
 export const Info = styled.div`
-  flex: 5;
+  width: 50%;
+  flex: none;
   ul {
     margin: 0;
     padding: 0;
@@ -22,8 +34,4 @@ export const Info = styled.div`
   h3 {
     margin-top: 0;
   }
-`;
-
-export const BandCampPlayer = styled.div`
-flex: 1;
 `;
