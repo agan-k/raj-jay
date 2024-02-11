@@ -17,7 +17,6 @@ export default function Discography({content}) {
    const featuredAlbum = discography.filter(result =>
       result.data.content_body[1].text === FEATURED_ALBUM
    );
-   console.log('sdaflsdkfj', featuredAlbum[0].data)
 
    return (
       <Layout>
