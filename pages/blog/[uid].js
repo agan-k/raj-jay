@@ -5,8 +5,8 @@ import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 import { RichText, Date as PrismicDate } from "prismic-reactjs"
 
-import {Layout} from "../../components";
-import Modal from "../../components/modal";
+import {Layout, Modal} from "../../components";
+// import Modal from "../../components/modal";
 import { Date, Post, Container } from "./styled";
 import { PostsLinks } from "./components";
 import formatPrismicDate from "../../utils/formatPrismicDate"

@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './modal.module.css'
 import { RichText } from "prismic-reactjs"
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 
 export default function Modal(props) {
       let detail;

@@ -5,8 +5,13 @@ import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
 import { RichText } from "prismic-reactjs";
 
-import { Layout, NewsCards, BannerQuotes } from '../components'
-import Modal from '../components/modal'
+import {
+   Layout, 
+   NewsCards, 
+   BannerQuotes,
+   Modal,
+} from '../components';
+
 import style from './Home.module.css'
 
 export default function Home({content}) {

@@ -6,7 +6,7 @@ import { client } from '../../prismic-configuration'
 import { RichText } from "prismic-reactjs"
 
 import {Layout} from '../../components'
-import Modal from '../../components/modal'
+import {Modal} from '../../components'
 import { 
    Container,
    Gallery,

@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
-import {Layout} from '../../components';
-import Modal from '../../components/modal';
+import {Layout, Modal} from '../../components';
+import isVerticalImage from '../../utils/isVerticalImage';
 import {
    Container,
    Gallery,
@@ -39,10 +39,10 @@ export default function Photos(props) {
          >
             <Image
                src={photo.data.img.url}
-               orientation={getImgOrientation(
-                  photo.data.img.dimensions.height, 
-                  photo.data.img.dimensions.width
-               )}
+               vertical={isVerticalImage({
+                  height: photo.data.img.dimensions.height, 
+                  width: photo.data.img.dimensions.width
+               })}
             />
          </ImageMask>
       </Photo>
@@ -58,7 +58,6 @@ export default function Photos(props) {
          
          {showModal && (
             <Modal
-               getImageOrientation={getImgOrientation}
                closeModal={() => setShowModal(false)}
                photo={photo}
                photos={true}

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   -webkit-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   -moz-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
@@ -37,11 +37,9 @@ export const ImageMask = styled.div`
   background:white;
 `;
 export const Image = styled.img`
-  height: ${({orientation}) => orientation === 'vertical' ? '280%' : '170%'};
+  height: ${({vertical}) => vertical ? '270%' : '140%'};
   &:hover {
-    height: ${({orientation}) => orientation === 'vertical' ? '80%' : '55%'};
-    margin-top: ${({orientation}) => 
-      orientation === 'vertical' ? '8%' : '15%'
-    };
+    height: ${({vertical}) => vertical ? '90%' : '55%'};
+    margin-top: ${({vertical}) => vertical ? '3%' : '18%'};
   }
 `;

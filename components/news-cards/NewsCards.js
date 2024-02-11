@@ -10,6 +10,7 @@ export default function NewsCards({cards, HandleVideoLinkModal}) {
 
     if (isVideoLink) {
       const videoLink = item.data.video_link[0].text;
+    
       return(
         <Card key={item.uid}
           onClick={() => HandleVideoLinkModal(videoLink)}
@@ -23,6 +24,7 @@ export default function NewsCards({cards, HandleVideoLinkModal}) {
         </Card>
       );
     }
+    console.log(cards)
     return(
       <Card key={item.uid}>
         <Link href={`/${item.data.content_type.substr(0, 5)}/${item.uid}`} >

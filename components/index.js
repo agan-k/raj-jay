@@ -10,3 +10,4 @@ export {Nav} from "./nav";
 export {NavToggle} from "./nav-toggle";
 export {NewsCards} from "./news-cards";
 export {Text} from "./primitives";
+export {Modal} from "./modal"
