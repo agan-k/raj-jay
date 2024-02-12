@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   background: red;
   `;
   export const Container = styled.div`
-  width: 100%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,13 +18,11 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Card = styled.div`
-  font-weight: 100;
+export const CardContainer = styled.div`
   min-height: min-content;
   margin: 0 .2rem;
-  flex-basis: 21%;
+  flex-basis: 45%;
   padding: 1rem;
-  text-align: left;
   text-decoration: none;
   opacity: .7;
   transition: .2s;
@@ -52,8 +50,6 @@ export const Card = styled.div`
 `;
   
 export const Date = styled.div`
-  font-size: 1rem;
-  font-weight: 700;
   margin-bottom: .5rem;
 
 `;

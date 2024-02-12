@@ -12,7 +12,6 @@ import { PostsLinks } from "./components";
 import formatPrismicDate from "../../utils/formatPrismicDate"
 
 export default function Uid({ data, content }) {
-   console.log(data)
    const [showModal, setShowModal] = useState(false)
    const blog = content.results.filter(result =>
       result.data.content_type == 'blog'

@@ -9,14 +9,12 @@ import HandleVideoLinkModal from '../../utils/handleVideoLinkModal';
 import {Post} from "./components";
 import {Container} from './styled';
 
-export default function Blog(props) {
+export default function Blog({postsData}) {
+   console.log(postsData)
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
-   const blog = props.content.results.filter(result =>
-      result.data.content_type == 'blog'
-   );
    
-   const posts = blog.map(post =>
+   const posts = postsData.map(post =>
       <Post
          key={post.id} 
          data={post.data}
@@ -42,7 +40,7 @@ export default function Blog(props) {
 
 export async function getStaticProps() {
    const content = await client.query(
-      Prismic.Predicates.at("document.type", "content"),
+      Prismic.Predicates.at("document.type", "micro_blog"),
       {
          orderings: '[my.content.date desc]',
          pageSize: 100
@@ -50,7 +48,7 @@ export async function getStaticProps() {
    );
    return {
       props: {
-         content
+         postsData: content.results
       }
    };
 }

@@ -6,8 +6,8 @@ import { client } from "../prismic-configuration"
 import {
    Layout, 
    NewsCards, 
-   BannerQuotes,
    Modal,
+   Text,
 } from '../components';
 import HandleVideoLinkModal from '../utils/handleVideoLinkModal';
 import style from './Home.module.css'
@@ -45,6 +45,7 @@ export default function Home({content}) {
                      <p>listen / buy &rarr;</p>
                   </Link>
                </div> */}
+               <Text fontSize={24} textTransform={'uppercase'} margin={'0 0 0 16px'}>News</Text>
                <NewsCards 
                   cards={cards} 
                   setShowModal={setShowModal}

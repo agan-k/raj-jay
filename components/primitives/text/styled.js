@@ -12,6 +12,7 @@ export const Container = styled.div`
   text-transform: ${({textTransform}) => textTransform};
   color: ${({color}) => color};
   padding: ${({padding}) => padding};
+  margin: ${({margin}) => margin};
   white-space: ${({whiteSpace}) => whiteSpace};
   
 `;

@@ -13,6 +13,7 @@ export default function Text({
   color,
   padding,
   whiteSpace,
+  margin,
 }) {
   return (
     <Container
@@ -26,6 +27,7 @@ export default function Text({
       textTransform={textTransform}
       color={color}
       padding={padding}
+      margin={margin}
       whiteSpace={whiteSpace}
     >
       {children}
