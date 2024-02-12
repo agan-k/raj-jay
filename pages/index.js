@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
 
 import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
-import { RichText } from "prismic-reactjs";
 
 import {
    Layout, 
@@ -11,18 +9,13 @@ import {
    BannerQuotes,
    Modal,
 } from '../components';
-
+import HandleVideoLinkModal from '../utils/handleVideoLinkModal';
 import style from './Home.module.css'
 
 export default function Home({content}) {
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
    const [randomQuoteIndex, setRandomQuoteIndex] = useState(6);
-
-   function HandleVideoLinkModal(videoLink) {
-      setVideoURL(videoLink);
-      setShowModal(true);
-   }
 
    useEffect(() => {
       const index = setInterval(() => {
@@ -52,12 +45,16 @@ export default function Home({content}) {
                      <p>listen / buy &rarr;</p>
                   </Link>
                </div> */}
-               <NewsCards cards={cards} HandleVideoLinkModal={HandleVideoLinkModal} />
+               <NewsCards 
+                  cards={cards} 
+                  setShowModal={setShowModal}
+                  setVideoURL={setVideoURL}
+               />
             </div>
          </div>
          {showModal && (
             <Modal
-               news_card_video_url={videoURL}
+               video={videoURL}
                closeModal={() => setShowModal(false)}
             />
          )}

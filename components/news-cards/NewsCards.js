@@ -3,8 +3,9 @@ import Link from "next/link";
 import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../utils/formatPrismicDate";
 import { Container, Card, Date, Arrow, Blurb } from "./styled";
+import HandleVideoLinkModal from "../../utils/handleVideoLinkModal";
 
-export default function NewsCards({cards, HandleVideoLinkModal}) {
+export default function NewsCards({cards, setShowModal, setVideoURL}) {
   const newsCards = cards.map((item) => {
     const isVideoLink = Boolean(item.data.video_link.length > 0);
 
@@ -13,7 +14,11 @@ export default function NewsCards({cards, HandleVideoLinkModal}) {
     
       return(
         <Card key={item.uid}
-          onClick={() => HandleVideoLinkModal(videoLink)}
+          onClick={() => HandleVideoLinkModal({
+            url: videoLink,
+            setShowModal: setShowModal,
+            setVideoURL: setVideoURL,
+          })}
         >
           <Date>{formatPrismicDate(item.data.date)}</Date>
           <img src={item.data.img.url} />
@@ -24,7 +29,7 @@ export default function NewsCards({cards, HandleVideoLinkModal}) {
         </Card>
       );
     }
-    console.log(cards)
+
     return(
       <Card key={item.uid}>
         <Link href={`/${item.data.content_type.substr(0, 5)}/${item.uid}`} >

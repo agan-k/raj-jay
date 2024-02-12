@@ -11,7 +11,8 @@ import { Date, Post, Container } from "./styled";
 import { PostsLinks } from "./components";
 import formatPrismicDate from "../../utils/formatPrismicDate"
 
-export default function BlogPost({ data, content }) {
+export default function Uid({ data, content }) {
+   console.log(data)
    const [showModal, setShowModal] = useState(false)
    const blog = content.results.filter(result =>
       result.data.content_type == 'blog'
@@ -24,10 +25,13 @@ export default function BlogPost({ data, content }) {
       day: '2-digit' 
    }).format(date);
 
+   function HandleVideoLinkModal(videoLink) {
+      setVideoURL(videoLink);
+      setShowModal(true);
+   }
+
    const post = data.video_link.length !== 0 ?
-   <Post
-      onClick={() => setVideoURL(data.video_link[0].text)}
-   >
+   <Post>
       <Date>{formatPrismicDate(data.date)}</Date>
       <img src={data.img.url} onClick={() => setShowModal(true)} />
       {RichText.render(data.content_body)}

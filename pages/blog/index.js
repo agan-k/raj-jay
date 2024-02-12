@@ -3,51 +3,36 @@ import Link from "next/link"
 
 import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
-import { RichText } from "prismic-reactjs";
-import {Layout} from "../../components";
-import formatPrismicDate from '../../utils/formatPrismicDate';
+import {Layout, Modal} from "../../components";
+import HandleVideoLinkModal from '../../utils/handleVideoLinkModal';
 
-import Modal from '../../components';
-import {PostsLinks} from "./components";
-import { Container, Post, PostsList, PostLink, Date } from './styled';
+import {Post} from "./components";
+import {Container} from './styled';
 
 export default function Blog(props) {
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
-   
    const blog = props.content.results.filter(result =>
       result.data.content_type == 'blog'
    );
    
    const posts = blog.map(post =>
-      post.data.video_link.length !== 0 ?
-         <Post
-            key={post.id} 
-            onClick={() => setVideoURL(post.data.video_link[0].text)}
-         >
-            <Date>{formatPrismicDate(post.data.date)}</Date>
-            <img src={post.data.img.url} onClick={() => setShowModal(true)} />
-            {RichText.render(post.data.content_body)}
-         </Post>
-         
-         :
-
-         <Post key={post.id}>
-            <Date>{formatPrismicDate(post.data.date)}</Date>
-            <img src={post.data.img.url} />
-            {RichText.render(post.data.content_body)}
-         </Post>
+      <Post
+         key={post.id} 
+         data={post.data}
+         setShowModal={setShowModal}
+         setVideoURL={setVideoURL}
+      />
    );
 
    return (
       <Layout>
          <Container blur={showModal ? true : false}>
-            {posts[0]}
-            <PostsLinks blog={blog} />
+            {posts}
          </Container>
          {showModal && (
             <Modal
-               blog_video_url={videoURL}
+               video={videoURL}
                closeModal={() => setShowModal(false)}
             />
          )}
