@@ -3,6 +3,7 @@ import { client } from "../../prismic-configuration";
 import { Layout, MicroBlog, FlexBox, Box } from "../../components";
 
 export default function BlogHome({postsData}) {
+  //TODO: create masonry layout
   return (
     <Layout>
       <Box>

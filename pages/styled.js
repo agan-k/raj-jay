@@ -18,13 +18,3 @@ export const Container = styled.div`
     width: 35%;
   }
 `;
-
-export const BannerWrapper = styled.div`
-  width: 100%;
-  margin-top: -140px;
-  opacity: .5;
-  z-index: ${Z_INDEX.banner};
-  img {
-    width: 100%;
-  }
-`;

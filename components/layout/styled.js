@@ -12,7 +12,6 @@ export const Container = styled.div`
 
 `;
 export const PageWrapper = styled.main`
-  // padding-top: 2rem;
   min-height: 100vh;
 `;
 
@@ -20,7 +19,6 @@ export const BannerWrapper = styled.div`
   width: 100%;
   height: 400px;
   background: center / cover no-repeat url('/images/shows_banner.jpg');
-  opacity: .8;
   z-index: ${Z_INDEX.banner};
   img {
     width: 100%;

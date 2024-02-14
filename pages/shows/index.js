@@ -9,7 +9,6 @@ import {Layout,
 } from '../../components';
 import { 
    Container,
-    Banner,
     CalendarContainer,
    //  SelectedPastShows,
    FeaturedFlyers,
