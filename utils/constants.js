@@ -1,7 +1,6 @@
 export const navLinks = [
   {name: 'home', url: '/'},
   {name: 'bio', url: '/bio'},
-  {name: 'blog', url: '/blog'},
   {name: 'shows', url: '/shows'},
   {name: 'press', url: '/press'},
   {name: 'photos', url: '/photos'},
@@ -36,6 +35,7 @@ export const socialLinks = [
 
 export const Z_INDEX = {
   header: 1,
+  banner: -1,
 }
 
 export const FEATURED_ALBUM = 'Pistils'; // Pistils (second)

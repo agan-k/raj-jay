@@ -6,6 +6,7 @@ export {FlexBox} from "./primitives";
 export {Header} from "./header";
 export {Layout} from "./layout"
 export {MailingList} from "./mailing-list";
+export {MicroBlog} from "./micro-blog";
 export {Nav} from "./nav";
 export {NavToggle} from "./nav-toggle";
 export {NewsCards} from "./news-cards";

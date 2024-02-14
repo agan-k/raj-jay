@@ -11,6 +11,7 @@ export default function Text({
   verticalAlign,
   textTransform,
   color,
+  background,
   padding,
   whiteSpace,
   margin,
@@ -26,6 +27,7 @@ export default function Text({
       verticalAlign={verticalAlign}
       textTransform={textTransform}
       color={color}
+      background={background}
       padding={padding}
       margin={margin}
       whiteSpace={whiteSpace}

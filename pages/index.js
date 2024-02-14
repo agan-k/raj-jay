@@ -4,55 +4,58 @@ import Prismic from "prismic-javascript"
 import { client } from "../prismic-configuration"
 
 import {
-   Layout, 
+   Layout,
+   MicroBlog,
    NewsCards, 
    Modal,
    Text,
+   FlexBox,
+   Box,
 } from '../components';
-import HandleVideoLinkModal from '../utils/handleVideoLinkModal';
-import style from './Home.module.css'
+import { Container } from './styled';
 
-export default function Home({content}) {
-   const [showModal, setShowModal] = useState(false)
-   const [videoURL, setVideoURL] = useState(null)
-   const [randomQuoteIndex, setRandomQuoteIndex] = useState(6);
-
-   useEffect(() => {
-      const index = setInterval(() => {
-        setRandomQuoteIndex(randomQuoteIndex => Math.floor(Math.random() * quotes.length));
-      },10000);
-      return () => clearInterval(index);
-    }, []);
-
-   const quotes = content.results.filter(result => 
-      result.data.press_quote.length !== 0
-   );
+export default function Home({content, postsData}) {
+   const [showModal, setShowModal] = useState(false);
+   const [videoURL, setVideoURL] = useState(null);
    const cards = content.results.filter(item => item.data.news_card);   
 
    return (
       <Layout>
-         <div className={showModal ? style['container_blur'] : style['container']}>
-            {/* <BannerQuotes quotes={quotes} randomQuote={randomQuoteIndex} /> */}
-
-            <div className={style.main}>
-               {/* <img className={style.banner} src={'/images/home_banner.jpg'} />
-               <img className={style.banner_mobile} src={'/images/mobile_home_banner3.jpg'} /> */}
-               
-               {/* <div className={style.cta_buy_album}>
-                  <img src={'/images/cta_buy_album.jpg'} />
-                  <p>new album Pistils<br/> out now!</p>
-                  <Link href="https://pistils.bandcamp.com/album/pistils">
-                     <p>listen / buy &rarr;</p>
-                  </Link>
-               </div> */}
-               <Text fontSize={24} textTransform={'uppercase'} margin={'0 0 0 16px'}>News</Text>
+         <Container>
+            <section>
+               <Text 
+                  fontSize={24}
+                  fontWeight={100}
+                  textAlign={'center'}
+                  color={'white'}
+                  background={'black'}
+                  letterSpacing={5}
+                  textTransform={'uppercase'}>
+                  News
+               </Text>
                <NewsCards 
                   cards={cards} 
                   setShowModal={setShowModal}
                   setVideoURL={setVideoURL}
                />
-            </div>
-         </div>
+            </section>
+            <aside>
+               <FlexBox justifyContent={'end'} >
+                  <Box>
+                     <Text 
+                        fontSize={24}
+                        fontWeight={100}
+                        textAlign={'center'}
+                        color={'white'}
+                        background={'black'}
+                        letterSpacing={5}>
+                        microBLOG
+                     </Text>
+                     <MicroBlog postsData={postsData} linkToBlog={true} />
+                  </Box>
+               </FlexBox>
+            </aside>
+         </Container>
          {showModal && (
             <Modal
                video={videoURL}
@@ -70,10 +73,18 @@ export async function getStaticProps() {
          orderings: '[my.content.date desc]',
          pageSize : 100
       }
-   )
+   );
+   const postsData = await client.query(
+      Prismic.Predicates.at("document.type", "micro_blog"),
+      {
+         orderings: '[my.micro_blog.date desc]',
+         pageSize : 3
+      }
+   );
    return {
       props: {
-         content
+         content,
+         postsData: postsData.results
       },
    }
 }

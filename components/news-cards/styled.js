@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   background: red;
   `;
   export const Container = styled.div`
-  width: 60%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,9 +20,9 @@ export const Wrapper = styled.div`
 
 export const CardContainer = styled.div`
   min-height: min-content;
-  margin: 0 .2rem;
+  // margin: 0 .2rem;
+  padding: 12px;
   flex-basis: 45%;
-  padding: 1rem;
   text-decoration: none;
   opacity: .7;
   transition: .2s;
@@ -30,11 +30,11 @@ export const CardContainer = styled.div`
   box-shadow: 0 0 0 0 rgb(245, 245, 245);
   &:hover {
     opacity: 1;
-    box-shadow: 0px 0px 9px 1px rgb(238, 238, 238);
+    box-shadow: 0px 0px 9px 1px rgb(227, 227, 227);
     transition: .2s
   }
   a {
-    color:rgb(73, 73, 73);
+    // color:rgb(73, 73, 73);
     transition: .3s;
   }
   &:hover a {
@@ -58,7 +58,9 @@ export const Blurb = styled.div`
   font-size: .8rem;
 
 `;
-export const Arrow = styled.span`
-  display: block;
-  text-align: right;
+export const Arrow = styled.div`
+  height: 10px;
+  width: 10px;
+  transform: rotate(-45deg);
+  color: red;
 `;

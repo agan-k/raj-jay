@@ -1,6 +1,6 @@
 
 import Head from "next/head";
-import { Container, PageWrapper } from "./styled";
+import { Container, PageWrapper, BannerWrapper } from "./styled";
 import  {Header} from "../../components";
 
 export default function Layout({children, title = 'Rajiv Jayaweera',}) {
@@ -11,6 +11,9 @@ export default function Layout({children, title = 'Rajiv Jayaweera',}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <BannerWrapper>
+        {/* <img src="/images/shows_banner.jpg" /> */}
+      </BannerWrapper>
       <PageWrapper>
         {children}
       </PageWrapper>
