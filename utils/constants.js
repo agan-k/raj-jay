@@ -8,6 +8,7 @@ export const navLinks = [
   {name: 'discography', url: '/disco'},
   {name: 'store', url: 'https://pistils.bandcamp.com/merch'},
   {name: 'links', url: '/links'},
+  {name: 'blog', url: '/blog'},
   {name: 'contact', url: '/contact'},
   {name: 'media-kit', url: '/#'},
   {name: 'instagram', url: 'https://www.instagram.com/euroraj/'},

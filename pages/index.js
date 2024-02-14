@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
-import Prismic from "prismic-javascript"
-import { client } from "../prismic-configuration"
+import Prismic from "prismic-javascript";
+import { client } from "../prismic-configuration";
 
 import {
    Layout,

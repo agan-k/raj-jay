@@ -6,4 +6,6 @@ export const Container = styled.div`
   margin: ${({margin}) => margin};
   margin-top: ${({marginTop}) => marginTop + 'px'};
   margin-left: ${({marginLeft}) => marginLeft + 'px'};
+  background: ${({background}) => background};
+
 `;

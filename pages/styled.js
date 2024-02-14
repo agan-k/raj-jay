@@ -7,6 +7,10 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  section,
+  aside {
+    margin-top: 16px;
+  }
   section {
     width: 60%;
   }
@@ -17,7 +21,6 @@ export const Container = styled.div`
 
 export const BannerWrapper = styled.div`
   width: 100%;
-  // position: absolute;
   margin-top: -140px;
   opacity: .5;
   z-index: ${Z_INDEX.banner};

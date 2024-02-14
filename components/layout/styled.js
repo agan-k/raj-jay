@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 `;
 export const PageWrapper = styled.main`
-  padding-top: 2rem;
+  // padding-top: 2rem;
   min-height: 100vh;
 `;
 

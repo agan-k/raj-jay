@@ -6,6 +6,7 @@ export default function Box({
   margin, 
   marginLeft,
   marginTop,
+  background,
 }) {
   return (
     <Container
@@ -13,6 +14,7 @@ export default function Box({
       margin={margin} 
       marginLeft={marginLeft}
       marginTop={marginTop}
+      background={background}
     >
       {children}
     </Container>
