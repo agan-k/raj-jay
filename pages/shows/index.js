@@ -24,9 +24,6 @@ export default function Shows(props) {
    return (
       <Layout>
          <Container>
-            <Banner>
-               <img src={props.shows.data.banner_image.url} />
-            </Banner>
             <FlexBox justifyContent={'end'} width={'100%'}  >
                <FlexBox alignItems={'center'}>
                   <Text fontWeight={100} fontStyle={'italic'}>mailing list: </Text>&nbsp;&nbsp;
