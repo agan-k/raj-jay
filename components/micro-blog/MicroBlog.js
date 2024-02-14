@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
-import {Modal, Text} from "../../components";
+import {Modal, Text, Anchor, FlexBox} from "../../components";
 
 import {Post} from "./components/post";
 import {Container} from './styled';
@@ -23,11 +23,13 @@ export default function MicroBlog({postsData, linkToBlog}) {
       <Container blur={showModal ? true : false}>
         {posts}
         {linkToBlog && (
-          <Text fontSize={16} fontWeight={700} textAlign={'right'} >
-            <Link href={'/blog'}>
-              blog home {'>'}
-            </Link>
-          </Text>
+          <FlexBox justifyContent={'end'}>
+            <Anchor path={'/blog'}>
+              <Text fontSize={16}>
+                ...more, blog home
+              </Text>
+            </Anchor>
+          </FlexBox>
         )}
       </Container>
       {showModal && (

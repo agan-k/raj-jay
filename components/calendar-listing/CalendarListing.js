@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../utils/formatPrismicDate";
-import {Text} from '../../components'
+import {Text, Anchor, FlexBox} from '../../components'
 import { 
   Listing, 
   Header,
@@ -55,20 +55,16 @@ export default function CalendarListing({listing, linkToShows}) {
             )}
           </Links>
         </Footer>
-      </Listing>
         {linkToShows && (
-          <Text 
-          fontSize={16} 
-          fontWeight={700} 
-          textAlign={'right'} 
-          margin={'16px 0'}
-          >
-            {/* TODO: create link component with arrow */}
-            <Link href={'/shows'}>
-                full calendar {'>'}
-            </Link>
-          </Text>
+          <FlexBox justifyContent={'end'}>
+            <Anchor path={'/shows'}>
+            <Text fontSize={16} textTransform={'none'}>
+              ...more, full calendar
+            </Text>
+            </Anchor>
+          </FlexBox>
         )}
+      </Listing>
       </>
   )
 }

@@ -33,13 +33,6 @@ export const CardContainer = styled.div`
     box-shadow: 0px 0px 9px 1px rgb(227, 227, 227);
     transition: .2s
   }
-  a {
-    // color:rgb(73, 73, 73);
-    transition: .3s;
-  }
-  &:hover a {
-    transition: .3s;
-  }
   img {
     width: 100%;
   }

@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+  margin-bottom: 32px;
 `;
   
 export const TitleImage = styled.img`
   height: 128px;
-  max-width: 100%;
+  width: 100%;
   display: block;
   margin: 0 auto;
   cursor: ${({pointer}) => pointer ? 'pointer' : ''};

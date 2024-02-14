@@ -22,15 +22,15 @@ export default function Links({linksData}) {
    
    return (
       <Layout>
-         <Text padding={'0 0 0 32px'} letterSpacing={2}>musicians:</Text>
+         <Text letterSpacing={2} margin={'32px 0 0'}>musicians:</Text>
          <Container>
             {musicians}
          </Container>
-         <Text padding={'0 0 0 32px'} letterSpacing={2}>visual artists:</Text>
+         <Text letterSpacing={2}>visual artists:</Text>
          <Container>
             {visualArtists}
          </Container>
-         <Text padding={'0 0 0 32px'} letterSpacing={2}>other:</Text>
+         <Text letterSpacing={2}>other:</Text>
          <Container>
             {other}
          </Container>

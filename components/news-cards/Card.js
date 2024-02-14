@@ -2,7 +2,7 @@ import Link from "next/link";
 import formatPrismicDate from "../../utils/formatPrismicDate";
 import { RichText } from "prismic-reactjs";
 import { CardContainer, Date, Blurb, Arrow } from "./styled";
-import { FlexBox } from "../primitives";
+import { FlexBox, LinkArrow } from "../../components";
 
 export default function Card({card}) {
   const isVideoLink = Boolean(card.data.video_link.length > 0);
@@ -17,7 +17,7 @@ export default function Card({card}) {
             {RichText.render(card.data.news_card_blurb)}
             </Blurb>
             <FlexBox justifyContent={'end'}>
-              <Arrow>&rarr;</Arrow>
+              <LinkArrow />
             </FlexBox>
           </Link> 
         </CardContainer> 
@@ -29,7 +29,7 @@ export default function Card({card}) {
             {RichText.render(card.data.news_card_blurb)}
           </Blurb>
           <FlexBox justifyContent={'end'}>
-            <Arrow>&rarr;</Arrow>
+            <LinkArrow />
           </FlexBox>
         </CardContainer>
       }
