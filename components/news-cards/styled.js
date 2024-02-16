@@ -19,18 +19,18 @@ export const Wrapper = styled.div`
 `;
 
 export const CardContainer = styled.div`
+background: white;
   min-height: min-content;
-  // margin: 0 .2rem;
   padding: 12px;
-  flex-basis: 45%;
+  flex-basis: 33%;
   text-decoration: none;
-  opacity: .7;
+  opacity: .9;
   transition: .2s;
   cursor: pointer;
-  box-shadow: 0 0 0 0 rgb(245, 245, 245);
+  // box-shadow: 0 0 0 0 rgb(245, 245, 245);
   &:hover {
     opacity: 1;
-    box-shadow: 0px 0px 9px 1px rgb(227, 227, 227);
+    // box-shadow: 0px 0px 9px 1px rgb(227, 227, 227);
     transition: .2s
   }
   img {

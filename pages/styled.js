@@ -12,9 +12,9 @@ export const Container = styled.div`
     margin-top: 16px;
   }
   section {
-    width: 60%;
+    width: 70%;
   }
   aside {
-    width: 35%;
+    width: 28%;
   }
 `;

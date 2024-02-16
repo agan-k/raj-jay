@@ -12,6 +12,7 @@ import {
    FlexBox,
    Box,
    CalendarListing,
+   Anchor
 } from '../components';
 import { Container } from './styled';
 
@@ -41,9 +42,10 @@ export default function Home({content, postsData, calendarData}) {
                />
             </section>
             <aside>
-               <FlexBox justifyContent={'end'} >
-                  <Box>
-                     <Text 
+               <FlexBox>
+                  <Box width={'100%'}>
+                     <Text
+                        margin={'0 0 16px 0'}
                         fontSize={24}
                         fontWeight={100}
                         textAlign={'center'}
@@ -52,13 +54,24 @@ export default function Home({content, postsData, calendarData}) {
                         letterSpacing={5}>
                         NEXT SHOW
                      </Text>
-                     <CalendarListing 
-                        listing={calendarData.results[0]}
-                        linkToShows={true} />
+                     <Box background={'white'} padding={'16px'}>
+                        <CalendarListing 
+                           listing={calendarData.results[0]}
+                           linkToShows={true} 
+                        />
+                        <FlexBox justifyContent={'end'}>
+                           <Anchor path={'/shows'}>
+                           <Text fontSize={16} textTransform={'none'}>
+                           ...more, full calendar
+                           </Text>
+                           </Anchor>
+                        </FlexBox>
+                     </Box>
                   </Box>
                </FlexBox>
-               <FlexBox justifyContent={'end'} >
-                  <Box>
+
+               <FlexBox>
+                  <Box background={'white'}>
                      <Text 
                         fontSize={24}
                         fontWeight={100}
@@ -68,7 +81,16 @@ export default function Home({content, postsData, calendarData}) {
                         letterSpacing={5}>
                         microBLOG
                      </Text>
-                     <MicroBlog postsData={postsData} linkToBlog={true} />
+                     <Box padding={'16px'}>
+                        <MicroBlog postsData={postsData} linkToBlog={true} />
+                        <FlexBox justifyContent={'end'}>
+                           <Anchor path={'/blog'}>
+                           <Text fontSize={16}>
+                              ...more, blog home
+                           </Text>
+                           </Anchor>
+                        </FlexBox>
+                     </Box>
                   </Box>
                </FlexBox>
             </aside>

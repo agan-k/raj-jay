@@ -11,9 +11,8 @@ export default function Layout({children, title = 'Rajiv Jayaweera',}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <BannerWrapper>
-        {/* <img src="/images/shows_banner.jpg" /> */}
-      </BannerWrapper>
+      {/* <BannerWrapper>
+      </BannerWrapper> */}
       <PageWrapper>
         {children}
       </PageWrapper>

@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: white;
-  // padding: 16px;
-  width: 100%;
-  margin-bottom: 32px;
+height: min-content;
+padding: 12px;
+flex-basis: 18%;
+margin: 5px;
+background: white;
 `;
-
+  
 export const TitleImage = styled.img`
-  height: 128px;
   width: 100%;
   display: block;
   margin: 0 auto;

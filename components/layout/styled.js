@@ -12,6 +12,10 @@ export const Container = styled.div`
 
 `;
 export const PageWrapper = styled.main`
+  background: no-repeat url('/images/shows_banner.jpg');
+  background-position: top -100px right 0;
+  background-size: contain;
+  padding: 400px 1rem;
   min-height: 100vh;
 `;
 

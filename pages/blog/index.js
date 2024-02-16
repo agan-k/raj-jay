@@ -1,18 +1,28 @@
+import { useState } from "react";
 import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration";
 import { Layout, MicroBlog, FlexBox, Box } from "../../components";
+import { Container, Wrapper } from "./styled";
+import { Post } from "./components";
 
 export default function BlogHome({postsData}) {
-  //TODO: create masonry layout
+  const [showModal, setShowModal] = useState(false)
+  const [videoURL, setVideoURL] = useState(null)
+  const posts = postsData.map(post =>
+    <Post
+       key={post.id} 
+       data={post.data}
+       setShowModal={setShowModal}
+       setVideoURL={setVideoURL}
+    />
+ );
   return (
     <Layout>
-      <Box>
-        <FlexBox justifyContent={'center'}>
-          <Box width={'30%'}>
-            <MicroBlog postsData={postsData} linkToBlog={false} />
-          </Box>
-        </FlexBox>
-      </Box>
+      <Wrapper>
+        <Container>
+          {posts}
+        </Container>
+      </Wrapper>
     </Layout>
   )
 }

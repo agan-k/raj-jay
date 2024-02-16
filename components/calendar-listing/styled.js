@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Listing = styled.div`
+  background: white;
   width: 100%;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -36,7 +37,6 @@ export const Body = styled.div`
 `;
 
 export const Footer = styled.div`
-  
 `;
 
 export const Links = styled.div`

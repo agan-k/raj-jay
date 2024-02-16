@@ -5,7 +5,7 @@ import {Modal, Text, Anchor, FlexBox} from "../../components";
 import {Post} from "./components/post";
 import {Container} from './styled';
 
-export default function MicroBlog({postsData, linkToBlog}) {
+export default function MicroBlog({postsData}) {
    const [showModal, setShowModal] = useState(false)
    const [videoURL, setVideoURL] = useState(null)
    
@@ -22,15 +22,6 @@ export default function MicroBlog({postsData, linkToBlog}) {
     <>
       <Container blur={showModal ? true : false}>
         {posts}
-        {linkToBlog && (
-          <FlexBox justifyContent={'end'}>
-            <Anchor path={'/blog'}>
-              <Text fontSize={16}>
-                ...more, blog home
-              </Text>
-            </Anchor>
-          </FlexBox>
-        )}
       </Container>
       {showModal && (
         <Modal

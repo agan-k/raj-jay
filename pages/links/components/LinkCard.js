@@ -7,19 +7,25 @@ export default function LinkCard({link}) {
   return (
     <Container>
       <Link href={link.url.url} target="_blank">
-        <Text 
-          fontWeight={500}
-          fontStyle={'italic'}
-          >
-          {RichText.asText(link.name)}&nbsp;{link.country_code}
-        </Text>
-        <FlexBox justifyContent={'space-between'}>
+        <FlexBox>
           <Text 
-            fontWeight={100}
+            fontWeight={500}
             fontStyle={'italic'}
-          >{link.occupation}</Text>
+            whiteSpace={'nowrap'}
+            >
+            {RichText.asText(link.name)}&nbsp;
+          </Text>
+          <Text 
+            fontWeight={500}
+            fontStyle={'italic'}
+            >{link.country_code}
+          </Text>
           <LinkArrow />
         </FlexBox>
+        <Text 
+          fontWeight={100}
+          fontStyle={'italic'}
+        >{link.occupation}</Text>
       </Link>
     </Container>
 

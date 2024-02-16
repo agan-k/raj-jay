@@ -1,7 +1,8 @@
 import { Container } from "./styled";
 
 export default function FlexBox({
-  children, 
+  children,
+  flexWrap,
   flexDirection, 
   justifyContent, 
   alignContent, 
@@ -11,6 +12,7 @@ export default function FlexBox({
   return (
     <Container 
       width={width}
+      flexWrap={flexWrap}
       flexDirection={flexDirection} 
       justifyContent={justifyContent} 
       alignContent={alignContent}
