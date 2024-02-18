@@ -1,8 +1,4 @@
 import { useState } from "react";
-import Link from "next/link";
-import { RichText } from "prismic-reactjs";
-import formatPrismicDate from "../../utils/formatPrismicDate";
-import { Text } from "../../components";
 import Card from "./Card";
 import { Container, Date, Arrow, Blurb } from "./styled";
 import HandleVideoLinkModal from "../../utils/handleVideoLinkModal";
