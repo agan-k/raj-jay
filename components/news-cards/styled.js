@@ -9,9 +9,8 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  // align-items: center;
+  align-items: center;
   flex-wrap: wrap;
-  // margin-top: 1rem;
   &::after {
     content: "";
     flex: auto;
@@ -21,7 +20,7 @@ export const Wrapper = styled.div`
 export const CardContainer = styled.div`
 background: white;
   min-height: min-content;
-  padding: 0 12px 12px;
+  padding: 12px;
   flex-basis: 33%;
   text-decoration: none;
   cursor: pointer;
@@ -31,10 +30,20 @@ background: white;
     // box-shadow: 0px 0px 9px 1px rgb(227, 227, 227);
     transition: .7s
   }
+`;
+export const ImageWrapper = styled.div`
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
   img {
-    max-width: 150px;
+    max-width: 100%;
   }
 `;
+
   
 export const Date = styled.div`
 

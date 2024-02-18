@@ -1,7 +1,7 @@
 import Link from "next/link";
 import formatPrismicDate from "../../utils/formatPrismicDate";
 import { RichText } from "prismic-reactjs";
-import { CardContainer, Date, Blurb, Arrow } from "./styled";
+import { CardContainer, Date, Blurb, Arrow, ImageWrapper } from "./styled";
 import { FlexBox, LinkArrow } from "../../components";
 
 export default function Card({card}) {
@@ -12,7 +12,9 @@ export default function Card({card}) {
         <CardContainer>
           <Link href={`/${card.data.content_type.substring(0, 5)}/${card.uid}`}>
             <Date>{formatPrismicDate(card.data.date)}</Date>
-            <img src={card.data.img.url} />
+            <ImageWrapper>
+              <img src={card.data.img.url} />
+            </ImageWrapper>
             <Blurb>
             {RichText.render(card.data.news_card_blurb)}
             </Blurb>
@@ -24,7 +26,9 @@ export default function Card({card}) {
         :
         <CardContainer>
           <Date>{formatPrismicDate(card.data.date)}</Date>
-          <img src={card.data.img.url} />
+          <ImageWrapper>
+            <img src={card.data.img.url} />
+          </ImageWrapper>
           <Blurb>
             {RichText.render(card.data.news_card_blurb)}
           </Blurb>
