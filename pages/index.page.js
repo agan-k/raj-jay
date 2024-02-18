@@ -12,9 +12,10 @@ import {
    FlexBox,
    Box,
    CalendarListing,
-   Anchor
+   Anchor,
+   BlockTitle,
 } from '../components';
-import { Container, BlockTitle } from './styled';
+import { Container } from './styled';
 
 export default function Home({content, postsData, calendarData}) {
    const [showModal, setShowModal] = useState(false);
@@ -25,9 +26,7 @@ export default function Home({content, postsData, calendarData}) {
       <Layout>
          <Container>
             <section>
-               <BlockTitle>
-                  news
-               </BlockTitle>
+               <BlockTitle>news</BlockTitle>
                <NewsCards 
                   cards={cards} 
                   setShowModal={setShowModal}
@@ -37,9 +36,7 @@ export default function Home({content, postsData, calendarData}) {
             <aside>
                <FlexBox>
                   <Box width={'100%'} padding={'0 0 16px 0'}>
-                     <BlockTitle>
-                        next show
-                     </BlockTitle>
+                     <BlockTitle>next show</BlockTitle>
                      <Box>
                         <CalendarListing 
                            listing={calendarData.results[0]}
@@ -48,7 +45,7 @@ export default function Home({content, postsData, calendarData}) {
                         <FlexBox justifyContent={'end'}>
                            <Anchor path={'/shows'}>
                            <Text fontSize={16} textTransform={'none'}>
-                           ...more, full calendar
+                           ...full calendar
                            </Text>
                            </Anchor>
                         </FlexBox>
@@ -58,9 +55,7 @@ export default function Home({content, postsData, calendarData}) {
 
                <FlexBox>
                   <Box>
-                     <BlockTitle>
-                        blog
-                     </BlockTitle>
+                     <BlockTitle>blog</BlockTitle>
                      <Box>
                         <MicroBlog postsData={postsData} linkToBlog={true} />
                         <FlexBox justifyContent={'end'}>

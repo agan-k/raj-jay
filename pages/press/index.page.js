@@ -29,9 +29,9 @@ export default function Press({content}) {
                </div>
             {/*  */}
             
-               <div className={quotesShow ? style['quoteS_open'] : style['quoteS']}>
+               {/* <div className={quotesShow ? style['quoteS_open'] : style['quoteS']}>
                   <QuoteList content={content} />
-               </div>
+               </div> */}
             </div>
             <section>
                <Article currentArticle={pressReviews[0].data} />
@@ -42,7 +42,7 @@ export default function Press({content}) {
             </section>
             <aside>
                <ArticleList content={content} />
-               <QuoteList content={content} />
+               {/* <QuoteList content={content} /> */}
             </aside>
          </Container>
       </Layout>

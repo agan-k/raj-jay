@@ -1,5 +1,5 @@
 import { ArticleLink, Quote } from "../../components/";
-import { Text } from "../../../../components";
+import { BlockTitle, Text } from "../../../../components";
 import { Container } from "./styled";
 
 
@@ -47,17 +47,20 @@ export default function ArticleList({content}) {
 
    return(
       <Container>
-         <Text fontSize={18} letterSpacing={7} fontWeight={600}>press releases</Text>
+         <BlockTitle margin={'16px 0'}>press releases</BlockTitle>
          <ul>{pressReleases}</ul>
 
-         <Text fontSize={18} letterSpacing={7} fontWeight={600}>reviews</Text>
+         <BlockTitle margin={'16px 0'}>reviews</BlockTitle>
          <ul>{reviews}</ul>
 
-         <Text fontSize={18} letterSpacing={7} fontWeight={600}>interviews</Text> 
+         <BlockTitle margin={'16px 0'}>interviews</BlockTitle>
          <ul>{interviews}</ul>
 
-         <Text fontSize={18} letterSpacing={7} fontWeight={600}>features</Text>
+         <BlockTitle margin={'16px 0'}>features</BlockTitle>
          <ul>{features}</ul>
+
+         <BlockTitle margin={'16px 0'}>quotes</BlockTitle>
+         <ul>{quotes}</ul>
       </Container>
    );
 }

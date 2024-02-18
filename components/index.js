@@ -1,5 +1,6 @@
 export {BannerQuotes} from "./banner-quotes";
 export {Anchor} from "./anchor";
+export {BlockTitle} from "./primitives";
 export {Box} from "./primitives";
 export {CalendarListing} from "./calendar-listing";
 export {Footer} from "./footer";

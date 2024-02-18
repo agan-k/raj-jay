@@ -18,7 +18,6 @@ export default function Uid({ data, content }) {
             </section>
             <aside>
                <ArticleList content={content} />
-               <QuoteList content={content} />
             </aside>
          </Container>
       </Layout>
