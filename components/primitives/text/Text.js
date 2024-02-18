@@ -15,6 +15,7 @@ export default function Text({
   padding,
   whiteSpace,
   margin,
+  border,
 }) {
   return (
     <Container
@@ -31,6 +32,7 @@ export default function Text({
       padding={padding}
       margin={margin}
       whiteSpace={whiteSpace}
+      border={border}
     >
       {children}
     </Container>

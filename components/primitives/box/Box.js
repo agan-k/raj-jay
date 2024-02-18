@@ -8,8 +8,10 @@ export default function Box({
   padding, 
   marginLeft,
   marginTop,
+  marginBottom,
   paddingBottom,
   background,
+  border
 }) {
   return (
     <Container
@@ -19,8 +21,10 @@ export default function Box({
       padding={padding} 
       marginLeft={marginLeft}
       marginTop={marginTop}
+      marginBottom={marginBottom}
       paddingBottom={paddingBottom}
       background={background}
+      border={border}
     >
       {children}
     </Container>

@@ -14,6 +14,7 @@ export const Container = styled.div`
   background: ${({background}) => background};
   padding: ${({padding}) => padding};
   margin: ${({margin}) => margin};
+  border: ${({border}) => border};
   white-space: ${({whiteSpace}) => whiteSpace};
   
 `;

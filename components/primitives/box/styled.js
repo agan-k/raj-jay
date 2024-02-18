@@ -7,8 +7,10 @@ export const Container = styled.div`
   margin: ${({margin}) => margin};
   padding: ${({padding}) => padding};
   margin-top: ${({marginTop}) => marginTop + 'px'};
+  margin-bottom: ${({marginBottom}) => marginBottom + 'px'};
   margin-left: ${({marginLeft}) => marginLeft + 'px'};
   padding-bottom: ${({paddingBottom}) => paddingBottom + 'px'};
   background: ${({background}) => background};
+  border: ${({border}) => border};
 
 `;

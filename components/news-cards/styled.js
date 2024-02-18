@@ -9,9 +9,9 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  // margin-top: 1rem;
   &::after {
     content: "";
     flex: auto;
@@ -21,39 +21,24 @@ export const Wrapper = styled.div`
 export const CardContainer = styled.div`
 background: white;
   min-height: min-content;
-  padding: 12px;
+  padding: 0 12px 12px;
   flex-basis: 33%;
   text-decoration: none;
-  opacity: .9;
-  transition: .2s;
   cursor: pointer;
-  // box-shadow: 0 0 0 0 rgb(245, 245, 245);
+  border: 1px dashed white;
   &:hover {
-    opacity: 1;
+    border: 1px dashed grey;
     // box-shadow: 0px 0px 9px 1px rgb(227, 227, 227);
-    transition: .2s
+    transition: .7s
   }
   img {
-    width: 100%;
-  }
-  h3 {
-    font-size: 1.2rem;
-    margin: .5rem 0;
+    max-width: 150px;
   }
 `;
   
 export const Date = styled.div`
-  margin-bottom: .5rem;
 
 `;
 export const Blurb = styled.div`
-  margin-bottom: .5rem;
-  font-size: .8rem;
 
-`;
-export const Arrow = styled.div`
-  height: 10px;
-  width: 10px;
-  transform: rotate(-45deg);
-  color: red;
 `;

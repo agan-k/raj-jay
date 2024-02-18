@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-  margin-top: 32px;
   -webkit-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   -moz-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   -o-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};

@@ -9,19 +9,14 @@ export const Container = styled.div`
   align-items: center;
   `;
 
-export const Banner = styled.div`
-  img {
-    width: 100%
-  }
-`;
-
 export const CalendarContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
   section {
-    width: 60%
+    width: 80%;
+    // display: flex;
+    
   }
 `;
 
@@ -34,10 +29,8 @@ export const FeaturedFlyers = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3rem;
   img {
     width: 100%;
-    margin: 1rem 0;
     opacity: .8;
   }
 `;

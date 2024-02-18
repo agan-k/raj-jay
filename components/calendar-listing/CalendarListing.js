@@ -1,33 +1,27 @@
 import Link from "next/link";
 import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../utils/formatPrismicDate";
-import {Text, Anchor, FlexBox} from '../../components'
+import {Text, FlexBox, Box} from '../../components'
 import { 
   Listing, 
   Header,
   Body, 
   Footer,
-  Links,
+  Icon,
 } from "./styled";
 
 export default function CalendarListing({listing}) {
+  console.log(listing)
   return(
     <Listing>
       <Header>
-        <h2>
-          {formatPrismicDate(listing.data.date)}
-        </h2>
-        <h2>
+        {formatPrismicDate(listing.data.date)}
+        <Text fontSize={24} margin={'8px 0'} textTransform={'capitalize'}>
           {RichText.asText(listing.data.headlining_artist)}
-        </h2>
-        <h3>
+        </Text>
+        <Text fontWeight={'100'}>
           {RichText.asText(listing.data.venue)}
-          &nbsp;
-          {listing.data.map_link.url && (
-            <a href={listing.data.map_link.url} target="_blank">
-            <img src="/icons/location-icon.png" /></a>
-          )}
-        </h3>
+        </Text>
       </Header>
       <Body>
         <ul>
@@ -37,22 +31,31 @@ export default function CalendarListing({listing}) {
         </ul>
       </Body>
       <Footer>
-        <p>
-          {RichText.asText(listing.data.street_address)}
-        </p>
-        <h4>
-          {RichText.asText(listing.data.city)}
-          {listing.data.country && ', '}
-          {RichText.asText(listing.data.country)}
-        </h4>
-        <Links>
-          {listing.data.links.length !== 0 && (
-            <FlexBox>
-              <img src="/icons/link-icon.png" />&nbsp;
-              <Link href={RichText.asText(listing.data.links)} target="_blank">Website</Link>
-            </FlexBox>
+        {RichText.asText(listing.data.street_address)}
+        <Box margin={'16px 0'}>
+          {listing.data.map_link.url && (
+            <Link href={listing.data.map_link.url} target="_blank">
+            <Icon src="/icons/location-icon.png" />&nbsp;Directions</Link>
           )}
-        </Links>
+        </Box>
+        <Box marginBottom={16}>
+          <FlexBox>
+            {RichText.asText(listing.data.city)}{','}&nbsp;
+            {RichText.asText(listing.data.country)}
+          </FlexBox>
+        </Box>
+        {listing.data.links.length > 0 && (
+          listing.data.links.map(item => (
+            <Link href={RichText.asText(listing.data.links)} target="_blank">
+              <FlexBox>
+                <Icon src="/icons/link-icon.png" />&nbsp;
+                <Text textTransform={'lowercase'} fontStyle={'italic'}>
+                  {item.link.url.substring(0, 30)}{'...'}
+                </Text>
+              </FlexBox>
+            </Link>
+          ))
+        )}
       </Footer>
     </Listing>
   )

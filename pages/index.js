@@ -14,7 +14,7 @@ import {
    CalendarListing,
    Anchor
 } from '../components';
-import { Container } from './styled';
+import { Container, BlockTitle } from './styled';
 
 export default function Home({content, postsData, calendarData}) {
    const [showModal, setShowModal] = useState(false);
@@ -25,16 +25,9 @@ export default function Home({content, postsData, calendarData}) {
       <Layout>
          <Container>
             <section>
-               <Text 
-                  fontSize={24}
-                  fontWeight={100}
-                  textAlign={'center'}
-                  color={'white'}
-                  background={'black'}
-                  letterSpacing={5}
-                  textTransform={'uppercase'}>
-                  News
-               </Text>
+               <BlockTitle>
+                  news
+               </BlockTitle>
                <NewsCards 
                   cards={cards} 
                   setShowModal={setShowModal}
@@ -43,18 +36,11 @@ export default function Home({content, postsData, calendarData}) {
             </section>
             <aside>
                <FlexBox>
-                  <Box width={'100%'}>
-                     <Text
-                        margin={'0 0 16px 0'}
-                        fontSize={24}
-                        fontWeight={100}
-                        textAlign={'center'}
-                        color={'white'}
-                        background={'black'}
-                        letterSpacing={5}>
-                        NEXT SHOW
-                     </Text>
-                     <Box background={'white'} padding={'16px'}>
+                  <Box width={'100%'} padding={'0 0 16px 0'}>
+                     <BlockTitle>
+                        next show
+                     </BlockTitle>
+                     <Box>
                         <CalendarListing 
                            listing={calendarData.results[0]}
                            linkToShows={true} 
@@ -71,17 +57,11 @@ export default function Home({content, postsData, calendarData}) {
                </FlexBox>
 
                <FlexBox>
-                  <Box background={'white'}>
-                     <Text 
-                        fontSize={24}
-                        fontWeight={100}
-                        textAlign={'center'}
-                        color={'white'}
-                        background={'black'}
-                        letterSpacing={5}>
-                        microBLOG
-                     </Text>
-                     <Box padding={'16px'}>
+                  <Box>
+                     <BlockTitle>
+                        blog
+                     </BlockTitle>
+                     <Box>
                         <MicroBlog postsData={postsData} linkToBlog={true} />
                         <FlexBox justifyContent={'end'}>
                            <Anchor path={'/blog'}>
