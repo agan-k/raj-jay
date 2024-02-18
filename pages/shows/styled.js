@@ -2,22 +2,15 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  `;
-
-export const CalendarContainer = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  section {
-    width: 80%;
-    // display: flex;
-    
-  }
+  `;
+
+export const ListingWrapper = styled.div`
+  width: 32%;
+  padding: 16px;
+  border: 1px dashed grey;
+  font-size: .8rem;
 `;
 
 export const SelectedPastShows = styled.div`

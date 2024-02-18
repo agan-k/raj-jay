@@ -25,6 +25,7 @@ export const Footer = styled.div`
 `;
 
 export const Icon = styled.img`
-  height: 16px;
+  height: 12px;
+  opacity: .4;
   vertical-align: bottom;
 `;

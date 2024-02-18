@@ -44,18 +44,19 @@ export default function CalendarListing({listing}) {
             {RichText.asText(listing.data.country)}
           </FlexBox>
         </Box>
-        {listing.data.links.length > 0 && (
+        {
           listing.data.links.map(item => (
-            <Link href={RichText.asText(listing.data.links)} target="_blank">
+            item.link.url &&
+            <Link href={item.link.url} target="_blank">
               <FlexBox>
                 <Icon src="/icons/link-icon.png" />&nbsp;
-                <Text textTransform={'lowercase'} fontStyle={'italic'}>
+                <Text fontSize={12} textTransform={'lowercase'} fontStyle={'italic'}>
                   {item.link.url.substring(0, 30)}{'...'}
                 </Text>
               </FlexBox>
             </Link>
           ))
-        )}
+        }
       </Footer>
     </Listing>
   )

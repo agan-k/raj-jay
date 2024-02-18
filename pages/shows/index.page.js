@@ -6,37 +6,25 @@ import {Layout,
    CalendarListing, 
    FlexBox,
    Text,
+   Box,
 } from '../../components';
 import { 
    Container,
-    CalendarContainer,
-   //  SelectedPastShows,
-   FeaturedFlyers,
+   ListingWrapper,
  } from './styled';
 
 export default function Shows(props) {
    // const selectedPastShows = RichText.render(props.shows.data.shows_body);
    const calendarListings = props.calendar_listings.results.map(listing =>
-      <CalendarListing listing={listing} />
+      <ListingWrapper>
+         <CalendarListing listing={listing} />
+      </ListingWrapper>
    );
 
    return (
       <Layout>
          <Container>
-            <CalendarContainer>
-               <section>
-                  {calendarListings}
-                  {/* TODO: ask if there is a need for this section */}
-                  {/* <SelectedPastShows>
-                     {selectedPastShows}
-                  </SelectedPastShows> */}
-               </section>
-               <FeaturedFlyers>
-                  <img src={props.shows.data.featured_flyer.url} />
-                  <img src={props.shows.data.featured_flyer1.url} />
-                  <img src={props.shows.data.featured_flyer2.url} />
-               </FeaturedFlyers>
-            </CalendarContainer>
+            {calendarListings}
          </Container>
       </Layout>
    )
