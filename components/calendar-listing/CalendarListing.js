@@ -11,7 +11,6 @@ import {
 } from "./styled";
 
 export default function CalendarListing({listing}) {
-  console.log(listing)
   return(
     <Listing>
       <Header>
