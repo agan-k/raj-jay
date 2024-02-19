@@ -6,20 +6,18 @@ export const Container = styled.div`
   position: relative;
   width: 80%;
   max-width: 1200px;
-  padding: 0 .5rem 128px .5rem;
   margin: 0 auto;
   background: white;
 
 `;
 export const PageWrapper = styled.main`
-  padding-top: 32px;
   min-height: 100vh;
 `;
 
-export const BannerWrapper = styled.div`
+export const Banner = styled.div`
   width: 100%;
-  height: 400px;
-  background: center / cover no-repeat url('/images/shows_banner.jpg');
+  height: 250px;
+  background: center / cover no-repeat url('/images/banner1.png');
   z-index: ${Z_INDEX.banner};
   img {
     width: 100%;

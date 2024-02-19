@@ -1,0 +1,15 @@
+import {Container} from './styled';
+import { Text } from '../../components';
+import { RichText } from 'prismic-reactjs';
+import {Quote} from './styled';
+
+export default function Banner({quote, imagePath}) {
+  return(
+    <Container>
+      <img src={imagePath} />
+      <Quote>
+        {RichText.render(quote.data.press_quote)}
+      </Quote>
+    </Container>
+  )
+}

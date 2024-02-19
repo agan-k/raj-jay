@@ -1,4 +1,4 @@
-export {BannerQuotes} from "./banner-quotes";
+export {Banner} from "./banner";
 export {Anchor} from "./anchor";
 export {BlockTitle} from "./primitives";
 export {Box} from "./primitives";

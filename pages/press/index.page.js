@@ -11,10 +11,9 @@ import style from './press.module.css'
 
 export default function Press({content}) {
    const [quotesShow, setQuotesShow] = useState(false);
-   // ---> Reviews
    const pressReviews = content.results.filter(result => 
       result.data.content_type == 'press-reviews'
-      );
+   );
 
    return (
       <Layout>
@@ -27,22 +26,12 @@ export default function Press({content}) {
                   <div className={!quotesShow ? style['open_icon'] : style['close_icon']}>
                   </div>
                </div>
-            {/*  */}
-            
-               {/* <div className={quotesShow ? style['quoteS_open'] : style['quoteS']}>
-                  <QuoteList content={content} />
-               </div> */}
             </div>
             <section>
                <Article currentArticle={pressReviews[0].data} />
-               {/* 
-               <img src={pressReviews[0].data.img.url} style={{maxHeight: '3rem'}}/>
-               {RichText.render(pressReviews[0].data.content_body)}
-               */}
             </section>
             <aside>
                <ArticleList content={content} />
-               {/* <QuoteList content={content} /> */}
             </aside>
          </Container>
       </Layout>

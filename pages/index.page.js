@@ -12,6 +12,7 @@ import {
    CalendarListing,
    Anchor,
    BlockTitle,
+   Banner,
 } from '../components';
 import { currentDate } from '../utils/currentDate';
 import { Container } from './styled';
@@ -20,11 +21,16 @@ export default function Home({content, postsData, calendarListings}) {
    const [showModal, setShowModal] = useState(false);
    const [videoURL, setVideoURL] = useState(null);
    const cards = content.results.filter(item => item.data.news_card); 
-   const upcomingShows = calendarListings.filter(listing => listing > currentDate);  
-   console.log(upcomingShows)
+   const upcomingShows = calendarListings.filter(listing => listing > currentDate);
+   const quotesData = content.results.filter(result =>
+      result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
+   );
+   const quotes = quotesData.map(item => item); 
+   console.log(quotes)
    
    return (
       <Layout>
+         <Banner imagePath={'images/banner1.png'} quote={quotes[0]}/>
          <Container>
             <section>
                <BlockTitle>news</BlockTitle>

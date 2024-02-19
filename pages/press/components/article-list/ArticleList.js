@@ -38,10 +38,10 @@ export default function ArticleList({content}) {
    );
 
    // ---> Quotes
-   const quotes_source = content.results.filter(result =>
+   const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
-   const quotes = quotes_source.map(quote =>
+   const quotes = quotesData.map(quote =>
       <Quote quote={quote} />
    );
 
