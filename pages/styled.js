@@ -15,5 +15,12 @@ export const Container = styled.div`
   }
   aside {
     width: 28%;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        transition: .7s;
+      }
+    }
   }
 `;

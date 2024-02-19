@@ -26,7 +26,7 @@ background: white;
   cursor: pointer;
   border: 1px dashed white;
   &:hover {
-    border: 1px dashed rgb(212,212,212);
+    background: rgb(212,212,212);
     transition: .7s
   }
 `;
@@ -35,11 +35,14 @@ export const ImageWrapper = styled.div`
   height: 100px;
   margin: 0 auto;
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+  border: 1px dashed rgb(212,212,212);
   img {
-    max-width: 100%;
+    max-width: 80%;
+    opacity: .9;
+    padding: 4px;
   }
 `;
 

@@ -1,9 +1,10 @@
 import { Container } from "./styled";
 
 export default function Box({
+  children, 
   position,
   width,
-  children, 
+  height,
   margin, 
   padding, 
   marginLeft,
@@ -17,6 +18,7 @@ export default function Box({
     <Container
       position={position}
       width={width}
+      height={height}
       margin={margin} 
       padding={padding} 
       marginLeft={marginLeft}

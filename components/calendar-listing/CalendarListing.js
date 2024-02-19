@@ -30,11 +30,17 @@ export default function CalendarListing({listing}) {
         </ul>
       </Body>
       <Footer>
-        {RichText.asText(listing.data.street_address)}
-        <Box margin={'16px 0'}>
+        <Text fontSize={12} fontWeight={100}>
+          {RichText.asText(listing.data.street_address)}
+        </Text>
+        <Box margin={'8px 0'}>
           {listing.data.map_link.url && (
             <Link href={listing.data.map_link.url} target="_blank">
-            <Icon src="/icons/location-icon.png" />&nbsp;Directions</Link>
+              <FlexBox>
+                <Icon src="/icons/location-icon.png" />&nbsp;
+                <Text fontSize={12} fontWeight={100}>Directions</Text>
+              </FlexBox>
+            </Link>
           )}
         </Box>
         <Box marginBottom={16}>
@@ -50,7 +56,6 @@ export default function CalendarListing({listing}) {
             item.link.url &&
             <Link href={item.link.url} target="_blank">
               <FlexBox>
-                <Icon src="/icons/link-icon.png" />&nbsp;
                 <Text fontSize={12} textTransform={'lowercase'} fontStyle={'italic'}>
                   {item.link.url.substring(0, 30)}{'...'}
                 </Text>

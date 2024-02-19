@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-
 import Prismic from "prismic-javascript";
 import { client } from "../prismic-configuration";
-
 import {
    Layout,
    MicroBlog,
@@ -15,12 +13,15 @@ import {
    Anchor,
    BlockTitle,
 } from '../components';
+import { currentDate } from '../utils/currentDate';
 import { Container } from './styled';
 
-export default function Home({content, postsData, calendarData}) {
+export default function Home({content, postsData, calendarListings}) {
    const [showModal, setShowModal] = useState(false);
    const [videoURL, setVideoURL] = useState(null);
-   const cards = content.results.filter(item => item.data.news_card);   
+   const cards = content.results.filter(item => item.data.news_card); 
+   const upcomingShows = calendarListings.filter(listing => listing > currentDate);  
+   console.log(upcomingShows)
    
    return (
       <Layout>
@@ -39,7 +40,7 @@ export default function Home({content, postsData, calendarData}) {
                      <BlockTitle margin={'0 0 8px 0'}>next show</BlockTitle>
                      <Box>
                         <CalendarListing 
-                           listing={calendarData.results[0]}
+                           listing={upcomingShows[0]}
                            linkToShows={true} 
                         />
                         <FlexBox justifyContent={'end'}>
@@ -91,7 +92,7 @@ export async function getStaticProps() {
    const calendarListing = await client.query(
       Prismic.Predicates.at("document.type", "calendar_listing"),
       {
-         orderings: '[my.calendar_listing.date]',
+         orderings: '[my.calendar_listing.date desc]',
          pageSize: 1
       }
    );
@@ -106,7 +107,7 @@ export async function getStaticProps() {
       props: {
          content,
          postsData: postsData.results,
-         calendarData: calendarListing
+         calendarListings: calendarListing.results
       },
    }
 }

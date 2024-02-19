@@ -8,14 +8,14 @@ import {
    FlexBox,
    BlockTitle,
 } from '../../components';
+import { currentDate } from "../../utils/currentDate";
 import { 
    ListingWrapper,
  } from './styled';
 
 export default function Shows({calendarListings}) {
-   const currentDate = new Date();
    const upcomingShows = calendarListings.map(listing => {
-      if (listing.data.date > currentDate.toISOString()) {
+      if (listing.data.date > currentDate) {
          return (
             <ListingWrapper>
                <CalendarListing listing={listing} />
@@ -25,8 +25,8 @@ export default function Shows({calendarListings}) {
    });
    const oldDates = calendarListings.map(listing => listing);
 
-   const pastShows = oldDates.reverse().map(listing => {
-      if (listing.data.date < currentDate.toISOString()) {
+   const pastShows = oldDates.map(listing => {
+      if (listing.data.date < currentDate) {
          return(
             <ListingWrapper>
                <CalendarListing listing={listing} />
@@ -39,11 +39,11 @@ export default function Shows({calendarListings}) {
    return (
       <Layout>
          <Box>
-            <BlockTitle margin={'0 0 8px 0'}>upcoming shows</BlockTitle>
+            <BlockTitle margin={'0 0 16px 0'}>upcoming shows</BlockTitle>
             <FlexBox>
                {upcomingShows}
             </FlexBox>
-            <BlockTitle margin={'32px 0 8px 0'}>past shows</BlockTitle>
+            <BlockTitle margin={'32px 0 16px 0'}>past shows</BlockTitle>
             <FlexBox>
                {pastShows}
             </FlexBox>
@@ -55,7 +55,7 @@ export async function getStaticProps() {
    const calendarListings = await client.query(
       Prismic.Predicates.at("document.type", "calendar_listing"),
       {
-         orderings: '[my.calendar_listing.date]',
+         orderings: '[my.calendar_listing.date desc]',
          pageSize: 100
       }
    );
