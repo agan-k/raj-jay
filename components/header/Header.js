@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {Nav, MailingList, NavToggle} from "../../components";
+import {Nav, NavToggle} from "../../components";
 import {
    Container,
    Logo,
@@ -23,6 +23,8 @@ export default function Header() {
       let active;
       if (pathname == '/') {
          active = 'home';
+      } else if (pathname == '/disco') {
+         active = 'discography';
       } else {
          active = pathname.split("/")[1];
       }

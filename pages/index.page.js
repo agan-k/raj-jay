@@ -35,8 +35,8 @@ export default function Home({content, postsData, calendarData}) {
             </section>
             <aside>
                <FlexBox>
-                  <Box width={'100%'} padding={'0 0 16px 0'}>
-                     <BlockTitle>next show</BlockTitle>
+                  <Box width={'100%'} padding={'0 0 8px 0'}>
+                     <BlockTitle margin={'0 0 8px 0'}>next show</BlockTitle>
                      <Box>
                         <CalendarListing 
                            listing={calendarData.results[0]}
@@ -55,7 +55,7 @@ export default function Home({content, postsData, calendarData}) {
 
                <FlexBox>
                   <Box>
-                     <BlockTitle>blog</BlockTitle>
+                     <BlockTitle margin={'0 0 8px 0'}>blog</BlockTitle>
                      <Box>
                         <MicroBlog postsData={postsData} linkToBlog={true} />
                         <FlexBox justifyContent={'end'}>

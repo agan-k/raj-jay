@@ -20,14 +20,13 @@ export const Wrapper = styled.div`
 export const CardContainer = styled.div`
 background: white;
   min-height: min-content;
-  padding: 12px;
+  padding: 8px;
   flex-basis: 33%;
   text-decoration: none;
   cursor: pointer;
   border: 1px dashed white;
   &:hover {
-    border: 1px dashed grey;
-    // box-shadow: 0px 0px 9px 1px rgb(227, 227, 227);
+    border: 1px dashed rgb(212,212,212);
     transition: .7s
   }
 `;
