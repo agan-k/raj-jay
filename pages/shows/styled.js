@@ -1,15 +1,10 @@
 import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  `;
-
 export const ListingWrapper = styled.div`
   width: 32%;
   padding: 16px;
-  border: 1px dashed grey;
+  // border-right: 1px dashed grey;
   font-size: .8rem;
 `;
 

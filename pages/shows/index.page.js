@@ -1,37 +1,58 @@
 import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration";
 // import { RichText } from "prismic-reactjs";
-import {Layout, 
-   MailingList, 
-   CalendarListing, 
-   FlexBox,
-   Text,
+import {
+   Layout, 
+   CalendarListing,
    Box,
+   FlexBox,
+   BlockTitle,
 } from '../../components';
 import { 
-   Container,
    ListingWrapper,
  } from './styled';
 
-export default function Shows(props) {
-   // const selectedPastShows = RichText.render(props.shows.data.shows_body);
-   const calendarListings = props.calendar_listings.results.map(listing =>
-      <ListingWrapper>
-         <CalendarListing listing={listing} />
-      </ListingWrapper>
-   );
+export default function Shows({calendarListings}) {
+   const currentDate = new Date();
+   const upcomingShows = calendarListings.map(listing => {
+      if (listing.data.date > currentDate.toISOString()) {
+         return (
+            <ListingWrapper>
+               <CalendarListing listing={listing} />
+            </ListingWrapper>
+         );
+      }
+   });
+   const oldDates = calendarListings.map(listing => listing);
+
+   const pastShows = oldDates.reverse().map(listing => {
+      if (listing.data.date < currentDate.toISOString()) {
+         return(
+            <ListingWrapper>
+               <CalendarListing listing={listing} />
+            </ListingWrapper>
+         );
+      }
+   });
+
 
    return (
       <Layout>
-         <Container>
-            {calendarListings}
-         </Container>
+         <Box>
+            <BlockTitle margin={'0 0 8px 0'}>upcoming shows</BlockTitle>
+            <FlexBox>
+               {upcomingShows}
+            </FlexBox>
+            <BlockTitle margin={'32px 0 8px 0'}>past shows</BlockTitle>
+            <FlexBox>
+               {pastShows}
+            </FlexBox>
+         </Box>
       </Layout>
    )
 }
 export async function getStaticProps() {
-   const shows = await client.getSingle("shows");
-   const calendar_listings = await client.query(
+   const calendarListings = await client.query(
       Prismic.Predicates.at("document.type", "calendar_listing"),
       {
          orderings: '[my.calendar_listing.date]',
@@ -40,8 +61,7 @@ export async function getStaticProps() {
    );
    return {
       props: {
-         shows,
-         calendar_listings
+         calendarListings: calendarListings.results
       }
    };
 }

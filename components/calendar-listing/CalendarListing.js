@@ -14,11 +14,11 @@ export default function CalendarListing({listing}) {
   return(
     <Listing>
       <Header>
-        {formatPrismicDate(listing.data.date)}
+          {formatPrismicDate(listing.data.date)}
         <Text fontSize={24} margin={'8px 0'} textTransform={'capitalize'}>
           {RichText.asText(listing.data.headlining_artist)}
         </Text>
-        <Text fontWeight={'100'}>
+        <Text fontSize={20} fontWeight={'100'}>
           {RichText.asText(listing.data.venue)}
         </Text>
       </Header>
@@ -39,8 +39,10 @@ export default function CalendarListing({listing}) {
         </Box>
         <Box marginBottom={16}>
           <FlexBox>
-            {RichText.asText(listing.data.city)}{','}&nbsp;
-            {RichText.asText(listing.data.country)}
+            <Text fontSize={20}>
+              {RichText.asText(listing.data.city)}{','}&nbsp;
+              {RichText.asText(listing.data.country)}
+            </Text>
           </FlexBox>
         </Box>
         {
