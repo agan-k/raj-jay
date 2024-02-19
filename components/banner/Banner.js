@@ -7,9 +7,11 @@ export default function Banner({quote, imagePath}) {
   return(
     <Container>
       <img src={imagePath} />
-      <Quote>
-        {RichText.render(quote.data.press_quote)}
-      </Quote>
+      {quote && (
+        <Quote>
+          {RichText.render(quote.data.press_quote)}
+        </Quote>
+      )}
     </Container>
   )
 }

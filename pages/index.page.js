@@ -15,6 +15,7 @@ import {
    Banner,
 } from '../components';
 import { currentDate } from '../utils/currentDate';
+import { BANNER_QUOTE } from '../utils/constants';
 import { Container } from './styled';
 
 export default function Home({content, postsData, calendarListings}) {
@@ -25,12 +26,11 @@ export default function Home({content, postsData, calendarListings}) {
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
-   const quotes = quotesData.map(item => item); 
-   console.log(quotes)
+   const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
    
    return (
       <Layout>
-         <Banner imagePath={'images/banner1.png'} quote={quotes[0]}/>
+         <Banner imagePath={'images/banner1.png'} quote={quotes[BANNER_QUOTE.home]}/>
          <Container>
             <section>
                <BlockTitle>news</BlockTitle>
@@ -68,7 +68,7 @@ export default function Home({content, postsData, calendarListings}) {
                         <FlexBox justifyContent={'end'}>
                            <Anchor path={'/blog'}>
                            <Text fontSize={16}>
-                              ...more, blog home
+                              ...blog home
                            </Text>
                            </Anchor>
                         </FlexBox>

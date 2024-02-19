@@ -18,15 +18,6 @@ export default function Press({content}) {
    return (
       <Layout>
          <Container>
-            {/* TODO this is isMobile && expandable quotes 
-            container. Top of the page */}
-            <div className={style.quoteS_container_mobile} >
-               <div className={style['quotes_toggle']} onClick={() => setQuotesShow(!quotesShow)}>
-               <h4>quotes</h4>
-                  <div className={!quotesShow ? style['open_icon'] : style['close_icon']}>
-                  </div>
-               </div>
-            </div>
             <section>
                <Article currentArticle={pressReviews[0].data} />
             </section>

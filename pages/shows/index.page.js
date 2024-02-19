@@ -7,13 +7,17 @@ import {
    Box,
    FlexBox,
    BlockTitle,
+   Banner,
 } from '../../components';
+import { BANNER_QUOTE } from "../../utils/constants";
 import { currentDate } from "../../utils/currentDate";
-import { 
-   ListingWrapper,
- } from './styled';
+import { ListingWrapper } from './styled';
 
-export default function Shows({calendarListings}) {
+export default function Shows({calendarListings, content}) {
+   const quotesData = content.results.filter(result =>
+      result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
+   );
+   const quotes = quotesData.filter(item => item.data.press_quote.length > 0);
    const upcomingShows = calendarListings.map(listing => {
       if (listing.data.date > currentDate) {
          return (
@@ -38,6 +42,7 @@ export default function Shows({calendarListings}) {
 
    return (
       <Layout>
+         <Banner imagePath={'images/banner2.png'} quote={quotes[BANNER_QUOTE.shows]}/>
          <Box>
             <BlockTitle margin={'0 0 16px 0'}>upcoming shows</BlockTitle>
             <FlexBox>
@@ -52,6 +57,13 @@ export default function Shows({calendarListings}) {
    )
 }
 export async function getStaticProps() {
+   const content = await client.query(
+      Prismic.Predicates.at("document.type", "content"),
+      {
+         orderings: '[my.content.date desc]',
+         pageSize : 100
+      }
+   );
    const calendarListings = await client.query(
       Prismic.Predicates.at("document.type", "calendar_listing"),
       {
@@ -61,6 +73,7 @@ export async function getStaticProps() {
    );
    return {
       props: {
+         content,
          calendarListings: calendarListings.results
       }
    };

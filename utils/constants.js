@@ -38,5 +38,12 @@ export const Z_INDEX = {
   header: 1,
   banner: -1,
 }
+export const BANNER_QUOTE = {
+  home: 2,
+  bio: 3,
+  shows: 0,
+  press: 4,
+}
 
 export const FEATURED_ALBUM = 'Pistils'; // Pistils (second)
+

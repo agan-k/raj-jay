@@ -18,6 +18,8 @@ export const Quote = styled.div`
     color: rgb(212,212,212);
     font-weight: 100;
     font-size: 12px;
-
+  }
+  p:nth-child(2) {
+    text-align: right;
   }
 `;
