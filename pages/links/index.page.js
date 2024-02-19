@@ -1,8 +1,7 @@
 import Prismic from 'prismic-javascript';
 import { client } from '../../prismic-configuration';
-import {Layout, Text, FlexBox, Box} from '../../components';
+import {Layout, Text, FlexBox, Box, BlockTitle} from '../../components';
 import LinkCard from './components/LinkCard';
-import { Container } from './styled';
 
 export default function Links({linksData}) {
    const links = linksData.map(link => link.data);
@@ -23,15 +22,15 @@ export default function Links({linksData}) {
    return (
       <Layout>
          <Box width={'90%'}>
-         <Text letterSpacing={2} margin={'32px 0 0'}>musicians:</Text>
+         <BlockTitle margin={'32px 0 0'}>musicians:</BlockTitle>
             <FlexBox>
                {musicians}
             </FlexBox>
-            <Text letterSpacing={2} margin={'32px 0 0'}>visual artists:</Text>
+            <BlockTitle margin={'32px 0 0'}>visual artists:</BlockTitle>
             <FlexBox>
                {visualArtists}
             </FlexBox>
-            <Text letterSpacing={2} margin={'32px 0 0'}>other:</Text>
+            <BlockTitle margin={'32px 0 0'}>other:</BlockTitle>
             <FlexBox>
                {other}
             </FlexBox>
