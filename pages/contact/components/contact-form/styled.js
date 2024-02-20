@@ -36,7 +36,7 @@ export const Container = styled.div`
     border: 0;
     text-transform: lowercase;
     padding: .5rem;
-    background: rgba(0, 0, 0, 0.6);
+    background: black;
     cursor: pointer;
   }
 `;

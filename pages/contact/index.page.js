@@ -18,21 +18,27 @@ export default function Contact({contact, content, publicity}) {
    return (
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.contact]} imagePath={'images/banner6.png'} />
-            <BlockTitle>publicity:</BlockTitle>
-         <FlexBox justifyContent={'center'}>
-            <FlexBox width={'60%'} justifyContent={'space-between'}>
-               {publicityCard}
-            </FlexBox>
-         </FlexBox>
-         <BlockTitle>
-            <FlexBox>
-               write to&nbsp;
-               <Text textTransform={'capitalize'}>raj:</Text>
-            </FlexBox>
-         </BlockTitle>
-         <FlexBox justifyContent={'center'}>
-            <Box width={'60%'}>
-               <ContactForm />
+         <FlexBox justifyContent={'space-between'}>
+            <Box width={'30%'}>
+               <BlockTitle>publicity:</BlockTitle>
+               <Box marginTop={32}>
+                  <Box>
+                     {publicityCard}
+                  </Box>
+               </Box>
+            </Box>
+            <Box width={'50%'}>
+               <BlockTitle>
+                  <FlexBox>
+                     write to&nbsp;
+                     <Text textTransform={'capitalize'}>raj:</Text>
+                  </FlexBox>
+               </BlockTitle>
+               <FlexBox justifyContent={'end'}>
+                  <Box width={'80%'} marginTop={32}>
+                     <ContactForm />
+                  </Box>
+               </FlexBox>
             </Box>
          </FlexBox>
       </Layout>
