@@ -26,8 +26,10 @@ export const Photo = styled.div`
   flex-basis: 13%;
   display: flex;
   padding: 4px 0;
-  `;
-  export const Image = styled.img`
+`;
+
+export const Image = styled.img`
+  cursor: pointer;
   max-height: 160px;
   border-radius: 10px;
   margin: 0 auto;
