@@ -1,11 +1,11 @@
 import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../../utils/formatPrismicDate";
-import HandleVideoLinkModal from "../../../utils/handleVideoLinkModal";
+import HandleMediaLinkModal from "../../../utils/handleMediaLinkModal";
 import {Body, Container, Date, TitleImage} from "./styled";
 import { Text } from "../../../components";
 
 export default function Post({data, setShowModal, setVideoURL}) {
-  const hasVideoLink = Boolean(data.youtube.url != null);
+  const hasVideoLink = Boolean(data.youtube.url);
   const hasTitleImage = Boolean(data.title_image.url != null);
   const videoLink = hasVideoLink ? data.youtube.url : '';
   return (
@@ -14,12 +14,11 @@ export default function Post({data, setShowModal, setVideoURL}) {
     {hasTitleImage && (
       <TitleImage 
         src={data.title_image?.url}
-        onClick={hasVideoLink && (
-          () => HandleVideoLinkModal({
-          url: videoLink,
+        onClick={() => HandleMediaLinkModal({
+          url: data.youtube.url,
           setShowModal: setShowModal,
-          setVideoURL: setVideoURL,
-          }))
+          setMediaURL: setVideoURL,
+          })
         }
         pointer={hasVideoLink} 
       /> 

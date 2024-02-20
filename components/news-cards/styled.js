@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CardContainer = styled.div`
-background: white;
+  background: white;
   min-height: min-content;
   padding: 8px;
   flex-basis: 33%;

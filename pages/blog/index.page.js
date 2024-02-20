@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration";
-import { Layout, Banner } from "../../components";
+import { Layout, Banner, Modal } from "../../components";
 import { BANNER_QUOTE } from "../../utils/constants";
 import { Container, Wrapper } from "./styled";
 import { Post } from "./components";
@@ -29,6 +29,12 @@ export default function BlogHome({postsData, content}) {
           {posts}
         </Container>
       </Wrapper>
+      {showModal && (
+        <Modal
+          video={videoURL}
+          closeModal={() => setShowModal(false)}
+        />
+      )}
     </Layout>
   )
 }

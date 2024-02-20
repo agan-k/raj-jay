@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import Link from 'next/link';
-import {Modal, Text, Anchor, FlexBox} from "../../components";
+import {Modal} from "../../components";
 
 import {Post} from "./components/post";
 import {Container} from './styled';

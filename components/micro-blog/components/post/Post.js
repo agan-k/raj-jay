@@ -1,6 +1,6 @@
 import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../../../utils/formatPrismicDate";
-import HandleVideoLinkModal from "../../../../utils/handleVideoLinkModal";
+import HandleVideoLinkModal from "../../../../utils/handleMediaLinkModal";
 import {Body, Container, Date, TitleImage} from "./styled";
 import { Text } from "../../../../components";
 
@@ -18,7 +18,7 @@ export default function Post({data, setShowModal, setVideoURL}) {
           () => HandleVideoLinkModal({
           url: videoLink,
           setShowModal: setShowModal,
-          setVideoURL: setVideoURL,
+          setMediaURL: setVideoURL,
           }))
         }
         pointer={hasVideoLink} 

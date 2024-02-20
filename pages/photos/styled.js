@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-  width: 70%;
-  margin: 0 auto;
   -webkit-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   -moz-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   -o-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
@@ -15,31 +13,22 @@ export const Container = styled.div`
 export const Gallery = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  // &::after {
-  //   content: "";
-  //   flex: auto;
-  // }
+  &::after {
+    content: "";
+    flex: auto;
+  }
 `;
 export const Photo = styled.div`
-  height: 15rem;
-  width: 33%;
-  text-align: center;
-  img {
-    cursor: pointer;
-  }
-`;
-export const ImageMask = styled.div`
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background:white;
-`;
-export const Image = styled.img`
-  height: ${({vertical}) => vertical ? '270%' : '140%'};
-  &:hover {
-    height: ${({vertical}) => vertical ? '90%' : '55%'};
-    margin-top: ${({vertical}) => vertical ? '3%' : '18%'};
-  }
+  min-height: min-content;
+  flex-basis: 13%;
+  display: flex;
+  padding: 4px 0;
+  `;
+  export const Image = styled.img`
+  max-height: 160px;
+  border-radius: 10px;
+  margin: 0 auto;
 `;

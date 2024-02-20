@@ -2,7 +2,7 @@ import { Container, Image, ImageWrapper, VideoWrapper } from "./styled";
 import { RichText } from "prismic-reactjs";
 import isVerticalImage from "../../utils/isVerticalImage";
 
-export default function Modal({video, closeModal}) {
+export default function Modal({video, closeModal, photo}) {
   const hasVideo = Boolean(video != null)
 
   return (
@@ -10,22 +10,22 @@ export default function Modal({video, closeModal}) {
       {!hasVideo ?
         <ImageWrapper>
           <Image 
-            src={detail.img.url} 
+            src={photo.img.url} 
             vertical={isVerticalImage({
-                height: detail.img.dimensions.height,
-                width: detail.img.dimensions.width,
+                height: photo.img.dimensions.height,
+                width: photo.img.dimensions.width,
             })} 
           />
-          {RichText.render(detail.photo_caption)}
+          {RichText.render(photo.photo_caption)}
         </ImageWrapper> :
         <VideoWrapper>
-          <iframe 
-              width="100%" 
-              height="100%" 
-              src={video} 
-              title="YouTube video player" 
-              frameborder="0" 
-              allowfullscreen
+          <iframe
+            width="100%" 
+            height="100%" 
+            src={video} 
+            title="YouTube video player" 
+            frameborder="0" 
+            allowfullscreen
           ></iframe>
         </VideoWrapper>
       } 
