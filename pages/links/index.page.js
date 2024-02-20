@@ -28,16 +28,16 @@ export default function Links({linksData, content}) {
    return (
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.links]} imagePath={'images/banner4.png'} />
-         <Box width={'90%'}>
-         <BlockTitle margin={'32px 0 0'}>musicians:</BlockTitle>
+         <Box>
+            <BlockTitle margin={'0 0 32px'}>musicians:</BlockTitle>
             <FlexBox>
                {musicians}
             </FlexBox>
-            <BlockTitle margin={'32px 0 0'}>visual artists:</BlockTitle>
+            <BlockTitle margin={'32px 0'}>visual artists:</BlockTitle>
             <FlexBox>
                {visualArtists}
             </FlexBox>
-            <BlockTitle margin={'32px 0 0'}>other:</BlockTitle>
+            <BlockTitle margin={'32px 0'}>other:</BlockTitle>
             <FlexBox>
                {other}
             </FlexBox>
