@@ -23,7 +23,7 @@ border-top: 1px dashed grey;
     color: grey;
   }
   img {
-    margin: 16px 15%;
+    margin: 16px 15% 0;
     width: 70%;
   }
 `;

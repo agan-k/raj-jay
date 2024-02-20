@@ -1,6 +1,7 @@
 import { Container } from "./styled";
 
 export default function Text({
+  display,
   children,
   fontFamily,
   fontSize,
@@ -19,6 +20,7 @@ export default function Text({
 }) {
   return (
     <Container
+      display={display}
       fontFamily={fontFamily}
       fontSize={fontSize}
       fontStyle={fontStyle}

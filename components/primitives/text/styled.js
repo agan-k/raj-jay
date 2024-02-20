@@ -10,6 +10,7 @@ export const Container = styled.div`
   text-align: ${({textAlign}) => textAlign};
   vertical-align: ${({verticalAlign}) => verticalAlign};
   text-transform: ${({textTransform}) => textTransform};
+  display: ${({display}) => display};
   color: ${({color}) => color};
   background: ${({background}) => background};
   padding: ${({padding}) => padding};

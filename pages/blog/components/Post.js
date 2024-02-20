@@ -28,7 +28,8 @@ export default function Post({data, setShowModal, setVideoURL}) {
           /> 
         )}
         <Text 
-          fontSize={64} 
+          fontSize={70}
+          fontWeight={100} 
           margin={'16px 0'} 
           color={'#e0e0e0'}
           letterSpacing={3}

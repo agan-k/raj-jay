@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: white;
   width: 100%;
-  margin-bottom: 32px;
   padding: 8px;
 `;
 
@@ -17,6 +15,8 @@ export const TitleImage = styled.img`
 
 export const Date = styled.div`
   white-space: nowrap;
+  font-weight: 100;
+  text-transform: uppercase;
 `;
 
 export const Body = styled.div`

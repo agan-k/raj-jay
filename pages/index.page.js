@@ -43,7 +43,7 @@ export default function Home({content, postsData, calendarListings}) {
             <aside>
                <FlexBox>
                   <Box width={'100%'} padding={'0 0 8px 0'}>
-                     <BlockTitle>next show</BlockTitle>
+                     <BlockTitle textAlign={'right'}>next show</BlockTitle>
                      <Box>
                         <CalendarListing 
                            listing={upcomingShows[0]}
@@ -51,9 +51,9 @@ export default function Home({content, postsData, calendarListings}) {
                         />
                         <FlexBox justifyContent={'end'}>
                            <Anchor path={'/shows'}>
-                           <Text fontSize={16} textTransform={'none'}>
-                           ...full calendar
-                           </Text>
+                              <Text fontSize={12}>
+                                 ...full calendar
+                              </Text>
                            </Anchor>
                         </FlexBox>
                      </Box>
@@ -61,13 +61,13 @@ export default function Home({content, postsData, calendarListings}) {
                </FlexBox>
 
                <FlexBox>
-                  <Box>
-                     <BlockTitle margin={'0 0 8px 0'}>blog</BlockTitle>
+                  <Box marginTop={16}>
+                     <BlockTitle margin={'0 0 8px 0'} textAlign={'right'}>blog</BlockTitle>
                      <Box>
                         <MicroBlog postsData={postsData} linkToBlog={true} />
                         <FlexBox justifyContent={'end'}>
                            <Anchor path={'/blog'}>
-                           <Text fontSize={16}>
+                           <Text fontSize={12}>
                               ...blog home
                            </Text>
                            </Anchor>
