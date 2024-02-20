@@ -3,10 +3,9 @@ import {mediaQuery} from "../../utils/mediaQuery"
 
 export const Container = styled.div`
   * {
-    font-style: italic;
-    font-size: .9rem;
+    letter-spacing: .1rem;
+    font-size: .8rem;
     text-transform: lowercase;
-    letter-spacing: 2px;
   }
   form {
     display: flex;
@@ -21,6 +20,7 @@ export const Container = styled.div`
     background: rgb(212,212,212);
   }
   input::placeholder {
+    font-style: italic;
     color: grey;
     font-weight: 100;
   }
@@ -32,7 +32,7 @@ export const Container = styled.div`
   button {
     margin: 0;
     color: white;
-    padding: 0 .3rem;
+    padding: .1rem .3rem;
     background: black;
     border: none;
     cursor: pointer;

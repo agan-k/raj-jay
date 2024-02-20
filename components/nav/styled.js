@@ -26,8 +26,8 @@ ul {
 }
 `;
 export const SeparationLine = styled.div`
-margin-top: 16px;
-height: 50%;
+  margin: 32px 0;
+  height: 52%;
   border-right: 1px dashed grey;
 `;
 export const NavItem = styled.li`
