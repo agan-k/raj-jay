@@ -1,7 +1,7 @@
 
 import Head from "next/head";
 import { Container, PageWrapper, Banner } from "./styled";
-import  {Header} from "../../components";
+import  {Footer, Header} from "../../components";
 
 export default function Layout({children, title = 'Rajiv Jayaweera',}) {
   return(
@@ -14,6 +14,7 @@ export default function Layout({children, title = 'Rajiv Jayaweera',}) {
       <PageWrapper>
         {children}
       </PageWrapper>
+      <Footer/>
     </Container>
   );
 }

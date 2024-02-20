@@ -1,9 +1,9 @@
 import {Container, Arrow} from './styled';
 
-export default function LinkArrow() {
+export default function LinkArrow({color}) {
   return (
     <Container>
-      <Arrow>&nbsp;&rarr;</Arrow>
+      <Arrow color={color}>&nbsp;&rarr;</Arrow>
     </Container>
   )
 }

@@ -1,16 +1,10 @@
+import { Anchor } from "../../components";
 import { Container } from "./styled";
 
 export default function Footer() {
   return(
     <Container>
-      Site by
-      <a
-        href="https://formversuscontent.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        &nbsp;{'FormVsContent'}
-      </a>
+      <Anchor url={'https://formversuscontent.com'} target={'_blank'} color={'white'}>Site by FormVsContent</Anchor>
     </Container>
   );
 }

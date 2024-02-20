@@ -6,10 +6,9 @@ export const Container = styled.div`
   display: flex;
   align-items: start;
   border-radius: 5px;
-  // background: #c4c4c4;
   `;
   export const Arrow = styled.div`
   transform: rotate(-45deg);
-  color: black;
+  color: ${({color}) => color};
   font-weight: 100;
 `;
