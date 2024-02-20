@@ -3,7 +3,7 @@ import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration";
 import { Layout, Banner, Modal } from "../../components";
 import { BANNER_QUOTE } from "../../utils/constants";
-import { Container, Wrapper } from "./styled";
+import { Container } from "./styled";
 import { Post } from "./components";
 
 export default function BlogHome({postsData, content}) {
@@ -24,11 +24,9 @@ export default function BlogHome({postsData, content}) {
   return (
     <Layout>
       <Banner quote={quotes[BANNER_QUOTE.blog]} imagePath={'/images/banner5.png'} />
-      <Wrapper>
-        <Container>
-          {posts}
-        </Container>
-      </Wrapper>
+      <Container>
+        {posts}
+      </Container>
       {showModal && (
         <Modal
           video={videoURL}

@@ -1,30 +1,29 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-height: min-content;
-padding: 12px;
-flex-basis: 18%;
-margin: 5px;
-background: white;
 `;
   
 export const TitleImage = styled.img`
-  width: 100%;
+  width: 50%;
   display: block;
   margin: 0 auto;
   cursor: ${({pointer}) => pointer ? 'pointer' : ''};
 `;
 
 export const Date = styled.div`
+  text-transform: uppercase;  
   white-space: nowrap;
   margin-bottom: 16px;
 `;
 
 export const Body = styled.div`
+padding-top: 16px;
+border-top: 1px dashed grey;
   p {
-    font-size: 12px;
+    color: grey;
   }
   img {
-    width: 100%;
+    margin: 16px 15%;
+    width: 70%;
   }
 `;
