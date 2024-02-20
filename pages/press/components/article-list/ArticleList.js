@@ -47,7 +47,7 @@ export default function ArticleList({content}) {
 
    return(
       <Container>
-         <BlockTitle margin={'16px 0'}>press releases</BlockTitle>
+         <BlockTitle margin={'0 0 16px 0'}>press releases</BlockTitle>
          <ul>{pressReleases}</ul>
 
          <BlockTitle margin={'16px 0'}>reviews</BlockTitle>

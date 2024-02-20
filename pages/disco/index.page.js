@@ -4,10 +4,10 @@ import Link from 'next/link'
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 
-import {Layout} from "../../components";
+import {Layout, Banner} from "../../components";
 import {Container} from './styled';
 import { AlbumList, Album } from './components';
-import { FEATURED_ALBUM } from '../../utils/constants';
+import { FEATURED_ALBUM, BANNER_QUOTE } from '../../utils/constants';
 
 
 export default function Discography({content}) {
@@ -17,9 +17,14 @@ export default function Discography({content}) {
    const featuredAlbum = discography.filter(result =>
       result.data.content_body[1].text === FEATURED_ALBUM
    );
-
+   const quotesData = content.results.filter(result =>
+      result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
+   );
+   const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
+   console.log(quotes)
    return (
       <Layout>
+         <Banner quote={quotes[BANNER_QUOTE.disco]} imagePath={'/images/banner6.png'} />
          <Container>
             <section>
                <Album currentAlbum={featuredAlbum[0].data}/>

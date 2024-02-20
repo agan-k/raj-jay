@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-position: relative;
+  position: relative;
   width: 100%;
   height: 250px;
   margin-bottom: 16px;
+  border-top-left-radius: 50px 50px;
+  border-top-right-radius: 50px 50px;
+  overflow: hidden;
+  background: black;
   img {
     width: 100%;
   }

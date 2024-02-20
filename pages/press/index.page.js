@@ -1,22 +1,23 @@
-import  React, { useState }  from 'react';
 import Prismic from "prismic-javascript";
-import { RichText } from 'prismic-reactjs';
 import { client } from "../../prismic-configuration"
 
-import {Layout} from '../../components';
-import {QuoteList, ArticleList, Article} from "./components";
+import {Layout, Banner} from '../../components';
+import { BANNER_QUOTE } from "../../utils/constants";
+import {ArticleList, Article} from "./components";
 import {Container} from './styled';
 
-import style from './press.module.css'
-
 export default function Press({content}) {
-   const [quotesShow, setQuotesShow] = useState(false);
    const pressReviews = content.results.filter(result => 
       result.data.content_type == 'press-reviews'
    );
+   const quotesData = content.results.filter(result =>
+      result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
+   );
+   const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
 
    return (
       <Layout>
+         <Banner quote={quotes[BANNER_QUOTE.press]} imagePath={'images/banner5.png'} />
          <Container>
             <section>
                <Article currentArticle={pressReviews[0].data} />
