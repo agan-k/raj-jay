@@ -14,7 +14,9 @@ export default function CalendarListing({listing}) {
   return(
     <Listing>
       <Header>
+        <Text fontWeight={100}>
           {formatPrismicDate(listing.data.date)}
+        </Text>
         <Text fontSize={24} margin={'8px 0'} textTransform={'capitalize'}>
           {RichText.asText(listing.data.headlining_artist)}
         </Text>

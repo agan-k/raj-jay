@@ -4,6 +4,7 @@ export const Container = styled.div`
   background: white;
   width: 100%;
   margin-bottom: 32px;
+  padding: 8px;
 `;
 
 export const TitleImage = styled.img`

@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  // align-items: center;
   flex-wrap: wrap;
   &::after {
     content: "";
@@ -26,8 +25,8 @@ export const CardContainer = styled.div`
   cursor: pointer;
   border: 1px dashed white;
   &:hover {
-    background: rgb(212,212,212);
-    transition: .7s
+    background: #e0e0e0;
+    transition: .3s
   }
 `;
 export const ImageWrapper = styled.div`
@@ -38,17 +37,19 @@ export const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border: 1px dashed rgb(212,212,212);
   img {
-    max-width: 80%;
+    width: 100%;
     opacity: .9;
     padding: 4px;
   }
-`;
-
+  `;
   
-export const Date = styled.div`
-
+  
+  export const Date = styled.div`
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: 8px;
+  // border-top: 1px dashed grey;
 `;
 export const Blurb = styled.div`
 

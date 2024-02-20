@@ -43,7 +43,7 @@ export default function Home({content, postsData, calendarListings}) {
             <aside>
                <FlexBox>
                   <Box width={'100%'} padding={'0 0 8px 0'}>
-                     <BlockTitle margin={'0 0 8px 0'}>next show</BlockTitle>
+                     <BlockTitle>next show</BlockTitle>
                      <Box>
                         <CalendarListing 
                            listing={upcomingShows[0]}

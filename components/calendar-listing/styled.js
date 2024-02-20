@@ -5,7 +5,7 @@ export const Listing = styled.div`
   width: 100%;
   letter-spacing: 1px;
   margin-bottom: 32px;
-  padding: 16px;
+  padding: 8px;
 `;
 
 export const Header = styled.div`

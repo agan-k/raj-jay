@@ -2,7 +2,7 @@ import Link from "next/link";
 import formatPrismicDate from "../../utils/formatPrismicDate";
 import { RichText } from "prismic-reactjs";
 import { CardContainer, Date, Blurb, ImageWrapper } from "./styled";
-import { FlexBox, LinkArrow, Box } from "../../components";
+import { FlexBox, LinkArrow } from "../../components";
 
 export default function Card({card, onClick}) {
   const isVideoLink = Boolean(card.data.video_link.length > 0);
@@ -12,7 +12,7 @@ export default function Card({card, onClick}) {
       {!isVideoLink ? 
         <CardContainer>
           <Link href={`/${card.data.content_type.substring(0, 5)}/${card.uid}`}>
-            <Box marginBottom={8}>{formatPrismicDate(card.data.date)}</Box>
+            <Date>{formatPrismicDate(card.data.date)}</Date>
             <ImageWrapper>
               <img src={card.data.img.url} />
             </ImageWrapper>
