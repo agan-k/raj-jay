@@ -47,6 +47,7 @@ export const BANNER_QUOTE = {
   links: 8,
   contact: 9,
   blog: 5,
+  videos: 2,
 }
 
 export const FEATURED_ALBUM = 'Pistils'; // Pistils (second)

@@ -11,7 +11,7 @@ export const Container = styled.div`
   background-color: black;
   background: url('${({imagePath}) => imagePath}');
   background-size: cover;
-  background-position: center;
+  background-position: right;
 `;
 export const Quote = styled.div`
   width: 40%;

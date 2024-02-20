@@ -14,20 +14,16 @@ export const Container = styled.div`
 export const Gallery = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 `;
-export const Video = styled.div`
- width: 23%;
- margin: 0 2rem;
+export const VideoContainer = styled.div`
+  width: 29%;
   p {
-    margin: 0 0 0 1rem;
+    margin: 0 0 16px 0;
   }
   img {
     width: 100%;
-    margin: 1rem 1rem 0 1rem;
     cursor: pointer;
-    opacity: .7;
-    transition: .4s;
- }
+  }
 `;
