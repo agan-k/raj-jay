@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery"
 
 export const Container = styled.div`
-  display: flex;
   * {
     font-style: italic;
     font-size: .9rem;
@@ -11,17 +10,19 @@ export const Container = styled.div`
   }
   form {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
   input {
     border: none;
+    margin-bottom: 4px;
     outline: none;
-    width: 80%;
-    background: rgb(245, 245, 245);
+    width: 100%;
+    background: rgb(212,212,212);
   }
   input::placeholder {
-    color: rgb(195, 195, 195);
-    padding-left: .3rem;
+    color: grey;
+    font-weight: 100;
   }
   
   input:focus {
@@ -32,7 +33,7 @@ export const Container = styled.div`
     margin: 0;
     color: white;
     padding: 0 .3rem;
-    background: rgba(0, 0, 0, 0.6);
+    background: black;
     border: none;
     cursor: pointer;
     &:hover {

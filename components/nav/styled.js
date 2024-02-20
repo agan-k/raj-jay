@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -25,6 +25,11 @@ ul {
   background: white;
 }
 `;
+export const SeparationLine = styled.div`
+margin-top: 16px;
+height: 50%;
+  border-right: 1px dashed grey;
+`;
 export const NavItem = styled.li`
   display: ${({active}) => active ? 'none' : 'initial'};
   a {
@@ -45,22 +50,6 @@ export const SocialAndMailingWrapper = styled.div`
   width: 40%;
   display: flex;
   margin-top: 2rem;
-`;
-export const SocialIcons = styled.div`
-  width: 100%;
-  height: 1.7rem;
-  margin: 0;
-  // img {
-  //   display: inline;
-  //   height: 100%;
-  //   padding: .2rem .2rem .2rem 0;
-  //   opacity: .7;
-  //   cursor: pointer;
-  // }
-  // &:hover img {
-  //   opacity: 1;
-  //   transition: .2s;
-  // }
 `;
 export const NavToggle = styled.div`
   

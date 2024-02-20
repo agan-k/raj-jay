@@ -7,12 +7,11 @@ import {
 } from "../../components"
 import { navLinks, socialLinks as social } from "../../utils/constants";
 import { 
-  Container, 
-  NavContainer, 
-  SocialIcons, 
+  Container,
   NavItem, 
   NavRoutes,
   SocialAndMailingWrapper,
+  SeparationLine,
 } from "./styled";
 
 export default function Nav({isNavOpen}) {
@@ -24,12 +23,6 @@ export default function Nav({isNavOpen}) {
       </Link>
     </NavItem>
   );
-  
-  // const socialLinks = social.map(item =>
-  //   <a key={item.name} href={item.url} target="_blank">
-  //     <img src={item.icon} alt={item.name} />
-  //   </a>
-  // );
 
   return(
     <Container isNavOpen={isNavOpen}>
@@ -38,10 +31,12 @@ export default function Nav({isNavOpen}) {
           {navigationRoutes}
         </ul>
       </NavRoutes>
+      <FlexBox alignItems={'center'}>
+        <SeparationLine />
+      </FlexBox>
       <SocialAndMailingWrapper>
-        {/* <SocialIcons>{socialLinks}</SocialIcons> */}
         <FlexBox alignItems={'start'}>
-          <FlexBox alignItems={'center'}>
+          <FlexBox>
             <Text 
               letterSpacing={1}
               fontSize={13}
@@ -52,8 +47,8 @@ export default function Nav({isNavOpen}) {
             >
               mailing list:
             </Text>&nbsp;
+            <MailingList />
           </FlexBox>
-          <MailingList />
         </FlexBox>
       </SocialAndMailingWrapper>
     </Container>
