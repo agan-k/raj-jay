@@ -5,8 +5,7 @@ import {Quote} from './styled';
 
 export default function Banner({quote, imagePath}) {
   return(
-    <Container>
-      <img src={imagePath} />
+    <Container imagePath={imagePath}>
       {quote && (
         <Quote>
           {RichText.render(quote.data.press_quote)}

@@ -8,10 +8,10 @@ export const Container = styled.div`
   border-top-left-radius: 50px 50px;
   border-top-right-radius: 50px 50px;
   overflow: hidden;
-  background: black;
-  img {
-    width: 100%;
-  }
+  background-color: black;
+  background: url('${({imagePath}) => imagePath}');
+  background-size: cover;
+  background-position: center;
 `;
 export const Quote = styled.div`
   width: 40%;
