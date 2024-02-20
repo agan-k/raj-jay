@@ -19,7 +19,7 @@ export default function Uid({ data, content }) {
 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.disco]} imagePath={'/images/banner5.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.disco]} imagePath={'/images/banner6.png'} />
          <Container>
             <section>
                <Album currentAlbum={data}/>
