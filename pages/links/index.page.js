@@ -30,15 +30,15 @@ export default function Links({linksData, content}) {
          <Banner quote={quotes[BANNER_QUOTE.links]} imagePath={'images/banner4.png'} />
          <Box>
             <BlockTitle margin={'0 0 32px'}>musicians:</BlockTitle>
-            <FlexBox>
+            <FlexBox justifyContent={'center'}>
                {musicians}
             </FlexBox>
             <BlockTitle margin={'32px 0'}>visual artists:</BlockTitle>
-            <FlexBox>
+            <FlexBox justifyContent={'center'}>
                {visualArtists}
             </FlexBox>
             <BlockTitle margin={'32px 0'}>other:</BlockTitle>
-            <FlexBox>
+            <FlexBox justifyContent={'center'}>
                {other}
             </FlexBox>
          </Box>
