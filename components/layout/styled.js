@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 `;
 export const PageWrapper = styled.main`
-  // min-height: 50vh;
+  min-height: 90vh;
 `;
 
 export const Banner = styled.div`
