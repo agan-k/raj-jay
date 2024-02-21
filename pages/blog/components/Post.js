@@ -1,8 +1,8 @@
 import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../../utils/formatPrismicDate";
-import HandleMediaLinkModal from "../../../utils/handleMediaLinkModal";
-import {Body, Container, Date, TitleImage} from "./styled";
 import { FlexBox, Text, Box, BlockTitle } from "../../../components";
+import HandleMediaLinkModal from "../../../utils/handleMediaLinkModal";
+import {Body, BodyWrapper, Container, Date, TitleImage} from "./styled";
 
 export default function Post({data, setShowModal, setVideoURL}) {
   const hasVideoLink = Boolean(data.youtube.url);
@@ -11,7 +11,7 @@ export default function Post({data, setShowModal, setVideoURL}) {
   return (
   <Container>
     <FlexBox justifyContent={'space-between'} width={'100%'}>
-      <Box width={'50%'}>
+      <Box width={'60%'}>
         <BlockTitle>
           <Date>{formatPrismicDate(data.date)}</Date>
         </BlockTitle>
@@ -32,13 +32,13 @@ export default function Post({data, setShowModal, setVideoURL}) {
           fontWeight={100} 
           margin={'16px 0'} 
           color={'#e0e0e0'}
-          letterSpacing={3}
-          >{data.title}</Text>
+          letterSpacing={3}>
+          {data.title}
+        </Text>
       </Box>
-      <Box width={'50%'}>
-        <Body>{RichText.render(data.body)}</Body>
-      </Box>
-
+      <Body>
+        {RichText.render(data.body)}
+      </Body>
     </FlexBox>
   </Container>
   );

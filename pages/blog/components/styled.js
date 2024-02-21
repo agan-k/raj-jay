@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+position: relative;
 `;
   
 export const TitleImage = styled.img`
   width: 50%;
   display: block;
-  margin: 0 auto;
   cursor: ${({pointer}) => pointer ? 'pointer' : ''};
 `;
 
@@ -17,12 +17,13 @@ export const Date = styled.div`
 `;
 
 export const Body = styled.div`
-padding-top: 16px;
-border-top: 1px dashed grey;
+  width: 40%;
+  border-top: 1px dashed grey;
   p {
     color: grey;
   }
   img {
+    flex: 0 1;
     margin: 16px 15% 0;
     width: 70%;
   }
