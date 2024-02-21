@@ -31,7 +31,7 @@ export const SeparationLine = styled.div`
   border-right: 1px dashed grey;
 `;
 export const NavItem = styled.li`
-  display: ${({active}) => active ? 'none' : 'initial'};
+  display: ${({$active}) => $active ? 'none' : 'initial'};
   a {
     letter-spacing: .1rem;
     font-size: .8rem;
