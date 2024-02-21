@@ -19,7 +19,7 @@ export default function Card({card, onClick}) {
             <Blurb>
             {RichText.render(card.data.news_card_blurb)}
             </Blurb>
-            <FlexBox justifyContent={'end'}>
+            <FlexBox $justifyContent={'end'}>
               <LinkArrow />
             </FlexBox>
           </Link> 
@@ -33,7 +33,7 @@ export default function Card({card, onClick}) {
           <Blurb>
             {RichText.render(card.data.news_card_blurb)}
           </Blurb>
-          <FlexBox justifyContent={'end'}>
+          <FlexBox $justifyContent={'end'}>
             <LinkArrow />
           </FlexBox>
         </CardContainer>

@@ -23,7 +23,7 @@ export default function BlogHome({postsData, content}) {
  );
   return (
     <Layout>
-      <Banner quote={quotes[BANNER_QUOTE.blog]} imagePath={'/images/banner5.png'} />
+      <Banner quote={quotes[BANNER_QUOTE.blog]} $imagePath={'/images/banner5.png'} />
       <Container>
         {posts}
       </Container>

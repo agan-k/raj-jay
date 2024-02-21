@@ -14,10 +14,10 @@ import {
   SeparationLine,
 } from "./styled";
 
-export default function Nav({isNavOpen}) {
+export default function Nav({$isNavOpen}) {
   const router = useRouter(); 
   const navigationRoutes = navLinks.map(item => 
-    <NavItem key={item.name} active={router.pathname === `${item.url}` ? true : false}>
+    <NavItem key={item.name} $active={router.pathname === `${item.url}` ? true : false}>
       <Link href={item.url}>
         {item.name}
       </Link>
@@ -25,25 +25,25 @@ export default function Nav({isNavOpen}) {
   );
 
   return(
-    <Container isNavOpen={isNavOpen}>
+    <Container $isNavOpen={$isNavOpen}>
       <NavRoutes>
         <ul>
           {navigationRoutes}
         </ul>
       </NavRoutes>
-      <FlexBox alignItems={'center'}>
+      <FlexBox $alignItems={'center'}>
         <SeparationLine />
       </FlexBox>
       <SocialAndMailingWrapper>
-        <FlexBox alignItems={'start'}>
+        <FlexBox $alignItems={'start'}>
           <FlexBox>
             <Text 
               letterSpacing={1}
               fontSize={13}
-              textTransform={'lowercase'}
+              $textTransform={'lowercase'}
               color={'grey'}
-              padding={'0 .5rem'}
-              whiteSpace={'nowrap'}
+              $padding={'0 .5rem'}
+              $whiteSpace={'nowrap'}
             >
               mailing list:
             </Text>&nbsp;

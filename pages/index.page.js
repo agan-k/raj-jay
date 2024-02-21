@@ -30,7 +30,7 @@ export default function Home({content, postsData, calendarListings}) {
    
    return (
       <Layout>
-         <Banner imagePath={'images/banner1.png'} quote={quotes[BANNER_QUOTE.home]}/>
+         <Banner $imagePath={'images/banner1.png'} quote={quotes[BANNER_QUOTE.home]}/>
          <Container>
             <section>
                <BlockTitle>news</BlockTitle>
@@ -42,16 +42,15 @@ export default function Home({content, postsData, calendarListings}) {
             </section>
             <aside>
                <FlexBox>
-                  <Box width={'100%'} padding={'0 0 8px 0'}>
-                     <BlockTitle textAlign={'right'}>next show</BlockTitle>
+                  <Box $padding={'0 0 8px 0'}>
+                     <BlockTitle $textAlign={'right'}>next show</BlockTitle>
                      <Box>
                         <CalendarListing 
                            listing={upcomingShows[0]}
-                           linkToShows={true} 
                         />
-                        <FlexBox justifyContent={'end'}>
+                        <FlexBox $justifyContent={'end'}>
                            <Anchor path={'/shows'}>
-                              <Text fontSize={12}>
+                              <Text $fontSize={12}>
                                  ...full calendar
                               </Text>
                            </Anchor>
@@ -61,18 +60,18 @@ export default function Home({content, postsData, calendarListings}) {
                </FlexBox>
 
                <FlexBox>
-                  <Box marginTop={16}>
-                     <BlockTitle margin={'0 0 8px 0'} textAlign={'right'}>blog</BlockTitle>
-                     <Box>
+                  <Box $marginTop={16}>
+                     <BlockTitle  $textAlign={'right'}>blog</BlockTitle>
+                     {/* <Box> */}
                         <MicroBlog postsData={postsData} linkToBlog={true} />
-                        <FlexBox justifyContent={'end'}>
+                        <FlexBox $justifyContent={'end'}>
                            <Anchor path={'/blog'}>
                            <Text fontSize={12}>
                               ...blog home
                            </Text>
                            </Anchor>
                         </FlexBox>
-                     </Box>
+                     {/* </Box> */}
                   </Box>
                </FlexBox>
             </aside>

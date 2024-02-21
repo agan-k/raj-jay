@@ -42,13 +42,13 @@ export default function Shows({calendarListings, content}) {
 
    return (
       <Layout>
-         <Banner imagePath={'images/banner2.png'} quote={quotes[BANNER_QUOTE.shows]}/>
+         <Banner $imagePath={'images/banner2.png'} quote={quotes[BANNER_QUOTE.shows]}/>
          <Box>
-            <BlockTitle margin={'0 0 16px 0'}>upcoming shows</BlockTitle>
+            <BlockTitle $margin={'0 0 16px 0'}>upcoming shows</BlockTitle>
             <FlexBox>
                {upcomingShows}
             </FlexBox>
-            <BlockTitle margin={'32px 0 16px 0'}>past shows</BlockTitle>
+            <BlockTitle $margin={'32px 0 16px 0'}>past shows</BlockTitle>
             <FlexBox>
                {pastShows}
             </FlexBox>

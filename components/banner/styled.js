@@ -9,7 +9,7 @@ export const Container = styled.div`
   border-top-right-radius: 50px 50px;
   overflow: hidden;
   background-color: black;
-  background: url('${({imagePath}) => imagePath}');
+  background: url('${({$imagePath}) => $imagePath}');
   background-size: cover;
   background-position: right;
 `;

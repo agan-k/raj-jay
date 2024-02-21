@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  height: ${({isNavOpen}) => isNavOpen ? '6.5rem' : '1.5rem'};
+  height: ${({$isNavOpen}) => $isNavOpen ? '6.5rem' : '1.5rem'};
   transition: .3s;
 `;
 export const NavRoutes = styled.nav`

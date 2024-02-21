@@ -25,21 +25,38 @@ export const Cover = styled.div`
 
 export const Info = styled.div`
   width: 50%;
-  // padding-left: 32px;
   ul {
     margin: 0 0 12px 0;
     padding: 0;
   }
   li {
     list-style: none;
-    // font-weight: 100;
-    font-size: 12px;
+    font-size: 14px;
+    strong {
+      font-weight: 400;
+    }
+    em {
+      font-weight: 100;
+    }
   }
   h3 {
-    margin-top: 0;
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+  h4 {
+    margin: 0 0 16px;
+    font-size: 32px;
+    font-weight: 100;
   }
   p {
-    font-size: 12px;
-    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  ol {
+    padding-left: 16px;
+    li {
+      list-style: numbered;
+      font-weight: 100;
+    }
   }
 `;

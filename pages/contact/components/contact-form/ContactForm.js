@@ -9,7 +9,7 @@ export default function ContactForm() {
         <input type="text" name="name" id="yourname" placeholder="your name "/> <br />
         <input type="email" name="email" id="youremail" placeholder="your@email" />
         <textarea name="message" id="yourmessage" placeholder="your message"></textarea>
-        <FlexBox justifyContent={'end'}>
+        <FlexBox $justifyContent={'end'}>
           <button type="submit">Send</button>
         </FlexBox>
       </form>

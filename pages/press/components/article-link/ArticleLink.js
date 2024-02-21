@@ -19,7 +19,7 @@ export default function ArticleLink({link, articleType, uid, index}) {
 
   return(
     <Container 
-      marginLeft={isPressHome || isCurrentArticle ? '-2rem' : '' }
+      $marginLeft={isPressHome || isCurrentArticle ? '-2rem' : '' }
     >
       <Box>
         {isPressHome || isCurrentArticle ?

@@ -42,24 +42,25 @@ export default function ArticleList({content}) {
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
    const quotes = quotesData.map(quote =>
-      <Quote quote={quote} />
+      <Quote key={quote.id} quote={quote} />
    );
+   console.log(quotesData)
 
    return(
       <Container>
-         <BlockTitle margin={'0 0 16px 0'}>press releases</BlockTitle>
+         <BlockTitle $margin={'0 0 16px 0'}>press releases</BlockTitle>
          <ul>{pressReleases}</ul>
 
-         <BlockTitle margin={'16px 0'}>reviews</BlockTitle>
+         <BlockTitle $margin={'16px 0'}>reviews</BlockTitle>
          <ul>{reviews}</ul>
 
-         <BlockTitle margin={'16px 0'}>interviews</BlockTitle>
+         <BlockTitle $margin={'16px 0'}>interviews</BlockTitle>
          <ul>{interviews}</ul>
 
-         <BlockTitle margin={'16px 0'}>features</BlockTitle>
+         <BlockTitle $margin={'16px 0'}>features</BlockTitle>
          <ul>{features}</ul>
 
-         <BlockTitle margin={'16px 0'}>quotes</BlockTitle>
+         <BlockTitle $margin={'16px 0'}>quotes</BlockTitle>
          <ul>{quotes}</ul>
       </Container>
    );

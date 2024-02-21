@@ -9,6 +9,6 @@ export const Container = styled.div`
   `;
   export const Arrow = styled.div`
   transform: rotate(-45deg);
-  color: ${({color}) => color};
+  color: ${({$color}) => $color};
   font-weight: 100;
 `;

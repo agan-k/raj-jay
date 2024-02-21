@@ -17,7 +17,7 @@ export default function Press({content}) {
 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.press]} imagePath={'images/banner5.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.press]} $imagePath={'images/banner5.png'} />
          <Container>
             <section>
                <Article currentArticle={pressReviews[0].data} />

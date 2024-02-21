@@ -24,7 +24,7 @@ export default function Discography({content}) {
    console.log(quotes)
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.disco]} imagePath={'/images/banner6.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.disco]} $imagePath={'/images/banner6.png'} />
          <Container>
             <section>
                <Album currentAlbum={featuredAlbum[0].data}/>

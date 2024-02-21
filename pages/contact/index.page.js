@@ -17,25 +17,25 @@ export default function Contact({contact, content, publicity}) {
    
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.contact]} imagePath={'images/banner6.png'} />
-         <FlexBox justifyContent={'space-between'}>
-            <Box width={'30%'}>
+         <Banner quote={quotes[BANNER_QUOTE.contact]} $imagePath={'images/banner6.png'} />
+         <FlexBox $justifyContent={'space-between'}>
+            <Box $width={'30%'}>
                <BlockTitle>publicity:</BlockTitle>
-               <Box marginTop={32}>
+               <Box $marginTop={32}>
                   <Box>
                      {publicityCard}
                   </Box>
                </Box>
             </Box>
-            <Box width={'50%'}>
+            <Box $width={'50%'}>
                <BlockTitle>
                   <FlexBox>
                      write to&nbsp;
-                     <Text textTransform={'capitalize'}>raj:</Text>
+                     <Text $textTransform={'capitalize'}>raj:</Text>
                   </FlexBox>
                </BlockTitle>
-               <FlexBox justifyContent={'end'}>
-                  <Box width={'80%'} marginTop={32}>
+               <FlexBox $justifyContent={'end'}>
+                  <Box $width={'80%'} $marginTop={32}>
                      <ContactForm />
                   </Box>
                </FlexBox>

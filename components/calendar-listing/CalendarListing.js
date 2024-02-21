@@ -14,13 +14,13 @@ export default function CalendarListing({listing}) {
   return(
     <Listing>
       <Header>
-        <Text fontWeight={100}>
+        <Text $fontWeight={100} $textTransform={'uppercase'}>
           {formatPrismicDate(listing.data.date)}
         </Text>
-        <Text fontSize={24} margin={'8px 0'} textTransform={'capitalize'}>
+        <Text $fontSize={24} $margin={'8px 0'} $textTransform={'capitalize'}>
           {RichText.asText(listing.data.headlining_artist)}
         </Text>
-        <Text fontSize={20} fontWeight={'100'}>
+        <Text $fontSize={20} $fontWeight={'100'}>
           {RichText.asText(listing.data.venue)}
         </Text>
       </Header>
@@ -32,22 +32,22 @@ export default function CalendarListing({listing}) {
         </ul>
       </Body>
       <Footer>
-        <Text fontSize={12} fontWeight={100}>
+        <Text $fontSize={12} $fontWeight={100}>
           {RichText.asText(listing.data.street_address)}
         </Text>
-        <Box margin={'8px 0'}>
+        <Box $margin={'8px 0'}>
           {listing.data.map_link.url && (
             <Link href={listing.data.map_link.url} target="_blank">
               <FlexBox>
                 <Icon src="/icons/location-icon.png" />&nbsp;
-                <Text fontSize={12} fontWeight={100}>Directions</Text>
+                <Text $fontSize={12} $fontWeight={100}>Directions</Text>
               </FlexBox>
             </Link>
           )}
         </Box>
-        <Box marginBottom={16}>
+        <Box $marginBottom={16}>
           <FlexBox>
-            <Text fontSize={20}>
+            <Text $fontSize={20}>
               {RichText.asText(listing.data.city)}{','}&nbsp;
               {RichText.asText(listing.data.country)}
             </Text>
@@ -58,7 +58,12 @@ export default function CalendarListing({listing}) {
             item.link.url &&
             <Link href={item.link.url} target="_blank">
               <FlexBox>
-                <Text fontSize={12} textTransform={'lowercase'} fontStyle={'italic'}>
+                <Text 
+                $fontSize={12} 
+                $textTransform={'lowercase'} 
+                $fontStyle={'italic'}
+                $fontWeight={100}
+                >
                   {item.link.url.substring(0, 30)}{'...'}
                 </Text>
               </FlexBox>

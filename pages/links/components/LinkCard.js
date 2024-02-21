@@ -11,7 +11,7 @@ export default function LinkCard({link}) {
           <Text 
             fontWeight={500}
             fontStyle={'italic'}
-            whiteSpace={'nowrap'}
+            $whiteSpace={'nowrap'}
             >
             {RichText.asText(link.name)}&nbsp;
           </Text>

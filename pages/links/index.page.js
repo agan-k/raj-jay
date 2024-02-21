@@ -27,18 +27,18 @@ export default function Links({linksData, content}) {
    
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.links]} imagePath={'images/banner4.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.links]} $imagePath={'images/banner4.png'} />
          <Box>
-            <BlockTitle margin={'0 0 32px'}>musicians:</BlockTitle>
-            <FlexBox justifyContent={'center'}>
+            <BlockTitle $margin={'0 0 32px'}>musicians:</BlockTitle>
+            <FlexBox $justifyContent={'center'}>
                {musicians}
             </FlexBox>
-            <BlockTitle margin={'32px 0'}>visual artists:</BlockTitle>
-            <FlexBox justifyContent={'center'}>
+            <BlockTitle $margin={'32px 0'}>visual artists:</BlockTitle>
+            <FlexBox $justifyContent={'center'}>
                {visualArtists}
             </FlexBox>
-            <BlockTitle margin={'32px 0'}>other:</BlockTitle>
-            <FlexBox justifyContent={'center'}>
+            <BlockTitle $margin={'32px 0'}>other:</BlockTitle>
+            <FlexBox $justifyContent={'center'}>
                {other}
             </FlexBox>
          </Box>

@@ -10,8 +10,8 @@ export default function Post({data, setShowModal, setVideoURL}) {
   const videoLink = hasVideoLink ? data.youtube.url : '';
   return (
   <Container>
-    <FlexBox justifyContent={'space-between'} width={'100%'}>
-      <Box width={'60%'}>
+    <FlexBox $justifyContent={'space-between'}>
+      <Box $width={'60%'}>
         <BlockTitle>
           <Date>{formatPrismicDate(data.date)}</Date>
         </BlockTitle>
@@ -28,11 +28,11 @@ export default function Post({data, setShowModal, setVideoURL}) {
           /> 
         )}
         <Text 
-          fontSize={70}
-          fontWeight={100} 
-          margin={'16px 0'} 
-          color={'#e0e0e0'}
-          letterSpacing={3}>
+          $fontSize={70}
+          $fontWeight={100} 
+          $margin={'16px 0'} 
+          $color={'#e0e0e0'}
+          $letterSpacing={3}>
           {data.title}
         </Text>
       </Box>

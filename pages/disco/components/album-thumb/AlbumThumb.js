@@ -21,10 +21,10 @@ export default function AlbumThumb({album, index}) {
     }
   }, [currentAlbum])
   return(
-    <Container active={isActive}>
+    <Container $active={isActive}>
       <Link href="/disco/[id]" as={`/disco/${album.uid}`}>
-        <ImageWrapper active={isActive}>
-          <Image src={album.data.img.url} active={isActive} />
+        <ImageWrapper $active={isActive}>
+          <Image src={album.data.img.url} $active={isActive} />
         </ImageWrapper>
       </Link>
     </Container>

@@ -17,7 +17,7 @@ export default function Uid({ data, content }) {
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.press]} imagePath={'/images/banner5.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.press]} $imagePath={'/images/banner5.png'} />
          <Container>
             <section>
                <Article currentArticle={data} />

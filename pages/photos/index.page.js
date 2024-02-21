@@ -46,7 +46,7 @@ export default function Photos({content}) {
 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.photos]} imagePath={'/images/banner2.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.photos]} $imagePath={'/images/banner2.png'} />
          <Container blur={showModal ? true : false}>
             <Gallery>
                {gallery}
