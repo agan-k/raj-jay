@@ -18,7 +18,6 @@ export default function MailingList() {
           letterSpacing: '0px',
           fontStyle: 'italic',
           whiteSpace: 'nowrap',
-          zIndex: 33,
         }}
       />
       {state.succeeded ? 

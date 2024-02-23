@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { mediaQuery } from "../../../../utils/mediaQuery";
 
 export const Container = styled.div`
+position: relative;
   input {
     width: 40%;
     margin-bottom: ${({theme}) => theme.space[3]}px;
@@ -39,4 +40,15 @@ export const Container = styled.div`
     background: black;
     cursor: pointer;
   }
+`;
+
+export const ErrorMessage = styled.div`
+  color: red;
+  letter-spacing: 0px;
+  font-style: italic;
+  whiteSpace: nowrap;
+`;
+export const MessageSubmitted = styled.div`
+  font-style: italic;
+  whiteSpace: nowrap;
 `;

@@ -6,7 +6,8 @@ export default function FlexBox({
   $flexDirection, 
   $justifyContent, 
   $alignContent, 
-  $alignItems, 
+  $alignItems,
+  $gap,
   $width,
 }) {
   return (
@@ -17,6 +18,7 @@ export default function FlexBox({
       $justifyContent={$justifyContent} 
       $alignContent={$alignContent}
       $alignItems={$alignItems}
+      $gap={$gap}
     >
       {children}
     </Container>
