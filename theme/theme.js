@@ -1,31 +1,44 @@
 export const theme = {
   breakpoints: ['480px', '1100px'],
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
+  fontSizes: [8, 10, 12, 14, 16, 20, 24, 32, 48, 64, 70],
   colors: {
-    background: '#f2f2f2',
-    text: 'gray',
-    link: '#6cbcf5',
+    background: '#ebebeb',
+    text: '#5e5e5e',
+    link: 'black',
+    diffused: '#e0e0e0',
+    charcoal: '#36454f',
+    focus: 'rgb(255, 255, 171)',
+    input: 'white',
   },
-  space: [0, 4, 8, 16, 32, 64, 128, 236, 472],
+  space: [0, 2, 4, 8, 16, 32, 64, 128, 256, 472],
   fonts: {
     body: 'Helvetica, Arial, Roboto, sans-serif',
-    heading: 'inherit',
+    press: 'Garamond',
     monospace: 'Menlo, monospace',
   },
-  fontWeights: {
-    body: 400,
+  fontWeight: {
+    thin: 100,
+    thick: 400,
     bold: 600,
-    heading: 700,
+    black: 700,
   },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.25,
+  lineHeight: {
+    paragraph: '22px',
+    secondary: '18px',
   },
-  shadows: {
-    
-  },
+  letterSpacing: [0, 1, 2, 5],
   borders: {
-    gray: '1px solid #d4d4d4'
+    dashedGray: '1px dashed gray',
+    thinCharcoal: '1px solid #36454f',
+  },
+  opacity: {
+    hazy: '.9',
+    faded: '.6',
+  },
+  transitions: {
+    fast: '.3s',
+    medium: '.5s',
+    slow: '.7s'
   },
   variants: {},
   text: {},

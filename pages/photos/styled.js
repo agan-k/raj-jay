@@ -8,7 +8,7 @@ export const Container = styled.div`
   -ms-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   filter: ${({blur}) => blur ? 'blur(5px)' : 'uset'};
   background-color: ${({blur}) => blur ? '#ffffff' : 'uset'};
-  transition: .3s;
+  transition: ${({theme}) => theme.transitions.fast};
 `;
 export const Gallery = styled.div`
   width: 100%;
@@ -25,12 +25,13 @@ export const Photo = styled.div`
   min-height: min-content;
   flex-basis: 13%;
   display: flex;
-  padding: 4px 0;
+  padding-top: ${({theme}) => theme.space[2]}px;
+  padding-bottom: ${({theme}) => theme.space[2]}px;
 `;
 
 export const Image = styled.img`
   cursor: pointer;
-  max-height: 160px;
-  border-radius: 10px;
+  max-height: ${({theme}) => theme.space[7]+theme.space[5]}px;
+  border-radius: 15px;
   margin: 0 auto;
 `;

@@ -3,14 +3,14 @@ import Link from "next/link";
 import {
   MailingList,
   FlexBox,
-  Text,
 } from "../../components"
 import { navLinks, socialLinks as social } from "../../utils/constants";
 import { 
   Container,
   NavItem, 
   NavRoutes,
-  SocialAndMailingWrapper,
+  MailingListWrapper,
+  MailingListLabel,
   SeparationLine,
 } from "./styled";
 
@@ -34,23 +34,17 @@ export default function Nav({$isNavOpen}) {
       <FlexBox $alignItems={'center'}>
         <SeparationLine />
       </FlexBox>
-      <SocialAndMailingWrapper>
+      <MailingListWrapper>
         <FlexBox $alignItems={'start'}>
           <FlexBox>
-            <Text 
-              letterSpacing={1}
-              fontSize={13}
-              $textTransform={'lowercase'}
-              color={'grey'}
-              $padding={'0 .5rem'}
-              $whiteSpace={'nowrap'}
+            <MailingListLabel
             >
               mailing list:
-            </Text>&nbsp;
+            </MailingListLabel>&nbsp;
             <MailingList />
           </FlexBox>
         </FlexBox>
-      </SocialAndMailingWrapper>
+      </MailingListWrapper>
     </Container>
   );
 }

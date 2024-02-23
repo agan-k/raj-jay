@@ -4,22 +4,17 @@ import { mediaQuery } from "../../../../utils/mediaQuery";
 export const Container = styled.li`
   display: flex;
   list-style: none;
-  font-size: .8rem;
+  font-size: ${({theme}) => theme.fontSizes[3]}px;
   font-style: italic;
-  padding: 0 0 .5rem 0;
-  // margin-bottom: 1rem;
-  margin-left: ${({marginLeft}) => marginLeft};
+  padding-left: ${({theme}) => theme.space[1]}px;
+  margin-left: ${({$marginLeft}) => $marginLeft};
+  pointer-events: ${({$pointerEvents}) => $pointerEvents};
   h3 {
-    margin: .5rem 0 0;
+    margin-top: ${({theme}) => theme.space[3]}px;
+    margin-bottom: 0;
   }
   h4 {
     margin: 0;
-  }
-  a {
-    color: grey;
-    &:hover {
-      color: black;
-      transition: .2s;
-    }
+    font-weight: ${({theme}) => theme.fontWeight.thin};
   }
 `;

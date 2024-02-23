@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
-  width: 100%;
-  height: 250px;
-  margin-bottom: 8px;
+  height: ${({theme}) => theme.space[8]}px;
+  margin-bottom: ${({theme}) => theme.space[2]}px;
+  // border-top-right-radius: 50px 50px;
   border-top-left-radius: 50px 50px;
-  border-top-right-radius: 50px 50px;
   overflow: hidden;
-  background-color: black;
+  background-color: ${({theme}) => theme.colors.charchoal};
   background: url('${({$imagePath}) => $imagePath}');
   background-size: cover;
   background-position: right;
@@ -16,14 +15,18 @@ export const Container = styled.div`
 export const Quote = styled.div`
   width: 40%;
   position: absolute;
-  top: 32px;
-  left: 64px;
+  top: ${({theme}) => theme.space[5]}px;
+  left: ${({theme}) => theme.space[6]}px;
   p {
-    color: rgb(212,212,212);
+    color: ${({theme}) => theme.colors.diffused};
     font-weight: 100;
-    font-size: 12px;
+    font-size: ${({theme}) => theme.fontSizes[4]}px;
+    line-height: ${({theme}) => theme.lineHeight.secondary};
+    letter-spacing: ${({theme}) => theme.letterSpacing[1]}px;
+    font-family: Garamond;
   }
   p:nth-child(2) {
+    font-size: ${({theme}) => theme.fontSizes[3]}px;
     text-align: right;
   }
 `;

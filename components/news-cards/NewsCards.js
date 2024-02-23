@@ -1,6 +1,5 @@
-import { useState } from "react";
 import Card from "./Card";
-import { Container, Date, Arrow, Blurb } from "./styled";
+import { Container } from "./styled";
 import HandleMediaLinkModal from "../../utils/handleMediaLinkModal";
 
 export default function NewsCards({cards, setShowModal, setVideoURL}) {

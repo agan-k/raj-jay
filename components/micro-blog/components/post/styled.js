@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  padding: 8px;
+  padding: ${({theme}) => theme.space[3]}px;
 `;
 
 export const TitleImage = styled.img`
-  max-width: 150px;
   width: 100%;
+  max-width: 50%;
   display: block;
   margin: 0 auto;
   cursor: ${({pointer}) => pointer ? 'pointer' : ''};
@@ -15,14 +15,14 @@ export const TitleImage = styled.img`
 
 export const Date = styled.div`
   white-space: nowrap;
-  font-weight: 100;
+  font-weight: ${({theme}) => theme.fontWeight.thin};
   text-transform: uppercase;
+  margin-bottom: ${({theme}) => theme.space[4]}px;
 `;
 
 export const Body = styled.div`
-  p {
-  }
   img {
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
   }
 `;

@@ -35,6 +35,7 @@ export default function Header() {
       <Container 
          onMouseOver={() => setOpen(true)} 
          onMouseOut={() => setOpen(false)}
+         $isNavOpen={open}
       >
          <Logo>
             {isHome ?

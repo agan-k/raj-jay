@@ -35,8 +35,9 @@ export const socialLinks = [
 ];
 
 export const Z_INDEX = {
-  header: 1,
   banner: -1,
+  header: 1,
+  modal: 2,
 }
 export const BANNER_QUOTE = {
   home: 6,

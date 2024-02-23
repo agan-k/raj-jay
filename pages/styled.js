@@ -1,25 +1,19 @@
 import styled from "styled-components";
 import { mediaQuery } from "../utils/mediaQuery";
-import { Z_INDEX } from "../utils/constants";
+import {theme} from '../theme';
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: ${({theme}) => theme.space[5]}px;
   section,
   aside {
   }
   section {
-    width: 70%;
+    flex: 2.3;
   }
   aside {
-    width: 28%;
-    a {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-        transition: .7s;
-      }
-    }
+    flex: 1;
   }
 `;

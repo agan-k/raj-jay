@@ -1,8 +1,8 @@
 import Link from "next/link";
 import formatPrismicDate from "../../utils/formatPrismicDate";
 import { RichText } from "prismic-reactjs";
-import { CardContainer, Date, Blurb, ImageWrapper } from "./styled";
-import { FlexBox, LinkArrow } from "../../components";
+import { CardContainer, Date, ImageWrapper } from "./styled";
+import { FlexBox, LinkArrow, Box } from "../../components";
 
 export default function Card({card, onClick}) {
   const isVideoLink = Boolean(card.data.video_link.length > 0);
@@ -16,9 +16,9 @@ export default function Card({card, onClick}) {
             <ImageWrapper>
               <img src={card.data.img.url} />
             </ImageWrapper>
-            <Blurb>
-            {RichText.render(card.data.news_card_blurb)}
-            </Blurb>
+            <Box>
+              {RichText.render(card.data.news_card_blurb)}
+            </Box>
             <FlexBox $justifyContent={'end'}>
               <LinkArrow />
             </FlexBox>
@@ -30,9 +30,9 @@ export default function Card({card, onClick}) {
           <ImageWrapper>
             <img src={card.data.img.url} />
           </ImageWrapper>
-          <Blurb>
+          <Box>
             {RichText.render(card.data.news_card_blurb)}
-          </Blurb>
+          </Box>
           <FlexBox $justifyContent={'end'}>
             <LinkArrow />
           </FlexBox>

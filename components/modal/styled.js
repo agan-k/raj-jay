@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Z_INDEX} from '../../utils/constants';
 
 export const Container = styled.div`
   position: fixed;
@@ -6,9 +7,8 @@ export const Container = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  color: white;
   background: rgba(0, 0, 0, 0.794);
-  z-index: 998;
+  z-index: ${Z_INDEX.modal};
   cursor: pointer;
 `;
 
@@ -17,12 +17,10 @@ export const ImageWrapper = styled.div`
   height: 100%;
   margin: 0 auto;
   text-align: center;
-
   p {
-    color: rgb(161, 161, 161);
-    font-weight: 100;
-    font-size: .7rem;
+    font-weight: ${({theme}) => theme.fontWeight.thin};
     font-style: italic;
+    color: ${({theme}) => theme.colors.diffused};
     margin: 0;
     width: 100%;
   }

@@ -6,51 +6,68 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  height: ${({$isNavOpen}) => $isNavOpen ? '6.5rem' : '1.5rem'};
-  transition: .3s;
+  height: ${({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6 : theme.space[4]+4}px;
+  height: ${({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6 : theme.space[6]+theme.space[5]+6}px;
+  transition: ${({theme}) => theme.transitions.fast};
 `;
+
 export const NavRoutes = styled.nav`
-width: 50%;
-margin-top: 2rem;
-ul {
-  height: 4rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0;
-  width: 100%;
-  padding: 0;
-  list-style: none;
-  background: white;
-}
+  margin-top: 2rem;
+  ul {
+    height: ${({theme}) => theme.space[6]}px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 `;
-export const SeparationLine = styled.div`
-  margin: 32px 0;
-  height: 52%;
-  border-right: 1px dashed grey;
-`;
+
 export const NavItem = styled.li`
   display: ${({$active}) => $active ? 'none' : 'initial'};
+  // margin-right: 16px;
   a {
-    letter-spacing: .1rem;
-    font-size: .8rem;
+    letter-spacing: ${({theme}) => theme.letterSpacing[3]}px;
+    font-size: ${({theme}) => theme.fontSizes[2]}px;
+    font-weight: 100;
     text-transform: lowercase;
-    color: grey;
-    padding: 0 .5rem;
-    transition: .2s;
+    padding-left: ${({theme}) => theme.space[3]}px;
+    padding-right: ${({theme}) => theme.space[3]}px;
+    color: ${({theme}) => theme.colors.charcoal}
   }
   &:hover a {
     background: black;
     color: white;
-    transition: .2s;
   }
 `;
-export const SocialAndMailingWrapper = styled.div`
-  width: 40%;
-  display: flex;
-  margin-top: 2rem;
+
+export const SeparationLine = styled.div`
+  margin-top: ${({theme}) => theme.space[5] -6}px;
+  height: ${({theme}) => theme.space[6] -6}px;
+  width: ${({theme}) => theme.space[4]+theme.space[3]}px;
+  border-right: ${({theme}) => theme.borders.dashedGray};
 `;
-export const NavToggle = styled.div`
-  
+
+export const MailingListWrapper = styled.div`
+  height: ${({theme}) => theme.space[6]+theme.space[5]}px;
+  display: flex;
+  align-items: end;
+`;
+
+export const MailingListLabel = styled.div`
+  letter-spacing: ${({theme}) => theme.letterSpacing[3]}px;
+  font-size: ${({theme}) => theme.fontSizes[2]}px;
+  font-weight: ${({theme}) => theme.fontWeight.thin};
+  text-transform: lowercase;
+  padding-left: ${({theme}) => theme.space[3]}px;
+  padding-right: ${({theme}) => theme.space[3]}px;
+  white-space: nowrap;
 `;

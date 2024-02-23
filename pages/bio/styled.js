@@ -2,18 +2,18 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-  width: 100%;
+  h2, p {
+    margin-bottom: ${({theme}) => theme.space[3]}px;
+  }
+  p {
+    margin-top: 0;
+  }
   img {
     float: left;
-    margin: .3rem 1rem 1rem 0;
-    max-height: 10rem;
-  }
-  a {
-    color: grey;
-    text-decoration: underline;
-    &:hover {
-      color: black;
-      transition: .3s;
-    }
+    margin-right: ${({theme}) => theme.space[4]}px;
+    margin-bottom: ${({theme}) => theme.space[4]}px;
+    max-height: ${({theme}) => theme.space[8]}px;
+    border: ${({theme}) => theme.borders.thinCharcoal};
+    border-radius: 12px;
   }
 `;

@@ -8,12 +8,12 @@ export default function MailingList() {
           <input type="hidden" name="form-name" value="mailing-list" />
           <label htmlFor="yourcity">
           </label>
-          <input type="text" name="city" id="yourcity" placeholder="city" />
+          <input type="text" name="city" id="yourcity" placeholder="your city" />
         </div>
         <div>
           <label htmlFor="youremail">
           </label>
-          <input type="email" name="email" id="youremail" placeholder="e-mail" />
+          <input type="email" name="email" id="youremail" placeholder="your@email" />
         </div>
         <button type="submit">join</button>
       </form>

@@ -9,7 +9,7 @@ export const Container = styled.div`
   -ms-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   filter: ${({blur}) => blur ? 'blur(5px)' : 'uset'};
   background-color: ${({blur}) => blur ? '#ffffff' : 'uset'};
-  transition: .3s;
+  transition: ${({theme}) => theme.transitions.fast};
 `;
 export const Gallery = styled.div`
   width: 100%;
@@ -20,7 +20,7 @@ export const Gallery = styled.div`
 export const VideoContainer = styled.div`
   width: 29%;
   p {
-    margin: 0 0 16px 0;
+    margin-bottom: ${({theme}) => theme.space[4]}px;
   }
   img {
     width: 100%;

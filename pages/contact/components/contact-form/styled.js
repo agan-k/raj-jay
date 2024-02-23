@@ -4,38 +4,38 @@ import { mediaQuery } from "../../../../utils/mediaQuery";
 export const Container = styled.div`
   input {
     width: 40%;
-    margin: 1rem 0;
+    margin-bottom: ${({theme}) => theme.space[3]}px;
     border: none;
-    border-bottom: 1px solid rgb(240, 240, 240);
   }
   textarea {
     resize: none;
     width: 100%;
-    height: 10rem;
-    border: 1px solid rgb(240, 240, 240);
+    height: ${({theme}) => theme.space[8]}px;
+    border: none;
   }
   input, textarea {
+    font-size: ${({theme}) => theme.fontSizes[4]}px;
     outline: none;
-    font-size: 1rem;
-    font-weight: 100;
+    font-weight: ${({theme}) => theme.fontWeight.thin};
     font-style: italic;
+    background: ${({theme}) => theme.colors.input};
     &:focus {
-      background: rgb(255, 255, 171);
+      background: ${({theme}) => theme.colors.focus};
     }
   }
   input::placeholder,
   textarea::placeholder {
     font-style: italic;
-    color: rgb(179, 179, 179);
+    color: ${({theme}) => theme.colors.diffused};
   }
   button {
     margin: 0;
-    font-size: .8rem;
-    letter-spacing: .1rem;
-    color: white;
+    font-size: ${({theme}) => theme.fontSizes[4]}px;
+    letter-spacing: ${({theme}) => theme.letterSpacing[1]}px;
+    color: ${({theme}) => theme.colors.diffused};
     border: 0;
     text-transform: lowercase;
-    padding: .5rem;
+    padding: ${({theme}) => theme.space[3]}px;
     background: black;
     cursor: pointer;
   }

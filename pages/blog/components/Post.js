@@ -12,9 +12,7 @@ export default function Post({data, setShowModal, setVideoURL}) {
   <Container>
     <FlexBox $justifyContent={'space-between'}>
       <Box $width={'60%'}>
-        <BlockTitle>
           <Date>{formatPrismicDate(data.date)}</Date>
-        </BlockTitle>
         {hasTitleImage && (
           <TitleImage 
             src={data.title_image?.url}
@@ -31,7 +29,7 @@ export default function Post({data, setShowModal, setVideoURL}) {
           $fontSize={70}
           $fontWeight={100} 
           $margin={'16px 0'} 
-          $color={'#e0e0e0'}
+          $color={'#b0b0b0'}
           $letterSpacing={3}>
           {data.title}
         </Text>

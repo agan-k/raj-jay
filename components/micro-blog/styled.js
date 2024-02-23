@@ -8,11 +8,6 @@ export const Container = styled.div`
   -ms-filter: ${({blur}) => blur ? 'blur(5px)' : 'unset'};
   filter: ${({blur}) => blur ? 'blur(5px)' : 'uset'};
   background-color: ${({blur}) => blur ? '#ffffff' : 'uset'};
-  transition: .3s;
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+  transition: ${({theme}) => theme.transitions.fast};
 `;
 

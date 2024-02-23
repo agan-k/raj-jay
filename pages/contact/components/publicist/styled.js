@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 256px;
-  margin-bottom: 32px;
+  margin-bottom: ${({theme}) => theme.space[5]}px;
   img {
-    height: 100%;
+    height: ${({theme}) => theme.space[6]}px;
   }
 `;

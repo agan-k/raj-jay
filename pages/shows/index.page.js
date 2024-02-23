@@ -11,7 +11,6 @@ import {
 } from '../../components';
 import { BANNER_QUOTE } from "../../utils/constants";
 import { currentDate } from "../../utils/currentDate";
-import { ListingWrapper } from './styled';
 
 export default function Shows({calendarListings, content}) {
    const quotesData = content.results.filter(result =>
@@ -21,9 +20,9 @@ export default function Shows({calendarListings, content}) {
    const upcomingShows = calendarListings.map(listing => {
       if (listing.data.date > currentDate) {
          return (
-            <ListingWrapper>
+            <Box $width={'32%'}>
                <CalendarListing listing={listing} />
-            </ListingWrapper>
+            </Box >
          );
       }
    });
@@ -32,9 +31,9 @@ export default function Shows({calendarListings, content}) {
    const pastShows = oldDates.map(listing => {
       if (listing.data.date < currentDate) {
          return(
-            <ListingWrapper>
+            <Box $width={'32%'}>
                <CalendarListing listing={listing} />
-            </ListingWrapper>
+            </Box >
          );
       }
    });

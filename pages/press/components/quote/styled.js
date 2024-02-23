@@ -3,17 +3,18 @@ import { mediaQuery } from "../../../../utils/mediaQuery";
 
 export const Container = styled.div`
   width: 100%;
+  font-family: ${({theme}) => theme.fonts.press};
   p {
-    font-size: .8rem;
+    font-size: ${({theme}) => theme.fontSizes[4]}px;
   }
   p:nth-child(2) {
-    color: black;
-    font-size: .7rem;
+    font-size: ${({theme}) => theme.fontSizes[3]}px;
     text-align: right;
     margin: 0;
-    margin-bottom: 1.5rem;
- }
- p:nth-child(1) {
+    margin-top: ${({theme}) => theme.space[1]}px;
+    margin-bottom: ${({theme}) => theme.space[5]}px;
+  }
+  p:nth-child(1) {
     margin: 0;
  }
 `;

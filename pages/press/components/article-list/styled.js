@@ -5,7 +5,7 @@ export const Container = styled.div`
   ul {
     padding: 0;
     margin: 0;
-    margin-left: 1rem;
+    margin-left: ${({theme}) => theme.space[3]}px;
   }
   
 `;

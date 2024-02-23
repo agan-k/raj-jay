@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { RichText } from "prismic-reactjs";
-import {Container} from "./styled";
+import {Container, PressLogo, ArticleBody} from "./styled";
 
 export default function Article({currentArticle}) {
 
   return(
     <Container>
-      <img src={currentArticle.img.url} />
-      {RichText.render(currentArticle.content_body)}
+      <PressLogo src={currentArticle.img.url} />
+      {/* <img src={currentArticle.img.url} /> */}
+      <ArticleBody>
+        {RichText.render(currentArticle.content_body)}
+      </ArticleBody>
     </Container>
   );
 }

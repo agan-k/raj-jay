@@ -33,7 +33,7 @@ export default function Home({content, postsData, calendarListings}) {
          <Banner $imagePath={'images/banner1.png'} quote={quotes[BANNER_QUOTE.home]}/>
          <Container>
             <section>
-               <BlockTitle>news</BlockTitle>
+               <BlockTitle $margin={'0 0 16px 0'}>news</BlockTitle>
                <NewsCards 
                   cards={cards} 
                   setShowModal={setShowModal}
@@ -43,7 +43,7 @@ export default function Home({content, postsData, calendarListings}) {
             <aside>
                <FlexBox>
                   <Box $padding={'0 0 8px 0'}>
-                     <BlockTitle $textAlign={'right'}>next show</BlockTitle>
+                     <BlockTitle $margin={'0 0 16px 0'}>next show</BlockTitle>
                      <Box>
                         <CalendarListing 
                            listing={upcomingShows[0]}
@@ -60,18 +60,16 @@ export default function Home({content, postsData, calendarListings}) {
                </FlexBox>
 
                <FlexBox>
-                  <Box $marginTop={16}>
-                     <BlockTitle  $textAlign={'right'}>blog</BlockTitle>
-                     {/* <Box> */}
-                        <MicroBlog postsData={postsData} linkToBlog={true} />
-                        <FlexBox $justifyContent={'end'}>
-                           <Anchor path={'/blog'}>
-                           <Text fontSize={12}>
-                              ...blog home
-                           </Text>
-                           </Anchor>
-                        </FlexBox>
-                     {/* </Box> */}
+                  <Box>
+                     <BlockTitle $margin={'0 0 16px 0'}>blog</BlockTitle>
+                     <MicroBlog postsData={postsData} linkToBlog={true} />
+                     <FlexBox $justifyContent={'end'}>
+                        <Anchor path={'/blog'}>
+                        <Text $fontSize={12}>
+                           ...blog home
+                        </Text>
+                        </Anchor>
+                     </FlexBox>
                   </Box>
                </FlexBox>
             </aside>
@@ -105,7 +103,7 @@ export async function getStaticProps() {
       Prismic.Predicates.at("document.type", "micro_blog"),
       {
          orderings: '[my.micro_blog.date desc]',
-         pageSize : 3
+         pageSize : 20
       }
    );
    return {

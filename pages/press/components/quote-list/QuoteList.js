@@ -1,5 +1,4 @@
-import {Quote} from "../../components";
-import {Container} from "./styled";
+import {Quote, Box} from "../../components";
 
 
 export default function QuoteList({content}) {
@@ -10,9 +9,9 @@ export default function QuoteList({content}) {
     <Quote key={quote.id} quote={quote} />
  );
   return(
-    <Container>
+    <Box>
       <h4>quotes</h4>
       {quotes}
-    </Container>
+    </Box>
   );
 }

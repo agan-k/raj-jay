@@ -35,7 +35,7 @@ export default function Contact({contact, content, publicity}) {
                   </FlexBox>
                </BlockTitle>
                <FlexBox $justifyContent={'end'}>
-                  <Box $width={'80%'} $marginTop={32}>
+                  <Box $width={'100%'} $marginTop={32}>
                      <ContactForm />
                   </Box>
                </FlexBox>

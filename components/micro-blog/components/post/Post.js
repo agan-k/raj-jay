@@ -24,7 +24,7 @@ export default function Post({data, setShowModal, setVideoURL}) {
         pointer={hasVideoLink} 
       /> 
     )}
-    <Text fontSize={20} $margin={'16px 0'} >{data.title}</Text>
+    <Text $fontSize={24} $margin={'16px 0'} >{data.title}</Text>
     <Body>{RichText.render(data.body)}</Body>
   </Container>
   );

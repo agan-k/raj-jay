@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-position: relative;
+  position: relative;
 `;
   
 export const TitleImage = styled.img`
@@ -11,20 +11,19 @@ export const TitleImage = styled.img`
 `;
 
 export const Date = styled.div`
+  border-top: ${({theme}) => theme.borders.dashedGray};
+  font-size: ${({theme}) => theme.fontSizes[6]}px;
+  font-weight: ${({theme}) => theme.fontWeight.thin};
   text-transform: uppercase;  
   white-space: nowrap;
-  margin-bottom: 16px;
+  margin-bottom: ${({theme}) => theme.space[4]}px;
 `;
 
 export const Body = styled.div`
   width: 40%;
-  border-top: 1px dashed grey;
-  p {
-    color: grey;
-  }
+  border-top: ${({theme}) => theme.borders.dashedGray};
   img {
-    flex: 0 1;
-    margin: 16px 15% 0;
+    margin: 16px 15% 0; //centered
     width: 70%;
   }
 `;
