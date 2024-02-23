@@ -1,4 +1,5 @@
 export {Banner} from "./banner";
+export {Cta} from "./cta";
 export {Anchor} from "./anchor";
 export {BlockTitle} from "./primitives";
 export {Box} from "./primitives";

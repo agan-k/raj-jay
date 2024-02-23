@@ -17,7 +17,6 @@ export default function NewsCards({cards, setShowModal, setVideoURL}) {
   return(
     <Container>
       {newsCards}
-      {newsCards}
     </Container>
 
   );

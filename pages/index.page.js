@@ -13,6 +13,7 @@ import {
    Anchor,
    BlockTitle,
    Banner,
+   Cta,
 } from '../components';
 import { currentDate } from '../utils/currentDate';
 import { BANNER_QUOTE } from '../utils/constants';
@@ -32,15 +33,25 @@ export default function Home({content, postsData, calendarListings}) {
       <Layout>
          <Banner $imagePath={'images/banner1.png'} quote={quotes[BANNER_QUOTE.home]}/>
          <Container>
-            <section>
-               <BlockTitle $margin={'0 0 16px 0'}>news</BlockTitle>
-               <NewsCards 
-                  cards={cards} 
-                  setShowModal={setShowModal}
-                  setVideoURL={setVideoURL}
-               />
-            </section>
             <aside>
+               <FlexBox>
+                  <Box $padding={'0 0 8px 0'} $width={'100%'}>
+                     <BlockTitle $margin={'0 0 16px 0'}>listen/buy</BlockTitle>
+                     <Box>
+                        <Cta 
+                           action={'buy / listen'} 
+                           imagePath={'/images/pistils.jpg'}
+                           url={'https://pistils.bandcamp.com/merch'}/>
+                        <FlexBox $justifyContent={'end'}>
+                           <Anchor path={'/discography'}>
+                              <Text $fontSize={12}>
+                                 ...full discography
+                              </Text>
+                           </Anchor>
+                        </FlexBox>
+                     </Box>
+                  </Box>
+               </FlexBox>
                <FlexBox>
                   <Box $padding={'0 0 8px 0'}>
                      <BlockTitle $margin={'0 0 16px 0'}>next show</BlockTitle>
@@ -73,6 +84,14 @@ export default function Home({content, postsData, calendarListings}) {
                   </Box>
                </FlexBox>
             </aside>
+            <section>
+               <BlockTitle $margin={'0 0 16px 0'}>news</BlockTitle>
+               <NewsCards 
+                  cards={cards} 
+                  setShowModal={setShowModal}
+                  setVideoURL={setVideoURL}
+               />
+            </section>
          </Container>
          {showModal && (
             <Modal
@@ -103,7 +122,7 @@ export async function getStaticProps() {
       Prismic.Predicates.at("document.type", "micro_blog"),
       {
          orderings: '[my.micro_blog.date desc]',
-         pageSize : 20
+         pageSize : 1
       }
    );
    return {
