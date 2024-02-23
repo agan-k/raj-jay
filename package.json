@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "facepaint": "^1.2.1",
     "next": "^14.1.0",
     "prismic-javascript": "^3.0.2",

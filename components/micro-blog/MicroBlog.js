@@ -19,7 +19,7 @@ export default function MicroBlog({postsData}) {
 
    return (
     <>
-      <Container blur={showModal ? true : false}>
+      <Container $blur={showModal ? true : false}>
         {posts}
       </Container>
       {showModal && (

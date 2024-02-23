@@ -46,3 +46,11 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const SuccessMessage = styled.div`
+  height: 60px;
+  font-size: ${({theme}) => theme.fontSizes[3]}px;
+  font-style: italic;
+  text-transform: none;
+  white-space: nowrap;
+`;

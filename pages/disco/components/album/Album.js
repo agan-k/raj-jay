@@ -12,7 +12,6 @@ import { Box, FlexBox, Text } from '../../../../components';
 const PLAYER_WIDTH = 300;
 
 export default function Album({currentAlbum}) {
-  console.log(currentAlbum.content_body)
   return(
     <Container>
       <Box $width={'40%'}>

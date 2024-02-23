@@ -10,7 +10,6 @@ export default function Contact({contact, content, publicity}) {
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0);
-   console.log(publicity)
    const publicityCard = publicity.map(publicist =>
       <Publicist publicist={publicist.data} />
    );

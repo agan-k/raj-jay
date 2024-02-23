@@ -44,7 +44,6 @@ export default function ArticleList({content}) {
    const quotes = quotesData.map(quote =>
       <Quote key={quote.id} quote={quote} />
    );
-   console.log(quotesData)
 
    return(
       <Container>

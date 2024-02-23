@@ -21,7 +21,6 @@ export default function Discography({content}) {
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
-   console.log(quotes)
    return (
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.disco]} $imagePath={'/images/banner6.png'} />

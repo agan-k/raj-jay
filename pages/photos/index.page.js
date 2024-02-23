@@ -25,7 +25,6 @@ export default function Photos({content}) {
    const photos = content.results.filter(result => 
       result.data.content_type == 'photo'
    );
-      console.log(photos)
    const gallery = photos.map(photo => 
       <Photo 
          key={photo.uid} 
@@ -47,7 +46,7 @@ export default function Photos({content}) {
    return (
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.photos]} $imagePath={'/images/banner2.png'} />
-         <Container blur={showModal ? true : false}>
+         <Container $blur={showModal ? true : false}>
             <Gallery>
                {gallery}
             </Gallery>

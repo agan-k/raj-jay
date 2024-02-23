@@ -33,7 +33,7 @@ export default function Videos({content}) {
    return (
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.videos]} $imagePath={'/images/banner2.png'} />
-         <Container blur={showModal ? true : false}>
+         <Container $blur={showModal ? true : false}>
             <Gallery>
                {videos}
             </Gallery>
