@@ -7,7 +7,6 @@ export const Container = styled.div`
   justify-content: space-between;
   overflow: hidden;
   height: ${({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6 : theme.space[4]+4}px;
-  height: ${({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6 : theme.space[6]+theme.space[5]+6}px;
   transition: ${({theme}) => theme.transitions.fast};
 `;
 
