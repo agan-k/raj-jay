@@ -3,7 +3,7 @@ import { mediaQuery } from "../../../utils/mediaQuery";
 
 export const Container = styled.div`
   width: ${({$width}) => $width};
-  gap: ${({$gap}) => $gap}px;
+  gap: ${({$gap}) => $gap};
   display: flex;
   flex-wrap: ${({$flexWrap}) => $flexWrap || 'wrap'};
   flex-direction: ${({$flexDirection}) => $flexDirection};
