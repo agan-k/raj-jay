@@ -5,7 +5,6 @@ import {theme} from '../theme';
 export const Container = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
   gap: ${({theme}) => theme.space[5]}px;
   section,
   aside {

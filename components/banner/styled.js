@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
   height: ${({theme}) => theme.space[8]}px;
-  margin-bottom: ${({theme}) => theme.space[2]}px;
-  // border-top-right-radius: 50px 50px;
+  margin-bottom: ${({theme}) => theme.space[4]}px;
   border-top-left-radius: 50px 50px;
   overflow: hidden;
   background-color: ${({theme}) => theme.colors.charchoal};

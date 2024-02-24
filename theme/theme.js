@@ -6,6 +6,7 @@ export const theme = {
     text: '#5e5e5e',
     link: 'black',
     diffused: '#e0e0e0',
+    sublte: '#b0b0b0',
     charcoal: '#36454f',
     focus: 'rgb(255, 255, 171)',
     input: 'white',

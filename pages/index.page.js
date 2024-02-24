@@ -14,6 +14,7 @@ import {
    BlockTitle,
    Banner,
    Cta,
+   Block,
 } from '../components';
 import { currentDate } from '../utils/currentDate';
 import { BANNER_QUOTE } from '../utils/constants';
@@ -34,63 +35,55 @@ export default function Home({content, postsData, calendarListings}) {
          <Banner $imagePath={'images/banner1.png'} quote={quotes[BANNER_QUOTE.home]}/>
          <Container>
             <aside>
-               <FlexBox>
-                  <Box $padding={'0 0 8px 0'} $width={'100%'}>
-                     <BlockTitle $margin={'0 0 16px 0'}>listen/buy</BlockTitle>
-                     <Box>
-                        <Cta 
-                           action={'buy / listen'} 
-                           imagePath={'/images/pistils.jpg'}
-                           url={'https://pistils.bandcamp.com/merch'}/>
-                        <FlexBox $justifyContent={'end'}>
-                           <Anchor path={'/discography'}>
-                              <Text $fontSize={12}>
-                                 ...full discography
-                              </Text>
-                           </Anchor>
-                        </FlexBox>
-                     </Box>
-                  </Box>
-               </FlexBox>
-               <FlexBox>
-                  <Box $padding={'0 0 8px 0'}>
-                     <BlockTitle $margin={'0 0 16px 0'}>next show</BlockTitle>
-                     <Box>
-                        <CalendarListing 
-                           listing={upcomingShows[0]}
-                        />
-                        <FlexBox $justifyContent={'end'}>
-                           <Anchor path={'/shows'}>
-                              <Text $fontSize={12}>
-                                 ...full calendar
-                              </Text>
-                           </Anchor>
-                        </FlexBox>
-                     </Box>
-                  </Box>
-               </FlexBox>
-
-               <FlexBox>
-                  <Box>
-                     <BlockTitle $margin={'0 0 16px 0'}>blog</BlockTitle>
-                     <MicroBlog postsData={postsData} linkToBlog={true} />
+               <Block>
+                  <BlockTitle $margin={'0 0 16px 0'}>new album</BlockTitle>
+                     <Cta 
+                        action={'buy / listen'} 
+                        imagePath={'/images/pistils.jpg'}
+                        url={'https://pistils.bandcamp.com/merch'}
+                     />
                      <FlexBox $justifyContent={'end'}>
-                        <Anchor path={'/blog'}>
-                        <Text $fontSize={12}>
-                           ...blog home
-                        </Text>
+                        <Anchor path={'/discography'}>
+                           <Text $fontSize={12}>
+                              ...full discography
+                           </Text>
                         </Anchor>
                      </FlexBox>
-                  </Box>
-               </FlexBox>
+               </Block>
+               <Block>
+                  <BlockTitle $margin={'0 0 16px 0'}>next show</BlockTitle>
+                  <CalendarListing 
+                     listing={upcomingShows[0]}
+                  />
+                  <FlexBox $justifyContent={'end'}>
+                     <Anchor path={'/shows'}>
+                        <Text $fontSize={12}>
+                           ...full calendar
+                        </Text>
+                     </Anchor>
+                  </FlexBox>
+               </Block>
+               <Block>
+                  <BlockTitle $margin={'0 0 16px 0'}>blog</BlockTitle>
+                  <MicroBlog postsData={postsData} linkToBlog={true} />
+                  <FlexBox $justifyContent={'end'}>
+                     <Anchor path={'/blog'}>
+                     <Text $fontSize={12}>
+                        ...blog home
+                     </Text>
+                     </Anchor>
+                  </FlexBox>
+               </Block>
             </aside>
             <section>
-               <BlockTitle $margin={'0 0 16px 0'}>news</BlockTitle>
-               <NewsCards 
-                  cards={cards} 
-                  setShowModal={setShowModal}
-                  setVideoURL={setVideoURL}
-               />
+               <Block>
+                  <BlockTitle $margin={'0 0 16px 0'}>news</BlockTitle>
+                  <NewsCards 
+                     cards={cards} 
+                     setShowModal={setShowModal}
+                     setVideoURL={setVideoURL}
+                  />
+               </Block>
             </section>
          </Container>
          {showModal && (

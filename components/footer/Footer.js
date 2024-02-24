@@ -1,4 +1,4 @@
-import { Anchor, FlexBox, Text } from "../../components";
+import { Anchor, FlexBox, Text, Box } from "../../components";
 import { Container } from "./styled";
 
 export default function Footer() {
@@ -7,12 +7,14 @@ export default function Footer() {
       <Container>
       </Container>
       <FlexBox $justifyContent={'end'}>
+          <Box $marginBottom={14} $marginTop={14}>
         <Anchor url={'https://formversuscontent.com'} target={'_blank'} $color={'grey'}>
-          <FlexBox $gap={'4px'}>
-            <Text $fontSize={12} $textTransform={'uppercase'} fontWeight={100}>site by:</Text>
-            <Text $fontFamily={'monospace'} $fontSize={12}>{'(form(vs(content)))'}</Text>
-          </FlexBox> 
+            <FlexBox $gap={'4px'}>
+              <Text $fontSize={12} $textTransform={'uppercase'} fontWeight={100}>site by:</Text>
+              <Text $fontFamily={'monospace'} $fontSize={12} $color={'orange'}>{'(form(vs(content)))'}</Text>
+            </FlexBox> 
         </Anchor>
+          </Box>
       </FlexBox>
     </>
   );

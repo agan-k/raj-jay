@@ -1,11 +1,11 @@
 import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration";
-// import { RichText } from "prismic-reactjs";
 import {
    Layout, 
    CalendarListing,
    Box,
    FlexBox,
+   Block,
    BlockTitle,
    Banner,
 } from '../../components';
@@ -38,23 +38,25 @@ export default function Shows({calendarListings, content}) {
       }
    });
 
-
    return (
       <Layout>
          <Banner $imagePath={'images/banner2.png'} quote={quotes[BANNER_QUOTE.shows]}/>
-         <Box>
+         <Block $marginBottom={14}>
             <BlockTitle $margin={'0 0 16px 0'}>upcoming shows</BlockTitle>
             <FlexBox>
                {upcomingShows}
             </FlexBox>
-            <BlockTitle $margin={'32px 0 16px 0'}>past shows</BlockTitle>
+         </Block>
+         <Block>
+            <BlockTitle $margin={'0 0 16px 0'}>past shows</BlockTitle>
             <FlexBox>
                {pastShows}
             </FlexBox>
-         </Box>
+         </Block>
       </Layout>
-   )
+   );
 }
+
 export async function getStaticProps() {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),

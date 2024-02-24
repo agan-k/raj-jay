@@ -1,3 +1,4 @@
+export {Block} from "./block";
 export {BlockTitle} from "./block-title";
 export {Box} from "./box";
 export {FlexBox} from "./flexbox";
