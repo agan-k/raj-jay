@@ -10,6 +10,11 @@ export const PressLogo = styled.img`
 `;
 export const ArticleBody = styled.div`
   img {
-    width: ${({theme}) => theme.space[9]}px;
+    ${mediaQuery({
+      width: [
+        '100%',
+        ({theme}) => theme.space[9]+'px',
+      ],
+    })}
   }
 `;

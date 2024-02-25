@@ -5,10 +5,10 @@ import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 import { RichText } from "prismic-reactjs"
 
-import {Layout, Banner} from "../../components";
+import {Layout, Banner, Anchor, BlockTitle} from "../../components";
 import { BANNER_QUOTE } from "../../utils/constants";
 import {ArticleList, Article} from "./components";
-import { Container } from "./styled";
+import { UidContainer, Back } from "./styled";
 
 export default function Uid({ data, content }) {
    const quotesData = content.results.filter(result =>
@@ -18,14 +18,20 @@ export default function Uid({ data, content }) {
    return (
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.press]} $imagePath={'/images/banner5.png'} />
-         <Container>
+         <UidContainer>
+            <Back $margin={'64px 0 0'}>
+               <Anchor path={'/press'}>back to press</Anchor>
+            </Back>
             <section>
                <Article currentArticle={data} />
             </section>
+            <Back $margin={'0 0 64px'}>
+               <Anchor path={'/press'}>back to press</Anchor>
+            </Back>
             <aside>
                <ArticleList content={content} />
             </aside>
-         </Container>
+         </UidContainer>
       </Layout>
    );
  }
