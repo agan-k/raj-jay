@@ -3,28 +3,47 @@ import { mediaQuery } from "../../../../utils/mediaQuery";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
-  `;
-
-export const BandCampPlayer = styled.div`
-  width: 100%;
-  margin-top: ${({theme}) => theme.space[4]}px;
+  ${mediaQuery({
+    flexDirection: ['column-reverse', 'row'],
+    justifyContent: ['unset', 'space-between']
+  })}
+`;
+export const CoverAndPlayerWrapper = styled.div`
+  ${mediaQuery({
+    width: ['unset', '40%']
+  })}
 `;
 
 export const Cover = styled.div`
   width: 100%;
-  padding: ${({theme}) => theme.space[3]}px;
   display: flex;
   justify-content: center;
-  border: ${({theme}) => theme.borders.dashedGray};
+  ${mediaQuery({
+    padding: [
+      'unset',
+      ({theme}) => theme.space[3]+'px',
+    ],
+    border: [
+      'unset', 
+      ({theme}) => theme.borders.dashedGray
+    ]
+  })}
   img {
     width: 100%;
     border: ${({theme}) => theme.borders.thinCharcoal};
   }
 `;
 
+export const BandCampPlayer = styled.div`
+  width: 100%;
+  margin-top: ${({theme}) => theme.space[4]}px;
+`;
+
 export const Info = styled.div`
   width: 50%;
+  ${mediaQuery({
+    width: ['unset', '50%']
+  })}
   ul {
     margin: 0;
     padding: 0;

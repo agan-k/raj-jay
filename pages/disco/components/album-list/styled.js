@@ -6,4 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: end;
   flex-wrap: wrap;
+  ${mediaQuery({
+    justifyContent: ['space-between', 'end']
+  })}
 `;

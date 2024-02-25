@@ -3,10 +3,10 @@ import Link from 'next/link'
 import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 
-import {Layout, Banner} from '../../components';
+import {Layout, Banner, Anchor} from '../../components';
 import { BANNER_QUOTE } from '../../utils/constants';
 import { Album, AlbumList } from './components';
-import {Container} from './styled';
+import {UidContainer, Back} from './styled';
 
 export default function Uid({ data, content }) {
    const discography = content.results.filter(result =>
@@ -20,14 +20,20 @@ export default function Uid({ data, content }) {
    return (
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.disco]} $imagePath={'/images/banner6.png'} />
-         <Container>
+         <UidContainer>
+            <Back $margin={'64px 0 0'}>
+               <Anchor path={'/disco'}>back to discography</Anchor>
+            </Back>
             <section>
                <Album currentAlbum={data}/>
             </section>
             <aside>
                <AlbumList discography={discography}/>
             </aside>
-         </Container>
+            <Back $margin={'32px 0 64px'}>
+               <Anchor path={'/disco'}>back to discography</Anchor>
+            </Back>
+         </UidContainer>
       </Layout>
    )
 }

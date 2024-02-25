@@ -3,8 +3,7 @@ import {
   Container, 
   BandCampPlayer,
   Cover,
-  AlbumArtist,
-  AlbumTitle,
+  CoverAndPlayerWrapper,
   Info,
 } from './styled';
 import { Box, FlexBox, Text } from '../../../../components';
@@ -14,7 +13,7 @@ const PLAYER_WIDTH = 300;
 export default function Album({currentAlbum}) {
   return(
     <Container>
-      <Box $width={'40%'}>
+      <CoverAndPlayerWrapper>
         <FlexBox $justifyContent={'center'}>
           <Cover>
             <img src={currentAlbum.img.url} />
@@ -29,7 +28,7 @@ export default function Album({currentAlbum}) {
             /> : ''
           }
         </BandCampPlayer>
-      </Box>
+      </CoverAndPlayerWrapper>
       <Info>
         {RichText.render(currentAlbum.content_body)}
       </Info>

@@ -7,10 +7,10 @@ export const Container = styled.div`
   justify-content: space-between;
   display: flex;
   section {
+    width: 60%;
     ${mediaQuery({
       display: ['none', 'unset'],
     })}
-    width: 60%;
   }
   aside {
     ${mediaQuery({
@@ -20,14 +20,12 @@ export const Container = styled.div`
   `;
 export const UidContainer = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   ${mediaQuery({
     display: ['unset', 'flex'],
+    justifyContent: ['unset', 'space-between']
   })}
   section {
     ${mediaQuery({
-      // display: ['flex', 'unset'],
       width: ['100%', '60%'],
     })}
   }
@@ -45,5 +43,4 @@ export const UidContainer = styled.div`
       display: ['flex', 'none'],
       justifyContent: ['end', 'unset']
     })}
-  
   `;
