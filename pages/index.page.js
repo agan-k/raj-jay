@@ -75,7 +75,7 @@ export default function Home({content, postsData, calendarListings}) {
                   </FlexBox>
                </Block>
             </aside>
-            <section>
+            <section id={'news'}>
                <Block>
                   <BlockTitle $margin={'0 0 16px 0'}>news</BlockTitle>
                   <NewsCards 

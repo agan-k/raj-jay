@@ -25,7 +25,7 @@ export default function Uid({ data, content }) {
                <Anchor path={'/disco'}>discography</Anchor>
             </Back>
             <Back>
-               <Anchor path={'/disco'}>news</Anchor>
+               <Anchor path={'/#news'}>news</Anchor>
             </Back>
             <section>
                <Album currentAlbum={data}/>
@@ -37,7 +37,7 @@ export default function Uid({ data, content }) {
                <Anchor path={'/disco'}>discography</Anchor>
             </Back>
             <Back $margin={'12px 0 64px'}>
-               <Anchor path={'/disco'}>news</Anchor>
+               <Anchor path={'/#news'}>news</Anchor>
             </Back>
          </UidContainer>
       </Layout>

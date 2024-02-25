@@ -23,7 +23,7 @@ export default function Uid({ data, content }) {
                <Anchor path={'/press'}>press</Anchor>
             </Back>
             <Back>
-               <Anchor path={'/press'}>news</Anchor>
+               <Anchor path={'/#news'}>news</Anchor>
             </Back>
             <section>
                <Article currentArticle={data} />
@@ -32,7 +32,7 @@ export default function Uid({ data, content }) {
                <Anchor path={'/press'}>press</Anchor>
             </Back>
             <Back $margin={'12px 0 64px'}>
-               <Anchor path={'/press'}>news</Anchor>
+               <Anchor path={'/#news'}>news</Anchor>
             </Back>
             <aside>
                <ArticleList content={content} />
