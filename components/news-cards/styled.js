@@ -5,12 +5,14 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  // align-items: center;
   flex-wrap: wrap;
   &::after {
     content: "";
     flex: auto;
   }
+  ${mediaQuery({
+    display: ['unset', 'flex']
+  })}
 `;
 
 export const CardContainer = styled.div`
@@ -43,11 +45,27 @@ export const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  ${mediaQuery({
+    height: [
+      'unset',
+      ({theme}) => theme.space[6]+12+'px'
+    ]
+  })}
   img {
     max-height: ${({theme}) => theme.space[6]+12}px;
     max-width: ${({theme}) => theme.space[7]+theme.space[6]}px;
     opacity: ${({theme}) => theme.opacity.hazy};
     padding: ${({theme}) => theme.space[2]};
+    ${mediaQuery({
+      maxWidth: [
+        '100%',
+        ({theme}) => theme.space[7]+theme.space[6]+'px',
+      ],
+      maxHeight: [
+        'unset',
+        ({theme}) => theme.space[6]+12+'px',
+      ]
+    })}
   }
 `;
   
