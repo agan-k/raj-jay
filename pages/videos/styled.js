@@ -13,14 +13,19 @@ export const Container = styled.div`
 `;
 export const Gallery = styled.div`
   width: 100%;
-  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  ${mediaQuery({
+    display: ['unset', 'flex']
+  })}
+  
 `;
 export const VideoContainer = styled.div`
-  width: 29%;
+  ${mediaQuery({
+    width: ['100%', '29%']
+  })}
   p {
-    margin-bottom: ${({theme}) => theme.space[4]}px;
+    margin-top: 0;
   }
   img {
     width: 100%;
