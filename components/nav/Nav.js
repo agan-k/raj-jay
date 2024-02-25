@@ -35,14 +35,12 @@ export default function Nav({$isNavOpen}) {
         <SeparationLine />
       </FlexBox>
       <MailingListWrapper>
-        <FlexBox $alignItems={'start'}>
-          <FlexBox>
-            <MailingListLabel
-            >
-              mailing list:
-            </MailingListLabel>&nbsp;
-            <MailingList />
-          </FlexBox>
+        <FlexBox>
+          <MailingListLabel
+          >
+            mailing list:
+          </MailingListLabel>
+          <MailingList />
         </FlexBox>
       </MailingListWrapper>
     </Container>

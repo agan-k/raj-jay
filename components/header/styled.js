@@ -8,6 +8,8 @@ export const Container = styled.header`
   margin: 0 auto;
   padding-top: ${({theme}) => theme.space[4]}px;
   ${mediaQuery({
+    width: ['96%', '80%'],
+    maxWidth: ['unset', '1200px']
   })}
 `;
 

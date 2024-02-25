@@ -17,21 +17,20 @@ export default function Shows({calendarListings, content}) {
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0);
+
    const upcomingShows = calendarListings.map(listing => {
       if (listing.data.date > currentDate) {
          return (
-            <Box $width={'32%'}>
+            <Box key={listing.id} $width={'32%'}>
                <CalendarListing listing={listing} />
             </Box >
          );
       }
    });
-   const oldDates = calendarListings.map(listing => listing);
-
-   const pastShows = oldDates.map(listing => {
+   const pastShows = calendarListings.map(listing => {
       if (listing.data.date < currentDate) {
          return(
-            <Box $width={'32%'}>
+            <Box key={listing.id} $width={'32%'}>
                <CalendarListing listing={listing} />
             </Box >
          );

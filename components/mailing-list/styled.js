@@ -2,9 +2,12 @@ import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery"
 
 export const Container = styled.div`
+  ${mediaQuery({
+    width: ['100%', 'unset'],
+  })}
   * {
     letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;
-    font-size: ${({theme}) => theme.fontSizes[3]}px;
+    font-size: ${({theme}) => theme.fontSizes[4]}px;
     text-transform: lowercase;
   }
   form {
@@ -38,12 +41,7 @@ export const Container = styled.div`
     padding-right: ${({theme}) => theme.space[2]}px;
     background: black;
     border: none;
-    border-color: ${({theme}) => theme.colors.charcoal};
     cursor: pointer;
-    &:hover {
-      background: black;
-      transition: ${({theme}) => theme.transitions.fast};
-    }
   }
 `;
 

@@ -6,22 +6,42 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  height: ${({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6 : theme.space[4]+4}px;
   transition: ${({theme}) => theme.transitions.fast};
+  ${mediaQuery({
+    width: ['unset', '100%'],
+    position: ['relative', 'unset'],
+    height: 
+    [
+      ({$isNavOpen, theme}) => !$isNavOpen ? 'unset' : theme.space[4]+4+'px',
+      ({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6+'px' : theme.space[4]+4+'px',
+      //dev to keep nav open: 
+      // ({theme}) => theme.space[6]+theme.space[5]+6+'px',
+    ],
+    flexDirection: ['column', 'row'],
+    gap: [({theme}) => theme.space[1]+'px', 'unset'],
+    alignItems: ['end', 'unset']
+  })}
 `;
 
 export const NavRoutes = styled.nav`
-  margin-top: 2rem;
+  margin-top: ${({theme}) => theme.space[5]}px;
   ul {
-    height: ${({theme}) => theme.space[6]}px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 4px;
-    margin: 0;
-    width: 100%;
+    gap: ${({theme}) => theme.space[2]};
     padding: 0;
     list-style: none;
+    ${mediaQuery({
+      margin: [
+        ({theme}) => `0 0 ${ theme.space[7]}px 0`,
+        '0'
+      ],
+      height: [
+        'unset',
+        ({theme}) => theme.space[6]+'px',
+      ],
+    })}
   }
   a {
     &:hover {
@@ -32,15 +52,29 @@ export const NavRoutes = styled.nav`
 
 export const NavItem = styled.li`
   display: ${({$active}) => $active ? 'none' : 'initial'};
-  // margin-right: 16px;
+  ${mediaQuery({
+    padding: [
+      ({theme}) => theme.space[3]+'px',
+      ({theme}) => `0 ${theme.space[2]}px`,
+    ],
+    textAlign: ['right', 'unset'],
+  })}
   a {
     letter-spacing: ${({theme}) => theme.letterSpacing[3]}px;
     font-size: ${({theme}) => theme.fontSizes[2]}px;
-    font-weight: 100;
+    font-weight: ${({theme}) => theme.fontWeight.thin};
     text-transform: lowercase;
-    padding-left: ${({theme}) => theme.space[3]}px;
-    padding-right: ${({theme}) => theme.space[3]}px;
-    color: ${({theme}) => theme.colors.charcoal}
+    color: ${({theme}) => theme.colors.charcoal};
+    ${mediaQuery({
+      fontSize: [
+        ({theme}) => theme.fontSizes[4]+'px',
+        ({theme}) => theme.fontSizes[2]+'px',
+      ],
+      padding: [
+        ({theme}) => theme.space[2]+'px',
+        ({theme}) => `0 ${theme.space[3]}px`,
+      ],
+    })}
   }
   &:hover a {
     background: black;
@@ -51,22 +85,34 @@ export const NavItem = styled.li`
 export const SeparationLine = styled.div`
   margin-top: ${({theme}) => theme.space[5] -6}px;
   height: ${({theme}) => theme.space[6] -6}px;
-  width: ${({theme}) => theme.space[4]+theme.space[3]}px;
   border-right: ${({theme}) => theme.borders.dashedGray};
+  ${mediaQuery({
+    display: ['none', 'initial']
+  })}
 `;
 
 export const MailingListWrapper = styled.div`
   height: ${({theme}) => theme.space[6]+theme.space[5]}px;
   display: flex;
-  align-items: end;
+  ${mediaQuery({
+    position: ['absolute', 'unset'],
+    alignItems: ['unset', 'end'],
+    bottom: [({theme}) => `${theme.space[4]}px`, 'unset'],
+  })}
+  
 `;
 
 export const MailingListLabel = styled.div`
+  margin-top: 1px;
   letter-spacing: ${({theme}) => theme.letterSpacing[3]}px;
-  font-size: ${({theme}) => theme.fontSizes[2]}px;
   font-weight: ${({theme}) => theme.fontWeight.thin};
   text-transform: lowercase;
-  padding-left: ${({theme}) => theme.space[3]}px;
-  padding-right: ${({theme}) => theme.space[3]}px;
   white-space: nowrap;
+  ${mediaQuery({
+    marginTop: ['unset', '1px'],
+    fontSize: [
+      ({theme}) => theme.fontSizes[4]+'px',
+      ({theme}) => theme.fontSizes[2]+'px',
+    ],
+  })}
 `;

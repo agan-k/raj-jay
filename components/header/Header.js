@@ -48,7 +48,6 @@ export default function Header() {
          </Logo>
          <Nav $isNavOpen={open} />
          {/* TODO Mobile: */}
-         {/* <MailingList /> */}
          {/* <NavToggle handleToggleNav={() => HandleToggleOpen()} /> */}
       </Container>
   );

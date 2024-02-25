@@ -31,6 +31,7 @@ export const theme = {
   borders: {
     dashedGray: '1px dashed gray',
     thinCharcoal: '1px solid #36454f',
+    hover: '2px solid white',
   },
   opacity: {
     hazy: '.9',

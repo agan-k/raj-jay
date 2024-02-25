@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
   position: relative;
@@ -10,6 +11,9 @@ export const Container = styled.div`
   background: url('${({$imagePath}) => $imagePath}');
   background-size: cover;
   background-position: right;
+  ${mediaQuery({
+    display: ['none', 'block']
+  })}
 `;
 export const Quote = styled.div`
   width: 40%;

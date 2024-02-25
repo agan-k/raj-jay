@@ -1,6 +1,6 @@
 import facepaint from "facepaint";
-import {theme as staticTheme} from '../theme';
+import {theme} from '../theme';
 
-export const mediaQuery = facepaint(staticTheme.breakpoints.map(
+export const mediaQuery = facepaint(theme.breakpoints.map(
   bp => `@media(min-width: ${bp})`
 ));
