@@ -20,13 +20,19 @@ export default function Uid({ data, content }) {
          <Banner quote={quotes[BANNER_QUOTE.press]} $imagePath={'/images/banner5.png'} />
          <UidContainer>
             <Back $margin={'64px 0 0'}>
-               <Anchor path={'/press'}>back to press</Anchor>
+               <Anchor path={'/press'}>press</Anchor>
+            </Back>
+            <Back>
+               <Anchor path={'/press'}>news</Anchor>
             </Back>
             <section>
                <Article currentArticle={data} />
             </section>
-            <Back $margin={'0 0 64px'}>
-               <Anchor path={'/press'}>back to press</Anchor>
+            <Back>
+               <Anchor path={'/press'}>press</Anchor>
+            </Back>
+            <Back $margin={'12px 0 64px'}>
+               <Anchor path={'/press'}>news</Anchor>
             </Back>
             <aside>
                <ArticleList content={content} />

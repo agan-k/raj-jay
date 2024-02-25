@@ -22,7 +22,10 @@ export default function Uid({ data, content }) {
          <Banner quote={quotes[BANNER_QUOTE.disco]} $imagePath={'/images/banner6.png'} />
          <UidContainer>
             <Back $margin={'64px 0 0'}>
-               <Anchor path={'/disco'}>back to discography</Anchor>
+               <Anchor path={'/disco'}>discography</Anchor>
+            </Back>
+            <Back>
+               <Anchor path={'/disco'}>news</Anchor>
             </Back>
             <section>
                <Album currentAlbum={data}/>
@@ -30,8 +33,11 @@ export default function Uid({ data, content }) {
             <aside>
                <AlbumList discography={discography}/>
             </aside>
-            <Back $margin={'32px 0 64px'}>
-               <Anchor path={'/disco'}>back to discography</Anchor>
+            <Back $margin={'32px 0 0'}>
+               <Anchor path={'/disco'}>discography</Anchor>
+            </Back>
+            <Back $margin={'12px 0 64px'}>
+               <Anchor path={'/disco'}>news</Anchor>
             </Back>
          </UidContainer>
       </Layout>
