@@ -3,6 +3,7 @@ import { client } from '../../prismic-configuration';
 import {Layout, FlexBox, Box, BlockTitle, Banner} from '../../components';
 import { BANNER_QUOTE } from '../../utils/constants';
 import LinkCard from './components/LinkCard';
+import { Container } from './components/styled';
 
 export default function Links({linksData, content}) {
    const quotesData = content.results.filter(result =>
@@ -30,17 +31,17 @@ export default function Links({linksData, content}) {
          <Banner quote={quotes[BANNER_QUOTE.links]} $imagePath={'images/banner4.png'} />
          <Box>
             <BlockTitle $margin={'0 0 32px'}>musicians:</BlockTitle>
-            <FlexBox $justifyContent={'center'}>
+            <Container>
                {musicians}
-            </FlexBox>
+            </Container>
             <BlockTitle $margin={'32px 0'}>visual artists:</BlockTitle>
-            <FlexBox $justifyContent={'center'}>
+            <Container>
                {visualArtists}
-            </FlexBox>
+            </Container>
             <BlockTitle $margin={'32px 0'}>other:</BlockTitle>
-            <FlexBox $justifyContent={'center'}>
+            <Container>
                {other}
-            </FlexBox>
+            </Container>
          </Box>
       </Layout>
    )

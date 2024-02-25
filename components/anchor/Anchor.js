@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { FlexBox, LinkArrow, Text } from '../../components';
-import {theme} from '../../theme';
 
 export default function Anchor({children, url, path, target, $color}) {
   return (
