@@ -20,6 +20,9 @@ export const Gallery = styled.div`
     content: "";
     flex: auto;
   }
+  ${mediaQuery({
+    display: ['unset', 'flex'],
+  })}
 `;
 export const Photo = styled.div`
   min-height: min-content;
@@ -34,4 +37,11 @@ export const Image = styled.img`
   max-height: ${({theme}) => theme.space[7]+theme.space[5]}px;
   border-radius: 15px;
   margin: 0 auto;
+  ${mediaQuery({
+    width: ['100%', 'unset'],
+    maxHeight:[
+      'unset',
+      ({theme}) => theme.space[7]+theme.space[5]+'px'
+    ]
+  })}
 `;
