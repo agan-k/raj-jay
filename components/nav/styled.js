@@ -12,10 +12,10 @@ export const Container = styled.div`
     position: ['relative', 'unset'],
     height: 
     [
-      ({$isNavOpen, theme}) => !$isNavOpen ? 'unset' : theme.space[4]+4+'px',
+      ({$isNavOpen, theme}) => $isNavOpen ? 'unset' : theme.space[4]+4+'px',
       ({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6+'px' : theme.space[4]+4+'px',
       //dev to keep nav open: 
-      ({theme}) => theme.space[6]+theme.space[5]+6+'px',
+      // ({theme}) => theme.space[6]+theme.space[5]+6+'px',
     ],
     flexDirection: ['column', 'row'],
     gap: [({theme}) => theme.space[1]+'px', 'unset'],
@@ -29,15 +29,11 @@ export const NavRoutes = styled.nav`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    // gap: ${({theme}) => theme.space[2]}px;
+    margin: 0;
     padding: 0;
     list-style: none;
     ${mediaQuery({
       gap: ['unset', ({theme}) => theme.space[2]+'px'],
-      margin: [
-        ({theme}) => `0 0 ${ theme.space[7]}px 0`,
-        '0'
-      ],
       height: [
         'unset',
         ({theme}) => theme.space[6]+'px',
@@ -97,9 +93,16 @@ export const MailingListWrapper = styled.div`
   height: ${({theme}) => theme.space[6]+theme.space[5]}px;
   display: flex;
   ${mediaQuery({
-    position: ['absolute', 'unset'],
+    width: [
+      ({theme}) => theme.space[7]+theme.space[4]+'px',
+      'unset'
+    ],
     alignItems: ['unset', 'end'],
-    bottom: [({theme}) => `${theme.space[4]}px`, 'unset'],
+    justifyContent: ['end', 'unset'],
+    marginBottom: [
+      ({theme}) => theme.space[6]+'px',
+      'unset',
+    ]
   })}
   
 `;

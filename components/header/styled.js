@@ -3,10 +3,10 @@ import {mediaQuery} from "../../utils/mediaQuery";
 
 export const Container = styled.header`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   margin: 0 auto;
   ${mediaQuery({
+    display: ['unset', 'flex'],
+    justiFyContent: ['unset', 'space-between'],
     paddingTop: [
       ({theme}) => theme.space[2]+'px',
       ({theme}) => theme.space[4]+'px'
