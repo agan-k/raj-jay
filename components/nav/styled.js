@@ -15,7 +15,7 @@ export const Container = styled.div`
       ({$isNavOpen, theme}) => !$isNavOpen ? 'unset' : theme.space[4]+4+'px',
       ({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6+'px' : theme.space[4]+4+'px',
       //dev to keep nav open: 
-      // ({theme}) => theme.space[6]+theme.space[5]+6+'px',
+      ({theme}) => theme.space[6]+theme.space[5]+6+'px',
     ],
     flexDirection: ['column', 'row'],
     gap: [({theme}) => theme.space[1]+'px', 'unset'],
@@ -29,10 +29,11 @@ export const NavRoutes = styled.nav`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: ${({theme}) => theme.space[2]};
+    // gap: ${({theme}) => theme.space[2]}px;
     padding: 0;
     list-style: none;
     ${mediaQuery({
+      gap: ['unset', ({theme}) => theme.space[2]+'px'],
       margin: [
         ({theme}) => `0 0 ${ theme.space[7]}px 0`,
         '0'
@@ -52,9 +53,10 @@ export const NavRoutes = styled.nav`
 
 export const NavItem = styled.li`
   display: ${({$active}) => $active ? 'none' : 'initial'};
+  padding: 0 4px;
   ${mediaQuery({
     padding: [
-      ({theme}) => theme.space[3]+'px',
+      ({theme}) => `${theme.space[3]}px 0`,
       ({theme}) => `0 ${theme.space[2]}px`,
     ],
     textAlign: ['right', 'unset'],
@@ -71,7 +73,7 @@ export const NavItem = styled.li`
         ({theme}) => theme.fontSizes[2]+'px',
       ],
       padding: [
-        ({theme}) => theme.space[2]+'px',
+        ({theme}) => `${theme.space[3]}px 0`,
         ({theme}) => `0 ${theme.space[3]}px`,
       ],
     })}

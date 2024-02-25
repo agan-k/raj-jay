@@ -21,18 +21,14 @@ export default function Shows({calendarListings, content}) {
    const upcomingShows = calendarListings.map(listing => {
       if (listing.data.date > currentDate) {
          return (
-            <Box key={listing.id} $width={'32%'}>
-               <CalendarListing listing={listing} />
-            </Box >
+            <CalendarListing key={listing.id} listing={listing} />
          );
       }
    });
    const pastShows = calendarListings.map(listing => {
       if (listing.data.date < currentDate) {
          return(
-            <Box key={listing.id} $width={'32%'}>
-               <CalendarListing listing={listing} />
-            </Box >
+            <CalendarListing key={listing.id} listing={listing} />
          );
       }
    });

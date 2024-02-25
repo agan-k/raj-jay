@@ -7,8 +7,13 @@ export const Container = styled.div`
   })}
   * {
     letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;
-    font-size: ${({theme}) => theme.fontSizes[4]}px;
     text-transform: lowercase;
+    ${mediaQuery({
+      fontSize: [
+        ({theme}) => theme.fontSizes[4]+'px',
+        ({theme}) => theme.fontSizes[3]+'px',
+      ],
+    })}
   }
   form {
     display: flex;

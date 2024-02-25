@@ -6,9 +6,12 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding-top: ${({theme}) => theme.space[4]}px;
   ${mediaQuery({
-    width: ['96%', '80%'],
+    paddingTop: [
+      ({theme}) => theme.space[2]+'px',
+      ({theme}) => theme.space[4]+'px'
+    ],
+    width: ['100%', '80%'],
     maxWidth: ['unset', '1200px']
   })}
 `;
@@ -21,14 +24,25 @@ export const Logo = styled.div`
     white-space: nowrap;
     margin: 0;
     font-weight: ${({theme}) => theme.fontWeight.thin};
-    font-size: ${({theme}) => theme.fontSizes[4]}px;
+    ${mediaQuery({
+      fontSize: [
+        ({theme}) => theme.fontSizes[3]+'px',
+        ({theme}) => theme.fontSizes[4]+'px',
+      ],
+    })}
   }
   ${mediaQuery({
+    marginLeft: ['2%', 'unset'],
   })}
 `;
 
 export const ActivePage = styled.div`
-  font-size: ${({theme}) => theme.fontSizes[3]}px;
+  ${mediaQuery({
+    fontSize: [
+      ({theme}) => theme.fontSizes[2]+'px',
+      ({theme}) => theme.fontSizes[3]+'px',
+    ],
+  })}
   font-weight: ${({theme}) => theme.fontWeight.thin};
   letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;
   color: ${({theme}) => theme.colors.diffused};

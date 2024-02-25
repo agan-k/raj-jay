@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Listing = styled.div`
-  width: 100%;
+${mediaQuery({
+  width: ['100%', '32%'],
+  padding: ['unset', ({theme}) => theme.space[3]+'px']
+})}
   margin-bottom: ${({theme}) => theme.space[3]}px;
   padding: ${({theme}) => theme.space[3]}px;
 `;
