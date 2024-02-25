@@ -3,6 +3,7 @@ import Prismic from "prismic-javascript";
 import {Box, FlexBox, Layout, Text, Banner, BlockTitle} from '../../components';
 import { BANNER_QUOTE } from '../../utils/constants';
 import {ContactForm, Publicist} from './components';
+import { PublicityWrapper, MessageWrapper } from './styled';
 
 
 export default function Contact({contact, content, publicity}) {
@@ -18,15 +19,15 @@ export default function Contact({contact, content, publicity}) {
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.contact]} $imagePath={'images/banner6.png'} />
          <FlexBox $justifyContent={'space-between'}>
-            <Box $width={'30%'}>
+            <PublicityWrapper>
                <BlockTitle>publicity:</BlockTitle>
                <Box $marginTop={32}>
                   <Box>
                      {publicityCard}
                   </Box>
                </Box>
-            </Box>
-            <Box $width={'50%'}>
+            </PublicityWrapper>
+            <MessageWrapper>
                <BlockTitle>
                   <FlexBox>
                      write to&nbsp;
@@ -38,7 +39,7 @@ export default function Contact({contact, content, publicity}) {
                      <ContactForm />
                   </Box>
                </FlexBox>
-            </Box>
+            </MessageWrapper>
          </FlexBox>
       </Layout>
    )
