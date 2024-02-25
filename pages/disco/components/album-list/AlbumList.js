@@ -4,7 +4,7 @@ import {AlbumThumb} from '../../components';
 
 export default function AlbumList({discography}) {
   const albums = discography.map((album, index) => 
-    <AlbumThumb key={album.uid} album={album} index={index} />
+    <AlbumThumb key={album.uid} album={album} id={album.id}/>
   )
   return(
     <Container>

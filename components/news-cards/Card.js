@@ -4,13 +4,13 @@ import { RichText } from "prismic-reactjs";
 import { CardContainer, Date, ImageWrapper } from "./styled";
 import { FlexBox, LinkArrow, Box } from "../../components";
 
-export default function Card({card, onClick}) {
+export default function Card({card, onClick, id}) {
   const isVideoLink = Boolean(card.data.video_link.length > 0);
 
   return(
     <>
       {!isVideoLink ? 
-        <CardContainer>
+        <CardContainer id={id}>
           <Link href={`/${card.data.content_type.substring(0, 5)}/${card.uid}`}>
             <Date>{formatPrismicDate(card.data.date)}</Date>
             <ImageWrapper>
@@ -25,7 +25,7 @@ export default function Card({card, onClick}) {
           </Link> 
         </CardContainer> 
         :
-        <CardContainer onClick={onClick}>
+        <CardContainer onClick={onClick} id={id}>
           <Date>{formatPrismicDate(card.data.date)}</Date>
           <ImageWrapper>
             <img src={card.data.img.url} />

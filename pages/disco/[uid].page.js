@@ -8,7 +8,7 @@ import { BANNER_QUOTE } from '../../utils/constants';
 import { Album, AlbumList } from './components';
 import {UidContainer, Back} from './styled';
 
-export default function Uid({ data, content }) {
+export default function Uid({ data, content, id }) {
    const discography = content.results.filter(result =>
       result.data.content_type == 'discography'
    );
@@ -22,10 +22,10 @@ export default function Uid({ data, content }) {
          <Banner quote={quotes[BANNER_QUOTE.disco]} $imagePath={'/images/banner6.png'} />
          <UidContainer>
             <Back $margin={'64px 0 0'}>
-               <Anchor path={'/disco'}>discography</Anchor>
+               <Anchor path={`/disco#${id}`}>discography</Anchor>
             </Back>
-            <Back>
-               <Anchor path={'/#news'}>news</Anchor>
+            <Back $margin={'16px 0 0'}>
+               <Anchor path={`/#${id}`}>news</Anchor>
             </Back>
             <section>
                <Album currentAlbum={data}/>
@@ -34,10 +34,10 @@ export default function Uid({ data, content }) {
                <AlbumList discography={discography}/>
             </aside>
             <Back $margin={'32px 0 0'}>
-               <Anchor path={'/disco'}>discography</Anchor>
+               <Anchor path={`/disco#${id}`}>discography</Anchor>
             </Back>
-            <Back $margin={'12px 0 64px'}>
-               <Anchor path={'/#news'}>news</Anchor>
+            <Back $margin={'16px 0 64px'}>
+               <Anchor path={`/#${id}`}>news</Anchor>
             </Back>
          </UidContainer>
       </Layout>
@@ -54,9 +54,10 @@ export async function getStaticProps({ params }) {
    )
    const { uid } = params;
    const { data } = await client.getByUID("content", uid);
+   const { id } = await client.getByUID("content", uid);
    return {
       props: {
-         data, content
+         data, content, id
       }
    }
 }

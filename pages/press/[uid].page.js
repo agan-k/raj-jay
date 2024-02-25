@@ -10,7 +10,7 @@ import { BANNER_QUOTE } from "../../utils/constants";
 import {ArticleList, Article} from "./components";
 import { UidContainer, Back } from "./styled";
 
-export default function Uid({ data, content }) {
+export default function Uid({ data, content, id }) {
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
@@ -22,8 +22,8 @@ export default function Uid({ data, content }) {
             <Back $margin={'64px 0 0'}>
                <Anchor path={'/press'}>press</Anchor>
             </Back>
-            <Back>
-               <Anchor path={'/#news'}>news</Anchor>
+            <Back $margin={'16px 0 0'}>
+               <Anchor path={`/#${id}`}>news</Anchor>
             </Back>
             <section>
                <Article currentArticle={data} />
@@ -31,8 +31,8 @@ export default function Uid({ data, content }) {
             <Back>
                <Anchor path={'/press'}>press</Anchor>
             </Back>
-            <Back $margin={'12px 0 64px'}>
-               <Anchor path={'/#news'}>news</Anchor>
+            <Back $margin={'16px 0 64px'}>
+               <Anchor path={`/#${id}`}>news</Anchor>
             </Back>
             <aside>
                <ArticleList content={content} />
@@ -49,8 +49,9 @@ export async function getStaticProps({ params }) {
    );
    const { uid } = params;
    const { data } = await client.getByUID("content", uid);
+   const { id } = await client.getByUID("content", uid);
    return {
-      props: { data, content }
+      props: { data, content, id }
    }
  }
 

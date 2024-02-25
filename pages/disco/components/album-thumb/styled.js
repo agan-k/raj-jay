@@ -11,6 +11,10 @@ export const Container = styled.div`
     transition: .4s;
   }
   ${mediaQuery({
+    pointerEvents: [
+      'unset',
+      ({$active}) => $active ? 'none' : 'initial'
+    ],
     opacity: [
       'unset',
       ({$active}) => $active ? '1' : '.4'
