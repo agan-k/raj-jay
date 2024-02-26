@@ -18,7 +18,7 @@ export default function Shows({calendarListings, content}) {
    );
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0);
 
-   const upcomingShows = calendarListings.map(listing => {
+   const upcomingShows = calendarListings.reverse().map(listing => {
       if (listing.data.date > currentDate) {
          return (
             <CalendarListing key={listing.id} listing={listing} $width={'32%'}/>
@@ -64,7 +64,7 @@ export async function getStaticProps() {
    const calendarListings = await client.query(
       Prismic.Predicates.at("document.type", "calendar_listing"),
       {
-         orderings: '[my.calendar_listing.date]',
+         orderings: '[my.calendar_listing.date desc]',
          pageSize: 100
       }
    );
