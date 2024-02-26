@@ -15,6 +15,7 @@ import {
 } from "./styled";
 
 export default function Nav({$isNavOpen}) {
+  console.log($isNavOpen)
   const router = useRouter(); 
   const navigationRoutes = navLinks.map(item => 
     <NavItem key={item.name} $active={router.pathname === `${item.url}` ? true : false}>

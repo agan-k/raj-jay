@@ -1,3 +1,5 @@
+import { theme } from "../theme";
+
 export const navLinks = [
   {name: 'home', url: '/'},
   {name: 'bio', url: '/bio'},
@@ -53,4 +55,7 @@ export const BANNER_QUOTE = {
 }
 
 export const FEATURED_ALBUM = 'Pistils'; // Pistils (second)
+
+export const MOBILE_BREAKPOINT = parseInt(theme.breakpoints[0]);
+
 

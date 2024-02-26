@@ -2,6 +2,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {Nav, NavToggle} from "../../components";
+import { useMediaQuery } from "../../utils/hooks";
+import { MOBILE_BREAKPOINT } from "../../utils/constants";
 import {
    Container,
    Logo,
@@ -9,15 +11,17 @@ import {
 } from "./styled";
 
 export default function Header() {
-   const [open, setOpen] = useState(false)
+   const [isNavOpen, setIsNavOpen] = useState(false);
+   const isMobile = useMediaQuery(MOBILE_BREAKPOINT)
    const router = useRouter();
    const pathname = router.pathname;
    const activePage = getActivePage(pathname);
    const isHome = Boolean(pathname === '/');
 
-   // function HandleToggleOpen() {
-   //    setOpen(!open);
-   //  }
+   function HandleToggleOpen() {
+      console.log('toggle')
+      setIsNavOpen(!isNavOpen);
+    }
 
    function getActivePage(pathname) {
       let active;
@@ -33,9 +37,9 @@ export default function Header() {
 
    return(
       <Container 
-         onMouseOver={() => setOpen(true)} 
-         onMouseOut={() => setOpen(false)}
-         $isNavOpen={open}
+         onMouseOver={!isMobile ? () => setOpen(true) : undefined} 
+         onMouseOut={!isMobile ? () => setOpen(false) : undefined}
+         $isNavOpen={isNavOpen}
       >
          <Logo>
             {isHome ?
@@ -46,9 +50,10 @@ export default function Header() {
                {activePage}
             </ActivePage>
          </Logo>
-         <Nav $isNavOpen={open} />
-         {/* TODO Mobile: */}
-         {/* <NavToggle handleToggleNav={() => HandleToggleOpen()} /> */}
+         <Nav $isNavOpen={isNavOpen} />
+         {isMobile && (
+            <NavToggle handleToggleNav={() => HandleToggleOpen()} />
+         )}
       </Container>
   );
 }
