@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({theme}) => theme.colors.background};
     font-family: ${({theme}) => theme.fonts.body};
     font-size: ${({theme}) => theme.fontSizes[4]}px;
-    color: ${({theme}) => theme.colors.charcoal};
+    color: ${({theme}) => theme.colors.text};
     letter-spacing: ${({theme}) => theme.letterSpacing[1]}px;
   }
   h1, h2, h3, h4 {

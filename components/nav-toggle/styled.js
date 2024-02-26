@@ -8,4 +8,5 @@ export const NavToggleButton = styled.button`
   border: none;
   background: none;
   font-size: ${({theme}) => theme.fontSizes[7]+theme.fontSizes[1]}px;
+  color: ${({theme}) => theme.colors.text}
 `;
