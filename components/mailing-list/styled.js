@@ -51,20 +51,14 @@ export const Container = styled.div`
     margin: 0;
     font-family: Helvetica;
     color: ${({theme}) => theme.colors.diffused};
-    padding-left: ${({theme}) => theme.space[2]}px;
-    padding-right: ${({theme}) => theme.space[2]}px;
     background: black;
     border: none;
     cursor: pointer;
     ${mediaQuery({
-      // fontSize: [
-      //   ({theme}) => theme.fontSizes[4]+'px',
-      //   ({theme}) => theme.fontSizes[2]+'px',
-      // ],
-      // color: [
-      //   ({theme}) => theme.colors.subtle,
-      //   ({theme}) => theme.colors.diffused
-      // ]
+      padding: [
+        ({theme}) => theme.space[3]+'px',
+        ({theme}) => `0 ${theme.space[2]}px`
+      ]
     })}
   }
 `;

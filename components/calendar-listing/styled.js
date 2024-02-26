@@ -3,13 +3,13 @@ import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Listing = styled.div`
   margin-bottom: ${({theme}) => theme.space[3]}px;
+  padding: ${({theme}) => theme.space[3]}px;
   ${mediaQuery({
     width: ['unset', ({$width}) => $width],
     marginBottom: [
       ({theme}) => theme.space[5]+'px',
       ({theme}) => theme.space[3]+'px',
     ],
-    padding: ['unset', ({theme}) => theme.space[3]+'px']
   })}
 `;
 

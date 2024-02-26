@@ -5,6 +5,10 @@ export const Container = styled.div`
   position: relative;
   margin: 0 auto;
   ${mediaQuery({
+    marginTop: [
+      ({theme}) => theme.space[6]+'px',
+      'unset'
+    ],
     width: ['96%', '80%'],
     maxWidth: ['unset', '1200px']
   })}
