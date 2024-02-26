@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { RichText } from "prismic-reactjs";
-import {Container} from "./styled";
+import {Container, LeftArrow} from "./styled";
 import { useRouter } from "next/router";
 import {FlexBox, Box} from "../../../../components";
 
@@ -19,14 +19,15 @@ export default function ArticleLink({link, articleType, uid, index}) {
 
   return(
     <Container 
+      id={link.id}
       $marginLeft={isPressHome || isCurrentArticle ? '-2rem' : '' }
       $pointerEvents={isPressHome || isCurrentArticle ? 'none' : 'initial' }
     >
-      <Box>
+      <LeftArrow>
         {isPressHome || isCurrentArticle ?
           <>&larr;</> : null
         }
-      </Box>
+      </LeftArrow>
       <Box>
         {RichText.render(link.data.content_body.filter(item => item.type == 'heading3'))}
         <Link href="/press/[id]" as={`/press/${link.uid}`}>
