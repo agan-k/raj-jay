@@ -24,7 +24,9 @@ export default function Home({content, postsData, calendarListings}) {
    const [showModal, setShowModal] = useState(false);
    const [videoURL, setVideoURL] = useState(null);
    const cards = content.results.filter(item => item.data.news_card); 
-   const upcomingShows = calendarListings.filter(listing => listing > currentDate);
+   const upcomingShows = calendarListings.filter(listing => listing.data.date > currentDate);
+   const nextShow = upcomingShows[upcomingShows.length -1];
+
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
@@ -53,7 +55,8 @@ export default function Home({content, postsData, calendarListings}) {
                <Block>
                   <BlockTitle $margin={'0 0 16px 0'}>next show</BlockTitle>
                   <CalendarListing 
-                     listing={upcomingShows[0]}
+                     listing={nextShow}
+                     $nextShow={true}
                   />
                   <FlexBox $justifyContent={'end'}>
                      <Anchor path={'/shows'}>
@@ -104,25 +107,25 @@ export async function getStaticProps() {
          pageSize : 100
       }
    );
-   const calendarListing = await client.query(
+   const calendarListings = await client.query(
       Prismic.Predicates.at("document.type", "calendar_listing"),
       {
          orderings: '[my.calendar_listing.date desc]',
-         pageSize: 1
+         pageSize: 100
       }
    );
    const postsData = await client.query(
       Prismic.Predicates.at("document.type", "micro_blog"),
       {
          orderings: '[my.micro_blog.date desc]',
-         pageSize : 1
+         pageSize : 100
       }
    );
    return {
       props: {
          content,
          postsData: postsData.results,
-         calendarListings: calendarListing.results
+         calendarListings: calendarListings.results
       },
    }
 }

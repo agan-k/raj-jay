@@ -15,7 +15,6 @@ import {
 } from "./styled";
 
 export default function Nav({$isNavOpen, handleToggleNav}) {
-  console.log($isNavOpen)
   const router = useRouter(); 
   const navigationRoutes = navLinks.map(item => 
     <NavItem 
