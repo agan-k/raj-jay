@@ -27,8 +27,6 @@ export default function Header() {
       let active;
       if (pathname == '/') {
          active = 'home';
-      } else if (pathname == '/disco') {
-         active = 'discography';
       } else {
          active = pathname.split("/")[1];
       }
