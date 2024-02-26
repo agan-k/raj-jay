@@ -43,7 +43,7 @@ export default function Home({content, postsData, calendarListings}) {
                         url={'https://pistils.bandcamp.com/merch'}
                      />
                      <FlexBox $justifyContent={'end'}>
-                        <Anchor path={'/discography'}>
+                        <Anchor path={'/disco'}>
                            <Text $fontSize={12}>
                               ...full discography
                            </Text>
