@@ -10,7 +10,7 @@ import {
   Icon,
 } from "./styled";
 
-export default function CalendarListing({listing, $width}) {
+export default function CalendarListing({listing, $width, $nextShow}) {
   return(
     <Listing $width={$width}>
       <Header>
@@ -24,13 +24,15 @@ export default function CalendarListing({listing, $width}) {
           {RichText.asText(listing.data.venue)}
         </Text>
       </Header>
-      <Body>
-        <ul>
-          {listing.data.lineup.map(list_item =>
-            <li key={list_item.text}>{list_item.text}</li>
-          )}
-        </ul>
-      </Body>
+      {!$nextShow && (
+        <Body>
+          <ul>
+            {listing.data.lineup.map(list_item =>
+              <li key={list_item.text}>{list_item.text}</li>
+            )}
+          </ul>
+        </Body>
+      )}
       <Footer>
         <Text $fontSize={12} $fontWeight={100}>
           {RichText.asText(listing.data.street_address)}
@@ -59,7 +61,6 @@ export default function CalendarListing({listing, $width}) {
             <Link href={item.link.url} target="_blank">
               <FlexBox>
                 <Text 
-                // $fontSize={12} 
                 $textTransform={'lowercase'} 
                 $fontStyle={'italic'}
                 $fontWeight={100}

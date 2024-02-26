@@ -19,7 +19,6 @@ export default function Header() {
    const isHome = Boolean(pathname === '/');
 
    function HandleToggleOpen() {
-      console.log('toggle')
       setIsNavOpen(!isNavOpen);
     }
 
