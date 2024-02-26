@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mediaQuery } from "../../../../utils/mediaQuery";
 
 export const Container = styled.div`
   width: 100%;
@@ -18,6 +19,12 @@ export const Date = styled.div`
   font-weight: ${({theme}) => theme.fontWeight.thin};
   text-transform: uppercase;
   margin-bottom: ${({theme}) => theme.space[4]}px;
+  ${mediaQuery({
+    fontSize: [
+      ({theme}) => theme.fontSizes[6]+'px',
+      'unset'
+    ]
+  })}
 `;
 
 export const Body = styled.div`

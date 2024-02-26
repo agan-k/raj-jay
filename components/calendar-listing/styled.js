@@ -22,7 +22,6 @@ export const Body = styled.div`
     font-style: italic;
     padding: 0 16px;
     li {
-      font-size: 12px;
     }
   }
 `;

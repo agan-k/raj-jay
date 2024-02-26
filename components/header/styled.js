@@ -33,7 +33,7 @@ export const Logo = styled.div`
     ${mediaQuery({
       // marginTop: ['4px', 'unset'],
       fontSize: [
-        ({theme}) => theme.fontSizes[4]+'px',
+        ({theme}) => theme.fontSizes[5]+'px',
         ({theme}) => theme.fontSizes[4]+'px',
       ],
     })}
@@ -42,8 +42,9 @@ export const Logo = styled.div`
 
 export const ActivePage = styled.div`
   ${mediaQuery({
+    marginTop: ['2px', 'unset'],
     fontSize: [
-      ({theme}) => theme.fontSizes[3]+'px',
+      ({theme}) => theme.fontSizes[4]+'px',
       ({theme}) => theme.fontSizes[3]+'px',
     ],
   })}

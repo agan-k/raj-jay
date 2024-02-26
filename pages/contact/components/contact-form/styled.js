@@ -2,11 +2,24 @@ import styled from "styled-components";
 import { mediaQuery } from "../../../../utils/mediaQuery";
 
 export const Container = styled.div`
-position: relative;
+  position: relative;
+  * {
+    letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;
+    text-transform: lowercase;
+      ${mediaQuery({
+        fontSize: [
+          ({theme}) => theme.fontSizes[6]+'px',
+          ({theme}) => theme.fontSizes[3]+'px',
+        ],
+      })}
+    }
   input {
     width: 40%;
     margin-bottom: ${({theme}) => theme.space[3]}px;
     border: none;
+    ${mediaQuery({
+      width: ['100%','40%']
+    })}
   }
   textarea {
     resize: none;
@@ -15,7 +28,7 @@ position: relative;
     border: none;
   }
   input, textarea {
-    font-size: ${({theme}) => theme.fontSizes[4]}px;
+    // font-size: ${({theme}) => theme.fontSizes[4]}px;
     outline: none;
     font-weight: ${({theme}) => theme.fontWeight.thin};
     font-style: italic;
@@ -28,6 +41,17 @@ position: relative;
   textarea::placeholder {
     font-style: italic;
     color: ${({theme}) => theme.colors.diffused};
+    font-size: ${({theme}) => theme.fontSizes[4]}px;
+    ${mediaQuery({
+      fontSize: [
+        ({theme}) => theme.fontSizes[5]+'px',
+        ({theme}) => theme.fontSizes[4]+'px',
+      ],
+      color: [
+        ({theme}) => theme.colors.subtle,
+        ({theme}) => theme.colors.diffused
+      ]
+    })}
   }
   button {
     margin: 0;

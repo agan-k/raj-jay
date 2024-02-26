@@ -33,7 +33,7 @@ export const Container = styled.div`
     font-weight: 100;
     ${mediaQuery({
       fontSize: [
-        ({theme}) => theme.fontSizes[4]+'px',
+        ({theme}) => theme.fontSizes[5]+'px',
         ({theme}) => theme.fontSizes[2]+'px',
       ],
       color: [

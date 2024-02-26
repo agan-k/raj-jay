@@ -59,7 +59,7 @@ export default function CalendarListing({listing, $width}) {
             <Link href={item.link.url} target="_blank">
               <FlexBox>
                 <Text 
-                $fontSize={12} 
+                // $fontSize={12} 
                 $textTransform={'lowercase'} 
                 $fontStyle={'italic'}
                 $fontWeight={100}
