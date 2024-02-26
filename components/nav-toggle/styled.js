@@ -2,14 +2,9 @@ import styled from "styled-components";
 
 export const NavToggleButton = styled.button`
   position: absolute;
-  display: flex;
-  vertical-align: text-top;
-  top: -.3rem;
+  top: -12px;
   right: 0;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  width: ${({theme}) => theme.space[5] + theme.space[3]}px;
   border: none;
-  background: none;
-  cursor: pointer;
-
+  font-size: ${({theme}) => theme.fontSizes[7]+theme.fontSizes[1]}px;
 `;

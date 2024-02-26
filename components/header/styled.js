@@ -8,8 +8,8 @@ export const Container = styled.header`
     display: ['unset', 'flex'],
     justiFyContent: ['unset', 'space-between'],
     paddingTop: [
-      ({theme}) => theme.space[2]+'px',
-      ({theme}) => theme.space[4]+'px'
+      'unset',
+      ({theme}) => theme.space[3]+'px'
     ],
     width: ['100%', '80%'],
     maxWidth: ['unset', '1200px']
@@ -26,20 +26,21 @@ export const Logo = styled.div`
     font-weight: ${({theme}) => theme.fontWeight.thin};
     ${mediaQuery({
       fontSize: [
-        ({theme}) => theme.fontSizes[3]+'px',
+        ({theme}) => theme.fontSizes[4]+'px',
         ({theme}) => theme.fontSizes[4]+'px',
       ],
     })}
   }
   ${mediaQuery({
     marginLeft: ['2%', 'unset'],
+    marginTop: ['4px', 'unset'],
   })}
 `;
 
 export const ActivePage = styled.div`
   ${mediaQuery({
     fontSize: [
-      ({theme}) => theme.fontSizes[2]+'px',
+      ({theme}) => theme.fontSizes[3]+'px',
       ({theme}) => theme.fontSizes[3]+'px',
     ],
   })}
