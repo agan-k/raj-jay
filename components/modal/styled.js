@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Z_INDEX} from '../../utils/constants';
+import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
   position: fixed;
@@ -27,14 +28,26 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Image = styled.img`
-  height: ${({vertical}) => vertical ? '80%' : '70%'};
   margin-top: ${({vertical}) => vertical ? '2%' : '5%'};
+  ${mediaQuery({
+
+    marginTop: [
+      ({vertical}) => vertical ? '10%' : '30%',
+      ({vertical}) => vertical ? '2%' : '5%'
+    ],
+    height: [
+      ({vertical}) => vertical ? '80%' : '35%',
+      ({vertical}) => vertical ? '80%' : '70%'
+    ]
+  })}
 `;
 export const VideoWrapper = styled.div`
   position: relative;
-  padding-top: 5%;
-  width: 700px;
-  height: 500px;
   margin: 0 auto;
+  ${mediaQuery({
+    paddingTop: ['unset', '5%'],
+    width: ['100%', '700px'],
+    height: ['380px', '500px'],
+  })}
 `;
 

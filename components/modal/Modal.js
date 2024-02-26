@@ -24,8 +24,8 @@ export default function Modal({video, closeModal, photo}) {
             height="100%" 
             src={video} 
             title="YouTube video player" 
-            frameBorder="0" 
-            allowfullscreen
+            frameborder="0" 
+            allowfullscreen="true"
           ></iframe>
         </VideoWrapper>
       } 
