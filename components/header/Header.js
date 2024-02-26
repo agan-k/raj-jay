@@ -50,7 +50,7 @@ export default function Header() {
                {activePage}
             </ActivePage>
          </Logo>
-         <Nav $isNavOpen={isNavOpen} />
+         <Nav $isNavOpen={isNavOpen} handleToggleNav={() => HandleToggleOpen()}/>
          {isMobile && (
             <NavToggle handleToggleNav={() => HandleToggleOpen()} />
          )}

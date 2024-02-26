@@ -14,11 +14,14 @@ import {
   SeparationLine,
 } from "./styled";
 
-export default function Nav({$isNavOpen}) {
+export default function Nav({$isNavOpen, handleToggleNav}) {
   console.log($isNavOpen)
   const router = useRouter(); 
   const navigationRoutes = navLinks.map(item => 
-    <NavItem key={item.name} $active={router.pathname === `${item.url}` ? true : false}>
+    <NavItem 
+      key={item.name} 
+      $active={router.pathname === `${item.url}` ? true : false}
+      onClick={handleToggleNav}>
       <Link href={item.url}>
         {item.name}
       </Link>
