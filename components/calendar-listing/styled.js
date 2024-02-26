@@ -2,12 +2,15 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Listing = styled.div`
-${mediaQuery({
-  width: ['100%', '32%'],
-  padding: ['unset', ({theme}) => theme.space[3]+'px']
-})}
   margin-bottom: ${({theme}) => theme.space[3]}px;
-  padding: ${({theme}) => theme.space[3]}px;
+  ${mediaQuery({
+    width: ['unset', ({$width}) => $width],
+    marginBottom: [
+      ({theme}) => theme.space[5]+'px',
+      ({theme}) => theme.space[3]+'px',
+    ],
+    padding: ['unset', ({theme}) => theme.space[3]+'px']
+  })}
 `;
 
 export const Header = styled.div`

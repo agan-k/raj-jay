@@ -10,9 +10,9 @@ import {
   Icon,
 } from "./styled";
 
-export default function CalendarListing({listing}) {
+export default function CalendarListing({listing, $width}) {
   return(
-    <Listing>
+    <Listing $width={$width}>
       <Header>
         <Text $fontWeight={100} $textTransform={'uppercase'}>
           {formatPrismicDate(listing.data.date)}
