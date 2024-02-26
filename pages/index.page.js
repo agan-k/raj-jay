@@ -118,7 +118,7 @@ export async function getStaticProps() {
       Prismic.Predicates.at("document.type", "micro_blog"),
       {
          orderings: '[my.micro_blog.date desc]',
-         pageSize : 100
+         pageSize : 1
       }
    );
    return {
