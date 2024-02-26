@@ -19,7 +19,7 @@ export default function Uid({ data, content, id }) {
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.press]} $imagePath={'/images/banner5.png'} />
          <UidContainer>
-            <Back $margin={'64px 0 0'}>
+            <Back>
                <Anchor path={`/press#${id}`}>press</Anchor>
             </Back>
             <Back $margin={'16px 0 0'}>
