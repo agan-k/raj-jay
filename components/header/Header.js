@@ -37,8 +37,8 @@ export default function Header() {
 
    return(
       <Container 
-         onMouseOver={!isMobile ? () => setOpen(true) : undefined} 
-         onMouseOut={!isMobile ? () => setOpen(false) : undefined}
+         onMouseOver={!isMobile ? () => setIsNavOpen(true) : undefined} 
+         onMouseOut={!isMobile ? () => setIsNavOpen(false) : undefined}
          $isNavOpen={isNavOpen}
       >
          <Logo>

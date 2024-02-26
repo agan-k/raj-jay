@@ -10,7 +10,7 @@ export const Container = styled.div`
     text-transform: lowercase;
     ${mediaQuery({
       fontSize: [
-        ({theme}) => theme.fontSizes[4]+'px',
+        ({theme}) => theme.fontSizes[6]+'px',
         ({theme}) => theme.fontSizes[3]+'px',
       ],
     })}
@@ -29,9 +29,18 @@ export const Container = styled.div`
   }
   input::placeholder {
     color: ${({theme}) => theme.colors.diffused};
-    font-size: ${({theme}) => theme.fontSizes[2]}px;
     font-style: italic;
     font-weight: 100;
+    ${mediaQuery({
+      fontSize: [
+        ({theme}) => theme.fontSizes[4]+'px',
+        ({theme}) => theme.fontSizes[2]+'px',
+      ],
+      color: [
+        ({theme}) => theme.colors.subtle,
+        ({theme}) => theme.colors.diffused
+      ]
+    })}
   }
   
   input:focus {
@@ -47,6 +56,16 @@ export const Container = styled.div`
     background: black;
     border: none;
     cursor: pointer;
+    ${mediaQuery({
+      // fontSize: [
+      //   ({theme}) => theme.fontSizes[4]+'px',
+      //   ({theme}) => theme.fontSizes[2]+'px',
+      // ],
+      // color: [
+      //   ({theme}) => theme.colors.subtle,
+      //   ({theme}) => theme.colors.diffused
+      // ]
+    })}
   }
 `;
 

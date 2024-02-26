@@ -19,22 +19,25 @@ export const Container = styled.header`
 export const Logo = styled.div`
   display: flex;
   min-width: 20%;
+  ${mediaQuery({
+    height: ['32px', 'unset'],
+    marginLeft: ['2%', 'unset'],
+    marginTop: ['4px', 'unset'],
+    paddingTop: ['6px', 'unset'],
+  })}
   h1 {
     text-transform: uppercase;
     white-space: nowrap;
     margin: 0;
     font-weight: ${({theme}) => theme.fontWeight.thin};
     ${mediaQuery({
+      // marginTop: ['4px', 'unset'],
       fontSize: [
         ({theme}) => theme.fontSizes[4]+'px',
         ({theme}) => theme.fontSizes[4]+'px',
       ],
     })}
   }
-  ${mediaQuery({
-    marginLeft: ['2%', 'unset'],
-    marginTop: ['4px', 'unset'],
-  })}
 `;
 
 export const ActivePage = styled.div`
