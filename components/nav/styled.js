@@ -8,7 +8,7 @@ export const Container = styled.div`
   overflow: hidden;
   transition: ${({theme}) => theme.transitions.fast};
   ${mediaQuery({
-    background: [({theme}) => theme.colors.diffused, 'unset'],
+    // background: [({theme}) => theme.colors.diffused, 'unset'],
 
     width: ['unset', '100%'],
     position: ['relative', 'unset'],
@@ -56,13 +56,12 @@ export const NavRoutes = styled.nav`
 export const NavItem = styled.li`
   display: ${({$active}) => $active ? 'none' : 'initial'};
   ${mediaQuery({
-    width: ['48%', 'unset'],
+    width: ['43%', 'unset'],
     verticalAlign: ['center', 'unset'],
     padding: [
       ({theme}) => `${theme.space[2]}px 0 0 4px`,
       ({theme}) => `0 ${theme.space[2]}px`,
     ],
-    textAlign: ['center', 'unset'],
   })}
   a {
     letter-spacing: ${({theme}) => theme.letterSpacing[3]}px;
@@ -83,6 +82,10 @@ export const NavItem = styled.li`
   &:hover a {
     background: black;
     color: white;
+    ${mediaQuery({
+      background: ['unset', 'black'],
+      color: ['unset', 'white']
+    })}
   }
 `;
 
@@ -100,13 +103,13 @@ export const MailingListWrapper = styled.div`
   display: flex;
   ${mediaQuery({
     width: [
-      '90%',
+      '99%',
       'unset'
     ],
     alignItems: ['unset', 'end'],
-    justifyContent: ['center', 'unset'],
+    justifyContent: ['start', 'unset'],
     margin: [
-      ({theme}) => `${theme.space[5]}px auto ${theme.space[7]}px`,
+      ({theme}) => `${theme.space[5]}px 0 ${theme.space[7]}px`,
        'unset'
     ],
   })}
