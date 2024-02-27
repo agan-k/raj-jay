@@ -41,8 +41,6 @@ export const Container = styled.div`
 export const ImageWrapper = styled.div`
   height: 100%;
   width: 100%;
-  border: ${({$active, theme}) => $active ? theme.borders.dashedGray : 'none'};
-  padding: ${({$active, theme}) => $active ? theme.space[2] + 'px' : 'none'};
   ${mediaQuery({
     padding: [
       'unset',
