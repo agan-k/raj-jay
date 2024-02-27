@@ -1,32 +1,37 @@
 import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery";
+import { Z_INDEX } from "../../utils/constants";
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  transition: ${({theme}) => theme.transitions.fast};
   ${mediaQuery({
-    // background: [({theme}) => theme.colors.diffused, 'unset'],
-
     width: ['unset', '100%'],
     position: ['relative', 'unset'],
+    position: ['fixed', 'unset'],
+    top: ['0', 'unset'],
+    background: [({theme}) => theme.colors.subtle, 'unset'],
+    zIndex: [Z_INDEX.mobileNav, 'unset'],
     height: 
     [
-      ({$isNavOpen, theme}) => $isNavOpen ? 'unset' : '0',
+      ({$isNavOpen}) => $isNavOpen ? '100%' : '0',
       ({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6+'px' : theme.space[4]+4+'px',
       //dev to keep nav open: 
       // ({theme}) => theme.space[6]+theme.space[5]+6+'px',
     ],
     flexDirection: ['column', 'row'],
     gap: [({theme}) => theme.space[1]+'px', 'unset'],
-    alignItems: ['end', 'unset']
+    justifyContent: ['unset', 'space-between'],
+    transition: [
+      'unset',
+      ({theme}) => theme.transitions.fast,
+    ]
   })}
 `;
 
 export const NavRoutes = styled.nav`
-  margin-top: ${({theme}) => theme.space[5]}px;
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -35,7 +40,7 @@ export const NavRoutes = styled.nav`
     list-style: none;
     ${mediaQuery({
       flexDirection: ['row', 'column'],
-      justifyContent: ['unset', 'unset'],
+      justifyContent: ['space-between', 'unset'],
       gap: [
         ({theme}) => theme.space[3]+5+'px',
         ({theme}) => theme.space[2]+'px'
@@ -44,6 +49,19 @@ export const NavRoutes = styled.nav`
         'unset',
         ({theme}) => theme.space[6]+'px',
       ],
+      paddingTop: [
+        ({theme}) => theme.space[5]+12+'px',
+        'unset'
+      ],
+      marginTop: [
+        'unset',
+        ({theme}) => theme.space[5]+'px'
+      ],
+      marginRight: [
+        ({theme}) => theme.space[2]+'px',
+        'unset'
+      ],
+      textAlign: ['right', 'unset']
     })}
   }
   a {
@@ -57,7 +75,6 @@ export const NavItem = styled.li`
   display: ${({$active}) => $active ? 'none' : 'initial'};
   ${mediaQuery({
     width: ['43%', 'unset'],
-    verticalAlign: ['center', 'unset'],
     padding: [
       ({theme}) => `${theme.space[2]}px 0 0 4px`,
       ({theme}) => `0 ${theme.space[2]}px`,
@@ -80,8 +97,6 @@ export const NavItem = styled.li`
     })}
   }
   &:hover a {
-    background: black;
-    color: white;
     ${mediaQuery({
       background: ['unset', 'black'],
       color: ['unset', 'white']
@@ -103,13 +118,13 @@ export const MailingListWrapper = styled.div`
   display: flex;
   ${mediaQuery({
     width: [
-      '99%',
+      '80%',
       'unset'
     ],
     alignItems: ['unset', 'end'],
     justifyContent: ['start', 'unset'],
     margin: [
-      ({theme}) => `${theme.space[5]}px 0 ${theme.space[7]}px`,
+      ({theme}) => `${theme.space[3]}px auto ${theme.space[7]}px`,
        'unset'
     ],
   })}

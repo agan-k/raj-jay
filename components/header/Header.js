@@ -15,22 +15,12 @@ export default function Header() {
    const isMobile = useMediaQuery(MOBILE_BREAKPOINT)
    const router = useRouter();
    const pathname = router.pathname;
-   const activePage = getActivePage(pathname);
+   const activePage = pathname.split("/")[1];
    const isHome = Boolean(pathname === '/');
 
    function HandleToggleOpen() {
       setIsNavOpen(!isNavOpen);
     }
-
-   function getActivePage(pathname) {
-      let active;
-      if (pathname == '/') {
-         active = 'home';
-      } else {
-         active = pathname.split("/")[1];
-      }
-      return active;
-   }
 
    return(
       <Container 

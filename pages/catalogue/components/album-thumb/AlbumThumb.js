@@ -8,14 +8,14 @@ import { FEATURED_ALBUM } from '../../../../utils/constants';
 export default function AlbumThumb({album, id}) {
   const [isActive, setIsActive] = useState(false);
   const router = useRouter();
-  const isDiscoHome = 
+  const isCatalogueHome = 
     Boolean(
-      router.asPath === '/disco' &&
+      router.asPath === '/catalogue' &&
       album.data.content_body[1].text === FEATURED_ALBUM
   );
   const currentAlbum = router.query.uid;
   useEffect(() => {
-    if (isDiscoHome || album.uid === currentAlbum) setIsActive(true);
+    if (isCatalogueHome || album.uid === currentAlbum) setIsActive(true);
     return () => {
       setIsActive(false);
     }
@@ -23,7 +23,7 @@ export default function AlbumThumb({album, id}) {
   return(
     <Container $active={isActive} id={id}>
       <ImageWrapper $active={isActive}>
-        <Link href="/disco/[id]" as={`/disco/${album.uid}`}>
+        <Link href="/catalogue/[id]" as={`/catalogue/${album.uid}`}>
           <Image src={album.data.img.url} $active={isActive} />
         </Link>
       </ImageWrapper>
