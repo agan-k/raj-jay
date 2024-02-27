@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Z_INDEX } from "../../utils/constants";
 
 export const NavToggleButton = styled.button`
-  position: absolute;
+  position: ${({$isNavOpen}) => $isNavOpen ? 'fixed' : 'absolute'};
   top: -8px;
   padding: 0;
   right: 0;

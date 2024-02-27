@@ -39,7 +39,7 @@ export default function Header() {
          </Logo>
          <Nav $isNavOpen={isNavOpen} handleToggleNav={() => HandleToggleOpen()}/>
          {isMobile && (
-            <NavToggle handleToggleNav={() => HandleToggleOpen()} />
+            <NavToggle $isNavOpen={isNavOpen} handleToggleNav={() => HandleToggleOpen()} />
          )}
       </Container>
   );
