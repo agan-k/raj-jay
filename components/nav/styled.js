@@ -9,7 +9,6 @@ export const Container = styled.div`
   overflow: hidden;
   ${mediaQuery({
     width: ['unset', '100%'],
-    position: ['relative', 'unset'],
     position: ['fixed', 'unset'],
     top: ['0', 'unset'],
     background: [({theme}) => theme.colors.subtle, 'unset'],
