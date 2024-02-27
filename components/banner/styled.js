@@ -12,7 +12,7 @@ export const Container = styled.div`
   background-size: cover;
   background-position: right;
   ${mediaQuery({
-    display: ['none', 'block']
+    // display: ['none', 'block']
   })}
 `;
 export const Quote = styled.div`
@@ -20,6 +20,9 @@ export const Quote = styled.div`
   position: absolute;
   top: ${({theme}) => theme.space[5]}px;
   left: ${({theme}) => theme.space[6]}px;
+  ${mediaQuery({
+    display: ['none', 'block'],
+  })}
   p {
     color: ${({theme}) => theme.colors.diffused};
     font-weight: 100;
@@ -27,6 +30,12 @@ export const Quote = styled.div`
     line-height: ${({theme}) => theme.lineHeight.secondary};
     letter-spacing: ${({theme}) => theme.letterSpacing[1]}px;
     font-family: Garamond;
+    ${mediaQuery({
+      fontSize: [
+        ({theme}) => theme.fontSizes[3]+'px',
+        ({theme}) => theme.fontSizes[4]+'px'
+      ]
+    })}
   }
   p:nth-child(2) {
     font-size: ${({theme}) => theme.fontSizes[3]}px;

@@ -22,7 +22,7 @@ export default function Uid({ data, content, id }) {
             <Back>
                <Anchor path={`/press#${id}`}>press</Anchor>
             </Back>
-            <Back $margin={'16px 0 0'}>
+            <Back $margin={'8px 0 0'}>
                <Anchor path={`/#${id}`}>news</Anchor>
             </Back>
             <section>
@@ -31,7 +31,7 @@ export default function Uid({ data, content, id }) {
             <Back>
                <Anchor path={`/press#${id}`}>press</Anchor>
             </Back>
-            <Back $margin={'16px 0 64px'}>
+            <Back $margin={'8px 0 64px'}>
                <Anchor path={`/#${id}`}>news</Anchor>
             </Back>
             <aside>

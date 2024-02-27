@@ -9,7 +9,7 @@ import { Album, AlbumList } from './components';
 import {UidContainer, Back} from './styled';
 
 export default function Uid({ data, content, id }) {
-   const catalogue = content.results.filter(result =>
+   const albums = content.results.filter(result =>
       result.data.content_type == 'discography'
    );
    const quotesData = content.results.filter(result =>
@@ -19,24 +19,24 @@ export default function Uid({ data, content, id }) {
 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.catalogue]} $imagePath={'/images/banner6.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.albums]} $imagePath={'/images/banner6.png'} />
          <UidContainer>
-            <Back $margin={'64px 0 0'}>
-               <Anchor path={`/catalogue#${id}`}>catalogue</Anchor>
+            <Back>
+               <Anchor path={`/albums#${id}`}>albums</Anchor>
             </Back>
-            <Back $margin={'16px 0 0'}>
+            <Back $margin={'8px 0 0'}>
                <Anchor path={`/#${id}`}>news</Anchor>
             </Back>
             <section>
                <Album currentAlbum={data}/>
             </section>
             <aside>
-               <AlbumList catalogue={catalogue}/>
+               <AlbumList albums={albums}/>
             </aside>
             <Back $margin={'32px 0 0'}>
-               <Anchor path={`/catalogue#${id}`}>catalogue</Anchor>
+               <Anchor path={`/albums#${id}`}>albums</Anchor>
             </Back>
-            <Back $margin={'16px 0 64px'}>
+            <Back $margin={'8px 0 64px'}>
                <Anchor path={`/#${id}`}>news</Anchor>
             </Back>
          </UidContainer>
