@@ -13,7 +13,7 @@ import {
    Image,
 } from './styled';
 
-export default function Photos({content}) {
+export default function Media({content}) {
    const [showModal, setShowModal] = useState(false);
    const [photo, setPhoto] = useState(null);
 
@@ -23,7 +23,9 @@ export default function Photos({content}) {
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
 
    const photos = content.results.filter(result => 
-      result.data.content_type == 'photo'
+      result.data.content_type == 'photo' ||
+      result.data.content_type == 'video'
+
    );
    const gallery = photos.map(photo => 
       <Photo 

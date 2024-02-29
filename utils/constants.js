@@ -5,7 +5,7 @@ export const navLinks = [
   {name: 'bio', url: '/bio'},
   {name: 'shows', url: '/shows'},
   {name: 'press', url: '/press'},
-  {name: 'photos', url: '/photos'},
+  {name: 'media', url: '/media'},
   {name: 'videos', url: '/videos'},
   {name: 'albums', url: '/albums'},
   {name: 'store', url: 'https://pistils.bandcamp.com/merch'},
