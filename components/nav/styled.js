@@ -18,7 +18,7 @@ export const Container = styled.div`
       ({$isNavOpen}) => $isNavOpen ? '100%' : '0',
       ({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6+'px' : theme.space[4]+4+'px',
       //dev to keep nav open: 
-      // ({theme}) => theme.space[6]+theme.space[5]+6+'px',
+      // ({theme}) => theme.space[6]+theme.space[5]+'px',
     ],
     flexDirection: ['column', 'row'],
     gap: [({theme}) => theme.space[1]+'px', 'unset'],
@@ -54,7 +54,7 @@ export const NavRoutes = styled.nav`
       ],
       marginTop: [
         'unset',
-        ({theme}) => theme.space[5]+'px'
+        ({theme}) => theme.space[4]+12+'px'
       ],
       marginRight: [
         ({theme}) => theme.space[2]+'px',
@@ -87,7 +87,7 @@ export const NavItem = styled.li`
     ${mediaQuery({
       fontSize: [
         ({theme}) => theme.fontSizes[6]+'px',
-        ({theme}) => theme.fontSizes[2]+'px',
+        ({theme}) => theme.fontSizes[3]+'px',
       ],
       padding: [
         ({theme}) => `${theme.space[3]}px 0`,
@@ -113,7 +113,7 @@ export const SeparationLine = styled.div`
 `;
 
 export const MailingListWrapper = styled.div`
-  height: ${({theme}) => theme.space[6]+theme.space[5]}px;
+  height: ${({theme}) => theme.space[6]+theme.space[4]+theme.space[3]+1}px;
   display: flex;
   ${mediaQuery({
     width: [
@@ -130,7 +130,6 @@ export const MailingListWrapper = styled.div`
 `;
 
 export const MailingListLabel = styled.div`
-  margin-top: 1px;
   letter-spacing: ${({theme}) => theme.letterSpacing[3]}px;
   font-weight: ${({theme}) => theme.fontWeight.thin};
   text-transform: lowercase;
@@ -139,7 +138,7 @@ export const MailingListLabel = styled.div`
     marginTop: ['unset', '1px'],
     fontSize: [
       ({theme}) => theme.fontSizes[6]+'px',
-      ({theme}) => theme.fontSizes[2]+'px',
+      ({theme}) => theme.fontSizes[3]+'px',
     ],
   })}
 `;
