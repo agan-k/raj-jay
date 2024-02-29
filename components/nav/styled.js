@@ -18,7 +18,7 @@ export const Container = styled.div`
       ({$isNavOpen}) => $isNavOpen ? '100%' : '0',
       ({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6+'px' : theme.space[4]+4+'px',
       //dev to keep nav open: 
-      ({theme}) => theme.space[6]+theme.space[5]+'px',
+      // ({theme}) => theme.space[6]+theme.space[5]+'px',
     ],
     flexDirection: ['column', 'row'],
     gap: [({theme}) => theme.space[1]+'px', 'unset'],
