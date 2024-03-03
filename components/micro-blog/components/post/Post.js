@@ -4,7 +4,7 @@ import HandleVideoLinkModal from "../../../../utils/handleMediaLinkModal";
 import {Body, Container, Date, TitleImage} from "./styled";
 import { Text } from "../../../../components";
 
-export default function Post({data, setShowModal, setVideoURL}) {
+export default function Post({data, setShowModal, setMedia}) {
   const hasVideoLink = Boolean(data.youtube.url != null);
   const hasTitleImage = Boolean(data.title_image.url != null);
   const videoLink = hasVideoLink ? data.youtube.url : '';
@@ -16,9 +16,9 @@ export default function Post({data, setShowModal, setVideoURL}) {
         src={data.title_image?.url}
         onClick={hasVideoLink && (
           () => HandleVideoLinkModal({
-          url: videoLink,
+          media: data,
           setShowModal: setShowModal,
-          setMediaURL: setVideoURL,
+          setMedia: setMedia,
           }))
         }
         pointer={hasVideoLink} 

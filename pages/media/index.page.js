@@ -1,64 +1,73 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
-import {Layout, Modal, Banner} from '../../components';
+import {Layout, Modal, Banner, BlockTitle, Box} from '../../components';
 import isVerticalImage from '../../utils/isVerticalImage';
 import HandleMediaLinkModal from '../../utils/handleMediaLinkModal';
 import { BANNER_QUOTE } from '../../utils/constants';
+import Video from './components/Video'
 import {
    Container,
-   Gallery,
+   PhotoGallery,
+   VideoGallery,
    Photo,
-   Image,
 } from './styled';
 
 export default function Media({content}) {
    const [showModal, setShowModal] = useState(false);
-   const [photo, setPhoto] = useState(null);
-
+   const [media, setMedia] = useState(null);
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
 
-   const photos = content.results.filter(result => 
-      result.data.content_type == 'photo' ||
-      result.data.content_type == 'video'
-
+   const photosData = content.results.filter(result => 
+      result.data.content_type == 'photo'
    );
-   const gallery = photos.map(photo => 
+   const photos = photosData.map(photo => 
       <Photo 
          key={photo.uid} 
          onClick={() => HandleMediaLinkModal({
-            url: photo.data, 
+            media: photo, 
             setShowModal: setShowModal,
-            setMediaURL: setPhoto,
+            setMedia: setMedia,
          })}>
-         <Image
+         <img
             src={photo.data.img.url}
-            vertical={isVerticalImage({
-               height: photo.data.img.dimensions.height, 
-               width: photo.data.img.dimensions.width
-            })}
          />
       </Photo>
-   )
+   );
+   const videosData = content.results.filter(result =>
+      result.data.content_type == 'video'
+   );
+
+   const videos = videosData.map((video) => 
+      <Video 
+         key={video.uid} 
+         setMedia={setMedia}
+         setShowModal={setShowModal}
+         video={video}
+      /> 
+   );
 
    return (
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.photos]} $imagePath={'/images/banner2.png'} />
          <Container $blur={showModal ? true : false}>
-            <Gallery>
-               {gallery}
-            </Gallery>
+            <Box>
+            <PhotoGallery>
+               {photos}
+            </PhotoGallery>
+            </Box>
+            <VideoGallery>
+               {videos}
+            </VideoGallery>
          </Container>
-         
          {showModal && (
             <Modal
                closeModal={() => setShowModal(false)}
-               photo={photo}
-               photos={true}
+               media={media}
             />
          )}
       </Layout>

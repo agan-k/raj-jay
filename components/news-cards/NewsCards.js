@@ -2,14 +2,14 @@ import Card from "./Card";
 import { Container } from "./styled";
 import HandleMediaLinkModal from "../../utils/handleMediaLinkModal";
 
-export default function NewsCards({cards, setShowModal, setVideoURL}) {
+export default function NewsCards({cards, setShowModal, setMedia}) {
   const newsCards = cards.map((item) => 
     <Card 
       key={item.uid}
       onClick={() => HandleMediaLinkModal({
-        url: item.data.video_link[0].text,
+        media: item,
         setShowModal: setShowModal,
-        setMediaURL: setVideoURL,
+        setMedia: setMedia,
       })}
       id={item.id}
       card={item}

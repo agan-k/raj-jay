@@ -71,7 +71,7 @@ export const NavRoutes = styled.nav`
 `;
 
 export const NavItem = styled.li`
-  display: ${({$active}) => $active ? 'none' : 'initial'};
+  // display: ${({$active}) => $active ? 'none' : 'initial'};
   ${mediaQuery({
     width: ['43%', 'unset'],
     padding: [

@@ -8,7 +8,7 @@ import { Post } from "./components";
 
 export default function BlogHome({postsData, content}) {
   const [showModal, setShowModal] = useState(false);
-  const [videoURL, setVideoURL] = useState(null);
+  const [media, setMedia] = useState(null);
   const quotesData = content.results.filter(result =>
     result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
  );
@@ -16,9 +16,9 @@ export default function BlogHome({postsData, content}) {
   const posts = postsData.map(post =>
     <Post
        key={post.id} 
-       data={post.data}
+       data={post}
        setShowModal={setShowModal}
-       setVideoURL={setVideoURL}
+       setMedia={setMedia}
     />
  );
   return (
@@ -29,7 +29,7 @@ export default function BlogHome({postsData, content}) {
       </Container>
       {showModal && (
         <Modal
-          video={videoURL}
+          media={media}
           closeModal={() => setShowModal(false)}
         />
       )}
