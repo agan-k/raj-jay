@@ -7,10 +7,10 @@ export const Container = styled.div`
   margin-bottom: ${({theme}) => theme.space[4]}px;
   border-top-left-radius: 50px 50px;
   overflow: hidden;
-  background-color: ${({theme}) => theme.colors.charchoal};
   background: url('${({$imagePath}) => $imagePath}');
   background-size: cover;
   background-position: right;
+  background-color: black;
   ${mediaQuery({
     // display: ['none', 'block']
   })}

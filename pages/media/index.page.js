@@ -12,6 +12,7 @@ import {
    PhotoGallery,
    VideoGallery,
    Photo,
+   PhotoThumb,
 } from './styled';
 
 export default function Media({content}) {
@@ -33,8 +34,12 @@ export default function Media({content}) {
             setShowModal: setShowModal,
             setMedia: setMedia,
          })}>
-         <img
+         <PhotoThumb
             src={photo.data.img.url}
+            $vertical={isVerticalImage({
+               height: photo.data.img.dimensions.height,
+               width: photo.data.img.dimensions.width,
+           })}
          />
       </Photo>
    );
@@ -55,14 +60,18 @@ export default function Media({content}) {
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.photos]} $imagePath={'/images/banner2.png'} />
          <Container $blur={showModal ? true : false}>
-            <Box>
-            <PhotoGallery>
-               {photos}
-            </PhotoGallery>
+            <Box $flex={'3'}>
+               <BlockTitle $margin={'0 0 16px 0'}>photos</BlockTitle>
+               <PhotoGallery>
+                  {photos}
+               </PhotoGallery>
             </Box>
-            <VideoGallery>
-               {videos}
-            </VideoGallery>
+            <Box $flex={'1'}>
+               <BlockTitle $margin={'0 0 16px 0'}>videos</BlockTitle>
+               <VideoGallery>
+                  {videos}
+               </VideoGallery>
+            </Box>
          </Container>
          {showModal && (
             <Modal

@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
+  gap: 64px;
   ${mediaQuery({
     display: ['unset', 'flex'],
-    justifyContent: ['unset', 'space-between'],
+    // justifyContent: ['unset', 'space-between'],
   })}
   -webkit-filter: ${({$blur}) => $blur ? 'blur(5px)' : 'unset'};
   -moz-filter: ${({$blur}) => $blur ? 'blur(5px)' : 'unset'};
@@ -15,59 +16,54 @@ export const Container = styled.div`
   transition: ${({theme}) => theme.transitions.fast};
 `;
 export const PhotoGallery = styled.div`
-  width: 65%;
   display: flex;
   justify-content: start;
-  gap: 16px;
+  gap: 8px;
   align-content: start;
   flex-wrap: wrap;
   ${mediaQuery({
     display: ['unset', 'flex'],
+    paddingLeft: [
+      'unset', 
+      ({theme}) => theme.space[4]+'px',
+    ]
   })}
 `;
 export const Photo = styled.div`
-  min-height: min-content;
-  flex-basis: 40%;
+  height: 128px;
+  width: 128px;
   display: flex;
-  padding-top: ${({theme}) => theme.space[2]}px;
-  padding-bottom: ${({theme}) => theme.space[2]}px;
-  img {
-    cursor: pointer;
-    border-radius: 15px;
-    margin: 0 auto;
-    ${mediaQuery({
-      width: ['100%', 'unset'],
-      maxHeight:[
-        'unset',
-        ({theme}) => theme.space[7]+theme.space[3]+'px'
-      ]
-    })}
-  }
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`;
+
+export const PhotoThumb = styled.img`
+  height: 200px;
+  cursor: pointer;
+  ${mediaQuery({
+  
+  })}
 `;
 
 export const VideoGallery = styled.div`
-  width: 30%;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  &::after {
-    content: "";
-    flex: auto;
-  }
   ${mediaQuery({
-    display : ['unset', 'flex'],
+    paddingLeft: [
+      'unset',
+      ({theme}) => theme.space[4]+'px',
+    ]
   })}
 `;
 
 export const VideoContainer = styled.div`
   ${mediaQuery({
-    // width: ['100%', '29%']
   })}
   p {
     margin-top: 0;
+    font-size: 12px;
   }
   img {
-    width: 100%;
+    width: 80%;
     cursor: pointer;
   }
 `;

@@ -3,6 +3,7 @@ import { mediaQuery } from "../../../utils/mediaQuery";
 
 export const Container = styled.div`
   position: ${({$position}) => $position};
+  flex: ${({$flex}) => $flex};
   width: ${({$width}) => $width};
   height: ${({$height}) => $height};
   margin: ${({$margin}) => $margin};

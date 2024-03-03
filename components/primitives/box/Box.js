@@ -3,6 +3,7 @@ import { Container } from "./styled";
 export default function Box({
   children, 
   $position,
+  $flex,
   $width,
   $height,
   $margin, 
@@ -17,6 +18,7 @@ export default function Box({
   return (
     <Container
       $position={$position}
+      $flex={$flex}
       $width={$width}
       $height={$height}
       $margin={$margin} 

@@ -1,7 +1,6 @@
 import { Container, Image, ImageWrapper, VideoWrapper } from "./styled";
 import { RichText } from "prismic-reactjs";
 import isVerticalImage from "../../utils/isVerticalImage";
-import BlogHome from "../../pages/blog/index.page";
 
 export default function Modal({media, closeModal}) {
   const isContentVideo = Boolean(media.data.content_type === 'video');
