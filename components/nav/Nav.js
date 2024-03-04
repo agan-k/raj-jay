@@ -24,13 +24,11 @@ export default function Nav({navigationRoutes, $isNavOpen}) {
         <SeparationLine $isNavOpen={$isNavOpen} />
       </FlexBox>
       <MailingListWrapper>
-        <Box>
           <MailingListLabel
           >
             mailing list:
           </MailingListLabel>
           <MailingList />
-        </Box>
       </MailingListWrapper>
     </Container>
   );

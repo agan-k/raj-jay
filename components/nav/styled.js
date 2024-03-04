@@ -10,14 +10,14 @@ export const Container = styled.div`
   ${mediaQuery({
     position: ['fixed', 'unset'],
     top: ['0', 'unset'],
-    paddingTop: ['unset', '8px'],
+    
     background: [({theme}) => theme.colors.subtle, 'unset'],
     zIndex: [Z_INDEX.mobileNav, 'unset'],
     height: 
     [
       ({$isNavOpen}) => $isNavOpen ? '100%' : '0',
       ({$isNavOpen, theme}) => $isNavOpen ? 
-      ({theme}) => theme.space[7]-theme.space[4]+'px' : theme.space[4]+4+'px',
+      ({theme}) => theme.space[7]-theme.space[4]+'px' : theme.space[4]+'px',
       //dev to keep nav open: 
       // ({theme}) => theme.space[7]-theme.space[4]+'px', // lg screen
     ],
@@ -54,7 +54,8 @@ export const NavRoutes = styled.nav`
       ],
       marginTop: [
         ({theme}) => theme.space[4]+'px',
-        ({theme}) => theme.space[4]+12+'px'
+        ({theme}) => theme.space[5]+'px',
+        // 'unset'
       ],
       textAlign: ['center', 'unset']
     })}
@@ -109,7 +110,7 @@ export const NavItem = styled.li`
 export const SeparationLine = styled.div`
   height: 50%;
   align-self: end;
-  margin-bottom: ${({theme}) => theme.space[4]}px;
+  margin-bottom: ${({theme}) => theme.space[3]}px;
   border-right: ${({theme}) => theme.borders.dashedGray};
   ${mediaQuery({
     display: [
@@ -123,15 +124,16 @@ export const MailingListWrapper = styled.div`
   height: ${({theme}) => theme.space[6]+theme.space[4]+theme.space[3]+1}px;
   display: flex;
   ${mediaQuery({
+    flexDirection: ['column', 'row'],
     width: [
       '80%',
       'unset'
     ],
-    alignItems: ['unset', 'end'],
+    alignItems: ['unset', 'unset'],
     justifyContent: ['center', 'unset'],
     margin: [
       ({theme}) => `${theme.space[4]}px auto ${theme.space[7]}px`,
-       'unset'
+      ({theme}) => `${theme.space[5]}px 0`,
     ],
   })}
 `;
