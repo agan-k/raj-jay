@@ -38,8 +38,8 @@ export const NavRoutes = styled.nav`
     padding: 0;
     list-style: none;
     ${mediaQuery({
-      display: ['block', 'flex'],
-      flexDirection: ['unset', 'column'],
+      display: ['flex', 'flex'],
+      flexDirection: ['row', 'column'],
       gap: [
         'unset',
         ({theme}) => theme.space[2]+'px'
@@ -49,7 +49,7 @@ export const NavRoutes = styled.nav`
         ({theme}) => theme.space[6]+'px',
       ],
       paddingTop: [
-        ({theme}) => theme.space[4]+'px',
+        ({theme}) => theme.space[5]+'px',
         'unset'
       ],
       marginTop: [
@@ -68,7 +68,7 @@ export const NavRoutes = styled.nav`
 
 export const NavItem = styled.li`
   ${mediaQuery({
-    width: ['80%', 'unset'],
+    width: ['40%', 'unset'],
     border: [
       ({theme}) => `1px solid ${theme.colors.diffused}`,
       'unset',
@@ -78,7 +78,7 @@ export const NavItem = styled.li`
       'unset'
     ],
     padding: [
-      ({theme}) => `${theme.space[2]}px 0`,
+      ({theme}) => `${theme.space[3]}px 0`,
       ({theme}) => `0 ${theme.space[2]}px`,
     ],
   })}
@@ -130,7 +130,7 @@ export const MailingListWrapper = styled.div`
     alignItems: ['unset', 'end'],
     justifyContent: ['center', 'unset'],
     margin: [
-      ({theme}) => `0 auto ${theme.space[7]}px`,
+      ({theme}) => `${theme.space[4]}px auto ${theme.space[7]}px`,
        'unset'
     ],
   })}
