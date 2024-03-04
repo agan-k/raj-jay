@@ -17,7 +17,7 @@ export default function Uid({ data, content, id }) {
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.press]} $imagePath={'/images/banner5.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.press]} />
          <UidContainer>
             <Back>
                <Anchor path={`/press#${id}`}>press</Anchor>

@@ -58,7 +58,7 @@ export default function Media({content}) {
 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.photos]} $imagePath={'/images/banner2.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.photos]} />
          <Container $blur={showModal ? true : false}>
             <Box $flex={'3'}>
                <BlockTitle $margin={'0 0 16px 0'}>photos</BlockTitle>
