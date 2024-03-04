@@ -11,14 +11,16 @@ export const Container = styled.div`
     width: ['unset', '100%'],
     position: ['fixed', 'unset'],
     top: ['0', 'unset'],
+    paddingTop: ['unset', '8px'],
     background: [({theme}) => theme.colors.subtle, 'unset'],
     zIndex: [Z_INDEX.mobileNav, 'unset'],
     height: 
     [
       ({$isNavOpen}) => $isNavOpen ? '100%' : '0',
-      ({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6+'px' : theme.space[4]+4+'px',
+      ({$isNavOpen, theme}) => $isNavOpen ? 
+      ({theme}) => theme.space[7]-theme.space[4]+'px' : theme.space[4]+4+'px',
       //dev to keep nav open: 
-      // ({theme}) => theme.space[6]+theme.space[5]+'px',
+      // ({theme}) => theme.space[7]-theme.space[4]+'px', // lg screen
     ],
     flexDirection: ['column', 'row'],
     gap: [({theme}) => theme.space[1]+'px', 'unset'],
@@ -104,11 +106,15 @@ export const NavItem = styled.li`
 `;
 
 export const SeparationLine = styled.div`
-  margin-top: ${({theme}) => theme.space[5] -6}px;
-  height: ${({theme}) => theme.space[6] -6}px;
+  height: 50%;
+  align-self: end;
+  margin-bottom: ${({theme}) => theme.space[4]}px;
   border-right: ${({theme}) => theme.borders.dashedGray};
   ${mediaQuery({
-    display: ['none', 'initial']
+    display: [
+      'none', 
+      ({$isNavOpen}) => $isNavOpen ? 'block' : 'none',
+    ],
   })}
 `;
 

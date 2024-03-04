@@ -4,7 +4,6 @@ import {
 } from "../../components"
 import { 
   Container,
-  NavItem, 
   NavRoutes,
   MailingListWrapper,
   MailingListLabel,
@@ -21,7 +20,7 @@ export default function Nav({navigationRoutes, $isNavOpen}) {
         </ul>
       </NavRoutes>
       <FlexBox $alignItems={'center'}>
-        <SeparationLine />
+        <SeparationLine $isNavOpen={$isNavOpen} />
       </FlexBox>
       <MailingListWrapper>
         <FlexBox>
