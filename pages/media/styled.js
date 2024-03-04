@@ -4,7 +4,8 @@ import { mediaQuery } from "../../utils/mediaQuery";
 export const Container = styled.div`
   gap: 64px;
   ${mediaQuery({
-    display: ['unset', 'flex'],
+    display: ['flex', 'flex'],
+    flexDirection: ['column', 'row']
     // justifyContent: ['unset', 'space-between'],
   })}
   -webkit-filter: ${({$blur}) => $blur ? 'blur(5px)' : 'unset'};
@@ -15,6 +16,7 @@ export const Container = styled.div`
   background-color: ${({$blur}) => $blur ? '#ffffff' : 'uset'};
   transition: ${({theme}) => theme.transitions.fast};
 `;
+
 export const PhotoGallery = styled.div`
   display: flex;
   justify-content: start;
@@ -22,13 +24,16 @@ export const PhotoGallery = styled.div`
   align-content: start;
   flex-wrap: wrap;
   ${mediaQuery({
-    display: ['unset', 'flex'],
+    justifyContent: ['center', 'start'],
+
+    gap: ['4px', '8px'],
     paddingLeft: [
       'unset', 
       ({theme}) => theme.space[4]+'px',
     ]
   })}
 `;
+
 export const Photo = styled.div`
   height: 128px;
   width: 128px;
@@ -36,6 +41,18 @@ export const Photo = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  ${mediaQuery({
+    height: [
+      ({theme}) => theme.space[7]-
+      theme.space[4]+'px',
+      ({theme}) => theme.space[7]+'px',
+    ],
+    width: [
+      ({theme}) => theme.space[7]-
+      theme.space[4]+'px',
+      ({theme}) => theme.space[7]+'px',
+    ]
+  })}
 `;
 
 export const PhotoThumb = styled.img`
@@ -56,14 +73,22 @@ export const VideoGallery = styled.div`
 `;
 
 export const VideoContainer = styled.div`
-  ${mediaQuery({
-  })}
   p {
     margin-top: 0;
     font-size: 12px;
-  }
+    ${mediaQuery({
+      fontSize: [
+        'unset',
+        ({theme}) => theme.fontSizes[3]+'px'
+      ],
+      paddingLeft: ['8px', 'unset']
+    })}
+    }
   img {
-    width: 80%;
     cursor: pointer;
+    ${mediaQuery({
+      width: ['96%', '80%'],
+      margin: ['0 2%', 'unset']
+    })}
   }
 `;
