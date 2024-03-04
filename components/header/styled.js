@@ -47,7 +47,7 @@ export const ActivePage = styled.div`
   ${mediaQuery({
     minWidth: ['unset', ({theme}) => theme.space[6]+24+'px'],
     textAlign: ['unset', 'center'],
-    marginTop: ['2px', '0'],
+    marginTop: ['3px', '0'],
     fontSize: [
       ({theme}) => theme.fontSizes[4]+'px',
       ({theme}) => theme.fontSizes[3]+'px',

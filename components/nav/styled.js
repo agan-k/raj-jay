@@ -132,7 +132,7 @@ export const MailingListWrapper = styled.div`
     alignItems: ['unset', 'unset'],
     justifyContent: ['center', 'unset'],
     margin: [
-      ({theme}) => `${theme.space[4]}px auto ${theme.space[7]}px`,
+      ({theme}) => `${theme.space[5]}px auto ${theme.space[7]}px`,
       ({theme}) => `${theme.space[5]}px 0`,
     ],
   })}
