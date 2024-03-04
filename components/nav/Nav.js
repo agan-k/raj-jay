@@ -1,6 +1,7 @@
 import {
   MailingList,
   FlexBox,
+  Box
 } from "../../components"
 import { 
   Container,
@@ -23,13 +24,13 @@ export default function Nav({navigationRoutes, $isNavOpen}) {
         <SeparationLine $isNavOpen={$isNavOpen} />
       </FlexBox>
       <MailingListWrapper>
-        <FlexBox>
+        <Box>
           <MailingListLabel
           >
             mailing list:
           </MailingListLabel>
           <MailingList />
-        </FlexBox>
+        </Box>
       </MailingListWrapper>
     </Container>
   );

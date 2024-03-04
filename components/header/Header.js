@@ -73,7 +73,7 @@ export default function Header() {
             HandleActivePage={() => HandleActivePage()}
          />
          {isMobile && (
-            <NavToggle $isNavOpen={isNavOpen} />
+            <NavToggle $isNavOpen={isNavOpen} HandleToggleNav={HandleToggleNav} />
          )}
       </Container>
   );

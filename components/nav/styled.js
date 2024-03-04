@@ -8,7 +8,6 @@ export const Container = styled.div`
   justify-content: space-between;
   overflow: hidden;
   ${mediaQuery({
-    width: ['unset', '100%'],
     position: ['fixed', 'unset'],
     top: ['0', 'unset'],
     paddingTop: ['unset', '8px'],
@@ -34,35 +33,30 @@ export const Container = styled.div`
 
 export const NavRoutes = styled.nav`
   ul {
-    display: flex;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style: none;
     ${mediaQuery({
-      flexDirection: ['row', 'column'],
-      justifyContent: ['space-between', 'unset'],
+      display: ['block', 'flex'],
+      flexDirection: ['unset', 'column'],
       gap: [
-        ({theme}) => theme.space[3]+5+'px',
+        'unset',
         ({theme}) => theme.space[2]+'px'
       ],
       height: [
-        'unset',
+        'initial',
         ({theme}) => theme.space[6]+'px',
       ],
       paddingTop: [
-        ({theme}) => theme.space[5]+12+'px',
+        ({theme}) => theme.space[4]+'px',
         'unset'
       ],
       marginTop: [
-        'unset',
+        ({theme}) => theme.space[4]+'px',
         ({theme}) => theme.space[4]+12+'px'
       ],
-      marginRight: [
-        ({theme}) => theme.space[2]+'px',
-        'unset'
-      ],
-      textAlign: ['right', 'unset']
+      textAlign: ['center', 'unset']
     })}
   }
   a {
@@ -73,11 +67,18 @@ export const NavRoutes = styled.nav`
 `;
 
 export const NavItem = styled.li`
-  // display: ${({$active}) => $active ? 'none' : 'initial'};
   ${mediaQuery({
-    width: ['43%', 'unset'],
+    width: ['80%', 'unset'],
+    border: [
+      ({theme}) => `1px solid ${theme.colors.diffused}`,
+      'unset',
+    ],
+    margin: [
+      '4px auto',
+      'unset'
+    ],
     padding: [
-      ({theme}) => `${theme.space[2]}px 0 0 4px`,
+      ({theme}) => `${theme.space[2]}px 0`,
       ({theme}) => `0 ${theme.space[2]}px`,
     ],
   })}
@@ -88,7 +89,7 @@ export const NavItem = styled.li`
     color: ${({theme}) => theme.colors.charcoal};
     ${mediaQuery({
       fontSize: [
-        ({theme}) => theme.fontSizes[6]+'px',
+        ({theme}) => theme.fontSizes[5]+'px',
         ({theme}) => theme.fontSizes[3]+'px',
       ],
       padding: [
@@ -127,9 +128,9 @@ export const MailingListWrapper = styled.div`
       'unset'
     ],
     alignItems: ['unset', 'end'],
-    justifyContent: ['start', 'unset'],
+    justifyContent: ['center', 'unset'],
     margin: [
-      ({theme}) => `${theme.space[3]}px auto ${theme.space[7]}px`,
+      ({theme}) => `0 auto ${theme.space[7]}px`,
        'unset'
     ],
   })}
@@ -143,8 +144,9 @@ export const MailingListLabel = styled.div`
   ${mediaQuery({
     marginTop: ['unset', '1px'],
     fontSize: [
-      ({theme}) => theme.fontSizes[6]+'px',
+      ({theme}) => theme.fontSizes[5]+'px',
       ({theme}) => theme.fontSizes[3]+'px',
     ],
+    textAlign: ['center', 'initial']
   })}
 `;

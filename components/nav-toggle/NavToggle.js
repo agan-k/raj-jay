@@ -1,9 +1,9 @@
 import { NavToggleButton } from "./styled";
 
-export default function NavToggle({handleToggleNav, $isNavOpen}) {
+export default function NavToggle({HandleToggleNav, $isNavOpen}) {
   return (
     <NavToggleButton 
-      onClick={handleToggleNav}
+      onClick={HandleToggleNav}
       $isNavOpen={$isNavOpen}
     >
       &#9776;
