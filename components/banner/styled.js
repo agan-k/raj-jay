@@ -34,13 +34,12 @@ export const Quote = styled.div`
   p {
     color: ${({theme}) => theme.colors.diffused};
     font-weight: 100;
-    font-size: ${({theme}) => theme.fontSizes[4]}px;
     line-height: ${({theme}) => theme.lineHeight.secondary};
     letter-spacing: ${({theme}) => theme.letterSpacing[1]}px;
     font-family: Garamond;
     ${mediaQuery({
       fontSize: [
-        ({theme}) => theme.fontSizes[2]+'px',
+        ({theme}) => theme.fontSizes[3]+'px',
         ({theme}) => theme.fontSizes[4]+'px'
       ]
     })}

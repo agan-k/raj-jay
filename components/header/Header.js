@@ -58,7 +58,7 @@ export default function Header() {
             <Logo>
                <Link href='/'>
                   <h1>
-                     RAJIV JAYAWEERA/&nbsp;
+                     RAJIV JAYAWEERA /&nbsp;
                   </h1>
                </Link>
                <ActivePage>
