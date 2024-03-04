@@ -6,7 +6,6 @@ export const Container = styled.div`
   ${mediaQuery({
     display: ['flex', 'flex'],
     flexDirection: ['column', 'row']
-    // justifyContent: ['unset', 'space-between'],
   })}
   -webkit-filter: ${({$blur}) => $blur ? 'blur(5px)' : 'unset'};
   -moz-filter: ${({$blur}) => $blur ? 'blur(5px)' : 'unset'};
