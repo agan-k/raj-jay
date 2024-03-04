@@ -23,7 +23,7 @@ export default function Albums({content}) {
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.albums]} $imagePath={'/images/banner6.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.albums]} />
          <Container>
             <section>
                <Album currentAlbum={featuredAlbum[0].data}/>

@@ -6,14 +6,14 @@ import {Container} from './styled';
 
 export default function MicroBlog({postsData}) {
    const [showModal, setShowModal] = useState(false)
-   const [videoURL, setVideoURL] = useState(null)
+   const [media, setMedia] = useState(null)
    
    const posts = postsData.map(post =>
       <Post
          key={post.id} 
          data={post.data}
          setShowModal={setShowModal}
-         setVideoURL={setVideoURL}
+         setMedia={setMedia}
       />
    );
 
@@ -24,7 +24,7 @@ export default function MicroBlog({postsData}) {
       </Container>
       {showModal && (
         <Modal
-            video={videoURL}
+            media={media}
             closeModal={() => setShowModal(false)}
         />
       )}

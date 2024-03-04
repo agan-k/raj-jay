@@ -1,6 +1,6 @@
 import Prismic from 'prismic-javascript';
 import { client } from '../../prismic-configuration';
-import {Layout, FlexBox, Box, BlockTitle, Banner} from '../../components';
+import {Layout, Box, BlockTitle, Banner} from '../../components';
 import { BANNER_QUOTE } from '../../utils/constants';
 import LinkCard from './components/LinkCard';
 import { Container } from './components/styled';

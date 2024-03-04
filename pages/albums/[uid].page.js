@@ -19,7 +19,7 @@ export default function Uid({ data, content, id }) {
 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.albums]} $imagePath={'/images/banner6.png'} />
+         <Banner quote={quotes[BANNER_QUOTE.albums]} />
          <UidContainer>
             <Back>
                <Anchor path={`/albums#${id}`}>albums</Anchor>

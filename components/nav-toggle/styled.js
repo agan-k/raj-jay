@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Z_INDEX } from "../../utils/constants";
+import { mediaQuery } from "../../utils/mediaQuery";
 
 export const NavToggleButton = styled.button`
   position: ${({$isNavOpen}) => $isNavOpen ? 'fixed' : 'absolute'};

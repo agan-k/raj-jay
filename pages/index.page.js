@@ -8,7 +8,6 @@ import {
    Modal,
    Text,
    FlexBox,
-   Box,
    CalendarListing,
    Anchor,
    BlockTitle,
@@ -22,11 +21,10 @@ import { Container } from './styled';
 
 export default function Home({content, postsData, calendarListings}) {
    const [showModal, setShowModal] = useState(false);
-   const [videoURL, setVideoURL] = useState(null);
+   const [media, setMedia] = useState(null);
    const cards = content.results.filter(item => item.data.news_card); 
    const upcomingShows = calendarListings.filter(listing => listing.data.date > currentDate);
    const nextShow = upcomingShows[upcomingShows.length -1];
-
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
@@ -84,14 +82,14 @@ export default function Home({content, postsData, calendarListings}) {
                   <NewsCards 
                      cards={cards} 
                      setShowModal={setShowModal}
-                     setVideoURL={setVideoURL}
+                     setMedia={setMedia}
                   />
                </Block>
             </section>
          </Container>
          {showModal && (
             <Modal
-               video={videoURL}
+               media={media}
                closeModal={() => setShowModal(false)}
             />
          )}

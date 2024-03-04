@@ -5,14 +5,15 @@ export const Container = styled.div`
   position: relative;
   height: ${({theme}) => theme.space[8]}px;
   margin-bottom: ${({theme}) => theme.space[4]}px;
-  border-top-left-radius: 50px 50px;
   overflow: hidden;
-  background-color: ${({theme}) => theme.colors.charchoal};
-  background: url('${({$imagePath}) => $imagePath}');
+  background: url('/images/banner6.png');
   background-size: cover;
   background-position: right;
+  background-color: black;
   ${mediaQuery({
-    // display: ['none', 'block']
+    width: ['106%', 'unset'],
+    left: ['-4%', 'unset'],
+    borderTopLeftRadius: ['none', '50px 50px'],
   })}
 `;
 export const Quote = styled.div`
@@ -21,12 +22,18 @@ export const Quote = styled.div`
   top: ${({theme}) => theme.space[5]}px;
   left: ${({theme}) => theme.space[6]}px;
   ${mediaQuery({
-    display: ['none', 'block'],
+    width: ['65%', '40%'],
+    top: [
+      ({theme}) => theme.space[2]+'px',
+      ({theme}) => theme.space[5]+'px',
+    ],
+    left: [
+      ({theme}) => theme.space[5]+'px',
+    ]
   })}
   p {
     color: ${({theme}) => theme.colors.diffused};
     font-weight: 100;
-    font-size: ${({theme}) => theme.fontSizes[4]}px;
     line-height: ${({theme}) => theme.lineHeight.secondary};
     letter-spacing: ${({theme}) => theme.letterSpacing[1]}px;
     font-family: Garamond;

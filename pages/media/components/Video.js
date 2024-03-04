@@ -2,14 +2,14 @@ import { RichText } from "prismic-reactjs";
 import HandleMediaLinkModal from "../../../utils/handleMediaLinkModal";
 import { VideoContainer } from "../styled";
 
-export default function Video({video, setShowModal, setVideoURL}) {
+export default function Video({video, setMedia, setShowModal}) {
   return (
     <VideoContainer 
       onClick={() => HandleMediaLinkModal({
-        url: video.data.video_link[0].text,
+        media: video,
         setShowModal: setShowModal,
-        setMediaURL: setVideoURL,
-      })}
+        setMedia: setMedia,
+    })}
     >
       <img src={video.data.img.url} />
       {RichText.render(video.data.video_caption)}

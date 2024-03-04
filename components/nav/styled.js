@@ -8,17 +8,18 @@ export const Container = styled.div`
   justify-content: space-between;
   overflow: hidden;
   ${mediaQuery({
-    width: ['unset', '100%'],
     position: ['fixed', 'unset'],
     top: ['0', 'unset'],
+    
     background: [({theme}) => theme.colors.subtle, 'unset'],
     zIndex: [Z_INDEX.mobileNav, 'unset'],
     height: 
     [
       ({$isNavOpen}) => $isNavOpen ? '100%' : '0',
-      ({$isNavOpen, theme}) => $isNavOpen ? theme.space[6]+theme.space[5]+6+'px' : theme.space[4]+4+'px',
+      ({$isNavOpen, theme}) => $isNavOpen ? 
+      ({theme}) => theme.space[7]-theme.space[4]+'px' : theme.space[4]+'px',
       //dev to keep nav open: 
-      // ({theme}) => theme.space[6]+theme.space[5]+'px',
+      // ({theme}) => theme.space[7]-theme.space[4]+'px', // lg screen
     ],
     flexDirection: ['column', 'row'],
     gap: [({theme}) => theme.space[1]+'px', 'unset'],
@@ -32,35 +33,31 @@ export const Container = styled.div`
 
 export const NavRoutes = styled.nav`
   ul {
-    display: flex;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style: none;
     ${mediaQuery({
+      display: ['flex', 'flex'],
       flexDirection: ['row', 'column'],
-      justifyContent: ['space-between', 'unset'],
       gap: [
-        ({theme}) => theme.space[3]+5+'px',
+        'unset',
         ({theme}) => theme.space[2]+'px'
       ],
       height: [
-        'unset',
+        'initial',
         ({theme}) => theme.space[6]+'px',
       ],
       paddingTop: [
-        ({theme}) => theme.space[5]+12+'px',
+        ({theme}) => theme.space[5]+'px',
         'unset'
       ],
       marginTop: [
-        'unset',
-        ({theme}) => theme.space[4]+12+'px'
+        ({theme}) => theme.space[4]+'px',
+        ({theme}) => theme.space[5]+'px',
+        // 'unset'
       ],
-      marginRight: [
-        ({theme}) => theme.space[2]+'px',
-        'unset'
-      ],
-      textAlign: ['right', 'unset']
+      textAlign: ['center', 'unset']
     })}
   }
   a {
@@ -71,11 +68,18 @@ export const NavRoutes = styled.nav`
 `;
 
 export const NavItem = styled.li`
-  display: ${({$active}) => $active ? 'none' : 'initial'};
   ${mediaQuery({
-    width: ['43%', 'unset'],
+    width: ['40%', 'unset'],
+    border: [
+      ({theme}) => `1px solid ${theme.colors.diffused}`,
+      'unset',
+    ],
+    margin: [
+      '4px auto',
+      'unset'
+    ],
     padding: [
-      ({theme}) => `${theme.space[2]}px 0 0 4px`,
+      ({theme}) => `${theme.space[3]}px 0`,
       ({theme}) => `0 ${theme.space[2]}px`,
     ],
   })}
@@ -86,7 +90,7 @@ export const NavItem = styled.li`
     color: ${({theme}) => theme.colors.charcoal};
     ${mediaQuery({
       fontSize: [
-        ({theme}) => theme.fontSizes[6]+'px',
+        ({theme}) => theme.fontSizes[5]+'px',
         ({theme}) => theme.fontSizes[3]+'px',
       ],
       padding: [
@@ -104,11 +108,15 @@ export const NavItem = styled.li`
 `;
 
 export const SeparationLine = styled.div`
-  margin-top: ${({theme}) => theme.space[5] -6}px;
-  height: ${({theme}) => theme.space[6] -6}px;
+  height: 50%;
+  align-self: end;
+  margin-bottom: ${({theme}) => theme.space[3]}px;
   border-right: ${({theme}) => theme.borders.dashedGray};
   ${mediaQuery({
-    display: ['none', 'initial']
+    display: [
+      'none', 
+      ({$isNavOpen}) => $isNavOpen ? 'block' : 'none',
+    ],
   })}
 `;
 
@@ -116,15 +124,16 @@ export const MailingListWrapper = styled.div`
   height: ${({theme}) => theme.space[6]+theme.space[4]+theme.space[3]+1}px;
   display: flex;
   ${mediaQuery({
+    flexDirection: ['column', 'row'],
     width: [
       '80%',
       'unset'
     ],
-    alignItems: ['unset', 'end'],
-    justifyContent: ['start', 'unset'],
+    alignItems: ['unset', 'unset'],
+    justifyContent: ['center', 'unset'],
     margin: [
-      ({theme}) => `${theme.space[3]}px auto ${theme.space[7]}px`,
-       'unset'
+      ({theme}) => `${theme.space[5]}px auto ${theme.space[7]}px`,
+      ({theme}) => `${theme.space[5]}px 0`,
     ],
   })}
 `;
@@ -137,8 +146,9 @@ export const MailingListLabel = styled.div`
   ${mediaQuery({
     marginTop: ['unset', '1px'],
     fontSize: [
-      ({theme}) => theme.fontSizes[6]+'px',
+      ({theme}) => theme.fontSizes[5]+'px',
       ({theme}) => theme.fontSizes[3]+'px',
     ],
+    textAlign: ['center', 'initial']
   })}
 `;

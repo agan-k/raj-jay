@@ -5,6 +5,10 @@ export const Container = styled.header`
   width: 100%;
   margin: 0 auto;
   ${mediaQuery({
+    pointerEvents: [
+      'unset', 
+      ({$disable}) => $disable ? 'none' : 'initial'
+    ],
     display: ['unset', 'flex'],
     justiFyContent: ['unset', 'space-between'],
     paddingTop: [
@@ -31,7 +35,6 @@ export const Logo = styled.div`
     margin: 0;
     font-weight: ${({theme}) => theme.fontWeight.thin};
     ${mediaQuery({
-      // marginTop: ['4px', 'unset'],
       fontSize: [
         ({theme}) => theme.fontSizes[5]+'px',
         ({theme}) => theme.fontSizes[4]+'px',
@@ -42,7 +45,9 @@ export const Logo = styled.div`
 
 export const ActivePage = styled.div`
   ${mediaQuery({
-    marginTop: ['unset', '1px'],
+    minWidth: ['unset', ({theme}) => theme.space[6]+24+'px'],
+    textAlign: ['unset', 'center'],
+    marginTop: ['3px', '0'],
     fontSize: [
       ({theme}) => theme.fontSizes[4]+'px',
       ({theme}) => theme.fontSizes[3]+'px',

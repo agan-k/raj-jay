@@ -1,23 +1,23 @@
 import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../../utils/formatPrismicDate";
-import { FlexBox, Text, Box, BlockTitle } from "../../../components";
 import HandleMediaLinkModal from "../../../utils/handleMediaLinkModal";
-import {Body, BodyWrapper, Container, Date, Title, TitleImage} from "./styled";
+import {Body, Container, Date, Title, TitleImage} from "./styled";
 
-export default function Post({data, setShowModal, setVideoURL}) {
-  const hasVideoLink = Boolean(data.youtube.url);
-  const hasTitleImage = Boolean(data.title_image.url != null);
+export default function Post({data, setShowModal, setMedia}) {
+  console.log(data)
+  const hasVideoLink = Boolean(data.data.youtube.url != null);
+  const hasTitleImage = Boolean(data.data.title_image.url != null);
   return (
   <Container>
       <aside>
-        <Date>{formatPrismicDate(data.date)}</Date>
+        <Date>{formatPrismicDate(data.data.date)}</Date>
         {hasTitleImage && (
           <TitleImage 
-            src={data.title_image?.url}
+            src={data.data.title_image?.url}
             onClick={() => HandleMediaLinkModal({
-              url: data.youtube.url,
+              media: data,
               setShowModal: setShowModal,
-              setMediaURL: setVideoURL,
+              setMedia: setMedia,
               })
             }
             pointer={hasVideoLink} 
@@ -25,11 +25,11 @@ export default function Post({data, setShowModal, setVideoURL}) {
         )}
         <Title
         >
-          {data.title}
+          {data.data.title}
         </Title>
       </aside>
       <Body>
-        {RichText.render(data.body)}
+        {RichText.render(data.data.body)}
       </Body>
   </Container>
   );

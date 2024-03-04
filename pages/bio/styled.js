@@ -18,11 +18,10 @@ h2 {
     float: left;
     max-height: ${({theme}) => theme.space[8]}px;
     border: ${({theme}) => theme.borders.thinCharcoal};
-    border-radius: 12px;
     ${mediaQuery({
-      width: ['90%', 'unset'],
+      width: ['100%', 'unset'],
       margin: [
-        ' 0 5%',
+        'unset',
         ({theme}) => `0 ${theme.space[4]}px ${theme.space[4]}px 0`,
       ],
       float: ['unset', 'left'],

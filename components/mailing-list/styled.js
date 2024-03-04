@@ -10,7 +10,7 @@ export const Container = styled.div`
     text-transform: lowercase;
     ${mediaQuery({
       fontSize: [
-        ({theme}) => theme.fontSizes[6]+'px',
+        ({theme}) => theme.fontSizes[5]+'px',
         ({theme}) => theme.fontSizes[3]+'px',
       ],
     })}
@@ -33,7 +33,7 @@ export const Container = styled.div`
     font-weight: 100;
     ${mediaQuery({
       fontSize: [
-        ({theme}) => theme.fontSizes[5]+'px',
+        ({theme}) => theme.fontSizes[4]+'px',
         ({theme}) => theme.fontSizes[2]+'px',
       ],
       color: [
@@ -56,7 +56,7 @@ export const Container = styled.div`
     cursor: pointer;
     ${mediaQuery({
       padding: [
-        ({theme}) => theme.space[3]+'px',
+        ({theme}) => theme.space[2]+'px',
         ({theme}) => `0 ${theme.space[2]}px`
       ]
     })}
