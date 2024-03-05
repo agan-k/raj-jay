@@ -1,9 +1,9 @@
 import Prismic from "prismic-javascript";
+import { GetStaticProps } from "next";
 import { client } from "../../prismic-configuration";
 import {
    Layout, 
    CalendarListing,
-   Box,
    FlexBox,
    Block,
    BlockTitle,
@@ -12,7 +12,12 @@ import {
 import { BANNER_QUOTE } from "../../utils/constants";
 import { currentDate } from "../../utils/currentDate";
 
-export default function Shows({calendarListings, content}) {
+interface ShowsProps {
+   calendarListings: any
+   content: any
+}
+
+export const Shows: React.FC<ShowsProps> = ({calendarListings, content}) => {
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
@@ -51,9 +56,10 @@ export default function Shows({calendarListings, content}) {
          </Block>
       </Layout>
    );
-}
+};
+export default Shows;
 
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       {
@@ -74,4 +80,4 @@ export async function getStaticProps() {
          calendarListings: calendarListings.results
       }
    };
-}
+}) satisfies GetStaticProps;
