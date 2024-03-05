@@ -36,11 +36,3 @@ export const UidContainer = styled.div`
     })}
   }
   `;
-  
-  export const Back = styled.div`
-    margin: ${({$margin}) => $margin};
-    ${mediaQuery({
-      display: ['flex', 'none'],
-      justifyContent: ['end', 'unset']
-    })}
-  `;

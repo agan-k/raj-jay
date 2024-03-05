@@ -1,12 +1,13 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
+import React from "react"
 
 import Prismic from "prismic-javascript"
-import { client } from "../../prismic-configuration"
+import { client } from "../../prismic-configuration";
+import { GetStaticProps, GetStaticPaths } from 'next';
 
-import {Layout, Banner, Anchor, FlexBox, Box} from '../../components';
-import { BANNER_QUOTE } from '../../utils/constants';
-import { Album, AlbumList } from './components';
-import {UidContainer} from './styled';
+import {Layout, Banner, Anchor, FlexBox, Box} from "../../components";
+import { BANNER_QUOTE } from "../../utils/constants";
+import {ArticleList, Article} from "./components";
+import { UidContainer } from "./styled";
 
 interface UidProps {
    data: any
@@ -17,43 +18,38 @@ interface UidProps {
 export const Uid: React.FC<UidProps> = ({ 
    data, 
    content, 
-   id 
-}) => {
-   const albums = content.results.filter(result =>
-      result.data.content_type == 'discography'
-   );
+   id }) => {
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
-
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.albums]} />
+         <Banner quote={quotes[BANNER_QUOTE.press]} />
          <UidContainer>
             <FlexBox $justifyContent='end' $gap='16px'>
-               <Anchor path={`/albums#${id}`}>albums</Anchor>
+               <Anchor path={`/press#${id}`}>press</Anchor>
                <Anchor path={`/#${id}`}>news</Anchor>
             </FlexBox>
             <section>
-               <Album currentAlbum={data}/>
+               <Article currentArticle={data} />
             </section>
-            <aside>
-               <AlbumList albums={albums}/>
-            </aside>
             <Box $margin='32px 0 62px'>
                <FlexBox $justifyContent='end' $gap='16px'>
-                  <Anchor path={`/albums#${id}`}>albums</Anchor>
+                  <Anchor path={`/press#${id}`}>press</Anchor>
                   <Anchor path={`/#${id}`}>news</Anchor>
                </FlexBox>
             </Box>
+            <aside>
+               <ArticleList content={content} />
+            </aside>
          </UidContainer>
       </Layout>
-   )
-};
-export default Uid;
+   );
+ };
+ export default Uid;
 
-export const getStaticProps = (async ({ params }) => {
+ export const getStaticProps = (async ({ params }) => {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       {

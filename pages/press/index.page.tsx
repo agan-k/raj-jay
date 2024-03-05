@@ -1,12 +1,17 @@
 import Prismic from "prismic-javascript";
 import { client } from "../../prismic-configuration"
+import { GetStaticProps } from "next";
 
 import {Layout, Banner} from '../../components';
 import { BANNER_QUOTE } from "../../utils/constants";
 import {ArticleList, Article} from "./components";
 import {Container} from './styled';
 
-export default function Press({content}) {
+interface PressProps {
+   content: any
+}
+
+export const Press: React.FC<PressProps> = ({content}) => {
    const pressReviews = content.results.filter(result => 
       result.data.content_type == 'press-reviews'
    );
@@ -28,8 +33,10 @@ export default function Press({content}) {
          </Container>
       </Layout>
    )
-}
-export async function getStaticProps() {
+};
+export default Press;
+
+export const getStaticProps = (async () => {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       { pageSize: 100 }
@@ -39,5 +46,5 @@ export async function getStaticProps() {
          content
       },
    };
-}
+}) satisfies GetStaticProps
 
