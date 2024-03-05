@@ -1,22 +1,17 @@
 import {ReactNode} from 'react';
-import Head from "next/head";
-import { Container, PageWrapper, Banner } from "./styled";
-import  {Footer, Header} from "../../components";
+import { Container, PageWrapper } from "./styled";
 
 interface LayoutProps {
   children?: ReactNode
 }
 
-export const Layout: React.FC<LayoutProps> = ({
-  children, 
-  title = 'Rajiv Jayaweera',
-}) => {
+export const Layout: React.FC<LayoutProps> = ({children}) => {
   return(
     <Container>
       <PageWrapper>
         {children}
       </PageWrapper>
-      <Footer/>
     </Container>
   );
-}
+};
+export default Layout;

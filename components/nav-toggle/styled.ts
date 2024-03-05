@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Z_INDEX } from "../../utils/constants";
-import { mediaQuery } from "../../utils/mediaQuery";
+import { NavToggleProps } from "./NavToggle";
 
-export const NavToggleButton = styled.button`
+export const NavToggleButton = styled.button<NavToggleProps>`
   position: ${({$isNavOpen}) => $isNavOpen ? 'fixed' : 'absolute'};
   top: -8px;
   padding: 0;

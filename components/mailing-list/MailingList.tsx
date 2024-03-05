@@ -1,7 +1,7 @@
 import {useForm, ValidationError} from '@formspree/react';
 import {Container, SuccessMessage} from "./styled";
 
-export default function MailingList() {
+export const MailingList = () => {
   const [state, handleSubmit] = useForm("mzbngzay");
 
   return(
@@ -44,4 +44,5 @@ export default function MailingList() {
       }
     </Container>
   );
-}
+};
+export default MailingList;

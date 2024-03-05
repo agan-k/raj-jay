@@ -69,7 +69,7 @@ export const Header: React.FC = () => {
             $isNavOpen={isNavOpen} 
          />
          {isMobile && (
-            <NavToggle $isNavOpen={isNavOpen} HandleToggleNav={HandleToggleNav} />
+            <NavToggle $isNavOpen={isNavOpen} onClick={HandleToggleNav} />
          )}
       </Container>
   );

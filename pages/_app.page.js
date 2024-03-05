@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import { Header } from '../components';
+import { Header, Footer } from '../components';
 import {GlobalStyles, theme} from '../theme';
 
 function MyApp({ Component, pageProps }) {
@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </ThemeProvider>
   );
 }
