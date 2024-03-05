@@ -10,5 +10,5 @@ export const Container = styled.div`
   })}
 `;
 export const PageWrapper = styled.main`
-  min-height: 90vh;
+  min-height: 100vh;
 `;

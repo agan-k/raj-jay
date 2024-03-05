@@ -2,18 +2,6 @@ import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div`
-h2 {
-  ${mediaQuery({
-    margin: ['0', 'unset']
-  })}
-  
-}
-  h2, p {
-    margin-bottom: ${({theme}) => theme.space[3]}px;
-  }
-  p {
-    margin-top: 0;
-  }
   img {
     float: left;
     max-height: ${({theme}) => theme.space[8]}px;

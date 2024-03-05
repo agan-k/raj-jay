@@ -14,7 +14,7 @@ export default function Bio({bio, content}) {
 
    return (
       <Layout>
-         <Banner quote={quotes[BANNER_QUOTE.bio]} $imagePath={'images/banner3.png'}/>
+         <Banner quote={quotes[BANNER_QUOTE.bio]} />
          <Container>
             {RichText.render(bio.data.bio_body)}
          </Container>
