@@ -12,6 +12,7 @@ export interface TextProps {
   $textAlign?: string
   $verticalAlign?: string
   $textTransform?: string
+  $textDecoration?: string
   $color?: string
   $background?: string
   $padding?: string
@@ -30,6 +31,7 @@ export const Text: React.FC<TextProps> = ({
   $textAlign,
   $verticalAlign,
   $textTransform,
+  $textDecoration,
   $color,
   $background,
   $padding,
@@ -48,6 +50,7 @@ export const Text: React.FC<TextProps> = ({
       $textAlign={$textAlign}
       $verticalAlign={$verticalAlign}
       $textTransform={$textTransform}
+      $textDecoration={$textDecoration}
       $color={$color}
       $background={$background}
       $padding={$padding}
