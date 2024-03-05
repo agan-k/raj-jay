@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Container } from "./styled";
 
 export interface BoxProps {
-  children: ReactNode
+  children?: ReactNode
   $position?: string
   $flex?: string
   $width?: string

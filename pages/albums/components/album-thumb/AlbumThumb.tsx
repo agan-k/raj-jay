@@ -4,8 +4,16 @@ import {Container, Image, ImageWrapper} from './styled';
 import { useRouter } from 'next/router';
 import { FEATURED_ALBUM } from '../../../../utils/constants';
 
+interface AlbumThumbProps {
+  album: any
+  id: string
+}
 
-export default function AlbumThumb({album, id}) {
+
+export const AlbumThumb: React.FC<AlbumThumbProps> = ({
+  album, 
+  id
+}) => {
   const [isActive, setIsActive] = useState(false);
   const router = useRouter();
   const isAlbumsHome = 

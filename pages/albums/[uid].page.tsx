@@ -1,12 +1,13 @@
-import Link from 'next/link'
+import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
 
 import Prismic from "prismic-javascript"
 import { client } from "../../prismic-configuration"
 
-import {Layout, Banner, Anchor} from '../../components';
+import {Layout, Banner, Anchor, FlexBox, Box} from '../../components';
 import { BANNER_QUOTE } from '../../utils/constants';
 import { Album, AlbumList } from './components';
 import {UidContainer, Back} from './styled';
+import { QueryOptions } from 'prismic-javascript/types/ResolvedApi';
 
 export default function Uid({ data, content, id }) {
    const albums = content.results.filter(result =>
@@ -21,30 +22,34 @@ export default function Uid({ data, content, id }) {
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.albums]} />
          <UidContainer>
-            <Back>
+            <FlexBox $justifyContent='end' $gap='16px'>
                <Anchor path={`/albums#${id}`}>albums</Anchor>
-            </Back>
-            <Back $margin={'8px 0 0'}>
+            
                <Anchor path={`/#${id}`}>news</Anchor>
-            </Back>
+            </FlexBox>
             <section>
                <Album currentAlbum={data}/>
             </section>
             <aside>
                <AlbumList albums={albums}/>
             </aside>
-            <Back $margin={'32px 0 0'}>
-               <Anchor path={`/albums#${id}`}>albums</Anchor>
-            </Back>
-            <Back $margin={'8px 0 64px'}>
-               <Anchor path={`/#${id}`}>news</Anchor>
-            </Back>
+            <Box $margin='32px 0 62px'>
+               <FlexBox $justifyContent='end' $gap='16px'>
+                  <Anchor path={`/albums#${id}`}>albums</Anchor>
+                  <Anchor path={`/#${id}`}>news</Anchor>
+               </FlexBox>
+            </Box>
          </UidContainer>
       </Layout>
    )
 }
 
-export async function getStaticProps({ params }) {
+type PageParams = {
+   uid: string
+   options?: any
+}
+
+export const getStaticProps = (async ({ params }: GetStaticPropsContext<PageParams>) => {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       {
@@ -52,17 +57,18 @@ export async function getStaticProps({ params }) {
          pageSize : 100
       }
    )
-   const { uid } = params;
-   const { data } = await client.getByUID("content", uid);
-   const { id } = await client.getByUID("content", uid);
+    // @ts-expect-error
+   const single = await client.getByUID("content", params.uid);
    return {
       props: {
-         data, content, id
+         content,
+         data: single.data,
+         id: single.id
       }
    }
-}
+}) satisfies GetStaticProps;
 
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
    const { results } = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       { pageSize: 100 }
@@ -76,4 +82,4 @@ export async function getStaticPaths() {
       paths,
       fallback: false
    }
-}
+}) satisfies GetStaticPaths;

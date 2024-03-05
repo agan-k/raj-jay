@@ -6,11 +6,14 @@ import {
   CoverAndPlayerWrapper,
   Info,
 } from './styled';
-import { Box, FlexBox, Text } from '../../../../components';
+import {FlexBox} from '../../../../components';
+import { BANDCAMP_PLAYER } from '../../../../utils/constants';
 
-const PLAYER_WIDTH = 300;
+interface AlbumProps {
+  currentAlbum: any
+}
 
-export default function Album({currentAlbum}) {
+export const Album: React.FC<AlbumProps> = ({currentAlbum}) => {
   return(
     <Container>
       <CoverAndPlayerWrapper>
@@ -22,7 +25,11 @@ export default function Album({currentAlbum}) {
         <BandCampPlayer>
           { RichText.asText(currentAlbum.bandcamp_id) ?
             <iframe 
-              style={{border: 0, height: '300px', width: `100%`}} 
+              style={{
+                border: 0, 
+                height: BANDCAMP_PLAYER.height, 
+                width: BANDCAMP_PLAYER.width
+              }} 
               src={`https://bandcamp.com/EmbeddedPlayer/album=${RichText.asText(currentAlbum.bandcamp_id)}/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/`} 
               seamless 
             /> : ''

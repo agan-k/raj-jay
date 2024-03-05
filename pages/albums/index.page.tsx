@@ -1,6 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
-
+import { GetStaticProps } from 'next';
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 
@@ -9,8 +8,11 @@ import {Container} from './styled';
 import { AlbumList, Album } from './components';
 import { FEATURED_ALBUM, BANNER_QUOTE } from '../../utils/constants';
 
+interface AlbumProps {
+   content: any
+}
 
-export default function Albums({content}) {
+export const Albums: React.FC<AlbumProps> =({content}) => {
    const albums = content.results.filter(result =>
       result.data.content_type == 'discography'
    );
@@ -34,9 +36,10 @@ export default function Albums({content}) {
          </Container>
       </Layout>
    )
-}
+};
+export default Albums;
 
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       {
@@ -49,4 +52,4 @@ export async function getStaticProps() {
          content
       }
    }
-}
+}) satisfies GetStaticProps

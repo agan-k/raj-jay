@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { mediaQuery } from "../../../../utils/mediaQuery";
-
-export const Container = styled.div`
+interface AlbumThumbState {
+  $active: boolean
+}
+export const Container = styled.div<AlbumThumbState>`
   opacity: ${({$active}) => $active ? '1' : '.4'};
   cursor: pointer;
   pointer-events: ${({$active}) => $active ? 'none' : 'initial'};
@@ -38,7 +40,7 @@ export const Container = styled.div`
   })}
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div<AlbumThumbState>`
   height: 100%;
   width: 100%;
   ${mediaQuery({
@@ -53,7 +55,7 @@ export const ImageWrapper = styled.div`
   })}
 `;
 
-export const Image = styled.img`
+export const Image = styled.img<AlbumThumbState>`
   border: ${({theme}) => theme.borders.thinCharcoal};
   height: 100%;
   margin: 0 auto;

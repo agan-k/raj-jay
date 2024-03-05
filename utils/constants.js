@@ -58,4 +58,9 @@ export const FEATURED_ALBUM = 'Pistils'; // Pistils (second)
 
 export const MOBILE_BREAKPOINT = parseInt(theme.breakpoints[0]);
 
+export const BANDCAMP_PLAYER = {
+  height: '300px',
+  width: '100%'
+};
+
 
