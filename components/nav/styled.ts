@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery";
 import { Z_INDEX } from "../../utils/constants";
+import { NavProps } from "./Nav";
 
-export const Container = styled.div`
+export const Container = styled.div<NavProps>`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -55,7 +56,6 @@ export const NavRoutes = styled.nav`
       marginTop: [
         ({theme}) => theme.space[4]+'px',
         ({theme}) => theme.space[5]+'px',
-        // 'unset'
       ],
       textAlign: ['center', 'unset']
     })}
@@ -107,7 +107,7 @@ export const NavItem = styled.li`
   }
 `;
 
-export const SeparationLine = styled.div`
+export const SeparationLine = styled.div<NavProps>`
   height: 50%;
   align-self: end;
   margin-bottom: ${({theme}) => theme.space[3]}px;

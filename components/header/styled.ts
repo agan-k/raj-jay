@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import {mediaQuery} from "../../utils/mediaQuery";
 
-export const Container = styled.header`
+interface HeaderProps {
+  $disabled?: boolean
+}
+
+export const Container = styled.header<HeaderProps>`
   width: 100%;
   margin: 0 auto;
   ${mediaQuery({
     pointerEvents: [
       'unset', 
-      ({$disable}) => $disable ? 'none' : 'initial'
+      ({$disabled}) => $disabled ? 'none' : 'initial'
     ],
     display: ['unset', 'flex'],
     justiFyContent: ['unset', 'space-between'],

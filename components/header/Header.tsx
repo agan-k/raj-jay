@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {Nav, NavToggle, FlexBox} from "../../components";
+import {Nav, NavToggle, FlexBox} from "..";
 import { useMediaQuery } from "../../utils/hooks";
 import { MOBILE_BREAKPOINT, navLinks } from "../../utils/constants";
 import {
@@ -11,10 +11,10 @@ import {
 } from "./styled";
 import { NavItem } from "../nav/styled";
 
-export default function Header() {
+export const Header: React.FC = () => {
    const [isNavOpen, setIsNavOpen] = useState(false);
    const [active, setActive] = useState('');
-   const [disable, setDisable] = useState(false);
+   const [disabled, setDisable] = useState(false);
    const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
    const router = useRouter();
    const pathname = router.pathname;
@@ -23,7 +23,6 @@ export default function Header() {
    const navigationRoutes = navLinks.map(item => 
       <NavItem 
         key={item.name} 
-        $active={router.pathname === `${item.url}` ? true : false}
         onClick={HandleToggleNav}
         onMouseOver={() => HandleActivePage(item.name)}
         >
@@ -39,7 +38,6 @@ export default function Header() {
    }, [pathname, isNavOpen]);
 
    function HandleActivePage(active) {
-      if (active.length > 8) return setActive(active);
       if (active === '/' || active === '') return setActive('home');
       setActive(active);
    }
@@ -52,7 +50,7 @@ export default function Header() {
       <Container 
          onMouseOver={!isMobile ? () => setIsNavOpen(true) : undefined} 
          onMouseOut={!isMobile ? () => setIsNavOpen(false) : undefined}
-         $disable={disable}
+         $disabled={disabled}
       >
          <FlexBox $flexWrap={'nowrap'}>
             <Logo>
@@ -69,12 +67,11 @@ export default function Header() {
          <Nav 
             navigationRoutes={navigationRoutes}
             $isNavOpen={isNavOpen} 
-            HandleToggleNav={() => HandleToggleOpen()}
-            HandleActivePage={() => HandleActivePage()}
          />
          {isMobile && (
             <NavToggle $isNavOpen={isNavOpen} HandleToggleNav={HandleToggleNav} />
          )}
       </Container>
   );
-}
+};
+export default Header

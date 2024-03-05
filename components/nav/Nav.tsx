@@ -1,8 +1,4 @@
-import {
-  MailingList,
-  FlexBox,
-  Box
-} from "../../components"
+import {MailingList,FlexBox} from "../../components";
 import { 
   Container,
   NavRoutes,
@@ -11,7 +7,12 @@ import {
   SeparationLine,
 } from "./styled";
 
-export default function Nav({navigationRoutes, $isNavOpen}) {
+export interface NavProps {
+  navigationRoutes?: any
+  $isNavOpen: boolean
+}
+
+export const Nav: React.FC<NavProps> = ({navigationRoutes, $isNavOpen}) => {
 
   return(
     <Container $isNavOpen={$isNavOpen}>
