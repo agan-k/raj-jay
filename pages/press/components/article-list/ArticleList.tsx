@@ -1,9 +1,12 @@
-import { ArticleLink, Quote } from "../../components/";
+import { ArticleLink, Quote } from "..";
 import { BlockTitle, Text } from "../../../../components";
 import { Container } from "./styled";
 
+interface ArticleListProps {
+   content: any
+}
 
-export default function ArticleList({content}) {
+export const ArticleList: React.FC<ArticleListProps> = ({content}) => {
 
   // ---> Reviews
   const press_reviews = content.results.filter(result => 

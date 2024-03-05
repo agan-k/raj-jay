@@ -1,7 +1,11 @@
 import { RichText } from "prismic-reactjs";
 import {Container, PressLogo, ArticleBody} from "./styled";
 
-export default function Article({currentArticle}) {
+interface ArticleProps {
+  currentArticle: any
+}
+
+export const Article: React.FC<ArticleProps> = ({currentArticle}) => {
 
   return(
     <Container>

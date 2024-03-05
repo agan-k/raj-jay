@@ -1,7 +1,11 @@
 import { RichText } from "prismic-reactjs";
 import {Container} from "./styled";
+
+interface QuoteProps {
+  quote: any
+}
  
-export default function Quote({quote}) {
+export const Quote: React.FC<QuoteProps> = ({quote}) => {
   return(
     <Container>
       { RichText.render(quote.data.press_quote) }

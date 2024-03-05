@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import { mediaQuery } from "../../../../utils/mediaQuery";
 
-export const Container = styled.li`
+interface ArticleLinkStyleProps {
+  $marginLeft: string
+  $pointerEvents: string
+}
+
+export const Container = styled.li<ArticleLinkStyleProps>`
   display: flex;
   list-style: none;
   font-size: ${({theme}) => theme.fontSizes[3]}px;

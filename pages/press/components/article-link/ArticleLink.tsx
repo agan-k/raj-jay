@@ -2,9 +2,22 @@ import Link from "next/link";
 import { RichText } from "prismic-reactjs";
 import {Container, LeftArrow} from "./styled";
 import { useRouter } from "next/router";
-import {FlexBox, Box} from "../../../../components";
+import {Box} from "../../../../components";
 
-export default function ArticleLink({link, articleType, uid, index}) {
+interface ArticleLinkProps {
+  link?: any
+  articleType?: string
+  uid?: string
+  index?: number
+
+}
+
+export const ArticleLink: React.FC<ArticleLinkProps> = ({
+  link, 
+  articleType, 
+  uid, 
+  index
+}) => {
   const router = useRouter();
   const currentUID = router.asPath;
   const isCurrentArticle =  

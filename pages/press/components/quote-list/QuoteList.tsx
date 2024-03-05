@@ -1,7 +1,11 @@
-import {Quote, Box} from "../../components";
+import {Box} from "../../../../components";
+import {Quote} from "../../components";
 
+interface QuoteListProps {
+  content: any
+}
 
-export default function QuoteList({content}) {
+export const QuoteList: React.FC<QuoteListProps> = ({content}) => {
  const quotes_source = content.results.filter(result =>
     result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
  );
