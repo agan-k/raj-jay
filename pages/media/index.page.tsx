@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
-
+import React, { useState } from 'react';
+import { GetStaticProps } from 'next';
 import Prismic from 'prismic-javascript'
 import { client } from '../../prismic-configuration'
 import {Layout, Modal, Banner, BlockTitle, Box} from '../../components';
-import isVerticalImage from '../../utils/isVerticalImage';
 import HandleMediaLinkModal from '../../utils/handleMediaLinkModal';
 import { BANNER_QUOTE } from '../../utils/constants';
 import Video from './components/Video'
@@ -15,7 +14,11 @@ import {
    PhotoThumb,
 } from './styled';
 
-export default function Media({content}) {
+interface MediaProps {
+   content: any
+}
+
+export const Media: React.FC<MediaProps> = ({content}) => {
    const [showModal, setShowModal] = useState(false);
    const [media, setMedia] = useState(null);
    const quotesData = content.results.filter(result =>
@@ -36,10 +39,6 @@ export default function Media({content}) {
          })}>
          <PhotoThumb
             src={photo.data.img.url}
-            $vertical={isVerticalImage({
-               height: photo.data.img.dimensions.height,
-               width: photo.data.img.dimensions.width,
-           })}
          />
       </Photo>
    );
@@ -80,11 +79,11 @@ export default function Media({content}) {
             />
          )}
       </Layout>
-   )
-      
-}
+   )    
+};
+export default Media;
 
-export async function getStaticProps() {
+export const getStaticProps = (async() => {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       { pageSize : 100 }
@@ -94,4 +93,4 @@ export async function getStaticProps() {
          content
       }
    };
-}
+}) satisfies GetStaticProps;

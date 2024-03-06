@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { mediaQuery } from "../../utils/mediaQuery";
 
-export const Container = styled.div`
+export const Container = styled.div<{$blur: boolean}>`
   gap: 64px;
   ${mediaQuery({
     display: ['flex', 'flex'],
