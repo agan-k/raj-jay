@@ -1,0 +1,1 @@
+export {AlbumThumb} from './AlbumThumb';

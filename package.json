@@ -18,5 +18,11 @@
     "react-player": "^2.9.0",
     "react-transition-group": "^4.4.1",
     "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.24",
+    "@types/react": "18.2.62",
+    "prismic-ts-codegen": "^0.1.19",
+    "typescript": "5.3.3"
   }
 }
