@@ -1,12 +1,21 @@
 import { useState } from "react";
 import Prismic from "prismic-javascript";
+import { GetStaticProps } from "next";
 import { client } from "../../prismic-configuration";
 import { Layout, Banner, Modal } from "../../components";
 import { BANNER_QUOTE } from "../../utils/constants";
 import { Container } from "./styled";
 import { Post } from "./components";
 
-export default function BlogHome({postsData, content}) {
+interface BlogHomeProps {
+  postsData: any
+  content: any
+}
+
+export const BlogHome: React.FC<BlogHomeProps> = ({
+  postsData, 
+  content
+}) => {
   const [showModal, setShowModal] = useState(false);
   const [media, setMedia] = useState(null);
   const quotesData = content.results.filter(result =>
@@ -35,16 +44,17 @@ export default function BlogHome({postsData, content}) {
       )}
     </Layout>
   )
-}
+};
+export default BlogHome;
 
-export async function getStaticProps() {
+export const getStaticProps= (async () => {
   const content = await client.query(
     Prismic.Predicates.at("document.type", "content"),
     {
        orderings: '[my.content.date desc]',
        pageSize : 100
     }
- );
+  );
   const postsData = await client.query(
      Prismic.Predicates.at("document.type", "micro_blog"),
      {
@@ -58,4 +68,4 @@ export async function getStaticProps() {
       postsData: postsData.results
      },
   }
-}
+}) satisfies GetStaticProps;

@@ -2,9 +2,19 @@ import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../../utils/formatPrismicDate";
 import HandleMediaLinkModal from "../../../utils/handleMediaLinkModal";
 import {Body, Container, Date, Title, TitleImage} from "./styled";
+import { Dispatch, SetStateAction } from "react";
 
-export default function Post({data, setShowModal, setMedia}) {
-  console.log(data)
+interface PostProps {
+  data: any
+  setShowModal: Dispatch<SetStateAction<boolean>>
+  setMedia: Dispatch<SetStateAction<any>>
+}
+
+export const Post: React.FC<PostProps> = ({
+  data, 
+  setShowModal, 
+  setMedia
+}) => {
   const hasVideoLink = Boolean(data.data.youtube.url != null);
   const hasTitleImage = Boolean(data.data.title_image.url != null);
   return (
@@ -20,7 +30,7 @@ export default function Post({data, setShowModal, setMedia}) {
               setMedia: setMedia,
               })
             }
-            pointer={hasVideoLink} 
+            $pointer={hasVideoLink} 
           /> 
         )}
         <Title
@@ -33,4 +43,4 @@ export default function Post({data, setShowModal, setMedia}) {
       </Body>
   </Container>
   );
-}
+};

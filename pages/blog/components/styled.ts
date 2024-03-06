@@ -13,13 +13,13 @@ export const Container = styled.div`
     })}
   }
   `;
-  
-  export const TitleImage = styled.img`
+  type $pointer: boolean;
+  export const TitleImage = styled.img<$pointer>`
   ${mediaQuery({
     width: ['100%', '60%'],
   })}
   display: block;
-  cursor: ${({pointer}) => pointer ? 'pointer' : ''};
+  cursor: ${({$pointer}) => pointer ? 'pointer' : ''};
 `;
 
 export const Date = styled.div`
