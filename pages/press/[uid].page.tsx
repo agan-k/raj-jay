@@ -7,7 +7,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import {Layout, Banner, Anchor, FlexBox, Box} from "../../components";
 import { BANNER_QUOTE } from "../../utils/constants";
 import {ArticleList, Article} from "./components";
-import { UidContainer } from "./styled";
+import { UidContainer, DisplayOption } from "./styled";
 
 interface UidProps {
    data: any
@@ -27,19 +27,23 @@ export const Uid: React.FC<UidProps> = ({
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.press]} />
          <UidContainer>
-            <FlexBox $justifyContent='end' $gap='16px'>
-               <Anchor path={`/press#${id}`}>press</Anchor>
-               <Anchor path={`/#${id}`}>news</Anchor>
-            </FlexBox>
-            <section>
-               <Article currentArticle={data} />
-            </section>
-            <Box $margin='32px 0 62px'>
+            <DisplayOption>
                <FlexBox $justifyContent='end' $gap='16px'>
                   <Anchor path={`/press#${id}`}>press</Anchor>
                   <Anchor path={`/#${id}`}>news</Anchor>
                </FlexBox>
-            </Box>
+            </DisplayOption>
+            <section>
+               <Article currentArticle={data} />
+            </section>
+            <DisplayOption>
+               <Box $margin='32px 0 62px'>
+                  <FlexBox $justifyContent='end' $gap='16px'>
+                     <Anchor path={`/press#${id}`}>press</Anchor>
+                     <Anchor path={`/#${id}`}>news</Anchor>
+                  </FlexBox>
+               </Box>
+            </DisplayOption>
             <aside>
                <ArticleList content={content} />
             </aside>

@@ -6,7 +6,8 @@ import { client } from "../../prismic-configuration"
 import {Layout, Banner, Anchor, FlexBox, Box} from '../../components';
 import { BANNER_QUOTE } from '../../utils/constants';
 import { Album, AlbumList } from './components';
-import {UidContainer} from './styled';
+import { UidContainer, DisplayOption } from './styled';
+import DevServer from 'next/dist/server/dev/next-dev-server';
 
 interface UidProps {
    data: any
@@ -31,25 +32,29 @@ export const Uid: React.FC<UidProps> = ({
       <Layout>
          <Banner quote={quotes[BANNER_QUOTE.albums]} />
          <UidContainer>
-            <FlexBox $justifyContent='end' $gap='16px'>
-               <Anchor path={`/albums#${id}`}>albums</Anchor>
-               <Anchor path={`/#${id}`}>news</Anchor>
-            </FlexBox>
+            <DisplayOption>
+               <FlexBox $justifyContent='end' $gap='16px'>
+                  <Anchor path={`/albums#${id}`}>albums</Anchor>
+                  <Anchor path={`/#${id}`}>news</Anchor>
+               </FlexBox>
+            </DisplayOption>
             <section>
                <Album currentAlbum={data}/>
             </section>
             <aside>
                <AlbumList albums={albums}/>
             </aside>
-            <Box $margin='32px 0 62px'>
-               <FlexBox $justifyContent='end' $gap='16px'>
-                  <Anchor path={`/albums#${id}`}>albums</Anchor>
-                  <Anchor path={`/#${id}`}>news</Anchor>
-               </FlexBox>
-            </Box>
+            <DisplayOption>
+               <Box $margin='32px 0 62px'>
+                  <FlexBox $justifyContent='end' $gap='16px'>
+                     <Anchor path={`/albums#${id}`}>albums</Anchor>
+                     <Anchor path={`/#${id}`}>news</Anchor>
+                  </FlexBox>
+               </Box>
+            </DisplayOption>
          </UidContainer>
       </Layout>
-   )
+   );
 };
 export default Uid;
 

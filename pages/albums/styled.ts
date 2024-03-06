@@ -32,3 +32,9 @@ export const UidContainer = styled.div`
     })}
   }
 `;
+
+export const DisplayOption = styled.div`
+  ${mediaQuery({
+    display: ['block', 'none'],
+  })}
+`;
