@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import { client } from '../../prismic-configuration'
 import Prismic from "prismic-javascript";
 import {Box, FlexBox, Layout, Text, Banner, BlockTitle} from '../../components';
@@ -5,8 +6,12 @@ import { BANNER_QUOTE } from '../../utils/constants';
 import {ContactForm, Publicist} from './components';
 import { PublicityWrapper, MessageWrapper } from './styled';
 
+interface ContactProps {
+   content: any
+   publicity: any
+}
 
-export default function Contact({contact, content, publicity}) {
+export const Contact: React.FC<ContactProps> = ({content, publicity}) => {
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
@@ -43,9 +48,10 @@ export default function Contact({contact, content, publicity}) {
          </FlexBox>
       </Layout>
    )
-}
+};
+export default Contact;
 
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       { pageSize: 100 }
@@ -54,6 +60,7 @@ export async function getStaticProps() {
       Prismic.Predicates.at("document.type", "publicist"),
       { pageSize: 10 }
    );
+   // @ts-expect-error
    const contact = await client.getSingle("contact")
    return {
       props: {
@@ -62,4 +69,4 @@ export async function getStaticProps() {
          contact: contact.data.contact_body
       }
    }
-}
+}) satisfies GetStaticProps;

@@ -2,7 +2,7 @@ import {useForm, ValidationError} from '@formspree/react';
 import { Container, ErrorMessage, MessageSubmitted } from "./styled";
 import { FlexBox } from "../../../../components";
 
-export default function ContactForm() {
+export const ContactForm: React.FC = () => {
   const [state, handleSubmit] = useForm("moqgwvky");
     
   return (
@@ -12,7 +12,7 @@ export default function ContactForm() {
         :
         <form onSubmit={handleSubmit}>
           <input type="name" name="name" id="name" placeholder="your name"/>
-          <FlexBox $gap={16}>
+          <FlexBox $gap="16">
             <input type="email" name="email" id="email" placeholder="your@email"/>
             <ErrorMessage>
               <ValidationError 
@@ -29,5 +29,5 @@ export default function ContactForm() {
         </form>
       }
     </Container>
-  )
-}
+  );
+};
