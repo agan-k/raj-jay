@@ -20,10 +20,6 @@ export const Date = styled.div`
   text-transform: uppercase;
   margin-bottom: ${({theme}) => theme.space[4]}px;
   ${mediaQuery({
-    fontSize: [
-      ({theme}) => theme.fontSizes[6]+'px',
-      'unset'
-    ]
   })}
 `;
 

@@ -74,9 +74,5 @@ export const Date = styled.div`
   font-weight: ${({theme}) => theme.fontWeight.thin};
   margin-bottom: ${({theme}) => theme.space[4]}px;
   ${mediaQuery({
-    fontSize: [
-      ({theme}) => theme.fontSizes[6]+'px',
-      'unset'
-    ]
   })}
 `;
