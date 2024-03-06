@@ -32,16 +32,17 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Image = styled.img<ImageProps>`
+  max-width: 100%;
   margin-top: ${({$vertical}) => $vertical ? '2%' : '5%'};
   ${mediaQuery({
 
     marginTop: [
-      ({vertical}) => vertical ? '10%' : '30%',
-      ({vertical}) => vertical ? '2%' : '5%'
+      ({$vertical}) => $vertical ? '10%' : '30%',
+      ({$vertical}) => $vertical ? '2%' : '5%'
     ],
     height: [
-      ({vertical}) => vertical ? '80%' : '35%',
-      ({vertical}) => vertical ? '80%' : '70%'
+      ({$vertical}) => $vertical ? '80%' : '40%',
+      ({$vertical}) => $vertical ? '80%' : '70%'
     ]
   })}
 `;
