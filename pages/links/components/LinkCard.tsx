@@ -3,7 +3,11 @@ import { RichText } from 'prismic-reactjs';
 import {LinkCardContainer} from './styled';
 import { Text, FlexBox, LinkArrow} from '../../../components';
 
-export default function LinkCard({link}) {
+interface LinkCardProps {
+  link: any
+}
+
+export const LinkCard: React.FC<LinkCardProps> = ({link}) => {
   return (
     <LinkCardContainer>
       <Link href={link.url.url} target="_blank">

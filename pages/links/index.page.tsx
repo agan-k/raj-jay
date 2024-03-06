@@ -1,11 +1,17 @@
+import { GetStaticProps } from 'next';
 import Prismic from 'prismic-javascript';
 import { client } from '../../prismic-configuration';
 import {Layout, Box, BlockTitle, Banner} from '../../components';
 import { BANNER_QUOTE } from '../../utils/constants';
-import LinkCard from './components/LinkCard';
+import {LinkCard} from './components/LinkCard';
 import { Container } from './components/styled';
 
-export default function Links({linksData, content}) {
+interface LinkProps {
+   linksData: any
+   content: any
+}
+
+export const Links: React.FC<LinkProps> = ({linksData, content}) => {
    const quotesData = content.results.filter(result =>
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
@@ -45,9 +51,10 @@ export default function Links({linksData, content}) {
          </Box>
       </Layout>
    )
-}
+};
+export default Links;
 
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
    const content = await client.query(
       Prismic.Predicates.at("document.type", "content"),
       { pageSize: 100 }
@@ -64,4 +71,4 @@ export async function getStaticProps() {
          linksData: linksData.results
       }
    }
-}
+}) satisfies GetStaticProps;
