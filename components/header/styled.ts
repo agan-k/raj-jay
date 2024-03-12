@@ -6,20 +6,19 @@ interface HeaderProps {
 }
 
 export const Container = styled.header<HeaderProps>`
-  width: 100%;
   margin: 0 auto;
   ${mediaQuery({
     pointerEvents: [
       'unset', 
       ({$disabled}) => $disabled ? 'none' : 'initial'
     ],
-    display: ['unset', 'flex'],
+    display: ['unset', 'block'],
     justiFyContent: ['unset', 'space-between'],
     paddingTop: [
       'unset',
       ({theme}) => theme.space[3]+'px'
     ],
-    width: ['100%', '80%'],
+    width: ['100%', '90%'],
     maxWidth: ['unset', '1200px']
   })}
 `;
@@ -27,11 +26,17 @@ export const Container = styled.header<HeaderProps>`
 export const Logo = styled.div`
   display: flex;
   min-width: 20%;
+  background-size: cover;
+  background-color: black;
+  color: ${({theme}) => theme.colors.diffused};
   ${mediaQuery({
+    background: [
+      'black',
+      `url('/images/header.png')`,
+    ],
+    borderTopRightRadius: ['none', '50px 50px'],
     height: ['32px', 'unset'],
-    marginLeft: ['2%', 'unset'],
-    marginTop: ['4px', 'unset'],
-    paddingTop: ['6px', 'unset'],
+    padding: ['6px 0 0', '8px'],
   })}
   h1 {
     text-transform: uppercase;
@@ -51,17 +56,25 @@ export const ActivePage = styled.div`
   ${mediaQuery({
     minWidth: ['unset', ({theme}) => theme.space[6]+24+'px'],
     textAlign: ['unset', 'center'],
-    marginTop: ['3px', '0'],
+    marginTop: ['2px', '1px'],
+    padding: [
+      '0',
+      ({theme}) => `0 ${theme.space[2]}px`,
+    ],
     fontSize: [
       ({theme}) => theme.fontSizes[4]+'px',
       ({theme}) => theme.fontSizes[3]+'px',
     ],
+    color: [
+      ({theme}) => theme.colors.diffused,
+      ({theme}) => theme.colors.charcoal,
+    ],
+    backgroundColor: [
+      'unset',
+      ({theme}) => theme.colors.diffused,
+    ],
   })}
   font-weight: ${({theme}) => theme.fontWeight.thin};
   letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;
-  color: ${({theme}) => theme.colors.diffused};
-  background-color: black;
   height: min-content;
-  padding-left: ${({theme}) => theme.space[2]}px;
-  padding-right: ${({theme}) => theme.space[1]}px;
 `;

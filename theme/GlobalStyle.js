@@ -13,9 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({theme}) => theme.colors.text};
     letter-spacing: ${({theme}) => theme.letterSpacing[1]}px;
   }
-  h1, h2, h3, h4 {
-    color: ${({theme}) => theme.colors.charcoal};
-}
+  
   p {
     color: ${({theme}) => theme.colors.charcoal};
     line-height: ${({theme}) => theme.lineHeight.paragraph};
