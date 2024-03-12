@@ -57,16 +57,24 @@ export const ActivePage = styled.div`
     minWidth: ['unset', ({theme}) => theme.space[6]+24+'px'],
     textAlign: ['unset', 'center'],
     marginTop: ['2px', '1px'],
+    padding: [
+      '0',
+      ({theme}) => `0 ${theme.space[2]}px`,
+    ],
     fontSize: [
       ({theme}) => theme.fontSizes[4]+'px',
       ({theme}) => theme.fontSizes[3]+'px',
     ],
+    color: [
+      ({theme}) => theme.colors.diffused,
+      ({theme}) => theme.colors.charcoal,
+    ],
+    backgroundColor: [
+      'unset',
+      ({theme}) => theme.colors.diffused,
+    ],
   })}
   font-weight: ${({theme}) => theme.fontWeight.thin};
   letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;
-  color: ${({theme}) => theme.colors.charcoal};
-  background-color: ${({theme}) => theme.colors.diffused};
   height: min-content;
-  padding-left: ${({theme}) => theme.space[2]}px;
-  padding-right: ${({theme}) => theme.space[1]}px;
 `;

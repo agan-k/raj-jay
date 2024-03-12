@@ -19,8 +19,6 @@ export const Container = styled.div<BannerProps>`
 export const Quote = styled.div`
   width: 40%;
   position: absolute;
-  top: ${({theme}) => theme.space[5]}px;
-  left: ${({theme}) => theme.space[6]}px;
   ${mediaQuery({
     width: ['65%', '40%'],
     top: [
@@ -28,6 +26,7 @@ export const Quote = styled.div`
       ({theme}) => theme.space[5]+'px',
     ],
     left: [
+      ({theme}) => theme.space[4]+'px',
       ({theme}) => theme.space[5]+'px',
     ]
   })}
