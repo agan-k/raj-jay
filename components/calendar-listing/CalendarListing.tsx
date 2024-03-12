@@ -1,8 +1,7 @@
-import { ReactNode } from "react";
 import Link from "next/link";
 import { RichText } from "prismic-reactjs";
 import formatPrismicDate from "../../utils/formatPrismicDate";
-import {Text, FlexBox, Box} from '..'
+import {Text, FlexBox, Box, Anchor} from '../../components';
 import { 
   Listing, 
   Header,
@@ -19,7 +18,7 @@ export interface CalendarListingProps {
 
 export const CalendarListing: React.FC<CalendarListingProps> = ({listing, $width, $nextShow}) => {
   return(
-    <Listing $width={$width}>
+    <Listing $width={$width} $nextShow={$nextShow}>
       <Header>
         <Text $fontWeight={100} $textTransform={'uppercase'}>
           {formatPrismicDate(listing.data.date)}
@@ -34,8 +33,8 @@ export const CalendarListing: React.FC<CalendarListingProps> = ({listing, $width
       {!$nextShow && (
         <Body>
           <ul>
-            {listing.data.lineup.map(list_item =>
-              <li key={list_item.text}>{list_item.text}</li>
+            {listing.data.lineup.map((list_item, index) =>
+              <li key={list_item.text+index}>{list_item.text}</li>
             )}
           </ul>
         </Body>
@@ -65,17 +64,9 @@ export const CalendarListing: React.FC<CalendarListingProps> = ({listing, $width
         {
           listing.data.links.map(item => (
             item.link.url &&
-            <Link href={item.link.url} target="_blank">
-              <FlexBox>
-                <Text 
-                $textTransform={'lowercase'} 
-                $fontStyle={'italic'}
-                $fontWeight={100}
-                >
-                  {item.link.url.substring(0, 30)}{'...'}
-                </Text>
-              </FlexBox>
-            </Link>
+            <Anchor key={item.link.url} path={item.link.url}>
+              {item.link.url.split('.')[1]}
+            </Anchor>
           ))
         }
       </Footer>

@@ -44,13 +44,13 @@ export const Shows: React.FC<ShowsProps> = ({calendarListings, content}) => {
          <Banner $imagePath={'images/banner2.png'} quote={quotes[BANNER_QUOTE.shows]}/>
          <Block $marginBottom={14}>
             <BlockTitle $margin={'0 0 16px 0'}>upcoming shows</BlockTitle>
-            <FlexBox>
+            <FlexBox $gap="2%">
                {upcomingShows}
             </FlexBox>
          </Block>
          <Block>
             <BlockTitle $margin={'0 0 16px 0'}>past shows</BlockTitle>
-            <FlexBox>
+            <FlexBox $gap="2%">
                {pastShows}
             </FlexBox>
          </Block>
