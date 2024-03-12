@@ -4,9 +4,7 @@ import { Z_INDEX } from "../../utils/constants";
 import { NavProps } from "./Nav";
 
 export const Container = styled.div<NavProps>`
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   overflow: hidden;
   ${mediaQuery({
     position: ['fixed', 'unset'],
@@ -18,13 +16,16 @@ export const Container = styled.div<NavProps>`
     [
       ({$isNavOpen}) => $isNavOpen ? '100%' : '0',
       ({$isNavOpen, theme}) => $isNavOpen ? 
-      ({theme}) => theme.space[7]-theme.space[4]+'px' : theme.space[4]+'px',
+      ({theme}) => theme.space[6]+16+'px' : '0',
       //dev to keep nav open: 
-      // ({theme}) => theme.space[7]-theme.space[4]+'px', // lg screen
+      // ({theme}) => theme.space[6]+16+'px', // lg screen
     ],
     flexDirection: ['column', 'row'],
-    gap: [({theme}) => theme.space[1]+'px', 'unset'],
-    justifyContent: ['unset', 'space-between'],
+    gap: [
+      ({theme}) => theme.space[1]+'px',
+      ({theme}) => theme.space[6]+'px',
+    ],
+    justifyContent: ['unset', 'end'],
     transition: [
       'unset',
       ({theme}) => theme.transitions.fast,
@@ -55,7 +56,7 @@ export const NavRoutes = styled.nav`
       ],
       marginTop: [
         ({theme}) => theme.space[4]+'px',
-        ({theme}) => theme.space[5]+'px',
+        ({theme}) => theme.space[3]+'px',
       ],
       textAlign: ['center', 'unset']
     })}
@@ -108,14 +109,14 @@ export const NavItem = styled.li`
 `;
 
 export const SeparationLine = styled.div<NavProps>`
-  height: 50%;
+  height: 80%;
   align-self: end;
   margin-bottom: ${({theme}) => theme.space[3]}px;
   border-right: ${({theme}) => theme.borders.dashedGray};
   ${mediaQuery({
-    display: [
-      'none', 
-      ({$isNavOpen}) => $isNavOpen ? 'block' : 'none',
+    visibility: [
+      'hidden', 
+      ({$isNavOpen}) => $isNavOpen ? 'visible' : 'hidden',
     ],
   })}
 `;
@@ -133,7 +134,7 @@ export const MailingListWrapper = styled.div`
     justifyContent: ['center', 'unset'],
     margin: [
       ({theme}) => `${theme.space[5]}px auto ${theme.space[7]}px`,
-      ({theme}) => `${theme.space[5]}px 0`,
+      ({theme}) => `${theme.space[3]}px 0`,
     ],
   })}
 `;

@@ -14,7 +14,6 @@ export const Container = styled.div<BannerProps>`
   ${mediaQuery({
     width: ['106%', 'unset'],
     left: ['-4%', 'unset'],
-    borderTopLeftRadius: ['none', '50px 50px'],
   })}
 `;
 export const Quote = styled.div`

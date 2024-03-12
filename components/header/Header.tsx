@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {Nav, NavToggle, FlexBox} from "..";
+import {Nav, NavToggle, FlexBox, Box} from "..";
 import { useMediaQuery } from "../../utils/hooks";
 import { MOBILE_BREAKPOINT, navLinks } from "../../utils/constants";
 import {
@@ -52,23 +52,21 @@ export const Header: React.FC = () => {
          onMouseOut={!isMobile ? () => setIsNavOpen(false) : undefined}
          $disabled={disabled}
       >
-         <FlexBox $flexWrap={'nowrap'}>
+         <Box>
             <Logo>
-               <Link href='/'>
-                  <h1>
-                     RAJIV JAYAWEERA /&nbsp;
-                  </h1>
-               </Link>
+               <h1>
+                  RAJIV JAYAWEERA /&nbsp;
+               </h1>
                <ActivePage>
                   {active}
                </ActivePage>
             </Logo>
-         </FlexBox>
+         </Box>
          <Nav 
             navigationRoutes={navigationRoutes}
             $isNavOpen={isNavOpen} 
          />
-         {isMobile && (
+         {!isMobile && (
             <NavToggle $isNavOpen={isNavOpen} onClick={HandleToggleNav} />
          )}
       </Container>

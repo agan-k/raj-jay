@@ -6,14 +6,14 @@ interface HeaderProps {
 }
 
 export const Container = styled.header<HeaderProps>`
-  width: 100%;
   margin: 0 auto;
   ${mediaQuery({
     pointerEvents: [
       'unset', 
       ({$disabled}) => $disabled ? 'none' : 'initial'
     ],
-    display: ['unset', 'flex'],
+    // display: ['unset', 'flex'],
+    display: ['unset', 'block'],
     justiFyContent: ['unset', 'space-between'],
     paddingTop: [
       'unset',
@@ -27,11 +27,15 @@ export const Container = styled.header<HeaderProps>`
 export const Logo = styled.div`
   display: flex;
   min-width: 20%;
+  background: url('/images/banner6.png');
+  background-color: black;
+  color: ${({theme}) => theme.colors.diffused};
   ${mediaQuery({
+    borderTopRightRadius: ['none', '50px 50px'],
     height: ['32px', 'unset'],
     marginLeft: ['2%', 'unset'],
     marginTop: ['4px', 'unset'],
-    paddingTop: ['6px', 'unset'],
+    padding: ['6px 0 0', '8px'],
   })}
   h1 {
     text-transform: uppercase;
@@ -51,7 +55,7 @@ export const ActivePage = styled.div`
   ${mediaQuery({
     minWidth: ['unset', ({theme}) => theme.space[6]+24+'px'],
     textAlign: ['unset', 'center'],
-    marginTop: ['3px', '0'],
+    marginTop: ['3px', '1px'],
     fontSize: [
       ({theme}) => theme.fontSizes[4]+'px',
       ({theme}) => theme.fontSizes[3]+'px',
@@ -59,8 +63,8 @@ export const ActivePage = styled.div`
   })}
   font-weight: ${({theme}) => theme.fontWeight.thin};
   letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;
-  color: ${({theme}) => theme.colors.diffused};
-  background-color: black;
+  color: ${({theme}) => theme.colors.charcoal};
+  background-color: ${({theme}) => theme.colors.diffused};
   height: min-content;
   padding-left: ${({theme}) => theme.space[2]}px;
   padding-right: ${({theme}) => theme.space[1]}px;
