@@ -16,7 +16,7 @@ export const NewsCards: React.FC <NewsCardsProps> = ({
 })  => {
   const newsCards = cards.map((item) => 
     <Card 
-      key={item.uid}
+      key={item.id}
       onClick={() => HandleMediaLinkModal({
         media: item,
         setShowModal: setShowModal,

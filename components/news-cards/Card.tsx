@@ -29,10 +29,10 @@ export const Card: React.FC<CardProps> = ({
             </ImageWrapper>
             <Box>
               {RichText.render(card.data.news_card_blurb)}
+              <FlexBox $justifyContent={'end'}>
+                <LinkArrow />
+              </FlexBox>
             </Box>
-            <FlexBox $justifyContent={'end'}>
-              <LinkArrow />
-            </FlexBox>
           </Link> 
         </CardContainer> 
         :

@@ -26,6 +26,9 @@ export const CardContainer = styled.div`
     font-size: ${({theme}) => theme.fontSizes[6]}px;
     font-weight: ${({theme}) => theme.fontWeight.thick}
   }
+  p {
+    margin-bottom: 0;
+  }
   a {
     &:hover {
       text-decoration: none;
@@ -38,22 +41,16 @@ export const CardContainer = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  width: 100%;
-  height: ${({theme}) => theme.space[6]+12}px;
-  margin: 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
   overflow: hidden;
   ${mediaQuery({
-    height: [
+    maxHeight: [
       'unset',
-      ({theme}) => theme.space[6]+12+'px'
+      ({theme}) => theme.space[7]+theme.space[7]+'px'
     ]
   })}
   img {
-    max-height: ${({theme}) => theme.space[6]+12}px;
-    max-width: ${({theme}) => theme.space[7]+theme.space[6]}px;
     opacity: ${({theme}) => theme.opacity.hazy};
     padding: ${({theme}) => theme.space[2]};
     ${mediaQuery({
@@ -63,7 +60,7 @@ export const ImageWrapper = styled.div`
       ],
       maxHeight: [
         'unset',
-        ({theme}) => theme.space[6]+12+'px',
+        ({theme}) => theme.space[7]+theme.space[7]+'px',
       ]
     })}
   }
@@ -73,6 +70,4 @@ export const Date = styled.div`
   text-transform: uppercase;
   font-weight: ${({theme}) => theme.fontWeight.thin};
   margin-bottom: ${({theme}) => theme.space[4]}px;
-  ${mediaQuery({
-  })}
 `;
