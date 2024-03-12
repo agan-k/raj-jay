@@ -7,10 +7,10 @@ export const Listing = styled.div<CalendarListingProps>`
   padding: ${({theme}) => theme.space[3]}px;
   background: ${({$nextShow, theme}) => !$nextShow ? theme.colors.diffused : ''};
   ${mediaQuery({
-    width: ['unset', ({$width}) => $width],
+    width: ['100%', ({$width}) => $width],
     marginBottom: [
-      ({theme}) => theme.space[5]+'px',
       ({theme}) => theme.space[3]+'px',
+      ({theme}) => theme.space[4]+'px',
     ],
   })}
 `;
