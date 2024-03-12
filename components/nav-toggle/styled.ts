@@ -11,6 +11,6 @@ export const NavToggleButton = styled.button<NavToggleProps>`
   border: none;
   background: none;
   font-size: ${({theme}) => theme.fontSizes[7]+theme.fontSizes[1]}px;
-  color: black;
+  color: ${({theme}) => theme.colors.diffused};
   z-index: ${Z_INDEX.mobileNav};
 `;

@@ -4,16 +4,16 @@ import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.div<BannerProps>`
   position: relative;
-  height: ${({theme}) => theme.space[8]}px;
+  height: 200px;
   margin-bottom: ${({theme}) => theme.space[4]}px;
   overflow: hidden;
-  background: url('/images/banner6.png');
+  background: url('/images/banner.png');
   background-size: cover;
-  background-position: right;
   background-color: black;
   ${mediaQuery({
-    width: ['106%', 'unset'],
-    left: ['-4%', 'unset'],
+    backgroundPosition: ['right', 'unset'],
+    width: ['106%', '100%'],
+    left: ['-4%', '0'],
   })}
 `;
 export const Quote = styled.div`

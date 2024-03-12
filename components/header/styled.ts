@@ -12,14 +12,13 @@ export const Container = styled.header<HeaderProps>`
       'unset', 
       ({$disabled}) => $disabled ? 'none' : 'initial'
     ],
-    // display: ['unset', 'flex'],
     display: ['unset', 'block'],
     justiFyContent: ['unset', 'space-between'],
     paddingTop: [
       'unset',
       ({theme}) => theme.space[3]+'px'
     ],
-    width: ['100%', '80%'],
+    width: ['100%', '90%'],
     maxWidth: ['unset', '1200px']
   })}
 `;
@@ -27,14 +26,16 @@ export const Container = styled.header<HeaderProps>`
 export const Logo = styled.div`
   display: flex;
   min-width: 20%;
-  background: url('/images/banner6.png');
+  background-size: cover;
   background-color: black;
   color: ${({theme}) => theme.colors.diffused};
   ${mediaQuery({
+    background: [
+      'black',
+      `url('/images/header.png')`,
+    ],
     borderTopRightRadius: ['none', '50px 50px'],
     height: ['32px', 'unset'],
-    marginLeft: ['2%', 'unset'],
-    marginTop: ['4px', 'unset'],
     padding: ['6px 0 0', '8px'],
   })}
   h1 {
@@ -55,7 +56,7 @@ export const ActivePage = styled.div`
   ${mediaQuery({
     minWidth: ['unset', ({theme}) => theme.space[6]+24+'px'],
     textAlign: ['unset', 'center'],
-    marginTop: ['3px', '1px'],
+    marginTop: ['2px', '1px'],
     fontSize: [
       ({theme}) => theme.fontSizes[4]+'px',
       ({theme}) => theme.fontSizes[3]+'px',

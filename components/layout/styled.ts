@@ -5,7 +5,7 @@ export const Container = styled.div`
   position: relative;
   margin: 0 auto;
   ${mediaQuery({
-    width: ['96%', '80%'],
+    width: ['96%', '90%'],
     maxWidth: ['unset', '1200px']
   })}
 `;

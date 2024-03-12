@@ -66,7 +66,7 @@ export const Header: React.FC = () => {
             navigationRoutes={navigationRoutes}
             $isNavOpen={isNavOpen} 
          />
-         {!isMobile && (
+         {isMobile && (
             <NavToggle $isNavOpen={isNavOpen} onClick={HandleToggleNav} />
          )}
       </Container>
