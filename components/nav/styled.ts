@@ -134,7 +134,7 @@ export const MailingListWrapper = styled.div`
     justifyContent: ['center', 'unset'],
     margin: [
       ({theme}) => `${theme.space[5]}px auto ${theme.space[7]}px`,
-      ({theme}) => `${theme.space[3]}px 0`,
+      ({theme}) => `${theme.space[3]+2}px 0`,
     ],
   })}
 `;
@@ -145,7 +145,7 @@ export const MailingListLabel = styled.div`
   text-transform: lowercase;
   white-space: nowrap;
   ${mediaQuery({
-    marginTop: ['unset', '1px'],
+    // marginTop: ['unset', '1px'],
     fontSize: [
       ({theme}) => theme.fontSizes[5]+'px',
       ({theme}) => theme.fontSizes[3]+'px',

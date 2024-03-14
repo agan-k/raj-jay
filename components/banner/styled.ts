@@ -17,10 +17,9 @@ export const Container = styled.div<BannerProps>`
   })}
 `;
 export const Quote = styled.div`
-  width: 40%;
   position: absolute;
   ${mediaQuery({
-    width: ['65%', '40%'],
+    width: ['70%', '40%'],
     top: [
       ({theme}) => theme.space[2]+'px',
       ({theme}) => theme.space[5]+'px',
@@ -45,6 +44,8 @@ export const Quote = styled.div`
   }
   p:nth-child(2) {
     font-size: ${({theme}) => theme.fontSizes[3]}px;
-    text-align: right;
+    ${mediaQuery({
+      textAlign: ['left', 'right'],
+    })}
   }
 `;

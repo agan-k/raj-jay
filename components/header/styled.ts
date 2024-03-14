@@ -3,9 +3,10 @@ import {mediaQuery} from "../../utils/mediaQuery";
 
 interface HeaderProps {
   $disabled?: boolean
+  $isNavOpen?: boolean
 }
 
-export const Container = styled.header<HeaderProps>`
+export const Container = styled.header<Pick<HeaderProps, '$disabled'>>`
   margin: 0 auto;
   ${mediaQuery({
     pointerEvents: [
@@ -52,14 +53,18 @@ export const Logo = styled.div`
   }
 `;
 
-export const ActivePage = styled.div`
+export const ActivePage = styled.div<Pick<HeaderProps, '$isNavOpen'>>`
   ${mediaQuery({
     minWidth: ['unset', ({theme}) => theme.space[6]+24+'px'],
-    textAlign: ['unset', 'center'],
+    textAlign: [
+      'unset', 
+      ({$isNavOpen}) => $isNavOpen ? 'center' : 'initial',
+    ],
     marginTop: ['2px', '1px'],
     padding: [
       '0',
-      ({theme}) => `0 ${theme.space[2]}px`,
+      ({theme, $isNavOpen}) => $isNavOpen ?
+        `0 ${theme.space[2]}px` : '0',
     ],
     fontSize: [
       ({theme}) => theme.fontSizes[4]+'px',
@@ -67,11 +72,12 @@ export const ActivePage = styled.div`
     ],
     color: [
       ({theme}) => theme.colors.diffused,
-      ({theme}) => theme.colors.charcoal,
+      ({theme, $isNavOpen}) => $isNavOpen ? 
+        theme.colors.charcoal : theme.colors.diffused,
     ],
     backgroundColor: [
       'unset',
-      ({theme}) => theme.colors.diffused,
+      ({theme, $isNavOpen}) => $isNavOpen ? theme.colors.diffused : '',
     ],
   })}
   font-weight: ${({theme}) => theme.fontWeight.thin};
