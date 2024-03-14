@@ -19,7 +19,6 @@ export const Header: React.FC = () => {
    const router = useRouter();
    const pathname = router.pathname;
    const activePage = pathname.split("/")[1]; 
-   const isHome = Boolean(pathname === '/');
    const navigationRoutes = navLinks.map(item => 
       <NavItem 
         key={item.name} 
@@ -57,7 +56,7 @@ export const Header: React.FC = () => {
                <h1>
                   RAJIV JAYAWEERA /&nbsp;
                </h1>
-               <ActivePage>
+               <ActivePage $isNavOpen={isNavOpen}>
                   {active}
                </ActivePage>
             </Logo>
