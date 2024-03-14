@@ -57,7 +57,7 @@ export const Container = styled.div`
     ${mediaQuery({
       padding: [
         ({theme}) => theme.space[2]+'px',
-        ({theme}) => `0 ${theme.space[2]}px`
+        ({theme}) => `${theme.space[1]}px ${theme.space[2]}px`
       ]
     })}
   }
