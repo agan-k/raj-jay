@@ -5,7 +5,6 @@ import { CalendarListingProps } from "./CalendarListing";
 export const Listing = styled.div<CalendarListingProps>`
   margin-bottom: ${({theme}) => theme.space[3]}px;
   padding: ${({theme}) => theme.space[3]}px;
-  // background: ${({$nextShow, theme}) => !$nextShow ? theme.colors.diffused : ''};
   ${mediaQuery({
     width: ['100%', ({$width}) => $width],
     marginBottom: [
