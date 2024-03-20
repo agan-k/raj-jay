@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
 display: flex;
-justify-content: end;
+justify-content: start;
 a {
   text-decoration: none;
 }
@@ -18,6 +18,6 @@ export const FlipperWrapper = styled.div`
 export const Flipper = styled.div`
   position: absolute;
   top: 130px;
-  right: -100px;
+  left: -95px;
   transform: rotate(-90deg);
 `;
