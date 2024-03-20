@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
               $fontSize={14} 
               $color="brown"
             >
-              {'(form (vs (content)))'}
+              {'site by: '}{'(form (vs (content)))'}
             </Text>
           </Anchor>
         </Flipper>

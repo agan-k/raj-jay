@@ -1,23 +1,32 @@
 import styled from "styled-components";
+import { mediaQuery } from "../../utils/mediaQuery";
 
 export const Container = styled.footer`
-display: flex;
-justify-content: start;
-a {
-  text-decoration: none;
-}
-a:hover {
-  color: orange;
-}
+  ${mediaQuery({
+    justifyContent: ['center', 'start'],
+  })}
+  display: flex;
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: orange;
+  }
 `;
 export const FlipperWrapper = styled.div`
-  height: 260px;
-  width: 300px;
-  position: relative;
+  ${mediaQuery({
+    position: ['unset', 'relative'],
+    display: ['flex', 'initial'],
+    alignItems: ['end', 'unset'],
+    height: ['100px', '300px'],
+    width: ['unset', '300px'],
+  })}
 `;
 export const Flipper = styled.div`
-  position: absolute;
-  top: 130px;
-  left: -95px;
-  transform: rotate(-90deg);
+  ${mediaQuery({
+    position: ['unset', 'absolute'],
+    top: ['unset', '130px'],
+    left: ['unset', '-130px'],
+    transform: ['unset', 'rotate(-90deg)'],
+  })}
 `;
