@@ -6,13 +6,13 @@ export const Footer: React.FC = () => {
     <Container>
       <FlipperWrapper>
         <Flipper>
-          <Anchor url={'https://formversuscontent.com'} target={'_blank'} $color={'orange'}>
+          <Anchor url={'https://formversuscontent.com'} target={'_blank'} $color={'black'}>
             <Text 
-              $fontFamily="courier new" 
+              $fontFamily="courier" 
               $fontSize={14} 
-              $color="grey"
+              $color="brown"
             >
-              {'(form (vs (content)))'}
+              {'site by: '}{'(form (vs (content)))'}
             </Text>
           </Anchor>
         </Flipper>
