@@ -17,13 +17,33 @@ export const Card: React.FC<CardProps> = ({
   id,
 }) => {
   const isVideoLink = Boolean(card.data.video_link.length > 0);
+  function getHref() {
+    const path = card.data.content_type;
+    switch(path) {
+      case 'discography':
+        return `/albums/${card.uid}`;
+        case 'press-reviews':
+        case 'press-interviews':
+        case 'press-features':
+        case 'press-releases':
+        return `/press/${card.uid}`;
+    }
+    return path
+  }
+  const path = getHref();
 
   return(
     <>
       {!isVideoLink ?
         <CardContainer id={id}>
-          <Link href={`/${card.data.content_type.substring(0, 5)}/${card.uid}`}>
-            <Date>{formatPrismicDate(card.data.date)}</Date>
+          <Link href={path}>
+            <Date>
+              {
+                card.data.date === null ? 
+                card.last_publication_date :
+                formatPrismicDate(card.data.date)
+              }
+            </Date>
             <ImageWrapper>
               <img src={card.data.img.url} />
             </ImageWrapper>
@@ -37,7 +57,13 @@ export const Card: React.FC<CardProps> = ({
         </CardContainer> 
         :
         <CardContainer onClick={onClick} id={id}>
-          <Date>{formatPrismicDate(card.data.date)}</Date>
+          <Date>
+              {
+                card.data.date === null ? 
+                formatPrismicDate(card.last_publication_date) :
+                formatPrismicDate(card.data.date)
+              }
+            </Date>
           <ImageWrapper>
             <img src={card.data.img.url} />
           </ImageWrapper>
