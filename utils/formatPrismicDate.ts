@@ -1,4 +1,5 @@
 export default function formatPrismicDate(date) {
+   if (!date) return;
   let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul",
      "Aug", "Sep", "Oct", "Nov", "Dec"];
   let day;
