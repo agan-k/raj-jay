@@ -35,6 +35,7 @@ export const Quote = styled.div`
     line-height: ${({theme}) => theme.lineHeight.secondary};
     letter-spacing: ${({theme}) => theme.letterSpacing[1]}px;
     font-family: Garamond;
+    font-style: italic;
     ${mediaQuery({
       fontSize: [
         ({theme}) => theme.fontSizes[3]+'px',
