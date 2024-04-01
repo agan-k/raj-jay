@@ -34,7 +34,6 @@ export const Home: React.FC<HomeProps> = ({
    const [showModal, setShowModal] = useState(false);
    const [media, setMedia] = useState(null);
    const [mounted, setMounted] = useState(false);
-   // useEffect(() => setMounted(true), []); if (!mounted) return null;
    const cards = content.results.filter(item => item.data.news_card); 
    const upcomingShows = calendarListings.filter(listing => listing.data.date > currentDate);
    const nextShow = upcomingShows[upcomingShows.length -1];
