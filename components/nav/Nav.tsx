@@ -4,7 +4,6 @@ import {
   NavRoutes,
   MailingListWrapper,
   MailingListLabel,
-  SeparationLine,
 } from "./styled";
 
 export interface NavProps {
