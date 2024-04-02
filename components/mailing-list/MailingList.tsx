@@ -39,7 +39,7 @@ export const MailingList = () => {
               placeholder="your@email"
             />
           </div>
-          <button type="submit" disabled={state.submitting}>join</button>
+          <button type="submit" disabled={state.submitting}>join mailing list</button>
         </form>
       }
     </Container>

@@ -3,7 +3,7 @@ import {mediaQuery} from "../../utils/mediaQuery"
 
 export const Container = styled.div`
   ${mediaQuery({
-    width: ['100%', 'unset'],
+    width: ['100%'],
   })}
   * {
     letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;
@@ -30,16 +30,14 @@ export const Container = styled.div`
   input::placeholder {
     color: ${({theme}) => theme.colors.diffused};
     font-style: italic;
-    font-weight: 100;
     ${mediaQuery({
+      fontWeight: ['100', 'unset'],
       fontSize: [
         ({theme}) => theme.fontSizes[4]+'px',
         ({theme}) => theme.fontSizes[2]+'px',
       ],
       color: [
-        ({theme}) => theme.colors.subtle,
-        ({theme}) => theme.colors.diffused
-      ]
+        ({theme}) => theme.colors.subtle      ]
     })}
   }
   
@@ -57,7 +55,7 @@ export const Container = styled.div`
     ${mediaQuery({
       padding: [
         ({theme}) => theme.space[2]+'px',
-        ({theme}) => `${theme.space[1]}px ${theme.space[2]}px`
+        ({theme}) => `${theme.space[2]}px ${theme.space[2]}px`
       ]
     })}
   }
