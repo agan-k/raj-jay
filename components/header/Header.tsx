@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {Nav, NavToggle, FlexBox, Box} from "..";
+import {Nav, NavToggle, FlexBox, Box} from "../../components";
 import { useMediaQuery } from "../../utils/hooks";
 import { MOBILE_BREAKPOINT, navLinks } from "../../utils/constants";
 import {
@@ -61,10 +61,12 @@ export const Header: React.FC = () => {
                </ActivePage>
             </Logo>
          </Box>
-         <Nav 
-            navigationRoutes={navigationRoutes}
-            $isNavOpen={isNavOpen} 
-         />
+         <FlexBox $justifyContent="end">
+            <Nav 
+               navigationRoutes={navigationRoutes}
+               $isNavOpen={isNavOpen} 
+            />
+         </FlexBox>
          {isMobile && (
             <NavToggle $isNavOpen={isNavOpen} onClick={HandleToggleNav} />
          )}

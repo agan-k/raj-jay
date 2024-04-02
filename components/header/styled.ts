@@ -54,31 +54,16 @@ export const Logo = styled.div`
 `;
 
 export const ActivePage = styled.div<Pick<HeaderProps, '$isNavOpen'>>`
+padding: 0;
   ${mediaQuery({
     minWidth: ['unset', ({theme}) => theme.space[6]+24+'px'],
-    textAlign: [
-      'unset', 
-      ({$isNavOpen}) => $isNavOpen ? 'center' : 'initial',
-    ],
     marginTop: ['2px', '1px'],
-    padding: [
-      '0',
-      ({theme, $isNavOpen}) => $isNavOpen ?
-        `0 ${theme.space[2]}px` : '0',
-    ],
     fontSize: [
       ({theme}) => theme.fontSizes[4]+'px',
       ({theme}) => theme.fontSizes[3]+'px',
     ],
     color: [
-      ({theme}) => theme.colors.diffused,
-      ({theme, $isNavOpen}) => $isNavOpen ? 
-        theme.colors.charcoal : theme.colors.diffused,
-    ],
-    backgroundColor: [
-      'unset',
-      ({theme, $isNavOpen}) => $isNavOpen ? theme.colors.diffused : '',
-    ],
+      ({theme}) => theme.colors.diffused]
   })}
   font-weight: ${({theme}) => theme.fontWeight.thin};
   letter-spacing: ${({theme}) => theme.letterSpacing[2]}px;

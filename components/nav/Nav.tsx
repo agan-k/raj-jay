@@ -4,7 +4,6 @@ import {
   NavRoutes,
   MailingListWrapper,
   MailingListLabel,
-  SeparationLine,
 } from "./styled";
 
 export interface NavProps {
@@ -21,13 +20,9 @@ export const Nav: React.FC<NavProps> = ({navigationRoutes, $isNavOpen}) => {
           {navigationRoutes}
         </ul>
       </NavRoutes>
-      <FlexBox $alignItems={'center'}>
-        <SeparationLine $isNavOpen={$isNavOpen} />
-      </FlexBox>
       <MailingListWrapper>
           <MailingListLabel
           >
-            mailing list:
           </MailingListLabel>
           <MailingList />
       </MailingListWrapper>
