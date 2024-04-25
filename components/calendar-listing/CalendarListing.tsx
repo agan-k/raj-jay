@@ -14,11 +14,12 @@ export interface CalendarListingProps {
   listing?: any
   $width?: string
   $nextShow?: boolean
+  $pastShow?: boolean
 }
 
-export const CalendarListing: React.FC<CalendarListingProps> = ({listing, $width, $nextShow}) => {
+export const CalendarListing: React.FC<CalendarListingProps> = ({listing, $width, $nextShow, $pastShow}) => {
   return(
-    <Listing $width={$width} $nextShow={$nextShow}>
+    <Listing $width={$width} $nextShow={$nextShow} $pastShow={$pastShow}>
       <Header>
         <Text $fontWeight={100} $textTransform={'uppercase'}>
           {formatPrismicDate(listing.data.date)}
@@ -39,7 +40,7 @@ export const CalendarListing: React.FC<CalendarListingProps> = ({listing, $width
           </ul>
         </Body>
       )}
-      <Footer>
+      <Footer $pastShow={$pastShow}>
         <Text $fontSize={12} $fontWeight={100}>
           {RichText.asText(listing.data.street_address)}
         </Text>
@@ -47,7 +48,7 @@ export const CalendarListing: React.FC<CalendarListingProps> = ({listing, $width
           {listing.data.map_link.url && (
             <Link href={listing.data.map_link.url} target="_blank">
               <FlexBox>
-                <Icon src="/icons/location-icon.png" />&nbsp;
+                <Icon src="/icons/location-icon.png" $pastShow={$pastShow} />&nbsp;
                 <Text $fontSize={12} $fontWeight={100}>Directions</Text>
               </FlexBox>
             </Link>
