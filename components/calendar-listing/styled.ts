@@ -6,19 +6,23 @@ export const Listing = styled.div<CalendarListingProps>`
   margin-bottom: ${({theme}) => theme.space[3]}px;
   padding: ${({theme}) => theme.space[3]}px;
   border-radius: 15px;
-  color: ${({$pastShow, theme}) => $pastShow ? 'blue' : 'red'}
   ${mediaQuery({
-    width: ['100%', ({$width}) => $width],
+    width: [
+      '100%',
+     ({$width}) => $width
+    ],
     marginBottom: [
       ({theme}) => theme.space[3]+'px',
       ({theme}) => theme.space[4]+'px',
     ],
-    background: [
+    padding: [
+      ({theme}) => theme.space[4]+'px',
       'unset',
+    ],
+    background: [
       ({$pastShow, theme}) => $pastShow ? theme.colors.diffused : '#d0d5db'
     ],
     border: [
-      'unset',
       ({$pastShow, theme}) => $pastShow ? 'none' : theme.borders.hover
     ],
     color: [
