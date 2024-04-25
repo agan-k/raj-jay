@@ -26,7 +26,7 @@ export const Shows: React.FC<ShowsProps> = ({calendarListings, content}) => {
    const upcomingShows = calendarListings.reverse().map(listing => {
       if (listing.data.date > currentDate) {
          return (
-            <CalendarListing key={listing.id} listing={listing} $width={'32%'}/>
+            <CalendarListing key={listing.id} listing={listing} $width={'32%'}  />
          );
       }
    });
@@ -34,7 +34,7 @@ export const Shows: React.FC<ShowsProps> = ({calendarListings, content}) => {
    const pastShows = calendarListings.reverse().map(listing => {
       if (listing.data.date < currentDate) {
          return(
-            <CalendarListing key={listing.id} listing={listing} $width={'32%'}/>
+            <CalendarListing key={listing.id} listing={listing} $width={'32%'} $pastShow={true} />
          );
       }
    });
