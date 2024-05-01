@@ -62,20 +62,22 @@ export const Home: React.FC<HomeProps> = ({
                         </Anchor>
                      </FlexBox>
                </Block>
-               <Block>
-                  <BlockTitle $margin={'0 0 16px 0'}>next show</BlockTitle>
-                  <CalendarListing 
-                     listing={nextShow}
-                     $nextShow={true}
-                  />
-                  <FlexBox $justifyContent={'end'}>
-                     <Anchor path={'/shows'}>
-                        <Text $fontSize={12}>
-                           ...full calendar
-                        </Text>
-                     </Anchor>
-                  </FlexBox>
-               </Block>
+               {nextShow && (
+                  <Block>
+                     <BlockTitle $margin={'0 0 16px 0'}>next show</BlockTitle>
+                        <CalendarListing 
+                           listing={nextShow}
+                           $nextShow={true}
+                        />
+                     <FlexBox $justifyContent={'end'}>
+                        <Anchor path={'/shows'}>
+                           <Text $fontSize={12}>
+                              ...full calendar
+                           </Text>
+                        </Anchor>
+                     </FlexBox>
+                  </Block>
+               )}
                <Block>
                   <BlockTitle $margin={'0 0 16px 0'}>blog</BlockTitle>
                   <MicroBlog postsData={postsData} />

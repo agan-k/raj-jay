@@ -18,6 +18,7 @@ export interface CalendarListingProps {
 }
 
 export const CalendarListing: React.FC<CalendarListingProps> = ({listing, $width, $nextShow, $pastShow}) => {
+  // if (!listing) return 
   return(
     <Listing $width={$width} $nextShow={$nextShow} $pastShow={$pastShow}>
       <Header>
