@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { GetStaticProps } from 'next';
 import Prismic from "prismic-javascript";
 import { client } from "../prismic-configuration";
@@ -33,7 +33,6 @@ export const Home: React.FC<HomeProps> = ({
 }) => {
    const [showModal, setShowModal] = useState(false);
    const [media, setMedia] = useState(null);
-   const [mounted, setMounted] = useState(false);
    const cards = content.results.filter(item => item.data.news_card); 
    const upcomingShows = calendarListings.filter(listing => listing.data.date > currentDate);
    const nextShow = upcomingShows[upcomingShows.length -1];
@@ -41,7 +40,7 @@ export const Home: React.FC<HomeProps> = ({
       result.data.content_type == 'press-reviews' || result.data.content_type == 'press-interviews'
    );
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0); 
-   
+   console.log(postsData)
    return (
       <Layout>
          <Banner $imagePath={'images/banner1.png'} quote={quotes[BANNER_QUOTE.home]}/>
@@ -131,7 +130,7 @@ export const getStaticProps = (async () => {
       Prismic.Predicates.at("document.type", "micro_blog"),
       {
          orderings: '[my.micro_blog.date desc]',
-         pageSize : 1
+         pageSize : 2
       }
    );
    return {
