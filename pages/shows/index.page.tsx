@@ -23,13 +23,17 @@ export const Shows: React.FC<ShowsProps> = ({calendarListings, content}) => {
    );
    const quotes = quotesData.filter(item => item.data.press_quote.length > 0);
 
-   const upcomingShows = calendarListings.reverse().map(listing => {
+   const upcomingShowsArr = calendarListings.reverse().filter(listing => {
+      if (listing.data.date > currentDate) return listing;
+   });
+   const upcomingShows = upcomingShowsArr.map(listing => {
       if (listing.data.date > currentDate) {
          return (
             <CalendarListing key={listing.id} listing={listing} $width={'32%'}  />
          );
       }
    });
+   console.log(upcomingShowsArr)
    
    const pastShows = calendarListings.reverse().map(listing => {
       if (listing.data.date < currentDate) {
@@ -38,16 +42,19 @@ export const Shows: React.FC<ShowsProps> = ({calendarListings, content}) => {
          );
       }
    });
-
    return (
       <Layout>
          <Banner $imagePath={'images/banner2.png'} quote={quotes[BANNER_QUOTE.shows]}/>
-         <Block $marginBottom={14}>
-            <BlockTitle $margin={'0 0 16px 0'}>upcoming shows</BlockTitle>
-            <FlexBox $gap="2%">
-               {upcomingShows}
-            </FlexBox>
-         </Block>
+            {
+               upcomingShows.length > 0 && (
+                  <Block $marginBottom={14}>
+                     <BlockTitle $margin={'0 0 16px 0'}>upcoming shows</BlockTitle>
+                     <FlexBox $gap="2%">
+                        {upcomingShows}
+                     </FlexBox>
+                  </Block>
+               )
+            }
          <Block>
             <BlockTitle $margin={'0 0 16px 0'}>past shows</BlockTitle>
             <FlexBox $gap="2%">
