@@ -6,6 +6,7 @@ export const Listing = styled.div<CalendarListingProps>`
   margin-bottom: ${({theme}) => theme.space[3]}px;
   padding: ${({theme}) => theme.space[4]}px;
   border-radius: 15px;
+  pointer-events: ${({$pastShow}) => $pastShow ? 'none' : 'initial'};
   ${mediaQuery({
     width: [
       '100%',
